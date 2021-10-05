@@ -1,0 +1,16 @@
+example_id                                               | status | run_time        |
+-------------------------------------------------------- | ------ | --------------- |
+./features/support/automation/filesAccountBlock.rb[1:1]  | passed | 2.23 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:2]  | passed | 2.24 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:3]  | passed | 4.61 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:4]  | passed | 2.46 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:5]  | passed | 2.22 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:6]  | passed | 4.22 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:7]  | passed | 2.22 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:8]  | passed | 4.21 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:9]  | passed | 3.95 seconds    |
+./features/support/automation/filesAccountBlock.rb[1:10] | passed | 2.33 seconds    |
+./features/support/automation/loginLogOut.rb[1:1]        | passed | 2.2 seconds     |
+./features/support/automation/loginLogOut.rb[1:2]        | passed | 2.46 seconds    |
+./features/support/automation/loginLogOut.rb[1:3]        | passed | 4.69 seconds    |
+./features/support/automation/loginLogOut.rb[1:4]        | passed | 0.91777 seconds |
