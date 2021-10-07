@@ -9,6 +9,7 @@ module FilesPage
 	include RSpec::Matchers
 	include Selenium
 
+	#### METHODS / LOCATORS ####
 	def filesVerificationAcessTextField
 		@browser.text_field(id: 'VerifyAccess-Text')
 	end
@@ -20,4 +21,6 @@ module FilesPage
 	def filesAccountMenuLinks(string)
 		@browser.element(xpath: "//*[@id='Command-Menu-Account']//*[text()='#{string}']")
 	end
+
+	####PAGE VERIFIERS ####
 end

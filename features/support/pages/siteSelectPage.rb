@@ -20,5 +20,5 @@ module SiteSelectPage
 		siteSelectLink.wait_until_present.flash(color: ["yellow"]).click
 	end
 
-	#### VERIFIERS ####
+	#### PAGE VERIFIERS ####
 end

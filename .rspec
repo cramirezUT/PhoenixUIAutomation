@@ -1,0 +1,4 @@
+--color
+--format doc
+--format html
+--out rspec_results.html

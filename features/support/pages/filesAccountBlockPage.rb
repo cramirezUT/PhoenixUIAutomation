@@ -9,7 +9,7 @@ module FilesAccountBlockPage
 	include RSpec::Matchers
 	include Selenium
 
-	#### METHODS / LOCATORS ####
+	#### BLOCK DISPLAYED COLUMNS MODAL METHODS / LOCATORS ####
 	def blockDisplayedColumsModalCloseButton
 		@browser.button(id: 'GridColumns-Close')
 	end
@@ -18,14 +18,15 @@ module FilesAccountBlockPage
 		@browser.table(id: "GridColumns-Columns").row.cells.length
 	end
 
-	def blockDisplayedColumsModalRows1
+	def blockDisplayedColumsModalAllRows
 		@browser.table(id: "GridColumns-Columns")
 	end
 
-	def blockDisplayedColumsModalRows
+	def blockDisplayedColumsModalIterateByRows
 		@browser.table(id: "GridColumns-Columns").trs.collect{ |tr| tr[0].text.gsub!(/[\s!@%\/&"']/,'')}
 	end
 
+	#### BLOCK CONFIGURATION MODAL METHODS / LOCATORS####
 	def blockConfigurationModal
 		sleep 1
 		@browser.div(id: 'gridcontentFileBlocks-Select')
@@ -40,9 +41,9 @@ module FilesAccountBlockPage
 		@browser.button(id: 'FileBlocks-Manage')
 	end
 
-	#### VERIFIERS ####
+	#### BLOCK PAGE VERIFIERS ####
 	def verifyDisplayedColumnsRowsText
-		if expect(blockDisplayedColumsModalRows[2]).to eql ("Id") and expect(blockDisplayedColumsModalRows[3]).to eql ("Description") and expect(blockDisplayedColumsModalRows[4]).to eql ("Conditions") and expect(blockDisplayedColumsModalRows[5]).to eql ("Number")
+		if expect(blockDisplayedColumsModalIterateByRows[2]).to eql ("Id") and expect(blockDisplayedColumsModalIterateByRows[3]).to eql ("Description") and expect(blockDisplayedColumsModalIterateByRows[4]).to eql ("Conditions") and expect(blockDisplayedColumsModalIterateByRows[5]).to eql ("Number")
 			blockConfigurationDisplayedColumsPopup.flash(color: ["green"])
 			puts "Text For All Rows Are A Match"
 		else
