@@ -13,7 +13,7 @@ module Browsers
   include Selenium
 
   #### VARIABLES ####
-  $toteSiteUrl = "#{::EnvironmentHelper.base_url}"
+  $toteSiteUrl = "https://phoenix.fbmtest.com/"
 
   #### METHODS ####
   def launchToteBrowser
@@ -45,16 +45,16 @@ module Browsers
   #### CHROME BROWSER
   # when ("chrome")
     puts "Launching Chrome Browser..."
-    @client = Selenium::WebDriver::Remote::Http::Default.new
-    @client.read_timeout = 60
-    @profile = Selenium::WebDriver::Chrome::Profile.new#CHANGE
-    @profile['browser.download.dir'] = "/tmp/webdriver-downloads"
-    @profile['browser.download.folderList'] = 2
-    @profile['browser.helperApps.neverAsk.saveToDisk'] = "application/octet-stream"
-    @browser = Watir::Browser.new :chrome, :profile => @profile, :http_client => @client, :options => $opts #CHANGE
+    # @client = Selenium::WebDriver::Remote::Http::Default.new
+    # @client.read_timeout = 60
+    # @profile = Selenium::WebDriver::Chrome::Profile.new#CHANGE
+    # @profile['browser.download.dir'] = "/tmp/webdriver-downloads"
+    # @profile['browser.download.folderList'] = 2
+    # @profile['browser.helperApps.neverAsk.saveToDisk'] = "application/octet-stream"
+    @browser = Watir::Browser.new :chrome
     @browser.driver.manage.timeouts.page_load = 60
     @browser.window.maximize()
-    @website = ENV['target'] || $toteSiteUrl
+    @website = $toteSiteUrl
     @browser.goto @website
     @browser.ready_state.eql? "complete"
   # #### FIREFOX BROWSER
@@ -79,7 +79,7 @@ module Browsers
   #   @client.read_timeout = 60
   #   @browser = Watir::Browser.new :safari, :profile => @profile, :http_client => @client, :options => $opts #CHANGE
   #   @browser.driver.manage.timeouts.page_load = 60
-  #   @browser.window.maximize()
+  #   @browfgh fg hser.window.maximize()
   #   @website = ENV['target'] || $toteSiteUrl
   #   @browser.goto @website
   #   @browser.ready_state.eql? "complete"

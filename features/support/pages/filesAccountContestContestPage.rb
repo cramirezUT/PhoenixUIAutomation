@@ -26,16 +26,16 @@ module ContestPage
 		@browser.button(id: 'FileContests-Help')
 	end
 
-	def contestConfigurationRowSelect
-		@browser.div(id: 'row0FileContests-Select')
-	end
-
 	def contestConfigurationSortAscend
-		@browser.button(id: 'sortascct1FileContests-Selectt')
+		@browser.button(id: 'sortascct1FileContests-Select')
 	end
 
 	def contestConfigurationSortDescend
 		@browser.button(id: 'sortdescct1FileContests-Select')
+	end
+
+	def prizeConfigurationRowSelection(index)
+		@browser.div(id: "row#{index}Fileprizes-Select")
 	end
 
 	#### DISPLAYED COLUMNS METHODS / LOCATORS #####
@@ -49,10 +49,6 @@ module ContestPage
 
 	def contestDispalyedColumnsCloseButton
 		@browser.button(id: 'GridColumns-Close')
-	end
-
-	def contestConfigurationRowSelection(index)
-		@browser.div(id: "row#{index}FileContests-Select")
 	end
 
 	def contestDisplayedColumsModalIterateByRows
