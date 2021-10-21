@@ -68,15 +68,16 @@ module PrizePage
 		@browser.button(id: 'FilePrize-Data-Help')
 	end
 
-	def prizeEditIdField
+	def prizeEditIdTextField
 		@browser.input(id: 'FilePrize-Data-Id')
 	end
 
-	def prizeEditDescriptionField
+	def prizeEditDescriptionTextField
 		@browser.input(id: 'FilePrize-Data-Description')
 	end
 
-	def prizePrizesRadioButtonByIndex(index)
+	#### PRIZE PRIZES METHODS / LOCATORS #####
+	def prizePrizesRadioButtonByIndex(index) #The index starts from 1
 		@browser.td(xpath: "//td[@data-value='#{index}']")
 	end
 
@@ -88,6 +89,114 @@ module PrizePage
 		@browser.td(xpath: "//td[@data-value='(PRZ) Prize'][0]")
 	end
 
-	#NEED TO CRAETE PRIZE EDIT DEF FOR SPLIT
+	def prizePrizesSplitTextField
+		@browser.input(id: "FilePrize-Data-Prize-Split")
+	end
 
+	def prizePrizesWinnerTextField
+		@browser.input(id: "FilePrize-Data-Prize-Winners")
+	end
+
+	def prizePrizesBreakToTextField
+		@browser.input(id: "FilePrize-Data-Prize-Break")
+	end
+
+	def prizePrizesRoundDropdown
+		@browser.button(id: "FilePrize-Data-Prize-Round-mainbutton")
+	end
+
+	def prizePrizesRoundSearchTextField
+		@browser.input(id: "FilePrize-Data-Prize-Round-search")
+	end
+
+	def prizePrizesMinimumTextField
+		@browser.input(id: "FilePrize-Data-Prize-Minimum")
+	end
+
+	def prizePrizesPrizeTextField
+		@browser.input(id: "FilePrize-Data-Prize-Prize")
+	end
+
+	#### PRIZE CONSOLATION METHODS / LOCATORS #####
+	def prizeConsolationTextField
+		@browser.input(id: "FilePrize-Data-Prize-Prize")
+	end
+
+	def prizeConsolationOptionsOnActiveCheckbox
+		@browser.td(xpath: "//td[@data-value='(ON ) Active'][1]")
+	end
+
+	def prizeConsolationOptionsLsrLosersCheckbox
+		@browser.td(xpath: "//td[@data-value='(LSR) Losers'][0]")
+	end
+
+	def prizeConsolationOptionsMinMimimumCheckbox
+		@browser.td(xpath: "//td[@data-value='(MIN) Minimum'][0]")
+	end
+
+	def prizeConsolationOptionsPrzPrizeCheckbox
+		@browser.td(xpath: "//td[@data-value='(PRZ) Prize'][1]")
+	end
+
+	def prizeConsolationWinnersTextField
+		@browser.input(id: "FilePrize-Data-Consolation-Winners")
+	end
+
+	def prizeConsolationBreakToTextField
+		@browser.input(id: "FilePrize-Data-Consolation-Break")
+	end
+
+	def prizeConsolationRoundDropdown
+		@browser.button(id: "FilePrize-Data-Consolation-Round-mainbutton")
+	end
+
+	def prizeConsolationRoundSearchTextField
+		@browser.input(id: "FilePrize-Data-Consolation-Round-search")
+	end
+
+	def prizeConsolationMinimumTextField
+		@browser.input(id: "FilePrize-Data-Consolation-Minimum")
+	end
+
+	def prizeConsolationFrequencyTextField
+		@browser.input(id: "FilePrize-Data-Consolation-Frequency")
+	end
+
+	def prizeConsolationPrizeTextField
+		@browser.input(id: "FilePrize-Data-Consolation-Prize")
+	end
+
+	#### PRIZE FREE ENTRY METHODS / LOCATORS #####
+	def prizeFreeEntryOnActiveCheckbox
+		@browser.td(xpath: "//td[@data-value='(ON ) Active'][2]")
+	end
+
+	def prizeFreeEntryLsrLosersCheckbox
+		@browser.td(xpath: "//td[@data-value='(LSR) Losers'][1]")
+	end
+
+	def prizeFreeEntryMinMinimumCheckbox
+		@browser.td(xpath: "//td[@data-value='(MIN) Minimum'][1]")
+	end
+
+	def prizeFreeEntryWinnersTextField
+		@browser.input(id: "FilePrize-Data-Free-Winners")
+	end
+
+	def prizeFreeEntryFrequencyTextField
+		@browser.input(id: "FilePrize-Data-Free-Frequency")
+	end
+
+	#### CONFIRM CLOSE PRIZE CHANGE MODAL METHODS / LOCATORS #####
+	def prizeConfirmClosePrizeModal
+		@browser.div(id: "Confirm")
+	end
+
+	def prizeConfirmClosePrizeModalYesButton
+		@browser.div(id: "Confirm-Yes")
+	end
+
+	def prizeConfirmClosePrizeModalNoButton
+		@browser.div(id: "Confirm-No")
+	end
 end
