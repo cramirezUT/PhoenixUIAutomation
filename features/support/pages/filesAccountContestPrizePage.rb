@@ -38,6 +38,63 @@ module PrizePage
 		@browser.div(id: "row#{index}Fileprizes-Select")
 	end
 
+	def prizeConfigurationFilterButton
+		@browser.button(id: 'FilePrizes-Select-gridFilterBtn')
+	end
+
+	#### SELECTION CRITERIA MODAL METHODS / LOCATORS ####
+	def prizeSelectionCriteriaModal
+		@browser.div(id: 'FilePrizes-Select-FilterDivrows')
+	end
+
+	def prizeSelectCriteriaHelpButton
+		@browser.button(id: 'FilterHelp')
+	end
+
+	def prizeSelectionCriteriaModalCriteriaDopdown
+		@browser.button(id: 'FilePrizes-Select-FilterDiv1FilterField1-mainbutton')
+	end
+
+	def prizeSelectionCriteriaModalCriteriaSearchTextField
+		@browser.input(id: 'FilePrizes-Select-FilterDiv1FilterField1-search')
+	end
+
+	def prizeSelectionCriteriaModalOperandDropdown
+		@browser.button(id: 'FilePrizes-Select-FilterDiv1FilterField2-mainbutton')
+	end
+
+	def prizeSelectionCriteriaModalOperandSearchTextField
+		@browser.input(id: 'FilePrizes-Select-FilterDiv1FilterField2-search')
+	end
+
+	def prizeSelectionCriteriaModalSelectionValueDropdown
+		@browser.button(id: 'FilePrizes-Select-FilterDiv1FilterField3-mainbutton')
+	end
+
+	def prizeSelectionCriteriaModalSelectionValueSearchTextField
+		@browser.input(id: 'FilePrizes-Select-FilterDiv2FilterField3-search')
+	end
+
+	def prizeSelectionCriteriaModalCancelIcon
+		@browser.button(id: 'FilePrizes-Select-FilterDiv2CancelButton')
+	end
+
+	def prizeSelectionCriteriaModalAddIcon
+		@browser.button(id: 'FilePrizes-Select-FilterDiv3OKButton')
+	end
+
+	def prizeSelectionCriteriaClearButton
+		@browser.button(id: 'resetFilterButton')
+	end
+
+	def prizeSelectionCriteriaApplyButton
+		@browser.button(id: 'utApplyFilterButton')
+	end
+
+	def prizeSelectionCriteriaCancelButton
+		@browser.button(id: 'cancelFilterButton')
+	end
+
 	#### DISPLAYED COLUMNS METHODS / LOCATORS #####
 	def prizeDispalyedColumnsModal
 		@browser.button(id: 'GridColumns-Columns')

@@ -42,10 +42,6 @@ module RegionPage
 		@browser.button(id: 'FileRegions-Select-gridFilterBtn')
 	end
 
-	def regionConfigurationFilterButton
-		@browser.button(id: 'FileRegions-Select-gridFilterBtn')
-	end
-
 	#### REGION DISPLAYED COLUMNS MODAL METHODS / LOCATORS ####
 	def regionDisplayedColumnsSaveButton
 		@browser.button(id: 'GridColumns-Save')
