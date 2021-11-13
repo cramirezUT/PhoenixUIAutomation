@@ -19,8 +19,9 @@ module BettingTicketPage
 	$currentDateTime = $time.strftime("%d-%b-%y %I:%M:%S")
 	$claimReason = "Lost"
 	$unclaimReason = "Found"
-	$cancelTicketNumber = "90655-0bf83"
+	$cancelTicketNumber = "2af03-e4bc7"
 	$cancelVerificationCode = "omit"
+	$invalidCancelVerificationCode = "wrong"
 
 	#### Ticket Inquiry METHODS / LOCATORS ####
 	def ticketSubMenuTab
@@ -95,6 +96,14 @@ module BettingTicketPage
 		@browser.text_field(xpath: "//*[@id='Confirm-Verify']")
 	end
 
+	def cancelTicketModalNoButton
+		@browser.button(id: 'Confirm-No')
+	end
+
+	def cancelTicketModalYesButton
+		@browser.button(id: 'Confirm-Yes')
+	end
+
 	#### PAGE GETTERS ####
 	def getTicketOperatorNumber
 		@browser.th(class: 'LargeText BoldText ThemeBackground ThemeText')
@@ -106,6 +115,10 @@ module BettingTicketPage
 
 	def getTicketClaimedAlert
 		@browser.element(xpath: "//*[@id='OperatorTicket-Error']")
+	end
+
+	def getTicketInvalidVerificationCodeAlert
+		@browser.element(xpath: "//*[@id='Confirm-Error']")
 	end
 
 	#### PAGE VERIFIERS ####
