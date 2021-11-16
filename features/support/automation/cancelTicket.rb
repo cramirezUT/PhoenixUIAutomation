@@ -58,7 +58,7 @@ RSpec.describe "Cancel Ticket from Phoenix application", :regression do
 		it "Sets a reason in the reason text field" do
 			cancelTicketModalReasonTextField.flash(color: ["yellow"])
 			cancelTicketModalReasonTextField.set ($cancelVerificationCode)
-		endI
+		end
 
 		it "Clicks on the Yes button" do
 			sendKeysTab
