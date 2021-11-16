@@ -19,7 +19,7 @@ module BettingTicketPage
 	$currentDateTime = $time.strftime("%d-%b-%y %I:%M:%S")
 	$claimReason = "Lost"
 	$unclaimReason = "Found"
-	$cancelTicketNumber = "2af03-e4bc7"
+	$cancelTicketNumber = "3e200-b007c"
 	$cancelVerificationCode = "omit"
 	$invalidCancelVerificationCode = "wrong"
 
@@ -62,6 +62,10 @@ module BettingTicketPage
 
 	def ticketCancelButton
 		@browser.button(id: 'OperatorTicket-Command-Cancel')
+	end
+
+	def ticketCancelButtonDisabled
+		@browser.button(xpath: "//*[contains(@id,'OperatorTicket-Command-Cancel') and contains(@title,'Ticket is CASHED')]")
 	end
 
 	def ticketBuyButton
@@ -180,5 +184,9 @@ module BettingTicketPage
 
 	def verifyTicketClaimedAlertIsDisplayed
 		expect(getTicketClaimedAlert).to be_truthy
+	end
+
+	def veirfyTicketButtonIsDisabled
+		expect(ticketCancelButtonDisabled).to be_truthy
 	end
 end
