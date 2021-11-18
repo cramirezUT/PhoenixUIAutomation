@@ -15,10 +15,10 @@ RSpec.configure do |c|
   c.include BettingTicketPage
 end
 
-RSpec.describe "Cash Cancelled Ticket from Phoenix application", :regression do
+RSpec.describe "Buy Ticket from Phoenix application", :regression do
   begin
     before(:all) do
-      puts "cashcancelledTicketTest"
+      puts "buyTicketTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -46,35 +46,38 @@ RSpec.describe "Cash Cancelled Ticket from Phoenix application", :regression do
 		end
 
 		it "Sets the ticket number in the Ticket Number text field" do
-			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($cancelTicketNumber)
+			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($buyTicketNumber)
 			sendKeysEnter
 		end
 
-		it "Clicks on the Cancel button" do
-			cancelTicketButton.wait_until_present.flash(color: ["yellow"]).click
+		it "Clicks on the Buy button" do
+			ticketBuyButton.wait_until_present.flash(color: ["yellow"]).click
 		end
 
-		it "Sets a reason in the reason text field" do
-			cancelTicketModalReasonTextField.flash(color: ["yellow"])
-			cancelTicketModalReasonTextField.set ($cancelVerificationCode)
+		it "Clicks on the Yes button in Buy Ticket modal" do
+			verifyBuyTicketModalIsDisplayed
+			buyTicketModalYesButton.flash(color: ["yellow"]).click
 		end
 
-		it "Clicks on the Yes button" do
-			sendKeysTab
-			claimTicketModalYesButton.flash(color: ["yellow"]).click
+		it "Verifies the Buy success alert" do
+			verifyBuyTicketSuccessAlertIsDisplayed
 		end
 
-		it "Verifies the success alert" do
-			verifyTicketClaimedAlertIsDisplayed
-		end
-
-		it "Sets the ticket number in the Ticket Number text field" do
-			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($cancelTicketNumber)
+		it "Clicks on the refresh button" do
 			ticketRefreshButton.flash(color: ["yellow"]).click
 		end
 
-		it "Verify ticket button is disabled" do
-			verifyTicketButtonIsDisabled
+		it "Clicks on the Unbuy button" do
+			ticketUnbuyButton.wait_until_present.flash(color: ["yellow"]).click
+		end
+
+		it "Clicks on the Yes button in Buy Ticket modal" do
+			verifyBuyTicketModalIsDisplayed
+			buyTicketModalYesButton.flash(color: ["yellow"]).click
+		end
+
+		it "Verifies the Unbuy success alert" do
+			verifyUnbuyTicketSuccessAlertIsDisplayed
 		end
 	ensure
 	after(:all) do

@@ -10,6 +10,7 @@ module BettingTicketPage
 	include Selenium
 
 	$ticketNumber = "8b635-0825f"
+	$buyTicketNumber = "96e7b-06bc0"
 	$ticketPrice = "$1.00"
 	$ticketType = "Sold-SA"
 	$ticketTerminal ="UTQATL"
@@ -72,6 +73,10 @@ module BettingTicketPage
 		@browser.button(id: 'OperatorTicket-Command-Buy')
 	end
 
+	def ticketUnbuyButton
+		@browser.button(id: 'OperatorTicket-Command-Buy')
+	end
+
 	def ticketHelplButton
 		@browser.button(id: 'OperatorTicket-Command-Help')
 	end
@@ -108,6 +113,10 @@ module BettingTicketPage
 		@browser.button(id: 'Confirm-Yes')
 	end
 
+	def buyTicketModalYesButton
+		@browser.button(id: 'Ack-Yes')
+	end
+
 	#### PAGE GETTERS ####
 	def getTicketOperatorNumber
 		@browser.th(class: 'LargeText BoldText ThemeBackground ThemeText')
@@ -123,6 +132,14 @@ module BettingTicketPage
 
 	def getTicketInvalidVerificationCodeAlert
 		@browser.element(xpath: "//*[@id='Confirm-Error']")
+	end
+
+	def getBuyTicketModal
+		@browser.div(class: 'BorderedTitledBox')
+	end
+
+	def getBuyTicketSuccessAlert
+		@browser.element(xpath: "//*[@id='OperatorTicket-Error']")
 	end
 
 	#### PAGE VERIFIERS ####
@@ -186,7 +203,23 @@ module BettingTicketPage
 		expect(getTicketClaimedAlert).to be_truthy
 	end
 
-	def veirfyTicketButtonIsDisabled
+	def verifyTicketButtonIsDisabled
 		expect(ticketCancelButtonDisabled).to be_truthy
+	end
+
+	def verifyBuyTicketModalIsDisplayed
+		expect(getBuyTicketModal).to be_truthy
+	end
+
+	def verifyBuyTicketSuccessAlertIsDisplayed
+		expectedSuccessMessage = "Ticket 96e7b-06bc0 marked as tote buy"
+		expect(getBuyTicketSuccessAlert.text).to eq(expectedSuccessMessage)
+		getBuyTicketSuccessAlert.flash(color: ["yellow"])
+	end
+
+	def verifyUnbuyTicketSuccessAlertIsDisplayed
+		expectedSuccessMessage = "Ticket 96e7b-06bc0 unmarked as tote buy"
+		expect(getBuyTicketSuccessAlert.text).to eq(expectedSuccessMessage)
+		getBuyTicketSuccessAlert.flash(color: ["yellow"])
 	end
 end
