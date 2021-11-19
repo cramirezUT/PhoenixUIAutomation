@@ -1,2 +1,3 @@
 .bash_profile
-vendor/
+rspec_results.html
+features/support/automation_screenshots/

@@ -6,7 +6,6 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 require 'webdriver-user-agent'
 require_relative 'environments.rb'
-require_relative '../spec/spec_helper.rb'
 
 module Browsers
 	include RSpec::Matchers

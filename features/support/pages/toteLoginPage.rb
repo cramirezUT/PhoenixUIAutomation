@@ -27,6 +27,14 @@ module ToteLoginPage
 		@browser.text_field(id: 'Login-User')
 	end
 
+	def duplicateModalYesButton
+		@browser.button(id: 'Ack-Yes')
+	end
+
+	def duplicateModalNoButton
+		@browser.button(id: 'Ack-No')
+	end
+
 	#### FUNCTIONS ####
 	def logInFunction
 		usernameTextField.wait_until_present.flash(color: ["yellow"]).set ($toteUsername)
@@ -34,7 +42,13 @@ module ToteLoginPage
 		passwordTextField.flash(color: ["yellow"]).set ($totePassword)
 		sendKeysTab
 		loginButton.wait_until_present.flash(color: ["yellow"]).click
-		loginButton.wait_while_present
+		sleep(1)
+		if (duplicateModalYesButton.present?) == true
+			duplicateModalYesButton.flash(color: ["yellow"]).click
+			duplicateModalYesButton.wait_while_present
+			loginButton.wait_until_present.flash(color: ["yellow"]).click
+			loginButton.wait_while_present
+		end
 	end
 
 	#### PAGE VERIFIERS ####
