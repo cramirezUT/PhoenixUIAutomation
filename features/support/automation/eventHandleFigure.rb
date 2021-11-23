@@ -1,7 +1,6 @@
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
-require_relative "../pages/bettingTicketPage.rb"
 require_relative "../pages/adminEventHandlePage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/SendKeys.rb"
@@ -13,14 +12,13 @@ RSpec.configure do |c|
   c.include SiteSelectPage
 	c.include Browsers
   c.include SendKeys
-  c.include BettingTicketPage
   c.include HandlePage
 end
 
-RSpec.describe "Cancel Ticket from Phoenix application", :regression do
+RSpec.describe "Event Handle figure validation on the Phoenix application", :regression do
   begin
     before(:all) do
-      puts "cancelingTicketTest"
+      puts "eventHandleFigureTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -39,44 +37,33 @@ RSpec.describe "Cancel Ticket from Phoenix application", :regression do
       isMainSystemTextDisplayed
     end
 
-		it "Clicks on the Betting tab" do
-			mainMenuLinks('Betting').flash(color: ["yellow"]).click
+		it "Clicks on the Admin tab in the main menu" do
+			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-		it "Clicks on the Ticket sub tab" do
-			ticketSubMenuTab().flash(color: ["yellow"]).click()
+		it "Clicks on the Event tab" do
+      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-		it "Sets the ticket number in the Ticket Number text field" do
-			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($cancelTicketNumber)
-			sendKeysEnter
-		end
-
-
-		it "Clicks on the Cancel button" do
-			cancelTicketButton.wait_until_present.flash(color: ["yellow"]).click
-		end
-
-		it "Sets a reason in the reason text field" do
-			cancelTicketModalReasonTextField.flash(color: ["yellow"])
-			cancelTicketModalReasonTextField.set ($cancelVerificationCode)
-		end
-
-		it "Clicks on the Yes button" do
-			sendKeysTab
-			claimTicketModalYesButton.flash(color: ["yellow"]).click
-		end
-
-		it "Verifies the success alert" do
-			verifyTicketClaimedAlertIsDisplayed
-		end
+    it "Clicks on the Handle link" do
+      eventMenuLinks("Handle").wait_until_present.flash(color: ["yellow"]).click
+    end
 
     it "Sets the Group ID" do
       eventHandleGourpDropdown.wait_until_present.flash(color: ["yellow"]).click
       eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($groupUtsId)
-      sleep(5000000)
+      sendKeysEnter
     end
 
+    it "Clicks on the Done button" do
+      eventHandleGroupDropdownDoneButton.flash(color: ["yellow"]).click
+    end
+
+    it "Verifes the Handle price" do
+      puts "Event Handle Price: #{getEventHandleViewBoxPrice.flash(color: ["yellow"]).text}"
+      puts "NEED THE RACE PRICE TO VALIDATE THE EVENT HANDLE PRICE AGAINST"
+      sleep(5000000)
+    end
 	ensure
 	after(:all) do
 		logOutFuction
