@@ -14,6 +14,14 @@ module HomePage
 		@browser.element(xpath: "//*[@id='Main-Menu']//*[text()='#{string}']")
 	end
 
+	def adminMenuLinks(string)
+		@browser.element(xpath: "//*[@id='Main']//*[text()='#{string}']")
+	end
+
+	def eventMenuLinks(string)
+		@browser.element(xpath: "//*[@id='Command-Menu']//*[text()='#{string}']")
+	end
+
 	def endSesstionButtonOption(string)
 		@browser.button(text: "#{string}")
 	end

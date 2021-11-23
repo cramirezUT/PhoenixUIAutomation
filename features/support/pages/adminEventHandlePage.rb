@@ -5,6 +5,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
+$groupUtsId = "UTS"
+$invalidGroupId = "CNR"
+$wildCharacterGroupId = "*All"
+
 module HandlePage
 	include RSpec::Matchers
 	include Selenium
@@ -96,5 +100,21 @@ module HandlePage
 
 	def eventHandleCurrencySearchTextField
 		@browser.text_field(id: 'EventHandle-Select-Currency-search')
+	end
+
+	#### GETTERS #####
+	def getEventHandleViewBoxPrice
+		@browser.div(id: 'EventHandle-View-0-3')
+	end
+
+	def getEventHandleSearchResults
+		@browser.li(id: 'ut-ms-opt-EventHandle-Select-Group_noresults')
+	end
+
+	#### VERIFIERS ####
+	def verifyEventHandleSearchResults(result)
+		expectedResult = "#{result}"
+		expect(getEventHandleSearchResults.text).to eq(expectedResult)
+		getEventHandleSearchResults.flash(color: ["yellow"])
 	end
 end
