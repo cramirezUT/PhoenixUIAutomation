@@ -13,7 +13,7 @@ module HandlePage
 	include RSpec::Matchers
 	include Selenium
 
-	#### Handle METHODS / LOCATORS ####
+	#### HANDLE METHODS / LOCATORS ####
 	def eventHandelSelectStyleButton
 		@browser.button(id: 'EventHandle-Select-Style')
 	end
@@ -46,6 +46,7 @@ module HandlePage
 		@browser.button(id: 'EventHandle-Select-Group-donebutton')
 	end
 
+	#### HANDLE SELECTION CRITERIA ####
 	def eventHandleSelectionCriteriaModal
 		@browser.div(id: 'EventHandle-Select-Group-FilterDivrows')
 	end
