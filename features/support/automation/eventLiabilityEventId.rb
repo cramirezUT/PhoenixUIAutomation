@@ -1,7 +1,7 @@
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
-require_relative "../pages/adminEventHandlePage.rb"
+require_relative "../pages/adminEventLiabilityPage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
@@ -12,13 +12,13 @@ RSpec.configure do |c|
   c.include SiteSelectPage
 	c.include Browsers
   c.include SendKeys
-  c.include HandlePage
+  c.include LiabilityPage
 end
 
-RSpec.describe "Event Handle invalid group test", :regression do
+RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
   begin
     before(:all) do
-      puts "eventHandleInvalidGroupTest"
+      puts "eventGroupEventIdTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -45,29 +45,34 @@ RSpec.describe "Event Handle invalid group test", :regression do
       adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-    it "Clicks on the Handle link" do
-      eventMenuLinks("Handle").wait_until_present.flash(color: ["yellow"]).click
-    end
+		it "Clicks on the liability link" do
+			eventMenuLinks("Liability").wait_until_present.flash(color: ["yellow"]).click
+		end
 
-    it "Sets invalid Group ID" do
-      eventHandleGourpDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidGroupId)
-      sendKeysEnter
-    end
-
-    it "Verifes the Handle search result" do
-      verifyEventHandleSearchResults("No matches found")
-    end
-
-		it "Sets wild card character in search field" do
-			eventHandleGroupSerachTextField.click
-			sendKeysClear
-      eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($wildCharacterGroupId)
+		it "Sets a valid Event id" do
+      eventLiabilityEventDropdown.wait_until_present.flash(color: ["yellow"]).click
+      eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventId)
       sendKeysEnter
 		end
 
-		it "Verifes the Handle search result" do
-      verifyEventHandleSearchResults("No matches found")
+    it "Sets the Source" do
+      eventLiabilitySourceDropdown.flash(color: ["yellow"]).click
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceId)
+      sendKeysEnter
+      sendKeysTab
+    end
+
+    it "Verifies the valid search result" do
+      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 1")
+    end
+
+    it "Sets invalid Event ID" do
+      eventLiabilityEventDropdown.wait_until_present.flash(color: ["yellow"]).click
+      eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidEventId)
+    end
+
+    it "Verifes the Event search result" do
+      verifyEventSearchResultsInvalid("No matches found")
     end
 	ensure
 	after(:all) do
