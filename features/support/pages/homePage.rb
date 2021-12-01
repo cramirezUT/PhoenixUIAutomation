@@ -27,7 +27,7 @@ module HomePage
 	end
 
 	def logOutLink
-		@browser.li(xpath: "//*[@id='Main-User-Menu-LogOut']")
+		@browser.element(xpath: "//*[@id='Main-User-Menu-LogOut']")
 	end
 
 	def mainUserMenu
@@ -41,8 +41,12 @@ module HomePage
 	#### FUNCTIONS ####
 	def logOutFuction
     mainUserMenu.flash(color: ["yellow"]).hover
-    logOutLink.wait_until_present.flash(color: ["yellow"]).hover
 		logOutLink.wait_until_present.flash(color: ["yellow"]).click
+		if (logOutLink.present?) == true
+			logOutLink.wait_until_present.flash(color: ["yellow"]).click
+		else
+			puts "Logout Link Already Clicked"
+		end
 		endSesstionButtonOption("Yes").wait_until_present.hover
     endSesstionButtonOption("Yes").wait_until_present.click
     endSesstionButtonOption("Yes").wait_while_present
