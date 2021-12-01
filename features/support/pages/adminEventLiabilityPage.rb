@@ -14,7 +14,7 @@ module LiabilityPage
 	include Selenium
 
 	#### LIABILITY METHODS / LOCATORS ####
-	def eventHandelSelectStyleButton
+	def eventLiabilitySelectStyleButton
 		@browser.button(id: 'EventLiability-Select-Style')
 	end
 
@@ -184,7 +184,7 @@ module LiabilityPage
 	#### VERIFIERS ####
 	def verifyEventSearchResults(result)
 		expectedResult = "#{result}"
-		expect(getEventResultView.text).to eq(expectedResult)
+		expect(getEventResultView.text).to include(expectedResult)
 		getEventResultView.flash(color: ["yellow"])
 	end
 

@@ -14,7 +14,7 @@ module HandlePage
 	include Selenium
 
 	#### HANDLE METHODS / LOCATORS ####
-	def eventHandelSelectStyleButton
+	def eventHandleSelectStyleButton
 		@browser.button(id: 'EventHandle-Select-Style')
 	end
 

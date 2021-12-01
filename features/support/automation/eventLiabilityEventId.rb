@@ -63,7 +63,7 @@ RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
     end
 
     it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 1")
+      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race")
     end
 
     it "Sets invalid Event ID" do
@@ -71,7 +71,7 @@ RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
       eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidEventId)
     end
 
-    it "Verifes the Event search result" do
+    it "Verifes the invalid Event search result" do
       verifyEventSearchResultsInvalid("No matches found")
     end
 	ensure
