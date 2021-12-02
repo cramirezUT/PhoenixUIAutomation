@@ -111,6 +111,26 @@ module LiabilityPage
 		@browser.button(id: 'EventLiability-Select-Source-filterbutton')
 	end
 
+	def eventLiabilityRacesDropdown
+		@browser.button(id: 'EventLiability-Select-Races-mainbutton')
+	end
+
+	def eventLiabilityRacesSearchTextField
+		@browser.text_field(id: 'EventLiability-Select-Races-search')
+	end
+
+	def eventLiabilityRacesDoneButton
+		@browser.button(id: 'EventLiability-Select-Races-donebutton')
+	end
+
+	def eventLiabilityRacesAllCheckbox
+		@browser.checkbox(id: 'ut-ms-opt-EventLiability-Select-Races-selectallcheckbox')
+	end
+
+	def eventLiabilityRacesCheckboxByIndex(index)
+		@browser.checkbox(id: "ut-ms-opt-EventLiability-Select-Races_#{index}-checkbox")
+	end
+
 	#### SOURCE SELECTION CRITERIA ####
 	def eventSourceSelectionCriteriaModal
 		@browser.div(id: 'EventLiability-Select-Source-FilterDivrows')
@@ -183,6 +203,7 @@ module LiabilityPage
 
 	#### VERIFIERS ####
 	def verifyEventSearchResults(result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(getEventResultView.text).to include(expectedResult)
 		getEventResultView.flash(color: ["yellow"])
