@@ -21,6 +21,4 @@ module FilesPage
 	def filesAccountMenuLinks(string)
 		@browser.element(xpath: "//*[@id='Command-Menu-Account']//*[text()='#{string}']")
 	end
-
-	####PAGE VERIFIERS ####
 end

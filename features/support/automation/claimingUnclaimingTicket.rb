@@ -94,7 +94,6 @@ RSpec.describe "Files-Account-Block: Verify the table options in the Displayed C
 		it "Verifies the success alert" do
 			verifyTicketClaimedAlertIsDisplayed
 		end
-
 	ensure
 	after(:all) do
 		logOutFuction

@@ -50,6 +50,4 @@ module ToteLoginPage
 			loginButton.wait_while_present
 		end
 	end
-
-	#### PAGE VERIFIERS ####
 end

@@ -54,5 +54,4 @@ module ContestPage
 	def contestDisplayedColumsModalIterateByRows
 		@browser.table(id: "GridColumns-Columns").trs.collect{ |tr| tr[0].text.gsub!(/[\s!@%\/&"']/,'')}
 	end
-
 end

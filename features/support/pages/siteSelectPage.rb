@@ -19,6 +19,4 @@ module SiteSelectPage
 	def selectSiteTable
 		siteSelectLink.wait_until_present.flash(color: ["yellow"]).click
 	end
-
-	#### PAGE VERIFIERS ####
 end
