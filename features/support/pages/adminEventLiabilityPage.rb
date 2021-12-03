@@ -8,6 +8,7 @@ require 'rspec/expectations'
 $eventId = "CHF"
 $invalidEventId = "TNT"
 $sourceId = "CHD"
+$sourceMerge = "Merge"
 
 module LiabilityPage
 	include RSpec::Matchers
