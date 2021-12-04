@@ -6,7 +6,6 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 $eventId = "CHF"
-$invalidEventId = "TNT"
 $sourceId = "CHD"
 
 module PoolsPage
