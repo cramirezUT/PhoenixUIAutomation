@@ -202,6 +202,34 @@ module LiabilityPage
 		@browser.li(id: 'ut-ms-opt-EventLiability-Select-Event_noresults')
 	end
 
+	def getEventRacePayoffAmount
+		@browser.div(id: 'EventLiability-View-0-6')
+	end
+
+	def getEventRaceBreakageAmount
+		@browser.div(id: 'EventLiability-View-0-5')
+	end
+
+	def getEventRaceCommissionAmount
+		@browser.div(id: 'EventLiability-View-0-4')
+	end
+
+	def getEventRaceRefundAmount
+		@browser.div(id: 'EventLiability-View-0-3')
+	end
+
+	def getEventRaceTotalAmount
+		@browser.div(id: 'EventLiability-View-0-2')
+	end
+
+	def getEventRacePool
+		@browser.div(id: 'EventLiability-View-0-1')
+	end
+
+	def getEventRaceRace
+		@browser.div(id: 'EventLiability-View-0-0')
+	end
+
 	#### VERIFIERS ####
 	def verifyEventSearchResults(result)
 		sleep(1)
