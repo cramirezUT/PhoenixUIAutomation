@@ -15,7 +15,7 @@ RSpec.configure do |c|
   c.include PoolsPage
 end
 
-RSpec.describe "Event Pools All selection test", :regression do
+RSpec.describe "Event Pools All selection and Refresh test", :regression do
   begin
     before(:all) do
       puts "eventPoolsAllTest"
@@ -75,7 +75,32 @@ RSpec.describe "Event Pools All selection test", :regression do
 		end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 3 FINAL")
+      sleep(1)
+      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
+    end
+
+    it "Clicks on the Refresh button" do
+      eventPoolsRefreshButton.flash(color: ["yellow"]).click
+    end
+
+    it "Verifies the valid search result" do
+      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
+    end
+
+    it "Sets the Source" do
+      eventPoolsSourceDropdown.flash(color: ["yellow"]).click
+      eventPoolsSourceSearchTextField.wait_until_present.set ($sourceMeregeId)
+      sendKeysEnter
+      sendKeysTab
+    end
+
+    it "Clicks on the Refresh button" do
+      eventPoolsRefreshButton.flash(color: ["yellow"]).click
+    end
+
+    it "Verifies the valid search result" do
+      sleep(1)
+      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
     end
 	ensure
 	after(:all) do
