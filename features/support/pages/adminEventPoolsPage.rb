@@ -7,6 +7,7 @@ require 'rspec/expectations'
 
 $eventId = "CHF"
 $sourceId = "CHD"
+$sourceMeregeId = "Merged"
 
 module PoolsPage
 	include RSpec::Matchers
