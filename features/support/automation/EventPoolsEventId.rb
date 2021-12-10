@@ -15,7 +15,7 @@ RSpec.configure do |c|
 	c.include PoolsPage
 end
 
-RSpec.describe "Event Pools Event Id valid and invalid test", :regression do
+RSpec.describe "Event Pools Event Id valid and invalid and selects an advanced race test", :regression do
 	begin
 		before(:all) do
 			puts "eventPoolsIdTest"
@@ -74,6 +74,19 @@ RSpec.describe "Event Pools Event Id valid and invalid test", :regression do
     it "Verifes the invalid Event search result" do
       verifyEventSearchResultsInvalid("No matches found")
     end
+
+		it "Clicks on a advance race arrow" do
+			eventPoolsRightArrow.flash(color: ["yellow"]).click
+			sleep(1)
+		end
+
+		it "Verifies an advanced race is selected" do
+			verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 4 OPEN")
+		end
+
+		it "Clicks on the previous race arrow" do
+			eventPoolsLeftArrow.flash(color: ["yellow"]).click
+		end
 	ensure
 	after(:all) do
 		logOutFuction
