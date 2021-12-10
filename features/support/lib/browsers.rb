@@ -16,12 +16,12 @@ module Browsers
 
   #### METHODS ####
   def launchToteBrowser
-    Watir.default_timeout = 60
+    Watir.default_timeout = 30
     Watir.logger.ignore(:deprecations)
     puts "Launching Chrome Browser..."
 		# Selenium::WebDriver::Chrome::Service.driver_path="/usr/local/bin/chromedriver" # Uncomment for MacOS only
 		@browser = Watir::Browser.new :chrome
-		@browser.driver.manage.timeouts.page_load = 60
+		@browser.driver.manage.timeouts.page_load = 30
 		@browser.window.maximize()
 		@website = $toteSiteUrl
 		@browser.goto @website
@@ -29,6 +29,12 @@ module Browsers
 
 	def browser_goto(url)
 		@browser.goto ("#{::EnvironmentHelper.base_url}" + url)
+	end
+
+	def currentBrowserUrlVerified(expectedURL)
+		@current_url = @browser.url
+		expectedUrlText = "#{expectedURL}"
+		expect(@current_url).to eql(expectedUrlText)
 	end
 
 	def close_browser
