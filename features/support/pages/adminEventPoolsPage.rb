@@ -8,6 +8,7 @@ require 'rspec/expectations'
 $eventId = "CHF"
 $sourceId = "CHD"
 $sourceMeregeId = "Merged"
+$invalidEventId = "TNT"
 
 module PoolsPage
 	include RSpec::Matchers
@@ -174,6 +175,14 @@ module PoolsPage
 
 	def eventRaceSearchSelectAllCheckbox
 		@browser.checkbox(id: 'ut-ms-opt-EventPools-Select-Races-selectallcheckbox')
+	end
+
+	def eventPoolsRightArrow
+		@browser.button(id: 'EventPools-Select-Next')
+	end
+
+	def eventPoolsLeftArrow
+		@browser.button(id: 'EventPools-Select-Prev')
 	end
 
 	#### GETTERS ####
