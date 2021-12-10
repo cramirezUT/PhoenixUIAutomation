@@ -5,6 +5,7 @@ require_relative "../pages/adminEventClassPage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
+require_relative "../lib/windows.rb"
 
 RSpec.configure do |c|
   c.include ToteLoginPage
@@ -13,6 +14,7 @@ RSpec.configure do |c|
 	c.include Browsers
   c.include SendKeys
   c.include ClassPage
+  c.include WindowsHelpers
 end
 
 RSpec.describe "Event Class group Id valid and invalid test", :regression do
@@ -64,6 +66,8 @@ RSpec.describe "Event Class group Id valid and invalid test", :regression do
       eventClassGroupDropdown.flash(color: ["yellow"]).click
       eventClassGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($groupId)
       sendKeysEnter
+      sleep(1)
+      sendKeysTab
       sendKeysTab
     end
 
@@ -72,7 +76,16 @@ RSpec.describe "Event Class group Id valid and invalid test", :regression do
     end
 
 		it "Verifies the Group search result" do
-      verifyEventInformationResults(0, "CHF")
+      verifyEventInformationResultByIndex(0, "CHF")
+    end
+
+    it "Clicks on the Help button" do
+      eventClassHelpButton.flash(color: ["yellow"]).click
+    end
+
+    it "Verifies the new tabs url" do
+      use_last_window
+      currentBrowserUrlVerified("about:blank")
     end
 	ensure
 	after(:all) do
