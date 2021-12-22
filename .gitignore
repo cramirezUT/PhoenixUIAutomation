@@ -2,4 +2,3 @@
 rspec_results.html
 features/support/automation_screenshots/
 /vendor
-features/support/lib/users.rb
