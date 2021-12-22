@@ -1,4 +1,4 @@
 
 		#### VARIABLES ####
 		$toteUsername = "michael"
-		$totePassword = "1234"
+		$totePassword = "12345"
