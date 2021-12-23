@@ -25,6 +25,10 @@ module AccountBalancePage
 		@browser.div(id: 'AccountBalance-Amounts')
 	end
 
+	def accountBalanceHelpButton
+		@browser.button(id: 'AccountBalance-Select-Help')
+	end
+
 	#### GETTERS ####
 	def getAccountBalanceError
 		@browser.label(id: 'AccountBalance-Error')
