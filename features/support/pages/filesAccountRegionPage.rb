@@ -1,4 +1,7 @@
-quire 'watir'
+## Class Page Helper File
+## Author: Carlos Ramirez
+
+require 'watir'
 require 'rspec'
 require 'pry'
 require 'rubygems'

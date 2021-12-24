@@ -1,3 +1,6 @@
+## Class Page Helper file
+## Author: Carlos Ramirez
+
 require 'watir'
 require 'rspec'
 require 'pry'

@@ -1,5 +1,7 @@
 # coding: utf-8
 # frozen_string_literal: true
+## Library Helper file
+## Author: Carlos Ramirez
 
 class EnvironmentHelper
   def self.for_environment
