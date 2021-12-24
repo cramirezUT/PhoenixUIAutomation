@@ -1,5 +1,5 @@
 ## Class Page Helper File
-## Auther: Carlos Ramirez
+## Author: Carlos Ramirez
 
 require 'watir'
 require 'rspec'

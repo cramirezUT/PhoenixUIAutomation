@@ -1,5 +1,5 @@
 ## e2e RSpec/Ruby Test
-## Auther: Carlos Ramirez
+## Author: Carlos Ramirez
 ## NOTES: There is a bug in the edit donation settings modal
 ## setting the number of days works, but deleting and trying to
 ## the days blanks always sets the donation days to "0" which

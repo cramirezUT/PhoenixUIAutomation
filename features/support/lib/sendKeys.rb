@@ -1,5 +1,5 @@
 ## Library Helper file
-## Auther: Carlos Ramirez
+## Author: Carlos Ramirez
 
 require 'watir'
 require 'rspec'
