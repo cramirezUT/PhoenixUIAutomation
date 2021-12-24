@@ -1,3 +1,5 @@
+## Library Helper file
+## Auther: Carlos Ramirez
 
 		#### VARIABLES ####
 		$toteUsername = "michael"

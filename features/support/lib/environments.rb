@@ -1,6 +1,9 @@
 # coding: utf-8
 # frozen_string_literal: true
 
+## Library Helper file
+## Auther: Carlos Ramirez
+
 class EnvironmentHelper
   def self.for_environment
     env = ENV['target'] || :staging

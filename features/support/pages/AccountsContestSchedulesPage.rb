@@ -1,3 +1,6 @@
+## Class Page Helper file
+## Auther: Carlos Ramirez
+
 require 'watir'
 require 'rspec'
 require 'pry'
@@ -5,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-module schedulesPage
+module SchedulesPage
 	include RSpec::Matchers
 	include Selenium
 
