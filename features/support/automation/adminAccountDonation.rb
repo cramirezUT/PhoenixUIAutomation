@@ -1,3 +1,10 @@
+## e2e RSpec/Ruby Test
+## Auther: Carlos Ramirez
+## NOTES: There is a bug in the edit donation settings modal
+## setting the number of days works, but deleting and trying to
+## the days blanks always sets the donation days to "0" which
+## will set the donation period to never ending.
+
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"

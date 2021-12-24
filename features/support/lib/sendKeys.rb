@@ -1,3 +1,6 @@
+## Library Helper file
+## Auther: Carlos Ramirez
+
 require 'watir'
 require 'rspec'
 require 'pry'
