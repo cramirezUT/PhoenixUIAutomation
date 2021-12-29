@@ -48,14 +48,13 @@ RSpec.describe "Admin->Account->Find: Account find account holder by name", :reg
       adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-    it "Clicks on the Handle link" do
+    it "Clicks on the Find link" do
       eventMenuLinks("Find").wait_until_present.flash(color: ["yellow"]).click
     end
 
     it "Sets an invalid first and last name to search" do
       findAccountFirstNameTextField.flash(color: ["yellow"]).set ($findAccountFirstNameInvalid)
       sendKeysTab
-      # findAccountLastNameTextField.flash(color: ["yellow"]).click
       findAccountLastNameTextField.flash(color: ["yellow"]).set ($findAccountLastNameInvalid)
       sendKeysTab
     end

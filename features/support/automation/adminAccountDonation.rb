@@ -52,7 +52,7 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
       adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-    it "Clicks on the Handle link" do
+    it "Clicks on the Donation link" do
       eventMenuLinks("Donation").wait_until_present.flash(color: ["yellow"]).click
     end
 

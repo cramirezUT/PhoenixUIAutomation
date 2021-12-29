@@ -48,7 +48,7 @@ RSpec.describe "Admin->Account->Balance: Account balance validation", :regressio
       adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-    it "Clicks on the Handle link" do
+    it "Clicks on the Balance link" do
       eventMenuLinks("Balance").wait_until_present.flash(color: ["yellow"]).click
     end
 
