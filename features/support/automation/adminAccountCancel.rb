@@ -48,7 +48,7 @@ RSpec.describe "Admin->Account->Cancel: Account ticket cancelation validation", 
       adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-    it "Clicks on the Handle link" do
+    it "Clicks on the Cancel link" do
       eventMenuLinks("Cancel").wait_until_present.flash(color: ["yellow"]).click
     end
 

@@ -48,7 +48,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
       adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-    it "Clicks on the Handle link" do
+    it "Clicks on the Inquire link" do
       eventMenuLinks("Inquire").wait_until_present.flash(color: ["yellow"]).click
     end
 
