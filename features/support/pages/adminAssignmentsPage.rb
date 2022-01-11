@@ -167,10 +167,6 @@ module AdminAssignmentsPage
 		@browser.element(xpath: "//label[contains(text(),'#{date}')]")
 	end
 
-	def adminAssignmentsGroupSearchTextField
-		@browser.text_field(id: '')
-	end
-
 	#### GETTERS ####
 
 	#### VERIFIERS ####

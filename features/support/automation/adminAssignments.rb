@@ -65,7 +65,6 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
 		end
 
 		it "Clicks on the next day label for the newly added Assignment" do
-			puts "Date and Time: #{$nextDay}"
 			adminAssignmentsResultsCheckboxByDate($nextDay).flash(color: ["yellow"]).click
 		end
 		#### EDIT ASSIGNMENT ####
@@ -100,7 +99,6 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
 		it "Clicks the newly copied Assignment date" do
 			adminAssignmentsResultsCheckboxByDate($twoDaysFromNow).flash(color: ["yellow"]).click
 		end
-
 		#### DELETE ASSIGNMENTS ####
 		it "Clicks on the trash can icon" do
 			adminAssignmentsDeleteButton.wait_until_present.flash(color: ["yellow"]).click
