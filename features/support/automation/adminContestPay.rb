@@ -1,6 +1,5 @@
 ## e2e RSpec/Ruby Test
 ## Author: Carlos Ramirez
-## NOTE:
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
