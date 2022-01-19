@@ -1,6 +1,5 @@
 ## e2e RSpec/Ruby Test
 ## Author: Carlos Ramirez
-## NOTE:
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
@@ -19,7 +18,7 @@ RSpec.configure do |c|
   c.include ContestInquireContestPage
 end
 
-RSpec.describe "Admin->Contest->inquire->Contest: Contest Inquire Contest verification test", :regression do
+RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verification test", :regression do
   begin
     before(:all) do
       puts "adminContestInquireContestTest"

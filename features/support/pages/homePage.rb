@@ -25,6 +25,12 @@ module HomePage
 		@browser.element(xpath: "//*[@id='Command-Menu']//*[text()='#{string}']")
 	end
 
+	def eventMenuSubLinks(string)
+		@browser.element(xpath: "//*[@class='dropdown-menu ']//*[text()='#{string}']")
+	end
+
+
+
 	def endSesstionButtonOption(string)
 		@browser.button(text: "#{string}")
 	end
