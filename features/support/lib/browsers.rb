@@ -22,8 +22,8 @@ module Browsers
     Watir.default_timeout = 30
     Watir.logger.ignore(:deprecations)
     puts "Launching Chrome Browser..."
-		# Selenium::WebDriver::Chrome::Service.driver_path="/usr/local/bin/chromedriver" # Uncomment for MacOS only
-		@browser = Watir::Browser.new :chrome
+		Selenium::WebDriver::Chrome::Service.driver_path="/usr/local/bin/chromedriver" # Uncomment for MacOS only
+		@browser = Watir::Browser.new :chrome, switches: ['--ignore-certificate-errors']
 		@browser.driver.manage.timeouts.page_load = 30
 		@browser.window.maximize()
 		@website = $toteSiteUrl
