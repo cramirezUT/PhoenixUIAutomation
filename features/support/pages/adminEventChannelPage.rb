@@ -8,47 +8,57 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$groupId = "UQA"
-$invalidGroupId = "CNR"
-$sourceMeregeId = "Merged"
+$groupId = "UQA - United Tote QA"
+$groupIdInvalid = "TNT"
+$sortById = "Id"
+$sortByName = "Name"
+$sortByNumber = "Number"
+$channelId = ""
 
-module ChannelPage
+module EventChannelPage
 	include RSpec::Matchers
 	include Selenium
 
-	#### Channel METHODS / LOCATORS ####
-	def eventChannelHelpButton
+	#### CHANNEL METHODS / LOCATORS ####
+	def eventMenuInquireSubLinks(string)
+		@browser.element(xpath: "//*[@id='Command-Menu-#{string}']")
+	end
+
+	def eventChannelModal
+		@browser.div(id: 'EventChannel-Select')
+	end
+
+	def eventChannelModalHelpButton
 		@browser.button(id: 'EventChannel-Select-Help')
 	end
 
-	def eventChannelGroupDropdown
+	def eventChannelModalGroupDropdown
 		@browser.button(id: 'EventChannel-Select-Group-mainbutton')
 	end
 
-	def eventChannelGroupSearchTextField
+	def eventChannelModalGroupSearchTextField
 		@browser.text_field(id: 'EventChannel-Select-Group-search')
 	end
 
-	def eventChannelGroupFilterButton
-		@browser.button(id: 'EventChannel-Select-Group-filterbutton')
-	end
-
-	def eventChannelSortByDropdown
+	def eventChannelModalSortByDropdown
 		@browser.button(id: 'EventChannel-Select-By-mainbutton')
 	end
 
-	def eventChannelSortBySearchTextField
-		@browser.button(id: 'EventChannel-Select-By-search')
+	def eventChannelModalSortBySearchTextField
+		@browser.text_field(id: 'EventChannel-Select-By-search')
 	end
 
-	#### Channel Group SELECTION CRITERIA ####
+	def eventChannelEventModal(index)
+		@browser.div(id: "EventChannel-Events-#{index}-Event")
+	end
+
+	#### CHANNEL GROUP SELECTION CRITERIA ####
 	def eventChannelGroupSelectionCriteriaModal
 		@browser.div(id: 'EventChannel-Select-Group-FilterDivrows')
 	end
 
 	def eventChannelGroupSelectionCriteriaSelectFieldDropdown
-		@browser.button(id: 'EventChannel-Select-Group-mainbutton')
+		@browser.button(id: 'EventChannel-Select-Group-FilterDiv1FilterField1-mainbutton')
 	end
 
 	def eventChannelGroupSelectionCriteriaSearchTextField
@@ -94,45 +104,18 @@ module ChannelPage
 	def eventChannelSelectionCriteriaCancelButton
 		@browser.button(id: 'cancelFilterButton')
 	end
-
-	def eventChannelSearchResultByRow(index)
-		@browser.link(id: "EventChannel-Events-#{index}-Event-Id")
-	end
-
-	def eventChannelButtonByIndex(index)
-		@browser.button(id: "EventChannel-Events-#{index}-Event-Channel")
-	end
-
-	def eventChannelGuidesButton
-		@browser.button(id: 'EventChannel-Select-Guides')
-	end
-
-	def eventChannelSaveChangesButton
-		@browser.button(id: 'EventChannel-Select-Save')
-	end
+	#############################################
 
 	#### GETTERS ####
-	def getEventResultView
-		@browser.div(id: 'EventChannel-View-HT-0')
-	end
-
-	def getEventSearchResults
+	def getEventChannelError
 		@browser.li(id: 'ut-ms-opt-EventChannel-Select-Group_noresults')
 	end
 
-	def getEventChannelDefinition(index)
-		eventChannelButtonByIndex(index)
-	end
-
-	def getEventInformationByRow(index)
-		@browser.div(id: "Information-View-#{index}-1")
-	end
-
 	#### VERIFIERS ####
-	def verifyEventSearchResults(result)
+	def verifyEventChannelSearchResults(result)
 		expectedResult = "#{result}"
-		expect(getEventResultView.text).to include(expectedResult)
-		getEventResultView.flash(color: ["yellow"])
+		expect(getEventChannelError.text).to include(expectedResult)
+		getEventChannelError.flash(color: ["yellow"])
 	end
 
 	def verifyEventSearchResultsInvalid(result)
