@@ -106,6 +106,10 @@ module EventChannelPage
 	end
 	#############################################
 
+	def eventChannelEeventResultsByIndex(index)
+		@browser.div(id: "EventChannel-Events-#{index}-Event")
+	end
+	
 	#### GETTERS ####
 	def getEventChannelError
 		@browser.li(id: 'ut-ms-opt-EventChannel-Select-Group_noresults')
@@ -120,8 +124,8 @@ module EventChannelPage
 
 	def verifyEventSearchResultsInvalid(result)
 		expectedResult = "#{result}"
-		expect(getEventSearchResults.text).to eq(expectedResult)
-		getEventSearchResults.flash(color: ["yellow"])
+		expect(getEventChannelError.text).to eq(expectedResult)
+		getEventChannelError.flash(color: ["yellow"])
 	end
 
 	def verifyEventChannelDefinition(index)

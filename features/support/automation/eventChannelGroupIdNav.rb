@@ -16,7 +16,7 @@ RSpec.configure do |c|
   c.include SiteSelectPage
 	c.include Browsers
   c.include SendKeys
-  c.include ChannelPage
+  c.include EventChannelPage
   c.include WindowsHelpers
 end
 
@@ -55,9 +55,9 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
     end
 
     it "Sets invalid Group ID" do
-      eventChannelGroupDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventChannelGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidGroupId)
-      sendKeysEnter
+      eventChannelModal.flash(color: ["yellow"])
+      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
+      eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupIdInvalid)
     end
 
     it "Verifies the Channel search result" do
@@ -65,29 +65,19 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
     end
 
     it "Sets a valid Group ID" do
-      eventChannelGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($groupId)
+      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
+      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
+      eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
       sendKeysEnter
       sendKeysTab
-			sendKeysTab
     end
 
-    it "Clicks on search result" do
-      eventChannelSearchResultByRow(0).wait_until_present.flash(color: ["yellow"]).click
+    it "Verify the Event search result" do
+      eventChannelEeventResultsByIndex(0).flash(color: ["yellow"])
     end
-
-		it "Verifies the Group search result" do
-			verifyEventInformationResultByIndex(0, "CHF")
-		end
 
     it "Clicks on the Help button" do
-      eventChannelHelpButton.flash(color: ["yellow"]).click
-    end
-
-    it "Verifies the new tabs url" do
-      use_last_window
-      currentBrowserUrlVerified("about:blank")
+      eventChannelModalHelpButton.flash(color: ["yellow"]).click
     end
 	ensure
 	after(:all) do
