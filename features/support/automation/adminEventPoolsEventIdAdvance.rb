@@ -21,7 +21,7 @@ end
 RSpec.describe "Event Pools Event Id valid and invalid and selects an advanced race test", :regression do
 	begin
 		before(:all) do
-			puts "eventPoolsIdTest"
+			puts "adminEventPoolsIdTest"
 			launchToteBrowser
 			selectSiteTable
 			logInFunction

@@ -9,7 +9,7 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 $groupUtsId = "UTS"
-$invalidGroupId = "CNR"
+$invalidGroupId = "TNT"
 $wildCharacterGroupId = "*All"
 
 module HandlePage

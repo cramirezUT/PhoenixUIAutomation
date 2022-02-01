@@ -10,7 +10,7 @@ require 'rspec/expectations'
 
 $eventId = "CHF"
 $groupId = "CHD"
-$invalidGroupId = "CNR"
+$invalidGroupId = "TNT"
 $sourceMeregeId = "Merged"
 
 module ClassPage

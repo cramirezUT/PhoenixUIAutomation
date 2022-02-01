@@ -21,7 +21,7 @@ end
 RSpec.describe "Event Inquiry Summary test", :regression do
   begin
     before(:all) do
-      puts "eventInquirySummaryTest"
+      puts "adminEventInquirySummaryTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -63,7 +63,7 @@ RSpec.describe "Event Inquiry Summary test", :regression do
       verifyEventInquirySearchResultsForName(0, 'Aquaduct')
 			verifyEventInquirySearchResultsForRaces(0, '1-3')
 			verifyEventInquirySearchResultsForRace(0, '1')
-			verifyEventInquirySearchResultsForStatus(0, 'CLOSED')
+			verifyEventInquirySearchResultsForStatus(0, 'POST')
     end
 
 		it "Click on the Event By dropdown and select the Name" do
@@ -77,7 +77,7 @@ RSpec.describe "Event Inquiry Summary test", :regression do
 			verifyEventInquirySearchResultsForName(0, 'Aquaduct')
 			verifyEventInquirySearchResultsForRaces(0, '1-3')
 			verifyEventInquirySearchResultsForRace(0, '1')
-			verifyEventInquirySearchResultsForStatus(0, 'CLOSED')
+			verifyEventInquirySearchResultsForStatus(0, 'POST')
     end
 
 		it "Click on the Event By dropdown and select the Open Races" do

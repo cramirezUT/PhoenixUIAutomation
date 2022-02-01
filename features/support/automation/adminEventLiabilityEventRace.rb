@@ -18,10 +18,10 @@ RSpec.configure do |c|
   c.include LiabilityPage
 end
 
-RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
+RSpec.describe "Event Liability Event Race test", :regression do
   begin
     before(:all) do
-      puts "eventGroupEventIdTest"
+      puts "adminEventLiablityEventRaceTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -65,18 +65,36 @@ RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
       sendKeysTab
     end
 
+		it "Click on the Races dropdown" do
+      eventLiabilityRacesDropdown.wait_until_present.flash(color: ["yellow"]).click
+    end
+
+		it "Clicks on the All checkbox" do
+			eventLiabilityRacesAllCheckbox.flash(color: ["yellow"]).click
+			eventLiabilityRacesAllCheckbox.flash(color: ["yellow"]).click
+		end
+
+		it "Selects race 1" do
+			eventLiabilityRacesCheckboxByIndex(0).flash(color: ["yellow"]).click
+		end
+
+		it "Clicks on the Done button" do
+			eventLiabilityRacesDoneButton.flash(color: ["yellow"]).click
+		end
+
     it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race")
+      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 1")
     end
 
-    it "Sets invalid Event ID" do
-      eventLiabilityEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidEventId)
-    end
-
-    it "Verifes the invalid Event search result" do
-      verifyEventSearchResultsInvalid("No matches found")
-    end
+		it "Prints the Payoff amount" do
+			puts "Payoff amount : #{getEventRacePayoffAmount.text}"
+			puts "Breakage amount : #{getEventRaceBreakageAmount.text}"
+			puts "Commission amount : #{getEventRaceCommissionAmount.text}"
+			puts "Refund amount : #{getEventRaceRefundAmount.text}"
+			puts "Total amount : #{getEventRaceTotalAmount.text}"
+			puts "Pool : #{getEventRacePool.text}"
+			puts "Race : #{getEventRaceRace.text}"
+		end
 	ensure
 	after(:all) do
 		logOutFuction

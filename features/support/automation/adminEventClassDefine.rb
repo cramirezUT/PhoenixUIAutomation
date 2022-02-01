@@ -23,7 +23,7 @@ end
 RSpec.describe "Event Class Define class test", :regression do
   begin
     before(:all) do
-      puts "eventClassDefineClassTest"
+      puts "adminEventClassDefineClassTest"
       launchToteBrowser
       selectSiteTable
       logInFunction

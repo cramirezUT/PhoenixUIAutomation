@@ -8,6 +8,7 @@ require_relative "../pages/adminEventChannelPage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
+require_relative "../lib/windows.rb"
 
 RSpec.configure do |c|
   c.include ToteLoginPage
@@ -16,12 +17,13 @@ RSpec.configure do |c|
 	c.include Browsers
   c.include SendKeys
   c.include EventChannelPage
+  c.include WindowsHelpers
 end
 
-RSpec.describe "Admin Event Channel verification test", :regression do
+RSpec.describe "Event Channel group Id valid and invalid test", :regression do
   begin
     before(:all) do
-      puts "adminEventChannelTest"
+      puts "adminEventChannelGroupIdTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -48,34 +50,39 @@ RSpec.describe "Admin Event Channel verification test", :regression do
       adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-		it "Clicks on the Channel sub link" do
-			eventMenuInquireSubLinks("Channel").flash(color: ["yellow"]).click
-		end
+    it "Clicks on the Channel link" do
+      eventMenuInquireSubLinks("Channel").wait_until_present.flash(color: ["yellow"]).click
+    end
 
-		it "Verifies the Event Channel modal" do
+    it "Verifies the Event Channel modal" do
 			eventChannelModal.flash(color: ["yellow"])
 		end
 
-		it "Sets an invalid Group id" do
+    it "Sets invalid Group ID" do
+      eventChannelModal.flash(color: ["yellow"])
       eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
       eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupIdInvalid)
-		end
+    end
 
-		it "Verifies No matches found error" do
-			verifyEventChannelSearchResults("No matches found")
-		end
+    it "Verifies the Channel search result" do
+      verifyEventSearchResultsInvalid("No matches found")
+    end
 
-		it "Sets a valid Dealer id" do
-			eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
+    it "Sets a valid Group ID" do
+      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
       eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
       eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
-			sendKeysEnter
-    	sendKeysTab
-		end
+      sendKeysEnter
+      sendKeysTab
+    end
 
-		it "Verifies the Event modal" do
-			eventChannelEventModal(0).flash(color: ["yellow"])
-		end
+    it "Verify the Event search result" do
+      eventChannelEeventResultsByIndex(0).flash(color: ["yellow"])
+    end
+
+    it "Clicks on the Help button" do
+      eventChannelModalHelpButton.flash(color: ["yellow"]).click
+    end
 	ensure
 	after(:all) do
 		logOutFuction

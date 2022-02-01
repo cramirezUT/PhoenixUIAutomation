@@ -1,10 +1,10 @@
-## e2e RSpec/Ruby Test
+features/support/automation/adminEventLiabilityEventAll.rb ## e2e RSpec/Ruby Test
 ## Author: Carlos Ramirez
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
-require_relative "../pages/adminEventChannelPage.rb"
+require_relative "../pages/adminEventClassPage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
@@ -16,14 +16,14 @@ RSpec.configure do |c|
   c.include SiteSelectPage
 	c.include Browsers
   c.include SendKeys
-  c.include EventChannelPage
+  c.include ClassPage
   c.include WindowsHelpers
 end
 
-RSpec.describe "Event Channel group Id valid and invalid test", :regression do
+RSpec.describe "Event Class group Id valid and invalid test", :regression do
   begin
     before(:all) do
-      puts "eventChannelGroupIdTest"
+      puts "eventClassGroupIdTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -50,34 +50,40 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
       adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-    it "Clicks on the Channel link" do
-      eventMenuLinks("Channel").wait_until_present.flash(color: ["yellow"]).click
+    it "Clicks on the Class link" do
+      eventMenuLinks("Class").wait_until_present.flash(color: ["yellow"]).click
     end
 
     it "Sets invalid Group ID" do
-      eventChannelModal.flash(color: ["yellow"])
-      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupIdInvalid)
+      eventClassGroupDropdown.wait_until_present.flash(color: ["yellow"]).click
+      eventClassGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidGroupId)
+      sendKeysEnter
     end
 
-    it "Verifies the Channel search result" do
+    it "Verifies the Class search result" do
       verifyEventSearchResultsInvalid("No matches found")
     end
 
     it "Sets a valid Group ID" do
-      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
+      eventClassGroupDropdown.flash(color: ["yellow"]).click
+      eventClassGroupDropdown.flash(color: ["yellow"]).click
+      eventClassGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($groupId)
       sendKeysEnter
+      sleep(1)
+      sendKeysTab
       sendKeysTab
     end
 
-    it "Verify the Event search result" do
-      eventChannelEeventResultsByIndex(0).flash(color: ["yellow"])
+    it "Clicks on search result" do
+      eventClassSearchResultByRow(0).wait_until_present.flash(color: ["yellow"]).click
+    end
+
+		it "Verifies the Group search result" do
+      verifyEventInformationResultByIndex(0, "CHF")
     end
 
     it "Clicks on the Help button" do
-      eventChannelModalHelpButton.flash(color: ["yellow"]).click
+      eventClassHelpButton.flash(color: ["yellow"]).click
     end
 	ensure
 	after(:all) do

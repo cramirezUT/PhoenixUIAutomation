@@ -4,7 +4,7 @@
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
-require_relative "../pages/adminEventPoolsPage.rb"
+require_relative "../pages/adminEventLiabilityPage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
@@ -15,13 +15,13 @@ RSpec.configure do |c|
   c.include SiteSelectPage
 	c.include Browsers
   c.include SendKeys
-  c.include PoolsPage
+  c.include LiabilityPage
 end
 
-RSpec.describe "Event Pools All selection and Refresh test", :regression do
+RSpec.describe "Event Liability Event Merge selection test", :regression do
   begin
     before(:all) do
-      puts "eventPoolsAllTest"
+      puts "adminEventEventMergeTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -48,62 +48,37 @@ RSpec.describe "Event Pools All selection and Refresh test", :regression do
       adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
 		end
 
-		it "Clicks on the Pools link" do
-			eventMenuLinks("Pools").wait_until_present.flash(color: ["yellow"]).click
+		it "Clicks on the liability link" do
+			eventMenuLinks("Liability").wait_until_present.flash(color: ["yellow"]).click
 		end
 
 		it "Sets a valid Event id" do
-      eventPoolsEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventPoolsEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventId)
+      eventLiabilityEventDropdown.wait_until_present.flash(color: ["yellow"]).click
+      eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
-      eventPoolsSourceDropdown.flash(color: ["yellow"]).click
-      eventPoolsSourceSearchTextField.wait_until_present.set ($sourceId)
+      eventLiabilitySourceDropdown.flash(color: ["yellow"]).click
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceMerge)
       sendKeysEnter
       sendKeysTab
     end
 
     it "Click on the Races dropdown" do
-      eventRacesDropdown.wait_until_present.flash(color: ["yellow"]).click
+      eventLiabilityRacesDropdown.wait_until_present.flash(color: ["yellow"]).click
     end
 
 		it "Clicks on the All checkbox" do
-			eventRaceSearchSelectAllCheckbox.flash(color: ["yellow"]).click
+			eventLiabilityRacesAllCheckbox.flash(color: ["yellow"]).click
 		end
 
 		it "Clicks on the Done button" do
-			eventRacesSearchDoneButton.flash(color: ["yellow"]).click
+			eventLiabilityRacesDoneButton.flash(color: ["yellow"]).click
 		end
 
 		it "Verifies the valid search result" do
-      sleep(1)
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
-    end
-
-    it "Clicks on the Refresh button" do
-      eventPoolsRefreshButton.flash(color: ["yellow"]).click
-    end
-
-    it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
-    end
-
-    it "Sets the Source" do
-      eventPoolsSourceDropdown.flash(color: ["yellow"]).click
-      eventPoolsSourceSearchTextField.wait_until_present.set ($sourceMeregeId)
-      sendKeysEnter
-      sendKeysTab
-    end
-
-    it "Clicks on the Refresh button" do
-      eventPoolsRefreshButton.flash(color: ["yellow"]).click
-    end
-
-    it "Verifies the valid search result" do
-      sleep(1)
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
+      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-3")
     end
 	ensure
 	after(:all) do

@@ -18,10 +18,10 @@ RSpec.configure do |c|
   c.include HandlePage
 end
 
-RSpec.describe "Event Handle figure validation on the Phoenix application", :regression do
+RSpec.describe "Event Handle group Id valid and invalid test", :regression do
   begin
     before(:all) do
-      puts "eventHandleFigureTest"
+      puts "adminEventHandleGroupIdTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -52,20 +52,25 @@ RSpec.describe "Event Handle figure validation on the Phoenix application", :reg
       eventMenuLinks("Handle").wait_until_present.flash(color: ["yellow"]).click
     end
 
-    it "Sets the Group ID" do
+    it "Sets invalid Group ID" do
       eventHandleGourpDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($groupUtsId)
+      eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidGroupId)
       sendKeysEnter
     end
 
-    it "Clicks on the Done button" do
-      eventHandleGroupDropdownDoneButton.flash(color: ["yellow"]).click
+    it "Verifes the Handle search result" do
+      verifyEventHandleSearchResults("No matches found")
     end
 
-    it "Verifes the Handle price" do
-      puts "Event Handle Price: #{getEventHandleViewBoxPrice.flash(color: ["yellow"]).text}"
-      puts "NEED THE RACE PRICE TO VALIDATE THE EVENT HANDLE PRICE AGAINST"
-      sleep(5000000)
+		it "Sets wild card character in search field" do
+			eventHandleGroupSerachTextField.click
+			sendKeysClear
+      eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($wildCharacterGroupId)
+      sendKeysEnter
+		end
+
+		it "Verifes the Handle search result" do
+      verifyEventHandleSearchResults("No matches found")
     end
 	ensure
 	after(:all) do

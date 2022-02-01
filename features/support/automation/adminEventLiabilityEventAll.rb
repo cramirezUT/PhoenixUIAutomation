@@ -18,10 +18,10 @@ RSpec.configure do |c|
   c.include LiabilityPage
 end
 
-RSpec.describe "Event Liability Event Merge selection test", :regression do
+RSpec.describe "Event Liability Event All selection test", :regression do
   begin
     before(:all) do
-      puts "eventEventMergeTest"
+      puts "adminEventEventAllTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -60,7 +60,7 @@ RSpec.describe "Event Liability Event Merge selection test", :regression do
 
     it "Sets the Source" do
       eventLiabilitySourceDropdown.flash(color: ["yellow"]).click
-      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceMerge)
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceId)
       sendKeysEnter
       sendKeysTab
     end
