@@ -41,21 +41,21 @@ RSpec.describe "Account Review verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Review link" do
-			eventMenuLinks("Review").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Review").wait_until_present.flash.click
 		end
 
 		it "Sets an invalid Account id" do
-			accountReviewModal.wait_until_present.flash(color: ["yellow"])
-			accountReviewSearchTextField.flash(color: ["yellow"]).click
-      accountReviewSearchTextField.flash(color: ["yellow"]).set ($invalidGroupId)
+			accountReviewModal.wait_until_present.flash
+			accountReviewSearchTextField.flash.click
+      accountReviewSearchTextField.flash.set ($invalidGroupId)
       sendKeysEnter
 		end
 
@@ -64,19 +64,19 @@ RSpec.describe "Account Review verification test", :regression do
 		end
 
 		it "Sets the valid Account id" do
-			accountReviewSearchTextField.flash(color: ["yellow"]).click
-      accountReviewSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+			accountReviewSearchTextField.flash.click
+      accountReviewSearchTextField.flash.set ($accountGroupId)
       sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Verifies the filter bar is displayed" do
-      accountReviewFilterBar.flash(color: ["yellow"])
+      accountReviewFilterBar.flash
     end
 
 		it "Verifies the results box by index" do
-			accountReviewResultsBoxByIndex(0).flash(color: ["yellow"])
-			accountReviewResultsBoxByIndex(1).flash(color: ["yellow"])
+			accountReviewResultsBoxByIndex(0).flash
+			accountReviewResultsBoxByIndex(1).flash
 		end
 	ensure
 	after(:all) do

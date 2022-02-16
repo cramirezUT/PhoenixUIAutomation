@@ -41,23 +41,23 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :regr
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Review link" do
-			eventMenuLinks("Review").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Review").wait_until_present.flash.click
 		end
 
 		it "Verifies the Contest Player Review modal" do
-			contestPlayerReviewModal.flash(color: ["yellow"])
+			contestPlayerReviewModal.flash
 		end
 
 		it "Sets an invalid Player id in search text field" do
-			contestPlayerReviewModalPlayerTextField.flash(color: ["yellow"]).set ($playerGroupdIdInvalid)
+			contestPlayerReviewModalPlayerTextField.flash.set ($playerGroupdIdInvalid)
 			sendKeysEnter
 		end
 
@@ -66,13 +66,13 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :regr
 		end
 
 		it "Sets a vaild Player id" do
-			contestPlayerReviewModalPlayerTextField.flash(color: ["yellow"]).click
-      contestPlayerReviewModalPlayerTextField.flash(color: ["yellow"]).set ($playerGroupdId)
+			contestPlayerReviewModalPlayerTextField.flash.click
+      contestPlayerReviewModalPlayerTextField.flash.set ($playerGroupdId)
       sendKeysEnter
 		end
 		#### ENTRY RESULT ####
 		it "Clicks on the Player Transaction search result for Entry" do
-			contestPlayerTransactionResultByIndex(0).flash(color: ["yellow"]).click
+			contestPlayerTransactionResultByIndex(0).flash.click
 		end
 
 		it "Verifies the Transaction result header for Entry" do
@@ -80,7 +80,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :regr
 		end
 		#### ADJUST RESULT ####
 		it "Clicks on the Player Transaction search result for Adjust" do
-			contestPlayerTransactionResultByIndex(1).flash(color: ["yellow"]).click
+			contestPlayerTransactionResultByIndex(1).flash.click
 		end
 
 		it "Verifies the Transaction result header for Adjust" do
@@ -88,7 +88,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :regr
 		end
 		#### WITHDRAW RESULT ####
 		it "Clicks on the Player Transaction search result for Withdraw" do
-			contestPlayerTransactionResultByIndex(3).flash(color: ["yellow"]).click
+			contestPlayerTransactionResultByIndex(3).flash.click
 		end
 
 		it "Verifies the Transaction result header for Withdraw" do
@@ -96,7 +96,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :regr
 		end
 		#### DEPOSIT RESULT ####
 		it "Clicks on the Player Transaction search result for Deposit" do
-			contestPlayerTransactionResultByIndex(4).flash(color: ["yellow"]).click
+			contestPlayerTransactionResultByIndex(4).flash.click
 		end
 
 		it "Verifies the Transaction result header for Deposit" do

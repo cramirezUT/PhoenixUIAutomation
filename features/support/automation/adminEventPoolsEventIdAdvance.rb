@@ -41,25 +41,25 @@ RSpec.describe "Event Pools Event Id valid and invalid and selects an advanced r
 		end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-			adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+			adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Pools tab" do
-			eventMenuLinks("Pools").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Pools").wait_until_present.flash.click
 		end
 
 		it "Sets a valid Event id" do
-      eventPoolsEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventPoolsEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventId)
+      eventPoolsEventDropdown.wait_until_present.flash.click
+      eventPoolsEventSearchTextField.wait_until_present.flash.set ($eventId)
       sendKeysEnter
 		end
 
 		it "Sets the Source" do
-      eventPoolsSourceDropdown.flash(color: ["yellow"]).click
+      eventPoolsSourceDropdown.flash.click
       eventPoolsSourceSearchTextField.wait_until_present.set ($sourceId)
       sendKeysEnter
       sendKeysTab
@@ -70,8 +70,8 @@ RSpec.describe "Event Pools Event Id valid and invalid and selects an advanced r
     end
 
 		it "Sets invalid Event ID" do
-      eventPoolsEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventPoolsEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidEventId)
+      eventPoolsEventDropdown.wait_until_present.flash.click
+      eventPoolsEventSearchTextField.wait_until_present.flash.set ($invalidEventId)
     end
 
     it "Verifes the invalid Event search result" do
@@ -79,7 +79,7 @@ RSpec.describe "Event Pools Event Id valid and invalid and selects an advanced r
     end
 
 		it "Clicks on a advance race arrow" do
-			eventPoolsRightArrow.flash(color: ["yellow"]).click
+			eventPoolsRightArrow.flash.click
 			sleep(1)
 		end
 
@@ -88,7 +88,7 @@ RSpec.describe "Event Pools Event Id valid and invalid and selects an advanced r
 		end
 
 		it "Clicks on the previous race arrow" do
-			eventPoolsLeftArrow.flash(color: ["yellow"]).click
+			eventPoolsLeftArrow.flash.click
 		end
 	ensure
 	after(:all) do

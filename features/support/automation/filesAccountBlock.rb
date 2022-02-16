@@ -43,22 +43,22 @@ RSpec.describe "Files-Account-Block: Verify the table options in the Displayed C
     end
 
 		it "Clicks on the Files tab in the main menu" do
-			mainMenuLinks("Files").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
 		it "Sets text in the Files Verification and Access Level fields" do
-      filesVerificationAcessTextField.wait_until_present.flash(color: ["yellow"]).set ("change")
+      filesVerificationAcessTextField.wait_until_present.flash.set ("change")
       sendKeysEnter
-      filesVerificationAcessTextField.wait_until_present.flash(color: ["yellow"]).set ("edit")
+      filesVerificationAcessTextField.wait_until_present.flash.set ("edit")
       sendKeysEnter
 		end
 
 		it "Hovers over the Account sub tab in the commands menu" do
-      filesCommandMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).hover
+      filesCommandMenuLinks("Account").wait_until_present.flash.hover
 		end
 
 		it "Clicks on the Block sub menu under the Account dropdown" do
-      filesAccountMenuLinks("Block").wait_until_present.flash(color: ["yellow"]).click
+      filesAccountMenuLinks("Block").wait_until_present.flash.click
 		end
 
 		it "Verifies the Block Configuration modal is displayed" do
@@ -66,7 +66,7 @@ RSpec.describe "Files-Account-Block: Verify the table options in the Displayed C
 		end
 
 		it "Clicks on the Configuration settings cog to open modal" do
-      blockConfigurationSettingsButton.wait_until_present.flash(color: ["yellow"]).click
+      blockConfigurationSettingsButton.wait_until_present.flash.click
 		end
 
 		it "Verifies the Displayed Columns modal is displayed" do
@@ -78,7 +78,7 @@ RSpec.describe "Files-Account-Block: Verify the table options in the Displayed C
 		end
 
     it "Closes the Displayed Columns Modal" do
-      blockDisplayedColumsModalCloseButton.flash(color: ["yellow"]).click
+      blockDisplayedColumsModalCloseButton.flash.click
       blockDisplayedColumsModalCloseButton.wait_while_present
     end
   ensure

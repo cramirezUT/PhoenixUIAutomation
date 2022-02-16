@@ -41,20 +41,20 @@ RSpec.describe "Admin Dealer verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Dealer tab" do
-      adminMenuLinks("Dealer").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Dealer").wait_until_present.flash.click
 		end
 
 		it "Verifies the Admin Dealer modal" do
-			adminDealerModal.flash(color: ["yellow"])
+			adminDealerModal.flash
 		end
 
 		it "Sets an invalid Dealer id" do
-      adminDealerModalDealerTextField.flash(color: ["yellow"]).click
-      adminDealerModalDealerTextField.flash(color: ["yellow"]).set ($dealerIdInvalid)
+      adminDealerModalDealerTextField.flash.click
+      adminDealerModalDealerTextField.flash.set ($dealerIdInvalid)
     	sendKeysTab
 		end
 
@@ -63,59 +63,59 @@ RSpec.describe "Admin Dealer verification test", :regression do
 		end
 
 		it "Sets a valid Dealer id" do
-			adminDealerModal.flash(color: ["yellow"])
-      adminDealerModalDealerTextField.wait_until_present.flash(color: ["yellow"])
+			adminDealerModal.flash
+      adminDealerModalDealerTextField.wait_until_present.flash
 			sendKeysClear
-      adminDealerModalDealerTextField.flash(color: ["yellow"]).set ($dealerId)
-			adminDealerModalDealerTextField.flash(color: ["yellow"]).set ($dealerId)
+      adminDealerModalDealerTextField.flash.set ($dealerId)
+			adminDealerModalDealerTextField.flash.set ($dealerId)
     	sendKeysTab
 		end
 
 		it "Sets the dealer pin" do
-			adminDealerModalPinTextField.flash(color: ["yellow"]).click
-			adminDealerModalPinTextField.flash(color: ["yellow"]).set ($dealerPin)
+			adminDealerModalPinTextField.flash.click
+			adminDealerModalPinTextField.flash.set ($dealerPin)
 			sendKeysTab
 		end
 
 		it "Verifies the Admin Dealer command modal" do
-			adminDealerCommandModal.flash(color: ["yellow"])
+			adminDealerCommandModal.flash
 		end
 
 		it "Clicks on the Balance button" do
-			adminDealerCommandModalBalanceButton.flash(color: ["yellow"]).click
+			adminDealerCommandModalBalanceButton.flash.click
 		end
 
 		it "Verifies the Admin Dealer Balance modal" do
-			adminDealerBalanceModal.flash(color: ["yellow"])
+			adminDealerBalanceModal.flash
 		end
 
 		it "Sets the balance amount to 0.00" do
-			adminDealerBalanceModalCashTextField.wait_until_present.flash(color: ["yellow"])
+			adminDealerBalanceModalCashTextField.wait_until_present.flash
 			adminDealerBalanceModalCashTextField.set ($cashBalanceAmountZero)
 		end
 
 		it "Click the Transaction button" do
-			adminDealerCommandModalTransactionButton.flash(color: ["yellow"]).click
+			adminDealerCommandModalTransactionButton.flash.click
 		end
 
 		it "Verifies the Admin Dealer Dealer modal" do
-			adminDealerUserModal.flash(color: ["yellow"])
+			adminDealerUserModal.flash
 		end
 
 		it "Sets the Type option to Draw from dropdown" do
-			adminDealerUserModalTypeDropdown.flash(color: ["yellow"]).click
-			adminDealerUserModalTypeSearchTextField.flash(color: ["yellow"]).set ($typeOptionDraw)
+			adminDealerUserModalTypeDropdown.flash.click
+			adminDealerUserModalTypeSearchTextField.flash.set ($typeOptionDraw)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets the Amount in Amount text field" do
-			adminDealerUserModalAmountTextfield.flash(color: ["yellow"]).set ($amountOneDollar)
+			adminDealerUserModalAmountTextfield.flash.set ($amountOneDollar)
 			sendKeysEnter
 		end
 
 		it "Clicks on the Submit button" do
-			adminDealerUserModalSubmitButton.flash(color: ["yellow"]).click
+			adminDealerUserModalSubmitButton.flash.click
 		end
 
 		it "Verifies the Cash amount set" do

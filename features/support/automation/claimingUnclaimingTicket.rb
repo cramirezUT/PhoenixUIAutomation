@@ -41,15 +41,15 @@ RSpec.describe "Files-Account-Block: Verify the table options in the Displayed C
     end
 
 		it "Clicks on the Betting tab" do
-			mainMenuLinks('Betting').flash(color: ["yellow"]).click
+			mainMenuLinks('Betting').flash.click
 		end
 
 		it "Clicks on the Ticket sub tab" do
-			ticketSubMenuTab().flash(color: ["yellow"]).click()
+			ticketSubMenuTab().flash.click()
 		end
 
 		it "Sets the ticket number in the Ticket Number text field" do
-			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($ticketNumber)
+			ticketTicketTextField.wait_until_present.flash.set ($ticketNumber)
 			sendKeysEnter
 		end
 
@@ -63,17 +63,17 @@ RSpec.describe "Files-Account-Block: Verify the table options in the Displayed C
 		end
 
 		it "Clicks on the Claim button" do
-			ticketClaimButton.flash(color: ["yellow"]).click()
+			ticketClaimButton.flash.click()
 		end
 
 		it "Sets a reason in the reason text field" do
-			claimTicketModalReasonTextField.flash(color: ["yellow"])
+			claimTicketModalReasonTextField.flash
 			claimTicketModalReasonTextField.set ($claimReason)
 		end
 
 		it "Clicks on the Yes button" do
 			sendKeysTab
-			claimTicketModalYesButton.flash(color: ["yellow"]).click
+			claimTicketModalYesButton.flash.click
 		end
 
 		it "Verifies the success alert" do
@@ -81,17 +81,17 @@ RSpec.describe "Files-Account-Block: Verify the table options in the Displayed C
 		end
 
 		it "Click on the Unclaim button" do
-			ticketUnclaimButton.wait_until_present.flash(color: ["yellow"]).click
+			ticketUnclaimButton.wait_until_present.flash.click
 		end
 
 		it "Sets a reason in the reason text field" do
-			claimTicketModalReasonTextField.flash(color: ["yellow"])
+			claimTicketModalReasonTextField.flash
 			claimTicketModalReasonTextField.set ($unclaimReason)
 		end
 
 		it "Clicks on the Yes button" do
 			sendKeysTab
-			claimTicketModalYesButton.flash(color: ["yellow"]).click
+			claimTicketModalYesButton.flash.click
 		end
 
 		it "Verifies the success alert" do

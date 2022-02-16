@@ -41,21 +41,21 @@ RSpec.describe "Account Transaction verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Transaction link" do
-			eventMenuLinks("Transaction").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Transaction").wait_until_present.flash.click
 		end
 
 		it "Sets an invalid Event id" do
-			accountTransactionsSourceGroupDropdown.flash(color: ["yellow"]).click
-			accountTransactionsSourceGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).click
-      accountTransactionsSourceGroupSearchTextField.flash(color: ["yellow"]).set ($accountSourceGroupIdInvalid)
+			accountTransactionsSourceGroupDropdown.flash.click
+			accountTransactionsSourceGroupSearchTextField.wait_until_present.flash.click
+      accountTransactionsSourceGroupSearchTextField.flash.set ($accountSourceGroupIdInvalid)
 		end
 
 		it "Verifies the No matches found error" do
@@ -63,24 +63,24 @@ RSpec.describe "Account Transaction verification test", :regression do
 		end
 
 		it "Sets a valid Source Group id" do
-			accountTransactionsSourceGroupDropdown.flash(color: ["yellow"]).click
-			accountTransactionsSourceGroupDropdown.flash(color: ["yellow"]).click
-      accountTransactionsSourceGroupSearchTextField.flash(color: ["yellow"]).click
-			accountTransactionsSourceGroupSearchTextField.flash(color: ["yellow"]).set ($accountSourceGroupId)
-      accountTransactionsSourceGroupSearchTextField.flash(color: ["yellow"]).set ($accountSourceGroupId)
+			accountTransactionsSourceGroupDropdown.flash.click
+			accountTransactionsSourceGroupDropdown.flash.click
+      accountTransactionsSourceGroupSearchTextField.flash.click
+			accountTransactionsSourceGroupSearchTextField.flash.set ($accountSourceGroupId)
+      accountTransactionsSourceGroupSearchTextField.flash.set ($accountSourceGroupId)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets a Transaction type Deposit" do
-			accountTransactionTransactionDropdown.flash(color: ["yellow"]).click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountTransactionIdDeposit)
+			accountTransactionTransactionDropdown.flash.click
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdDeposit)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets an Account Id" do
-			accountTransactionAccountSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+			accountTransactionAccountSearchTextField.flash.set ($accountGroupId)
 			sendKeysTab
 		end
 
@@ -89,14 +89,14 @@ RSpec.describe "Account Transaction verification test", :regression do
     end
 
 		it "Sets a Transaction type Withdraw" do
-			accountTransactionTransactionDropdown.flash(color: ["yellow"]).click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountTransactionIdWithdraw)
+			accountTransactionTransactionDropdown.flash.click
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdWithdraw)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets an Account Id" do
-			accountTransactionAccountSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+			accountTransactionAccountSearchTextField.flash.set ($accountGroupId)
 			sendKeysTab
 		end
 
@@ -105,14 +105,14 @@ RSpec.describe "Account Transaction verification test", :regression do
     end
 
 		it "Sets a Transaction type Adjust" do
-			accountTransactionTransactionDropdown.flash(color: ["yellow"]).click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountTransactionIdAdjust)
+			accountTransactionTransactionDropdown.flash.click
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdAdjust)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets an Account Id" do
-			accountTransactionAccountSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+			accountTransactionAccountSearchTextField.flash.set ($accountGroupId)
 			sendKeysTab
 		end
 
@@ -121,18 +121,18 @@ RSpec.describe "Account Transaction verification test", :regression do
     end
 
 		it "Sets a Transaction type Transfer" do
-			accountTransactionTransactionDropdown.flash(color: ["yellow"]).click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountTransactionIdTransfer)
+			accountTransactionTransactionDropdown.flash.click
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdTransfer)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets the Account From number" do
-			accountTransactionAccountFromTextfield.flash(color: ["yellow"]).set ($accountGroupId)
+			accountTransactionAccountFromTextfield.flash.set ($accountGroupId)
 		end
 
 		it "Clicks on the view from account button" do
-			accountTransactionViewButton.wait_until_present.flash(color: ["yellow"]).click
+			accountTransactionViewButton.wait_until_present.flash.click
 		end
 	ensure
 	after(:all) do

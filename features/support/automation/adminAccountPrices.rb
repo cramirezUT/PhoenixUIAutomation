@@ -41,20 +41,20 @@ RSpec.describe "Event Prices verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Prices link" do
-			eventMenuLinks("Prices").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Prices").wait_until_present.flash.click
 		end
 
 		it "Sets an invalid Event id" do
-			accountPricesEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      accountPricesEventSearchTextField.flash(color: ["yellow"]).set ($eventIdInvalid)
+			accountPricesEventDropdown.wait_until_present.flash.click
+      accountPricesEventSearchTextField.flash.set ($eventIdInvalid)
       sendKeysEnter
 		end
 
@@ -63,9 +63,9 @@ RSpec.describe "Event Prices verification test", :regression do
 		end
 
 		it "Sets the Event id" do
-      accountPricesEventDropdown.flash(color: ["yellow"]).click
-			accountPricesEventDropdown.flash(color: ["yellow"]).click
-      accountPricesEventSearchTextField.flash(color: ["yellow"]).set ($eventId)
+      accountPricesEventDropdown.flash.click
+			accountPricesEventDropdown.flash.click
+      accountPricesEventSearchTextField.flash.set ($eventId)
       sendKeysEnter
 			sendKeysTab
 		end

@@ -45,20 +45,20 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Donation link" do
-      eventMenuLinks("Donation").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Donation").wait_until_present.flash.click
     end
 
     it "Sets the Account Group Number" do
-      accountDonationModal.wait_until_present.flash(color: ["yellow"])
-      accountDonationSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidAccountGroupId)
+      accountDonationModal.wait_until_present.flash
+      accountDonationSearchTextField.wait_until_present.flash.set ($invalidAccountGroupId)
       sendKeysEnter
     end
 
@@ -67,30 +67,30 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
 		end
 
 		it "Sets a vaild account Donation group id" do
-			accountDonationModal.wait_until_present.flash(color: ["yellow"])
+			accountDonationModal.wait_until_present.flash
 			accountDonationSearchTextField.click
 			sendKeysClear
-      accountDonationSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
-			accountDonationSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+      accountDonationSearchTextField.flash.set ($accountGroupId)
+			accountDonationSearchTextField.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 
 		it "Clicks on the Edit button" do
-			accountDonationEditButton.flash(color: ["yellow"]).click
+			accountDonationEditButton.flash.click
 		end
 
 		it "Sets text in the Days text field" do
-			autoDonationSettingsModalDaysTextField.flash(color: ["yellow"]).click
+			autoDonationSettingsModalDaysTextField.flash.click
 			sendKeysBackspace
-			autoDonationSettingsModalDaysTextField.flash(color: ["yellow"]).click
-			autoDonationSettingsModalDaysTextField.flash(color: ["yellow"]).set ($numberOfDays)
+			autoDonationSettingsModalDaysTextField.flash.click
+			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays)
 			sendKeysTab
 		end
 
 		it "Closes the Auto Donate warning" do
 			sleep(2)
 			if accountDonationZeroDonateWarningModal.present? == true
-				accountDonationZeroDonateWarningModal.flash(color: ["yellow"])
+				accountDonationZeroDonateWarningModal.flash
 				accountDonationZeroDonateWarningModalCloseButton.click
 			else
 				puts "There is no Auto Donate Warning Modal"
@@ -98,37 +98,37 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
 		end
 
 		it "Clicks on the Auto donation label" do
-			autoDonationSettingsModalCheckbox.flash(color: ["yellow"]).click
+			autoDonationSettingsModalCheckbox.flash.click
 		end
 
 		it "Clicks on the Save button" do
-			autoDonationSettingsModalSaveButton.wait_until_present.flash(color: ["yellow"]).click
+			autoDonationSettingsModalSaveButton.wait_until_present.flash.click
 		end
 
 		it "Verifies the account Donation results table" do
-			accountDonationResultsModal.flash(color: ["yellow"])
+			accountDonationResultsModal.flash
 		end
 
 		it "Clicks on the Donate button" do
-			accountDonationDonateButton.flash(color: ["yellow"]).click
+			accountDonationDonateButton.flash.click
 		end
 
 		it "Clicks on the No button in the confirmation modal" do
-			accountDonationConfirmationModalNoButton.flash(color: ["yellow"])
-			accountDonationConfirmationModalNoButton.flash(color: ["yellow"]).click
+			accountDonationConfirmationModalNoButton.flash
+			accountDonationConfirmationModalNoButton.flash.click
 		end
 
 		it "Clicks on the Donate button" do
-			accountDonationDonateButton.flash(color: ["yellow"]).click
+			accountDonationDonateButton.flash.click
 		end
 
 		it "Sets a doation amount" do
-			accountDonationConfirmationModalTextField.flash(color: ["yellow"]).set ($donateAmount)
+			accountDonationConfirmationModalTextField.flash.set ($donateAmount)
 			sendKeysTab
 		end
 
 		it "Clicks on the Yes button" do
-			accountDonationConfirmationModalYesButton.flash(color: ["yellow"]).click
+			accountDonationConfirmationModalYesButton.flash.click
 		end
 	ensure
 	after(:all) do

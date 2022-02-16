@@ -42,35 +42,35 @@ RSpec.describe "Admin->Account->Edit: Account Edit validation", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Edit link" do
-      eventMenuLinks("Edit").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Edit").wait_until_present.flash.click
     end
 
     it "Sets the Action option to View" do
-      accountEditModal.wait_until_present.flash(color: ["yellow"])
-			accountEditActionDropdown.flash(color: ["yellow"]).click
-      accountEditActionSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountActionOptionView)
+      accountEditModal.wait_until_present.flash
+			accountEditActionDropdown.flash.click
+      accountEditActionSearchTextField.wait_until_present.flash.set ($accountActionOptionView)
       sendKeysEnter
 			sendKeysTab
     end
 
 		it "Sets the Group option" do
-			accountEditGroupDropdown.flash(color: ["yellow"]).click
-			accountEditGroupSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+			accountEditGroupDropdown.flash.click
+			accountEditGroupSearchTextField.flash.set ($accountGroupId)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
 		it "Sets an invalid account id" do
-			accountEditAccountSearchTextField.flash(color: ["yellow"]).set ($accountIdInvalid)
+			accountEditAccountSearchTextField.flash.set ($accountIdInvalid)
 			sendKeysEnter
 		end
 
@@ -79,9 +79,9 @@ RSpec.describe "Admin->Account->Edit: Account Edit validation", :regression do
 		end
 
 		it "Sets a vaild account id" do
-			accountEditAccountSearchTextField.flash(color: ["yellow"]).click
+			accountEditAccountSearchTextField.flash.click
 			sendKeysClear
-      accountEditAccountSearchTextField.flash(color: ["yellow"]).set ($accountId)
+      accountEditAccountSearchTextField.flash.set ($accountId)
       sendKeysEnter
 		end
 

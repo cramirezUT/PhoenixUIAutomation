@@ -43,25 +43,25 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
     it "Clicks on the Channel link" do
-      eventMenuInquireSubLinks("Channel").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuInquireSubLinks("Channel").wait_until_present.flash.click
     end
 
     it "Verifies the Event Channel modal" do
-			eventChannelModal.flash(color: ["yellow"])
+			eventChannelModal.flash
 		end
 
     it "Sets invalid Group ID" do
-      eventChannelModal.flash(color: ["yellow"])
-      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupIdInvalid)
+      eventChannelModal.flash
+      eventChannelModalGroupDropdown.flash.click
+      eventChannelModalGroupSearchTextField.flash.set ($groupIdInvalid)
     end
 
     it "Verifies the Channel search result" do
@@ -69,19 +69,19 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
     end
 
     it "Sets a valid Group ID" do
-      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelModalGroupDropdown.flash(color: ["yellow"]).click
-      eventChannelModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
+      eventChannelModalGroupDropdown.flash.click
+      eventChannelModalGroupDropdown.flash.click
+      eventChannelModalGroupSearchTextField.flash.set ($groupId)
       sendKeysEnter
       sendKeysTab
     end
 
     it "Verify the Event search result" do
-      eventChannelEeventResultsByIndex(0).flash(color: ["yellow"])
+      eventChannelEeventResultsByIndex(0).flash
     end
 
     it "Clicks on the Help button" do
-      eventChannelModalHelpButton.flash(color: ["yellow"]).click
+      eventChannelModalHelpButton.flash.click
     end
 	ensure
 	after(:all) do

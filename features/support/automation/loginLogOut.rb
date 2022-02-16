@@ -39,12 +39,12 @@ RSpec.describe "Tote Log in Log out test", :smoke do
     end
 
     it "Hovers on the main user menu dropdown" do
-      mainUserMenu.flash(color: ["yellow"]).hover
+      mainUserMenu.flash.hover
     end
 
     it "Clicks on the logout link under the menu dropdown" do
-      logOutLink.wait_until_present.flash(color: ["yellow"]).hover
-      logOutLink.wait_until_present.flash(color: ["yellow"]).click
+      logOutLink.wait_until_present.flash.hover
+      logOutLink.wait_until_present.flash.click
     end
 
     it "Clicks on the Yes button to end session for the user" do

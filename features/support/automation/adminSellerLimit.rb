@@ -43,55 +43,55 @@ RSpec.describe "Admin Seller Limit functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Seller tab" do
-      adminMenuLinks("Seller").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Seller").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Limit link" do
-      eventMenuLinks("Limit").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Limit").wait_until_present.flash.click
     end
 
 		it "Verifies Seller Over Limit modal" do
-			adminSellerLimitModal.flash(color: ["yellow"])
+			adminSellerLimitModal.flash
 		end
 
 		it "Clicks on the Terminals filter button" do
-			adminSellerLimitModalTerminalsFilterButton.flash(color: ["yellow"]).click
+			adminSellerLimitModalTerminalsFilterButton.flash.click
 		end
 
 		it "Verifies the Terminal Selection Filter modal" do
-			adminSellerTerminalSelectionFilterModal.flash(color: ["yellow"])
+			adminSellerTerminalSelectionFilterModal.flash
 		end
 
 		it "Clicks on the close button in the Terminal Selection Fitler modal" do
-			adminSellerTerminalSelectionFilterModalCloseButton.flash(color: ["yellow"]).click
+			adminSellerTerminalSelectionFilterModalCloseButton.flash.click
 		end
 
 		it "Clicks on the Count View button" do
-			adminSellerLimitModalSelectViewButton.flash(color: ["yellow"]).click
+			adminSellerLimitModalSelectViewButton.flash.click
 		end
 
     it "Verifies the Selected Terminals modal" do
-      adminSellersSelectedTerminalsModal.flash(color: ["yellow"])
+      adminSellersSelectedTerminalsModal.flash
     end
 
     it "Closes the Selected Terminals modal" do
-      adminSellersSelectedTerminalsModalCloseButton.flash(color: ["yellow"]).click
+      adminSellersSelectedTerminalsModalCloseButton.flash.click
     end
 
     it "Clicks on the Margin button" do
-      adminSellerLimitModalMarginButton.flash(color: ["yellow"]).click
+      adminSellerLimitModalMarginButton.flash.click
     end
 
     it "Verifies the Edit Margin Amount modal" do
-      adminSellerEditMarginAmountModal.flash(color: ["yellow"])
+      adminSellerEditMarginAmountModal.flash
     end
 
     it "Clicks on the close button" do
-      adminSellerEditMarginAmountModalCloseButton.flash(color: ["yellow"]).click
+      adminSellerEditMarginAmountModalCloseButton.flash.click
     end
 	ensure
 	after(:all) do

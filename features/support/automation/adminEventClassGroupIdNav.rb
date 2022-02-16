@@ -43,20 +43,20 @@ RSpec.describe "Event Class group Id valid and invalid test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
     it "Clicks on the Class link" do
-      eventMenuLinks("Class").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Class").wait_until_present.flash.click
     end
 
     it "Sets invalid Group ID" do
-      eventClassGroupDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventClassGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidGroupId)
+      eventClassGroupDropdown.wait_until_present.flash.click
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($invalidGroupId)
       sendKeysEnter
     end
 
@@ -65,9 +65,9 @@ RSpec.describe "Event Class group Id valid and invalid test", :regression do
     end
 
     it "Sets a valid Group ID" do
-      eventClassGroupDropdown.flash(color: ["yellow"]).click
-      eventClassGroupDropdown.flash(color: ["yellow"]).click
-      eventClassGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($groupId)
+      eventClassGroupDropdown.flash.click
+      eventClassGroupDropdown.flash.click
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($groupId)
       sendKeysEnter
       sleep(1)
       sendKeysTab
@@ -75,7 +75,7 @@ RSpec.describe "Event Class group Id valid and invalid test", :regression do
     end
 
     it "Clicks on search result" do
-      eventClassSearchResultByRow(0).wait_until_present.flash(color: ["yellow"]).click
+      eventClassSearchResultByRow(0).wait_until_present.flash.click
     end
 
 		it "Verifies the Group search result" do
@@ -83,7 +83,7 @@ RSpec.describe "Event Class group Id valid and invalid test", :regression do
     end
 
     it "Clicks on the Help button" do
-      eventClassHelpButton.flash(color: ["yellow"]).click
+      eventClassHelpButton.flash.click
     end
 	ensure
 	after(:all) do

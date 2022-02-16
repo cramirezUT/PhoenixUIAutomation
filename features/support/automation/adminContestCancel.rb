@@ -43,23 +43,23 @@ RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test",
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Cancel link" do
-			eventMenuLinks("Cancel").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Cancel").wait_until_present.flash.click
 		end
 
 		it "Verifies the Player Cancel Ticket Modal" do
-			contestCancelPlayerCancelTicketModal.flash(color: ["yellow"])
+			contestCancelPlayerCancelTicketModal.flash
 		end
 
 		it "Sets an invalid Group number" do
-			playerCancelTicketModalGroupNumberTextField.flash(color: ["yellow"]).set ($groupIdInvalid)
+			playerCancelTicketModalGroupNumberTextField.flash.set ($groupIdInvalid)
       sendKeysEnter
 		end
 
@@ -68,8 +68,8 @@ RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test",
 		end
 
 		# it "Sets a vaild group number" do
-    #   playerCancelTicketModalGroupNumberTextField.flash(color: ["yellow"]).click
-    #   playerCancelTicketModalGroupNumberTextField.flash(color: ["yellow"]).set ($groupId)
+    #   playerCancelTicketModalGroupNumberTextField.flash.click
+    #   playerCancelTicketModalGroupNumberTextField.flash.set ($groupId)
     #   sendKeysEnter
 		# 	sendKeysTab
 		# end

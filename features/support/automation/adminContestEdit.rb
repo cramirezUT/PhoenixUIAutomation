@@ -41,30 +41,30 @@ RSpec.describe "Admin->Contest->Edit: Contest Edit verification test", :regressi
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Edit link" do
-			eventMenuLinks("Edit").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Edit").wait_until_present.flash.click
 		end
 
 		it "Verifies the Player Edit modal" do
-			playerEditModal.flash(color: ["yellow"])
+			playerEditModal.flash
 		end
 
 		it "Sets the View option in the Action search text field" do
-			playerEditModalActionDropdown.flash(color: ["yellow"]).click
-			playerEditModalActionSearchTextField.flash(color: ["yellow"]).set ($playerActionOptionView)
+			playerEditModalActionDropdown.flash.click
+			playerEditModalActionSearchTextField.flash.set ($playerActionOptionView)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets an invalid Player id" do
-			playerEditPlayerTextField.flash(color: ["yellow"]).set ($playerIdInvalid)
+			playerEditPlayerTextField.flash.set ($playerIdInvalid)
 			sendKeysEnter
 			sendKeysTab
 		end
@@ -74,18 +74,18 @@ RSpec.describe "Admin->Contest->Edit: Contest Edit verification test", :regressi
 		end
 
 		it "Sets a valid Player id" do
-			playerEditPlayerTextField.flash(color: ["yellow"]).click
+			playerEditPlayerTextField.flash.click
 			sendKeysClear
-			playerEditPlayerTextField.flash(color: ["yellow"]).set ($playerId)
+			playerEditPlayerTextField.flash.set ($playerId)
 			sendKeysEnter
 		end
 
 		it "Verifies the Player account info" do
-			playerEditAccountModal.flash(color: ["yellow"])
+			playerEditAccountModal.flash
 		end
 
 		it "Clicks on the close button for the Player account info modal" do
-			playerEditAccountModalCancelButton.flash(color: ["yellow"]).click
+			playerEditAccountModalCancelButton.flash.click
 		end
 	ensure
 	after(:all) do

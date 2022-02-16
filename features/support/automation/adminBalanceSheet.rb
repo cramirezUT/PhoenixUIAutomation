@@ -41,86 +41,86 @@ RSpec.describe "Admin->Balance:  Balance Sheet validation", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Balance").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Balance").wait_until_present.flash.click
 		end
 
     it "Verifies Admin Balance Sheet modal" do
-      adminBalanceModal.wait_until_present.flash(color: ["yellow"])
+      adminBalanceModal.wait_until_present.flash
     end
 
 		it "Clicks on the Group dropdown" do
-			adminBalanceModalGroupDropdown.flash(color: ["yellow"]).click
+			adminBalanceModalGroupDropdown.flash.click
 		end
 
 		it "Sets the Group Id" do
-			adminBalanceModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
+			adminBalanceModalGroupSearchTextField.flash.set ($groupId)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Closes the UTS balance sheet" do
-			adminBalanceSheetModalCancelButton.flash(color: ["yellow"]).click
+			adminBalanceSheetModalCancelButton.flash.click
 		end
 
 		it "Clicks on the Settings button" do
-			adminBalanceSettingsButton.flash(color: ["yellow"]).click
+			adminBalanceSettingsButton.flash.click
 		end
 		#### SETS TEXT IN Aa TEXT FIELD ####
 		it " Verifies the Cell Editor modal" do
-			adminBalanceSheetCellEditorModal.flash(color: ["yellow"])
+			adminBalanceSheetCellEditorModal.flash
 		end
 
 		it "Clicks on the Label radio button" do
-			adminBalanceSheetCellEditorModalTypeByName('Label').flash(color: ["yellow"]).click
+			adminBalanceSheetCellEditorModalTypeByName('Label').flash.click
 		end
 
 		it "Sets text in the Label text field" do
-			adminBalanceSheetCellEditorModalLabelTextField.flash(color: ["yellow"]).set ($textForField)
+			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($textForField)
 		end
 
 		it "Clicks on the right arrow" do
-			adminBalanceSheetCellEditorModalRightArrow.flash(color: ["yellow"]).click
-			adminBalanceSheetCellEditorModalRightArrow.flash(color: ["yellow"]).click
+			adminBalanceSheetCellEditorModalRightArrow.flash.click
+			adminBalanceSheetCellEditorModalRightArrow.flash.click
 			sleep(1)
 		end
 		### SETS TEXT IN Ba TEXT FIELD ####
 		it " Verifies the Cell Editor modal" do
-			adminBalanceSheetCellEditorModal.flash(color: ["yellow"])
+			adminBalanceSheetCellEditorModal.flash
 		end
 
 		it "Clicks on the Label radio button" do
-			adminBalanceSheetCellEditorModalTypeByName('Label').flash(color: ["yellow"]).click
+			adminBalanceSheetCellEditorModalTypeByName('Label').flash.click
 		end
 
 		it "Sets text in the Label text field" do
-			adminBalanceSheetCellEditorModalLabelTextField.flash(color: ["yellow"]).set ($textForField)
+			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($textForField)
 		end
 
 		it "Clicks on the right arrow" do
-			adminBalanceSheetCellEditorModalRightArrow.flash(color: ["yellow"]).click
-			adminBalanceSheetCellEditorModalRightArrow.flash(color: ["yellow"]).click
+			adminBalanceSheetCellEditorModalRightArrow.flash.click
+			adminBalanceSheetCellEditorModalRightArrow.flash.click
 			sleep(1)
 		end
 		### SETS TEXT IN Ca TEXT FIELD ####
 		it " Verifies the Cell Editor modal" do
-			adminBalanceSheetCellEditorModal.flash(color: ["yellow"])
+			adminBalanceSheetCellEditorModal.flash
 		end
 
 		it "Clicks on the Label radio button" do
-			adminBalanceSheetCellEditorModalTypeByName('Label').flash(color: ["yellow"]).click
+			adminBalanceSheetCellEditorModalTypeByName('Label').flash.click
 		end
 
 		it "Sets text in the Label text field" do
-			adminBalanceSheetCellEditorModalLabelTextField.flash(color: ["yellow"]).set ($textForField)
+			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($textForField)
 		end
 
 		it "Clicks on the right arrow" do
-			adminBalanceSheetCellEditorModalRightArrow.flash(color: ["yellow"]).click
-			adminBalanceSheetCellEditorModalRightArrow.flash(color: ["yellow"]).click
+			adminBalanceSheetCellEditorModalRightArrow.flash.click
+			adminBalanceSheetCellEditorModalRightArrow.flash.click
 			sleep(1)
 		end
 
@@ -131,15 +131,15 @@ RSpec.describe "Admin->Balance:  Balance Sheet validation", :regression do
 		end
 
 		it "Clicks on the Close button" do
-			adminBalanceSheetEditTemplateModalCloseButton.flash(color: ["yellow"]).click
+			adminBalanceSheetEditTemplateModalCloseButton.flash.click
 		end
 
 		it "Verifies the Confirm Template Close modal" do
-			adminBalanceSheetConfirmTemplateModal.flash(color: ["yellow"])
+			adminBalanceSheetConfirmTemplateModal.flash
 		end
 
 		it "Clicks on the Yes button within the Confirm Template Close modal" do
-			adminBalanceSheetConfirmTemplateModalYesButton.flash(color: ["yellow"]).click
+			adminBalanceSheetConfirmTemplateModalYesButton.flash.click
 		end
 	ensure
 	after(:all) do

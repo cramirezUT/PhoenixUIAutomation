@@ -41,21 +41,21 @@ RSpec.describe "Account Unlock verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Unlock link" do
-			eventMenuLinks("Unlock").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Unlock").wait_until_present.flash.click
 		end
 
 		it "Sets an invalid Event id" do
-			accountUnlockSearchTextField.wait_until_present.flash(color: ["yellow"]).click
-      accountUnlockSearchTextField.flash(color: ["yellow"]).set ($accountIdInvalid)
-			accountUnlockSearchButton.flash(color: ["yellow"]).click
+			accountUnlockSearchTextField.wait_until_present.flash.click
+      accountUnlockSearchTextField.flash.set ($accountIdInvalid)
+			accountUnlockSearchButton.flash.click
 		end
 
 		it "Verifies the No matches found error" do
@@ -63,11 +63,11 @@ RSpec.describe "Account Unlock verification test", :regression do
 		end
 
 		it "Sets the Event id" do
-      accountUnlockSearchTextField.flash(color: ["yellow"]).click
-			accountUnlockSearchTextField.flash(color: ["yellow"]).click
-      accountUnlockSearchTextField.flash(color: ["yellow"]).set ($accountId)
-      accountUnlockSearchButton.flash(color: ["yellow"]).click
-			accountUnlockSearchButton.flash(color: ["yellow"]).click
+      accountUnlockSearchTextField.flash.click
+			accountUnlockSearchTextField.flash.click
+      accountUnlockSearchTextField.flash.set ($accountId)
+      accountUnlockSearchButton.flash.click
+			accountUnlockSearchButton.flash.click
 		end
 
 		it "Verifies the Unlocked icon" do
@@ -76,7 +76,7 @@ RSpec.describe "Account Unlock verification test", :regression do
 
 		it "Verifies the valid search result" do
       verifyAccountUnlockSearchResultsView
-			accountUnlockLockedAccountsCloseButton.flash(color: ["yellow"]).click
+			accountUnlockLockedAccountsCloseButton.flash.click
     end
 	ensure
 	after(:all) do

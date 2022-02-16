@@ -42,19 +42,19 @@ RSpec.describe "Admin->Account->Exchanges: Account Exchanges validation", :regre
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Exchanges link" do
-      eventMenuLinks("Exchanges").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Exchanges").wait_until_present.flash.click
     end
 
 		it "Sets an invalid account id" do
-			accountExchangesAccountSearchTextField.flash(color: ["yellow"]).set ($accountIdInvalid)
+			accountExchangesAccountSearchTextField.flash.set ($accountIdInvalid)
 			sendKeysEnter
 		end
 
@@ -63,9 +63,9 @@ RSpec.describe "Admin->Account->Exchanges: Account Exchanges validation", :regre
 		end
 
 		it "Sets a vaild account id" do
-			accountExchangesAccountSearchTextField.flash(color: ["yellow"]).click
+			accountExchangesAccountSearchTextField.flash.click
 			sendKeysClear
-      accountExchangesAccountSearchTextField.flash(color: ["yellow"]).set ($accountId)
+      accountExchangesAccountSearchTextField.flash.set ($accountId)
       sendKeysEnter
 			sendKeysEnter
 		end

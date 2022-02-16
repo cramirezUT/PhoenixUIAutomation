@@ -43,20 +43,20 @@ RSpec.describe "Admin->Account->Checks: Account Checks validation", :regression 
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Checks link" do
-      eventMenuLinks("Checks").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Checks").wait_until_present.flash.click
     end
 
     it "Sets an invalid Account Group Number" do
-      accountChecksModal.wait_until_present.flash(color: ["yellow"])
-      accountChecksSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountGroupIdInvalid)
+      accountChecksModal.wait_until_present.flash
+      accountChecksSearchTextField.wait_until_present.flash.set ($accountGroupIdInvalid)
       sendKeysEnter
     end
 
@@ -65,10 +65,10 @@ RSpec.describe "Admin->Account->Checks: Account Checks validation", :regression 
 		end
 
 		it "Sets a vaild account Checks group id" do
-			accountChecksModal.wait_until_present.flash(color: ["yellow"])
+			accountChecksModal.wait_until_present.flash
 			accountChecksSearchTextField.click
 			sendKeysClear
-      accountChecksSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountGroupId)
+      accountChecksSearchTextField.wait_until_present.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 	ensure

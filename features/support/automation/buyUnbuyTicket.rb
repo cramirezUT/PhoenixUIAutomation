@@ -41,25 +41,25 @@ RSpec.describe "Buy Ticket from Phoenix application", :regression do
     end
 
 		it "Clicks on the Betting tab" do
-			mainMenuLinks('Betting').flash(color: ["yellow"]).click
+			mainMenuLinks('Betting').flash.click
 		end
 
 		it "Clicks on the Ticket sub tab" do
-			ticketSubMenuTab().flash(color: ["yellow"]).click()
+			ticketSubMenuTab().flash.click()
 		end
 
 		it "Sets the ticket number in the Ticket Number text field" do
-			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($buyTicketNumber)
+			ticketTicketTextField.wait_until_present.flash.set ($buyTicketNumber)
 			sendKeysEnter
 		end
 
 		it "Clicks on the Buy button" do
-			ticketBuyButton.wait_until_present.flash(color: ["yellow"]).click
+			ticketBuyButton.wait_until_present.flash.click
 		end
 
 		it "Clicks on the Yes button in Buy Ticket modal" do
 			verifyBuyTicketModalIsDisplayed
-			buyTicketModalYesButton.flash(color: ["yellow"]).click
+			buyTicketModalYesButton.flash.click
 		end
 
 		it "Verifies the Buy success alert" do
@@ -67,16 +67,16 @@ RSpec.describe "Buy Ticket from Phoenix application", :regression do
 		end
 
 		it "Clicks on the refresh button" do
-			ticketRefreshButton.flash(color: ["yellow"]).click
+			ticketRefreshButton.flash.click
 		end
 
 		it "Clicks on the Unbuy button" do
-			ticketUnbuyButton.wait_until_present.flash(color: ["yellow"]).click
+			ticketUnbuyButton.wait_until_present.flash.click
 		end
 
 		it "Clicks on the Yes button in Buy Ticket modal" do
 			verifyBuyTicketModalIsDisplayed
-			buyTicketModalYesButton.flash(color: ["yellow"]).click
+			buyTicketModalYesButton.flash.click
 		end
 
 		it "Verifies the Unbuy success alert" do

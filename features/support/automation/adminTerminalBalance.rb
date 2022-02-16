@@ -43,23 +43,23 @@ RSpec.describe "Admin Terminal Balance functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Terminal tab" do
-      adminMenuLinks("Terminal").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Terminal").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Balance link" do
-      eventMenuLinks("Balance").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Balance").wait_until_present.flash.click
     end
 
 		it "Verifies Terminal Balance modal" do
-			adminTerminalBalanceModal.flash(color: ["yellow"])
+			adminTerminalBalanceModal.flash
 		end
 
 		it "Sets an invalid terminal id in text field" do
-			adminTerminalBalanceModalTerminalsTextField.flash(color: ["yellow"]).set ($terminalIdInvalid)
+			adminTerminalBalanceModalTerminalsTextField.flash.set ($terminalIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,12 +68,12 @@ RSpec.describe "Admin Terminal Balance functionality test", :regression do
 		end
 
 		it "Sets a valid terminal id in text field" do
-			adminTerminalBalanceModalTerminalsTextField.flash(color: ["yellow"]).set ($terminalId)
+			adminTerminalBalanceModalTerminalsTextField.flash.set ($terminalId)
 			sendKeysTab
 		end
 
 		it "Verifies the terminal result modal" do
-			adminTerminalBalanceResultsModal.flash(color: ["yellow"])
+			adminTerminalBalanceResultsModal.flash
 		end
 	ensure
 	after(:all) do

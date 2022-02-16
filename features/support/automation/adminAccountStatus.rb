@@ -41,21 +41,21 @@ RSpec.describe "Account Status verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Status link" do
-			eventMenuLinks("Status").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Status").wait_until_present.flash.click
 		end
 
 		it "Sets an invalid Event id" do
-			accountStatusSearchTextField.wait_until_present.flash(color: ["yellow"]).click
-      accountStatusSearchTextField.flash(color: ["yellow"]).set ($accountIdInvalid)
-			accountStatusSearchButton.flash(color: ["yellow"]).click
+			accountStatusSearchTextField.wait_until_present.flash.click
+      accountStatusSearchTextField.flash.set ($accountIdInvalid)
+			accountStatusSearchButton.flash.click
 		end
 
 		it "Verifies the No matches found error" do
@@ -63,16 +63,16 @@ RSpec.describe "Account Status verification test", :regression do
 		end
 
 		it "Sets the Event id" do
-      accountStatusSearchTextField.flash(color: ["yellow"]).click
-			accountStatusSearchTextField.flash(color: ["yellow"]).click
-      accountStatusSearchTextField.flash(color: ["yellow"]).set ($accountId)
-      accountStatusSearchButton.flash(color: ["yellow"]).click
-			accountStatusSearchButton.flash(color: ["yellow"]).click
+      accountStatusSearchTextField.flash.click
+			accountStatusSearchTextField.flash.click
+      accountStatusSearchTextField.flash.set ($accountId)
+      accountStatusSearchButton.flash.click
+			accountStatusSearchButton.flash.click
 		end
 
 		it "Verifies the valid search result" do
       verifyAccountStatusSearchResultsView
-			accountStatusDeleteAccountCloseButton.flash(color: ["yellow"]).click
+			accountStatusDeleteAccountCloseButton.flash.click
     end
 	ensure
 	after(:all) do

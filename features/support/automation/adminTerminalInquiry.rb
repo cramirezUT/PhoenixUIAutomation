@@ -43,23 +43,23 @@ RSpec.describe "Admin Terminal Inquiry functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Terminal tab" do
-      adminMenuLinks("Terminal").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Terminal").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Inquiry link" do
-      eventMenuLinks("Inquiry").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Inquiry").wait_until_present.flash.click
     end
 
 		it "Verifies Terminal Inquiry modal" do
-			adminTerminalInquiryModal.flash(color: ["yellow"])
+			adminTerminalInquiryModal.flash
 		end
 
 		it "Sets an invalid terminal id in text field" do
-			adminTerminalInquiryModalTerminalsTextField.flash(color: ["yellow"]).set ($terminalIdInvalid)
+			adminTerminalInquiryModalTerminalsTextField.flash.set ($terminalIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,26 +68,26 @@ RSpec.describe "Admin Terminal Inquiry functionality test", :regression do
 		end
 
 		it "Sets a valid terminal id in text field" do
-			adminTerminalInquiryModalTerminalsTextField.flash(color: ["yellow"]).click
-			adminTerminalInquiryModalTerminalsTextField.flash(color: ["yellow"]).set ($terminalId)
+			adminTerminalInquiryModalTerminalsTextField.flash.click
+			adminTerminalInquiryModalTerminalsTextField.flash.set ($terminalId)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Verifies the results modal" do
-			adminTerminalInquiryResultModal.flash(color: ["yellow"])
+			adminTerminalInquiryResultModal.flash
 		end
 
 		it "Clicks on the Filter button" do
-			adminTerminalInquiryModalFilterButton.flash(color: ["yellow"]).click
+			adminTerminalInquiryModalFilterButton.flash.click
 		end
 
 		it "Verifies the Terminal Selection Filter modal" do
-			terminalSelectionFilterModal.flash(color: ["yellow"])
+			terminalSelectionFilterModal.flash
 		end
 
 		it "Clicks on the close button" do
-			terminalSelectionFilterModalCloseButton.flash(color: ["yellow"]).click
+			terminalSelectionFilterModalCloseButton.flash.click
 		end
 	ensure
 	after(:all) do

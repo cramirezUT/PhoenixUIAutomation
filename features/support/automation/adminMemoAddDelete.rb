@@ -43,67 +43,67 @@ RSpec.describe "Admin Memo Add and delete functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Memo tab" do
-      adminMenuLinks("Memo").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Add button" do
-			adminMemoModalAddButton.wait_until_present.flash(color: ["yellow"]).click
+			adminMemoModalAddButton.wait_until_present.flash.click
 		end
     #### ADD NEW MEMO ####
 		it "Verifies the New Memo modal" do
-			adminMemoNewMemoModal.flash(color: ["yellow"])
+			adminMemoNewMemoModal.flash
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash(color: ["yellow"]).set ($newMemoText)
+			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoText)
 			sendKeysTab
 		end
 
 		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.wait_until_present.flash(color: ["yellow"]).click
+			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
       adminMemoNewMemoModalYesButton.wait_while_present
 		end
 
 		it "Verifies the subject modal" do
-			adminMemoSubjectModal.flash(color: ["yellow"])
+			adminMemoSubjectModal.flash
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash(color: ["yellow"]).set ($newSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
 		end
 
 		it "Sets body text" do
-      adminMemoSubjectModalBodyTextArea.flash(color: ["yellow"]).click
-			adminMemoSubjectModalBodyTextArea.flash(color: ["yellow"]).set ($newBodyText)
+      adminMemoSubjectModalBodyTextArea.flash.click
+			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
 		end
 
 		it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash(color: ["yellow"]).click
+			adminMemoSubjectModalSaveButton.flash.click
 		end
 
 		it "Verifies the memo was set" do
-			adminMemoModalMemoByIndex(0).flash(color: ["yellow"])
+			adminMemoModalMemoByIndex(0).flash
 			verifyNewMemoText(0, $newMemoText)
 		end
     #### DELETE NEW MEMO ####
     it "Clicks on the new memo line" do
-      adminMemoModalMemoByIndex(0).flash(color: ["yellow"]).click
+      adminMemoModalMemoByIndex(0).flash.click
     end
 
     it "Clicks on the trash can icon" do
-      adminMemoModalDeleteButton.flash(color: ["yellow"]).click
+      adminMemoModalDeleteButton.flash.click
     end
 
     it "Verifies the Delete Modal" do
-      adminMemoDeleteModal.flash(color: ["yellow"])
+      adminMemoDeleteModal.flash
     end
 
     it "Clicks on the Yes button" do
-      adminMemoDeleteModalYesButton.flash(color: ["yellow"]).click
+      adminMemoDeleteModalYesButton.flash.click
     end
 
     it "Verifies the newly created memo deleted success message" do

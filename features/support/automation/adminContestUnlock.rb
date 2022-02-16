@@ -41,20 +41,20 @@ RSpec.describe "Account Unlock verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Unlock link" do
-			eventMenuLinks("Unlock").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Unlock").wait_until_present.flash.click
 		end
 
 		it "Sets an invalid Player id" do
-			unlockplayerModalSearchTextField.wait_until_present.flash(color: ["yellow"]).click
-      unlockplayerModalSearchTextField.flash(color: ["yellow"]).set ($playerIdInvalid)
+			unlockplayerModalSearchTextField.wait_until_present.flash.click
+      unlockplayerModalSearchTextField.flash.set ($playerIdInvalid)
 			sendKeysTab
 		end
 
@@ -63,9 +63,9 @@ RSpec.describe "Account Unlock verification test", :regression do
 		end
 
 		it "Sets a valid Player id" do
-      unlockplayerModalSearchTextField.flash(color: ["yellow"]).click
-			unlockplayerModalSearchTextField.flash(color: ["yellow"]).click
-      unlockplayerModalSearchTextField.flash(color: ["yellow"]).set ($playerId)
+      unlockplayerModalSearchTextField.flash.click
+			unlockplayerModalSearchTextField.flash.click
+      unlockplayerModalSearchTextField.flash.set ($playerId)
     	sendKeysTab
 		end
 
@@ -74,7 +74,7 @@ RSpec.describe "Account Unlock verification test", :regression do
 		end
 
 		it "Clicks on the view icon" do
-			unlockPlayerModalViewButton.flash(color: ["yellow"]).click
+			unlockPlayerModalViewButton.flash.click
 		end
 
 		it "Verifies the Locked Players results modal" do
@@ -82,7 +82,7 @@ RSpec.describe "Account Unlock verification test", :regression do
 		end
 
 		it "Clicks on the close icon in the Locked Players modal" do
-			unlockPlayerLockedModalCloseButton.flash(color: ["yellow"]).click
+			unlockPlayerLockedModalCloseButton.flash.click
 		end
 	ensure
 	after(:all) do

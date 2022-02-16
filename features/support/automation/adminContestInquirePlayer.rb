@@ -41,27 +41,27 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Hovers on the Inquire link" do
-			eventMenuLinks("Inquire").wait_until_present.flash(color: ["yellow"]).hover
+			eventMenuLinks("Inquire").wait_until_present.flash.hover
 		end
 
 		it "Clicks on the Player sub link" do
-			eventMenuInquireSubLinks("Player").flash(color: ["yellow"]).click
+			eventMenuInquireSubLinks("Player").flash.click
 		end
 
 		it "Verifies the Player Inquiry modal" do
-			playerInquiryModal.flash(color: ["yellow"])
+			playerInquiryModal.flash
 		end
 
 		it "Sets an invalid Player id in search text field" do
-			playerInquiryModalPlayerSearchTextField.flash(color: ["yellow"]).set ($playerIdInvalid)
+			playerInquiryModalPlayerSearchTextField.flash.set ($playerIdInvalid)
 			sendKeysEnter
 		end
 
@@ -70,13 +70,13 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
 		end
 		#### FILTERS ALL OPTION ####
 		it "Sets a vaild Player id" do
-			playerInquiryModalPlayerSearchTextField.flash(color: ["yellow"]).click
-      playerInquiryModalPlayerSearchTextField.flash(color: ["yellow"]).set ($playerId)
+			playerInquiryModalPlayerSearchTextField.flash.click
+      playerInquiryModalPlayerSearchTextField.flash.set ($playerId)
       sendKeysEnter
 		end
 
 		it "Clicks on the Request button" do
-			playerInquiryModalRequestButton.flash(color: ["yellow"]).click
+			playerInquiryModalRequestButton.flash.click
 		end
 
 		it "Verifies the Player All result modal" do
@@ -84,14 +84,14 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
 		end
 		#### FILTERS OUTS OPTION ####
 		it "Sets the filter option" do
-			playerInquiryModalFilterDropdown.flash(color: ["yellow"]).click
-      playerInquiryModalFilterSearchTextField.flash(color: ["yellow"]).set ($filterOptionOuts)
+			playerInquiryModalFilterDropdown.flash.click
+      playerInquiryModalFilterSearchTextField.flash.set ($filterOptionOuts)
       sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Clicks on the Request button" do
-			playerInquiryModalRequestButton.flash(color: ["yellow"]).click
+			playerInquiryModalRequestButton.flash.click
 		end
 
 		it "Verifies the Player Outs result modal" do
@@ -99,46 +99,46 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
 		end
 		#### FILTERS EVENTS OPTION ####
 		it "Sets the filter option Events" do
-			playerInquiryModalFilterDropdown.flash(color: ["yellow"]).click
-      playerInquiryModalFilterSearchTextField.flash(color: ["yellow"]).set ($filterOptionEvents)
+			playerInquiryModalFilterDropdown.flash.click
+      playerInquiryModalFilterSearchTextField.flash.set ($filterOptionEvents)
       sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Clicks on the Events dropdown" do
-			playerInquiryModalEventsDropdown.flash(color: ["yellow"]).click
+			playerInquiryModalEventsDropdown.flash.click
 		end
 
 		it "Sets text in the Events text field" do
-			playerInquiryModalEventsSearchTextField.flash(color: ["yellow"]).set ($eventsOptionText)
+			playerInquiryModalEventsSearchTextField.flash.set ($eventsOptionText)
 		end
 
 		it "Clicks on the ALL option" do
-			playerInquiryModalEventsSearchOptionAll.flash(color: ["yellow"]).click
+			playerInquiryModalEventsSearchOptionAll.flash.click
 		end
 
 		it "Clicks on the Races dropdown" do
-			playerInquiryModalRacesDropdown.flash(color: ["yellow"]).click
+			playerInquiryModalRacesDropdown.flash.click
 		end
 
 		it "Clicks on the All option for the Race field" do
-			playerInquiryModalRacesAllOption.flash(color: ["yellow"]).click
+			playerInquiryModalRacesAllOption.flash.click
 		end
 
 		it "Clicks on the Pools dropdown" do
-			playerInquiryModalPoolsDropdown.flash(color: ["yellow"]).click
+			playerInquiryModalPoolsDropdown.flash.click
 		end
 
 		it "Sets text in the Pools search text field" do
-			playerInquiryModalPoolsSearchTextField.flash(color: ["yellow"]).set ($eventsOptionText)
+			playerInquiryModalPoolsSearchTextField.flash.set ($eventsOptionText)
 		end
 
 		it "Clicks on the ALL option" do
-			playerInquiryModalPoolsAllOption.flash(color: ["yellow"]).click
+			playerInquiryModalPoolsAllOption.flash.click
 		end
 
 		it "Clicks on the Request button" do
-			playerInquiryModalRequestButton.flash(color: ["yellow"]).click
+			playerInquiryModalRequestButton.flash.click
 		end
 
 		it "Verifies the Player Outs result modal" do
@@ -146,14 +146,14 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
 		end
 		#### FILTERS CASH OPTION ####
 		it "Sets the filter option to Cash" do
-			playerInquiryModalFilterDropdown.flash(color: ["yellow"]).click
-      playerInquiryModalFilterSearchTextField.flash(color: ["yellow"]).set ($filterOptionCash)
+			playerInquiryModalFilterDropdown.flash.click
+      playerInquiryModalFilterSearchTextField.flash.set ($filterOptionCash)
       sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Clicks on the Request button" do
-			playerInquiryModalRequestButton.flash(color: ["yellow"]).click
+			playerInquiryModalRequestButton.flash.click
 		end
 
 		it "Verifies the Player Outs result modal" do
@@ -161,14 +161,14 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
 		end
 		#### FILTERS COUPON OPTION ####
 		it "Sets the filter option to Coupon" do
-			playerInquiryModalFilterDropdown.flash(color: ["yellow"]).click
-      playerInquiryModalFilterSearchTextField.flash(color: ["yellow"]).set ($filterOptionCoupon)
+			playerInquiryModalFilterDropdown.flash.click
+      playerInquiryModalFilterSearchTextField.flash.set ($filterOptionCoupon)
       sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Clicks on the Request button" do
-			playerInquiryModalRequestButton.flash(color: ["yellow"]).click
+			playerInquiryModalRequestButton.flash.click
 		end
 
 		it "Verifies the Player Outs result modal" do
@@ -176,14 +176,14 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
 		end
 		#### FILTERS PENDING OPTION ####
 		it "Sets the filter option to Pending" do
-			playerInquiryModalFilterDropdown.flash(color: ["yellow"]).click
-			playerInquiryModalFilterSearchTextField.flash(color: ["yellow"]).set ($filterOptionPending)
+			playerInquiryModalFilterDropdown.flash.click
+			playerInquiryModalFilterSearchTextField.flash.set ($filterOptionPending)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Clicks on the Request button" do
-			playerInquiryModalRequestButton.flash(color: ["yellow"]).click
+			playerInquiryModalRequestButton.flash.click
 		end
 
 		it "Verifies the Player Outs result modal" do
@@ -191,14 +191,14 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verifica
 		end
 		#### FILTERS CHANGES OPTION ####
 		it "Sets the filter option to Changes" do
-			playerInquiryModalFilterDropdown.flash(color: ["yellow"]).click
-			playerInquiryModalFilterSearchTextField.flash(color: ["yellow"]).set ($filterOptionChanges)
+			playerInquiryModalFilterDropdown.flash.click
+			playerInquiryModalFilterSearchTextField.flash.set ($filterOptionChanges)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Clicks on the Request button" do
-			playerInquiryModalRequestButton.flash(color: ["yellow"]).click
+			playerInquiryModalRequestButton.flash.click
 		end
 
 		it "Verifies the Player Outs result modal" do

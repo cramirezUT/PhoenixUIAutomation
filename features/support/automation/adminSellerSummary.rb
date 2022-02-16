@@ -43,24 +43,24 @@ RSpec.describe "Admin Seller Summary functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Seller tab" do
-      adminMenuLinks("Seller").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Seller").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Summary link" do
-      eventMenuLinks("Summary").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Summary").wait_until_present.flash.click
     end
 
 		it "Verifies Seller Over Summary modal" do
-			adminSellerGroupSummaryModal.flash(color: ["yellow"])
+			adminSellerGroupSummaryModal.flash
 		end
 
 		it "Sets an invalid Group id in text field" do
-			adminSellerGroupSummaryModalGroupsDropdown.flash(color: ["yellow"]).click
-			adminSellerGroupSummaryModalGroupsSearchTextField.flash(color: ["yellow"]).set ($groupsIdInvalid)
+			adminSellerGroupSummaryModalGroupsDropdown.flash.click
+			adminSellerGroupSummaryModalGroupsSearchTextField.flash.set ($groupsIdInvalid)
 		end
 
 		it "Verifies the invalid Seller id error" do
@@ -68,16 +68,16 @@ RSpec.describe "Admin Seller Summary functionality test", :regression do
 		end
 
 		it "Sets a valid Seller id in text field" do
-			adminSellerGroupSummaryModalGroupsDropdown.flash(color: ["yellow"]).click
-			adminSellerGroupSummaryModalGroupsDropdown.flash(color: ["yellow"]).click
-			adminSellerGroupSummaryModalGroupsSearchTextField.flash(color: ["yellow"]).set ($groupsId)
+			adminSellerGroupSummaryModalGroupsDropdown.flash.click
+			adminSellerGroupSummaryModalGroupsDropdown.flash.click
+			adminSellerGroupSummaryModalGroupsSearchTextField.flash.set ($groupsId)
 			sendKeysEnter
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Verifies the Seller Group result modal" do
-			sellerGroupSummarySearchResultModal.flash(color: ["yellow"])
+			sellerGroupSummarySearchResultModal.flash
 		end
 	ensure
 	after(:all) do

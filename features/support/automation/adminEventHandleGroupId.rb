@@ -41,20 +41,20 @@ RSpec.describe "Event Handle group Id valid and invalid test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
     it "Clicks on the Handle link" do
-      eventMenuLinks("Handle").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Handle").wait_until_present.flash.click
     end
 
     it "Sets invalid Group ID" do
-      eventHandleGourpDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidGroupId)
+      eventHandleGourpDropdown.wait_until_present.flash.click
+      eventHandleGroupSerachTextField.wait_until_present.flash.set ($invalidGroupId)
       sendKeysEnter
     end
 
@@ -65,7 +65,7 @@ RSpec.describe "Event Handle group Id valid and invalid test", :regression do
 		it "Sets wild card character in search field" do
 			eventHandleGroupSerachTextField.click
 			sendKeysClear
-      eventHandleGroupSerachTextField.wait_until_present.flash(color: ["yellow"]).set ($wildCharacterGroupId)
+      eventHandleGroupSerachTextField.wait_until_present.flash.set ($wildCharacterGroupId)
       sendKeysEnter
 		end
 

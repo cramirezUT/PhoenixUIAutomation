@@ -41,30 +41,30 @@ RSpec.describe "Cash Cancelled Ticket from Phoenix application", :regression do
     end
 
 		it "Clicks on the Betting tab" do
-			mainMenuLinks('Betting').flash(color: ["yellow"]).click
+			mainMenuLinks('Betting').flash.click
 		end
 
 		it "Clicks on the Ticket sub tab" do
-			ticketSubMenuTab().flash(color: ["yellow"]).click()
+			ticketSubMenuTab().flash.click()
 		end
 
 		it "Sets the ticket number in the Ticket Number text field" do
-			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($cancelTicketNumber)
+			ticketTicketTextField.wait_until_present.flash.set ($cancelTicketNumber)
 			sendKeysEnter
 		end
 
 		it "Clicks on the Cancel button" do
-			cancelTicketButton.wait_until_present.flash(color: ["yellow"]).click
+			cancelTicketButton.wait_until_present.flash.click
 		end
 
 		it "Sets a reason in the reason text field" do
-			cancelTicketModalReasonTextField.flash(color: ["yellow"])
+			cancelTicketModalReasonTextField.flash
 			cancelTicketModalReasonTextField.set ($cancelVerificationCode)
 		end
 
 		it "Clicks on the Yes button" do
 			sendKeysTab
-			claimTicketModalYesButton.flash(color: ["yellow"]).click
+			claimTicketModalYesButton.flash.click
 		end
 
 		it "Verifies the success alert" do
@@ -72,8 +72,8 @@ RSpec.describe "Cash Cancelled Ticket from Phoenix application", :regression do
 		end
 
 		it "Sets the ticket number in the Ticket Number text field" do
-			ticketTicketTextField.wait_until_present.flash(color: ["yellow"]).set ($cancelTicketNumber)
-			ticketRefreshButton.flash(color: ["yellow"]).click
+			ticketTicketTextField.wait_until_present.flash.set ($cancelTicketNumber)
+			ticketRefreshButton.flash.click
 		end
 
 		it "Verify ticket button is disabled" do
