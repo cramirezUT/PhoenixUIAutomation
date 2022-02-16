@@ -41,24 +41,24 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :re
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Clicks on the control link" do
-			eventMenuLinks("Control").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Control").wait_until_present.flash.click
 		end
 
 		it "Verifies the Contest Control Modal" do
-			contestControlModal.flash(color: ["yellow"])
+			contestControlModal.flash
 		end
 
 		it "Sets an invalid Tournament id" do
-			contestControlTournamentDropdown.flash(color: ["yellow"]).click
-			contestControlTournamentSearchTextField.flash(color: ["yellow"]).set ($tournamentdIdInvalid)
+			contestControlTournamentDropdown.flash.click
+			contestControlTournamentSearchTextField.flash.set ($tournamentdIdInvalid)
 		end
 
 		it "Verifies the No matches found error" do
@@ -66,9 +66,9 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :re
 		end
 
 		it "Sets a vaild Tournament id" do
-      contestControlTournamentDropdown.flash(color: ["yellow"]).click
-			contestControlTournamentDropdown.flash(color: ["yellow"]).click
-      contestControlTournamentSearchTextField.flash(color: ["yellow"]).set ($tournamentdId)
+      contestControlTournamentDropdown.flash.click
+			contestControlTournamentDropdown.flash.click
+      contestControlTournamentSearchTextField.flash.set ($tournamentdId)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -82,7 +82,7 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :re
 		end
 
 		it "Closes the Contest modal" do
-			contestControlContestModalCloseButton.flash(color: ["yellow"]).click
+			contestControlContestModalCloseButton.flash.click
 		end
 	ensure
 	after(:all) do

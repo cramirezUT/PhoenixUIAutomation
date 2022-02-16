@@ -41,20 +41,20 @@ RSpec.describe "Admin Donation verification test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Donation tab" do
-      adminMenuLinks("Donation").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Donation").wait_until_present.flash.click
 		end
 
 		it "Verifies the Admin Donation modal" do
-			adminDonationGroupModal.flash(color: ["yellow"])
+			adminDonationGroupModal.flash
 		end
 
 		it "Sets an invalid Group id" do
-      adminDonationGroupModalGroupDropdown.flash(color: ["yellow"]).click
-      adminDonationGroupModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupIdInvalid)
+      adminDonationGroupModalGroupDropdown.flash.click
+      adminDonationGroupModalGroupSearchTextField.flash.set ($groupIdInvalid)
 		end
 
 		it "Verifies invalid Group Id error" do
@@ -62,10 +62,10 @@ RSpec.describe "Admin Donation verification test", :regression do
 		end
 
 		it "Sets a valid Group id" do
-			adminDonationGroupModal.flash(color: ["yellow"])
-      adminDonationGroupModalGroupDropdown.flash(color: ["yellow"]).click
-			adminDonationGroupModalGroupDropdown.flash(color: ["yellow"]).click
-      adminDonationGroupModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
+			adminDonationGroupModal.flash
+      adminDonationGroupModalGroupDropdown.flash.click
+			adminDonationGroupModalGroupDropdown.flash.click
+      adminDonationGroupModalGroupSearchTextField.flash.set ($groupId)
 			sendKeysEnter
     	sendKeysTab
 		end
@@ -75,37 +75,37 @@ RSpec.describe "Admin Donation verification test", :regression do
 		end
 
 		it "Clicks on the 1st Donate button" do
-			donationCharityResultModalDonateButtonByIndex(0).flash(color: ["yellow"]).click
+			donationCharityResultModalDonateButtonByIndex(0).flash.click
 		end
 
 		it "Verifies the Donate to modal" do
-			donationCharityDonateToModal.flash(color: ["yellow"])
+			donationCharityDonateToModal.flash
 		end
 
 		it "Sets $2.00 dollar in the Donation Amount text field" do
-			donationCharityDonateToModalDonationAmountTextField.flash(color: ["yellow"]).set ($donationAmountTwoDollar)
+			donationCharityDonateToModalDonationAmountTextField.flash.set ($donationAmountTwoDollar)
 			sendKeysTab
 		end
 
 		it "Clicks on the Yest button" do
-			donationCharityDonateToModalYesButton.flash(color: ["yellow"]).click
+			donationCharityDonateToModalYesButton.flash.click
 		end
 
 		it "Clicks on the Withdraw button" do
-			donationCharityResultModalWithdrawButtonByIndex(0).flash(color: ["yellow"]).click
+			donationCharityResultModalWithdrawButtonByIndex(0).flash.click
 		end
 
 		it "Verifies the Withdraw From modal" do
-			donationCharityWithdrawToModal.flash(color: ["yellow"])
+			donationCharityWithdrawToModal.flash
 		end
 
 		it "Sets $1.00 dollar in the Withdraw Amount text field" do
-			donationCharityWithdrawToModalWithdrawAmountTextField.flash(color: ["yellow"]).set ($withdrawAmountOneDollar)
+			donationCharityWithdrawToModalWithdrawAmountTextField.flash.set ($withdrawAmountOneDollar)
 			sendKeysTab
 		end
 
 		it "Clicks on the Yest button" do
-			donationCharityWithdrawToModalYesButton.flash(color: ["yellow"]).click
+			donationCharityWithdrawToModalYesButton.flash.click
 		end
 	ensure
 	after(:all) do

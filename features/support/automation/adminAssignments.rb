@@ -41,19 +41,19 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Assignments").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Assignments").wait_until_present.flash.click
 		end
 
     it "Verifies Admin Assignments modal" do
-      adminAssignmentsResultsModal.wait_until_present.flash(color: ["yellow"])
+      adminAssignmentsResultsModal.wait_until_present.flash
     end
 		#### ADD ASSIGNMENT ####
 		it "Clicks on the Add icon" do
-			adminAssignmentsAddButton.flash(color: ["yellow"]).click
+			adminAssignmentsAddButton.flash.click
 		end
 
 		it "Verifies the Add Assignment modal" do
@@ -61,15 +61,15 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
 		end
 
 		it "Clicks on the Add Assignment modal save button" do
-			adminAssignmentsAddAssignmentModalSaveButton.flash(color: ["yellow"]).click
+			adminAssignmentsAddAssignmentModalSaveButton.flash.click
 		end
 
 		it "Clicks on the next day label for the newly added Assignment" do
-			adminAssignmentsResultsCheckboxByDate($nextDay).flash(color: ["yellow"]).click
+			adminAssignmentsResultsCheckboxByDate($nextDay).flash.click
 		end
 		#### EDIT ASSIGNMENT ####
 		it "Clicks on the Edit icon" do
-			adminAssignmentsEditButton.flash(color: ["yellow"]).click
+			adminAssignmentsEditButton.flash.click
 		end
 
 		it "Verifies the Edit modal" do
@@ -77,15 +77,15 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
 		end
 
 		it "Closes the edit modal" do
-			adminAssignmentsEditModalCloseButton.flash(color: ["yellow"]).click
+			adminAssignmentsEditModalCloseButton.flash.click
 		end
 		#### COPY ASSIGNMENT ####
 		it "Clicks on the next day label for the newly added Assignment" do
-			adminAssignmentsResultsCheckboxByDate($nextDay).flash(color: ["yellow"]).click
+			adminAssignmentsResultsCheckboxByDate($nextDay).flash.click
 		end
 
 		it "Clicks on the Copy icon" do
-			adminAssignmentsCopyButton.flash(color: ["yellow"]).click
+			adminAssignmentsCopyButton.flash.click
 		end
 
 		it "Verifies the Copy Assignment modal" do
@@ -93,15 +93,15 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
 		end
 
 		it "Clicks on the save button within the Copy Assignment modal" do
-			adminAssignmentsCopyAssignmentModalSaveButton.flash(color: ["yellow"]).click
+			adminAssignmentsCopyAssignmentModalSaveButton.flash.click
 		end
 
 		it "Clicks the newly copied Assignment date" do
-			adminAssignmentsResultsCheckboxByDate($twoDaysFromNow).flash(color: ["yellow"]).click
+			adminAssignmentsResultsCheckboxByDate($twoDaysFromNow).flash.click
 		end
 		#### DELETE ASSIGNMENTS ####
 		it "Clicks on the trash can icon" do
-			adminAssignmentsDeleteButton.wait_until_present.flash(color: ["yellow"]).click
+			adminAssignmentsDeleteButton.wait_until_present.flash.click
 		end
 
 		it "Verifies the Confirm Deletion modal" do
@@ -109,15 +109,15 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
 		end
 
 		it "Clicks on the Yes button with the Confirm Deletion modal" do
-			adminAssignmentsConfirmDeletionModalYesButton.flash(color: ["yellow"]).click
+			adminAssignmentsConfirmDeletionModalYesButton.flash.click
 		end
 
 		it "Clicks on the next day label for the newly added Assignment" do
-			adminAssignmentsResultsCheckboxByDate($nextDay).flash(color: ["yellow"]).click
+			adminAssignmentsResultsCheckboxByDate($nextDay).flash.click
 		end
 
 		it "Clicks on the trash can icon" do
-			adminAssignmentsDeleteButton.wait_until_present.flash(color: ["yellow"]).click
+			adminAssignmentsDeleteButton.wait_until_present.flash.click
 		end
 
 		it "Verifies the Confirm Deletion modal" do
@@ -125,7 +125,7 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
 		end
 
 		it "Clicks on the Yes button with the Confirm Deletion modal" do
-			adminAssignmentsConfirmDeletionModalYesButton.flash(color: ["yellow"]).click
+			adminAssignmentsConfirmDeletionModalYesButton.flash.click
 		end
 	ensure
 	after(:all) do

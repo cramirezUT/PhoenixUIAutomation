@@ -41,20 +41,20 @@ RSpec.describe "Admin->Account->Cancel: Account ticket cancelation validation", 
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Cancel link" do
-      eventMenuLinks("Cancel").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Cancel").wait_until_present.flash.click
     end
 
     it "Sets the Account Group Number" do
-      accountCancelModal.wait_until_present.flash(color: ["yellow"])
-      accountCancelSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidAccountGroupId)
+      accountCancelModal.wait_until_present.flash
+      accountCancelSearchTextField.wait_until_present.flash.set ($invalidAccountGroupId)
       sendKeysEnter
     end
 
@@ -63,41 +63,41 @@ RSpec.describe "Admin->Account->Cancel: Account ticket cancelation validation", 
 		end
 
 		it "Sets a vaild account Cancel group id" do
-			accountCancelModal.wait_until_present.flash(color: ["yellow"])
+			accountCancelModal.wait_until_present.flash
 			accountCancelSearchTextField.click
 			sendKeysClear
-      accountCancelSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+      accountCancelSearchTextField.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 
 		it "Verifies the account Cancel results table" do
-			accountCancelTicketResults.flash(color: ["yellow"])
+			accountCancelTicketResults.flash
 		end
 
 		it "Selects a ticket to cancel" do
-			accountCancelTicketResultsByIndex(0).flash(color: ["yellow"]).click
+			accountCancelTicketResultsByIndex(0).flash.click
 		end
 
 		it "Clicks on the Cancel Ticket button" do
-			accountCancelTicketButton.flash(color: ["yellow"]).click
+			accountCancelTicketButton.flash.click
 		end
 
 		it "Clicks on the No button in the confirmation modal" do
-			accountCancelConfirmationModal.flash(color: ["yellow"])
-			accountCancelConfirmationModalNoButton.flash(color: ["yellow"]).click
+			accountCancelConfirmationModal.flash
+			accountCancelConfirmationModalNoButton.flash.click
 		end
 
 		it "Selects a ticket to cancel" do
-			accountCancelTicketResultsByIndex(0).flash(color: ["yellow"]).click
+			accountCancelTicketResultsByIndex(0).flash.click
 		end
 
 		it "Clicks on the Cancel Ticket button" do
-			accountCancelTicketButton.flash(color: ["yellow"]).click
+			accountCancelTicketButton.flash.click
 		end
 
 		it "Clicks on the Yes button in the confirmation modal" do
-			accountCancelConfirmationModal.flash(color: ["yellow"])
-			accountCancelConfirmationModalYesButton.flash(color: ["yellow"]).click
+			accountCancelConfirmationModal.flash
+			accountCancelConfirmationModalYesButton.flash.click
 		end
 	ensure
 	after(:all) do

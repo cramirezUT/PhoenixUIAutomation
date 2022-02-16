@@ -41,28 +41,28 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Hovers over the Review link" do
-			eventMenuLinks("Standings").wait_until_present.flash(color: ["yellow"]).hover
+			eventMenuLinks("Standings").wait_until_present.flash.hover
 		end
 
 		it "Clicks on the Contest sub link" do
-			eventMenuInquireSubLinks("Contest").flash(color: ["yellow"]).click
+			eventMenuInquireSubLinks("Contest").flash.click
 		end
 
 		it "Verifies the Contest Standings Contest modal" do
-			contestStandingsModal.flash(color: ["yellow"])
+			contestStandingsModal.flash
 		end
 
 		it "Sets an invalid Tournament id in the search text field" do
-			contestStandingsModalTournamentDropdown.flash(color: ["yellow"]).click
-			contestStandingsModalTournamentSearchTextField.flash(color: ["yellow"]).set ($tournamentIdInvalid)
+			contestStandingsModalTournamentDropdown.flash.click
+			contestStandingsModalTournamentSearchTextField.flash.set ($tournamentIdInvalid)
 		end
 
 		it "Verifies the No matches found error for Tournament" do
@@ -70,21 +70,21 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
 		end
 
 		it "Sets a vaild Tournament id in the search text field" do
-			contestStandingsModalTournamentDropdown.flash(color: ["yellow"]).click
-			contestStandingsModalTournamentDropdown.flash(color: ["yellow"]).click
-      contestStandingsModalTournamentSearchTextField.flash(color: ["yellow"]).set ($tournamentId)
+			contestStandingsModalTournamentDropdown.flash.click
+			contestStandingsModalTournamentDropdown.flash.click
+      contestStandingsModalTournamentSearchTextField.flash.set ($tournamentId)
       sendKeysEnter
       sendKeysTab
       sendKeysTab
 		end
 
 		it "Verifies the Tournament result modal" do
-			contestStandingsTournamentResultsModal.flash(color: ["yellow"])
+			contestStandingsTournamentResultsModal.flash
 		end
 
 		it "Sets an invalid Contest id in the search text field" do
-			contestStandingsModalContestDropdown.flash(color: ["yellow"]).click
-			contestStandingsModalContestSearchTextField.flash(color: ["yellow"]).set ($contestIdInvalid)
+			contestStandingsModalContestDropdown.flash.click
+			contestStandingsModalContestSearchTextField.flash.set ($contestIdInvalid)
 		end
 
 		it "Verifies the No matches found error for Tournament" do
@@ -92,15 +92,15 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
 		end
 
 		it "Sets a vaild Contest id in the search text field" do
-			contestStandingsModalContestDropdown.flash(color: ["yellow"]).click
-			contestStandingsModalContestDropdown.flash(color: ["yellow"]).click
-      contestStandingsModalContestSearchTextField.flash(color: ["yellow"]).set ($contestId)
+			contestStandingsModalContestDropdown.flash.click
+			contestStandingsModalContestDropdown.flash.click
+      contestStandingsModalContestSearchTextField.flash.set ($contestId)
       sendKeysEnter
       sendKeysTab
 		end
 
 		it "Verifies the Contest result modal" do
-			contestStandingsContestResultsModal.flash(color: ["yellow"])
+			contestStandingsContestResultsModal.flash
 		end
 	ensure
 	after(:all) do

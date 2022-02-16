@@ -43,24 +43,24 @@ RSpec.describe "Admin Terminal Text functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Terminal tab" do
-      adminMenuLinks("Terminal").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Terminal").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Text link" do
-      eventMenuLinks("Text").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Text").wait_until_present.flash.click
     end
 
 		it "Verifies Terminal Text modal" do
-			adminTerminalTextModal.flash(color: ["yellow"])
+			adminTerminalTextModal.flash
 		end
 
 		it "Sets an invalid group id in text field" do
-			adminTerminalTextModalGroupDropdown.flash(color: ["yellow"]).click
-			adminTerminalTextModalGroupSearchTextField.flash(color: ["yellow"]).set ($grouplIdInvalid)
+			adminTerminalTextModalGroupDropdown.flash.click
+			adminTerminalTextModalGroupSearchTextField.flash.set ($grouplIdInvalid)
 		end
 
 		it "Verifiesathe invalid group id error" do
@@ -68,30 +68,30 @@ RSpec.describe "Admin Terminal Text functionality test", :regression do
 		end
 
 		it "Sets a valid group id in text field" do
-			adminTerminalTextModalGroupDropdown.flash(color: ["yellow"]).click
-			adminTerminalTextModalGroupDropdown.flash(color: ["yellow"]).click
-			adminTerminalTextModalGroupSearchTextField.flash(color: ["yellow"]).set ($grouplId)
+			adminTerminalTextModalGroupDropdown.flash.click
+			adminTerminalTextModalGroupDropdown.flash.click
+			adminTerminalTextModalGroupSearchTextField.flash.set ($grouplId)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Verifies text modal" do
-			adminTerminalTextDataModal.flash(color: ["yellow"])
+			adminTerminalTextDataModal.flash
 		end
 
 		it "Set text in Blurbs and welcome text fields" do
-			adminTerminalTextDataModalBlurb1TextField.flash(color: ["yellow"]).click
+			adminTerminalTextDataModalBlurb1TextField.flash.click
 			sendKeysClear
-			adminTerminalTextDataModalBlurb1TextField.flash(color: ["yellow"]).set ($testBlurb1Text)
-			adminTerminalTextDataModalBlurb2TextField.flash(color: ["yellow"]).click
+			adminTerminalTextDataModalBlurb1TextField.flash.set ($testBlurb1Text)
+			adminTerminalTextDataModalBlurb2TextField.flash.click
 			sendKeysClear
-			adminTerminalTextDataModalBlurb2TextField.flash(color: ["yellow"]).set ($testBlurb2Text)
-			adminTerminalTextDataModalWelcomeTextField.flash(color: ["yellow"]).set ($testWelcomText)
-			adminTerminalTextDataModalWelcomeTextField.flash(color: ["yellow"]).set ($testWelcomText)
+			adminTerminalTextDataModalBlurb2TextField.flash.set ($testBlurb2Text)
+			adminTerminalTextDataModalWelcomeTextField.flash.set ($testWelcomText)
+			adminTerminalTextDataModalWelcomeTextField.flash.set ($testWelcomText)
 		end
 
 		it "Clicks on the Save button" do
-			adminTerminalTextDataModalSaveButton.flash(color: ["yellow"]).click
+			adminTerminalTextDataModalSaveButton.flash.click
 		end
 	ensure
 	after(:all) do

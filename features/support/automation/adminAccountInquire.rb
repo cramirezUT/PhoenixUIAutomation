@@ -41,20 +41,20 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Inquire link" do
-      eventMenuLinks("Inquire").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Inquire").wait_until_present.flash.click
     end
 
     it "Sets the Account Group Number" do
-      accountInquiryModal.wait_until_present.flash(color: ["yellow"])
-      accountInquirySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidAccountGroupId)
+      accountInquiryModal.wait_until_present.flash
+      accountInquirySearchTextField.wait_until_present.flash.set ($invalidAccountGroupId)
       sendKeysEnter
     end
 
@@ -63,16 +63,16 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
 		end
 
 		it "Sets a vaild account Inquiry group id" do
-			accountInquiryModal.wait_until_present.flash(color: ["yellow"])
+			accountInquiryModal.wait_until_present.flash
 			accountInquirySearchTextField.click
 			sendKeysClear
-      accountInquirySearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
-			accountInquirySearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+      accountInquirySearchTextField.flash.set ($accountGroupId)
+			accountInquirySearchTextField.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 
 		it "Clicks on the request button" do
-			accountInquiryRequestButton.flash(color: ["yellow"]).click
+			accountInquiryRequestButton.flash.click
 		end
 
 		it "Verifies the document output" do
@@ -80,13 +80,13 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
 		end
 
 		it "Selects filter option Outs" do
-			accountInquiryFilterDropdown.flash(color: ["yellow"]).click
+			accountInquiryFilterDropdown.flash.click
 			accountInquiryFilterTextSearchField('Outs')
 			sendKeysEnter
 		end
 
 		it "Clicks on the request button" do
-			accountInquiryRequestButton.flash(color: ["yellow"]).click
+			accountInquiryRequestButton.flash.click
 		end
 
 		it "Verifies the document output" do
@@ -94,43 +94,43 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
 		end
 
 		it "Selects filter option Events" do
-			accountInquiryFilterDropdown.flash(color: ["yellow"]).click
+			accountInquiryFilterDropdown.flash.click
 			accountInquiryFilterTextSearchField('Events')
 			sendKeysEnter
 		end
 
 		it "Selects the Events" do
-			accountInquiryEventsDropdown.flash(color: ["yellow"]).click
+			accountInquiryEventsDropdown.flash.click
 		end
 
 		it "Sets the Event in text field" do
-			accountInquiryEventsSearchTextField.flash(color: ["yellow"]).set ($eventOptionAQD)
+			accountInquiryEventsSearchTextField.flash.set ($eventOptionAQD)
 			sendKeysEnter
 			sendKeysEnter
 		end
 
 		it "Clicks on the Races dropdown" do
-			accountInquiryRacesDropdown.flash(color: ["yellow"]).click
+			accountInquiryRacesDropdown.flash.click
 		end
 
 		it "Sets the race number in the text field" do
-			accountInquiryRacesTextField.flash(color: ["yellow"]).set ($eventRaceOption)
+			accountInquiryRacesTextField.flash.set ($eventRaceOption)
 			sendKeysEnter
 			sendKeysEnter
 		end
 
 		it "Clicks on the Pools dropdown" do
-			accountInquiryPoolsDropdown.flash(color: ["yellow"]).click
+			accountInquiryPoolsDropdown.flash.click
 		end
 
 		it "Sets the Pools option in text field" do
-			accountInquiryPoolsSearchTextField.flash(color: ["yellow"]).set ($eventPoolOption)
+			accountInquiryPoolsSearchTextField.flash.set ($eventPoolOption)
 			sendKeysEnter
 			sendKeysEnter
 		end
 
 		it "Clicks on the request button" do
-			accountInquiryRequestButton.flash(color: ["yellow"]).click
+			accountInquiryRequestButton.flash.click
 		end
 
 		it "Verifies the document output" do
@@ -138,13 +138,13 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
 		end
 
 		it "Selects filter option Cash" do
-			accountInquiryFilterDropdown.flash(color: ["yellow"]).click
+			accountInquiryFilterDropdown.flash.click
 			accountInquiryFilterTextSearchField('Cash')
 			sendKeysEnter
 		end
 
 		it "Clicks on the request button" do
-			accountInquiryRequestButton.flash(color: ["yellow"]).click
+			accountInquiryRequestButton.flash.click
 		end
 
 		it "Verifies the document output" do
@@ -152,13 +152,13 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
 		end
 
 		it "Selects filter option Coupon" do
-			accountInquiryFilterDropdown.flash(color: ["yellow"]).click
+			accountInquiryFilterDropdown.flash.click
 			accountInquiryFilterTextSearchField('Coupon')
 			sendKeysEnter
 		end
 
 		it "Clicks on the request button" do
-			accountInquiryRequestButton.flash(color: ["yellow"]).click
+			accountInquiryRequestButton.flash.click
 		end
 
 		it "Verifies the document output" do
@@ -166,13 +166,13 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
 		end
 
 		it "Selects filter option Pending" do
-			accountInquiryFilterDropdown.flash(color: ["yellow"]).click
+			accountInquiryFilterDropdown.flash.click
 			accountInquiryFilterTextSearchField('Pending')
 			sendKeysEnter
 		end
 
 		it "Clicks on the request button" do
-			accountInquiryRequestButton.flash(color: ["yellow"]).click
+			accountInquiryRequestButton.flash.click
 		end
 
 		it "Verifies the document output" do
@@ -180,13 +180,13 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
 		end
 
 		it "Selects filter option Changes" do
-			accountInquiryFilterDropdown.flash(color: ["yellow"]).click
+			accountInquiryFilterDropdown.flash.click
 			accountInquiryFilterTextSearchField('Changes')
 			sendKeysEnter
 		end
 
 		it "Clicks on the request button" do
-			accountInquiryRequestButton.flash(color: ["yellow"]).click
+			accountInquiryRequestButton.flash.click
 		end
 
 		it "Verifies the document output" do

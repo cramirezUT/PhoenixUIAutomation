@@ -41,40 +41,40 @@ RSpec.describe "Event Liability Event All selection test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
 		it "Clicks on the liability link" do
-			eventMenuLinks("Liability").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Liability").wait_until_present.flash.click
 		end
 
 		it "Sets a valid Event id" do
-      eventLiabilityEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventId)
+      eventLiabilityEventDropdown.wait_until_present.flash.click
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($eventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
-      eventLiabilitySourceDropdown.flash(color: ["yellow"]).click
+      eventLiabilitySourceDropdown.flash.click
       eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceId)
       sendKeysEnter
       sendKeysTab
     end
 
     it "Click on the Races dropdown" do
-      eventLiabilityRacesDropdown.wait_until_present.flash(color: ["yellow"]).click
+      eventLiabilityRacesDropdown.wait_until_present.flash.click
     end
 
 		it "Clicks on the All checkbox" do
-			eventLiabilityRacesAllCheckbox.flash(color: ["yellow"]).click
+			eventLiabilityRacesAllCheckbox.flash.click
 		end
 
 		it "Clicks on the Done button" do
-			eventLiabilityRacesDoneButton.flash(color: ["yellow"]).click
+			eventLiabilityRacesDoneButton.flash.click
 		end
 
 		it "Verifies the valid search result" do

@@ -44,20 +44,20 @@ RSpec.describe "Admin->Account->Pending: Account Pending validation", :regressio
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Pending link" do
-      eventMenuLinks("Pending").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Pending").wait_until_present.flash.click
     end
 
     it "Sets an invalid Account Group Number" do
-      accountPendingModal.wait_until_present.flash(color: ["yellow"])
-      accountPendingSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountGroupIdInvalid)
+      accountPendingModal.wait_until_present.flash
+      accountPendingSearchTextField.wait_until_present.flash.set ($accountGroupIdInvalid)
       sendKeysEnter
     end
 
@@ -66,19 +66,19 @@ RSpec.describe "Admin->Account->Pending: Account Pending validation", :regressio
 		end
 
 		it "Sets a vaild account Pending group id" do
-			accountPendingModal.wait_until_present.flash(color: ["yellow"])
+			accountPendingModal.wait_until_present.flash
 			accountPendingSearchTextField.click
 			sendKeysClear
-      accountPendingSearchTextField.flash(color: ["yellow"]).set ($accountGroupId)
+      accountPendingSearchTextField.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 
 		it "Verifies the account Pending ticket mdoal" do
-			getAccountPendingTicketModal.flash(color: ["yellow"])
+			getAccountPendingTicketModal.flash
 		end
 
 		it "Clicks on the ticket by index" do
-			getAccountPendingTicketModalTicketByIndex(0).flash(color: ["yellow"]).click
+			getAccountPendingTicketModalTicketByIndex(0).flash.click
 		end
 
 		it "Verifies Account Pending ticket results" do

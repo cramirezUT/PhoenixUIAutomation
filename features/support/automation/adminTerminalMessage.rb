@@ -43,23 +43,23 @@ RSpec.describe "Admin Terminal Message functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Terminal tab" do
-      adminMenuLinks("Terminal").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Terminal").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Message link" do
-      eventMenuLinks("Message").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Message").wait_until_present.flash.click
     end
 
 		it "Verifies Terminal Message modal" do
-			adminTerminalMessageModal.flash(color: ["yellow"])
+			adminTerminalMessageModal.flash
 		end
 
 		it "Sets an invalid terminal id in text field" do
-			adminTerminalMessageModalTerminalsTextField.flash(color: ["yellow"]).set ($terminalIdInvalid)
+			adminTerminalMessageModalTerminalsTextField.flash.set ($terminalIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,20 +68,20 @@ RSpec.describe "Admin Terminal Message functionality test", :regression do
 		end
 
 		it "Sets a valid terminal id in text field" do
-			adminTerminalMessageModalTerminalsTextField.flash(color: ["yellow"]).click
+			adminTerminalMessageModalTerminalsTextField.flash.click
 			sendKeysClear
-			adminTerminalMessageModalTerminalsTextField.flash(color: ["yellow"]).set ($terminalId)
-			adminTerminalMessageModalTerminalsTextField.flash(color: ["yellow"]).set ($terminalId)
+			adminTerminalMessageModalTerminalsTextField.flash.set ($terminalId)
+			adminTerminalMessageModalTerminalsTextField.flash.set ($terminalId)
 			sendKeysEnter
 		end
 
 		it "Sets text in the Message text field" do
-			adminTerminalMessageModalMessageTextField.flash(color: ["yellow"]).set ($testMessage)
+			adminTerminalMessageModalMessageTextField.flash.set ($testMessage)
 			sendKeysTab
 		end
 
 		it "Clicks on the Send button" do
-			adminTerminalMessageModalSendButton.flash(color: ["yellow"]).click
+			adminTerminalMessageModalSendButton.flash.click
 		end
 
 		it "Verifies the sent message" do

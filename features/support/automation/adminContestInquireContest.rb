@@ -41,31 +41,31 @@ RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verifi
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Hovers on the Inquire link" do
-			eventMenuLinks("Inquire").wait_until_present.flash(color: ["yellow"]).hover
+			eventMenuLinks("Inquire").wait_until_present.flash.hover
 		end
 
 		it "Clicks on the Contest sub link" do
-			eventMenuInquireSubLinks("Contest").flash(color: ["yellow"]).click
+			eventMenuInquireSubLinks("Contest").flash.click
 		end
 
 		it "Verifies the Contest Inquiry modal" do
-			contestInquiryModal.flash(color: ["yellow"])
+			contestInquiryModal.flash
 		end
 
 		it "Clicks on the Tournament dropdown" do
-			contestInquiryModalTournamentDropdown.flash(color: ["yellow"]).click
+			contestInquiryModalTournamentDropdown.flash.click
 		end
 		#### INVALID CONTEST INQUIRY TEST ####
 		it "Sets an invalid Tournament id in search text field" do
-			contestInquiryModalTournamentSearchTextField.flash(color: ["yellow"]).set ($tournamentIdInvalid)
+			contestInquiryModalTournamentSearchTextField.flash.set ($tournamentIdInvalid)
 		end
 
 		it "Verifies the Tournament No match error" do
@@ -73,22 +73,22 @@ RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verifi
 		end
 
 		it "Clicks on the Tournament dropdown" do
-			contestInquiryModalTournamentDropdown.flash(color: ["yellow"]).click
+			contestInquiryModalTournamentDropdown.flash.click
 		end
 
 		it "Sets a vaild Tournament id" do
-			contestInquiryModalTournamentDropdown.flash(color: ["yellow"]).click
-      contestInquiryModalTournamentSearchTextField.flash(color: ["yellow"]).set ($tournamentId)
+			contestInquiryModalTournamentDropdown.flash.click
+      contestInquiryModalTournamentSearchTextField.flash.set ($tournamentId)
       sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Clicks on the Contest dropdown" do
-			contestInquiryModalContestDropdown.flash(color: ["yellow"]).click
+			contestInquiryModalContestDropdown.flash.click
 		end
 
 		it "Sets an invalid Contest id in search text field" do
-			contestInquiryModalContestSearchTextField.flash(color: ["yellow"]).set ($contestIdInvalid)
+			contestInquiryModalContestSearchTextField.flash.set ($contestIdInvalid)
 		end
 
 		it "Verifies the Contest No match error" do
@@ -96,8 +96,8 @@ RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verifi
 		end
 		#### VALID CONTEST INQUIRY TEST ####
 		it "Sets a vaild Tournament id" do
-			contestInquiryModalTournamentDropdown.flash(color: ["yellow"]).click
-      contestInquiryModalTournamentSearchTextField.flash(color: ["yellow"]).set ($tournamentId)
+			contestInquiryModalTournamentDropdown.flash.click
+      contestInquiryModalTournamentSearchTextField.flash.set ($tournamentId)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -107,8 +107,8 @@ RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verifi
 		end
 
 		it "Sets a vaild Contest id" do
-			contestInquiryModalContestDropdown.flash(color: ["yellow"]).click
-      contestInquiryModalContestSearchTextField.flash(color: ["yellow"]).set ($contestId)
+			contestInquiryModalContestDropdown.flash.click
+      contestInquiryModalContestSearchTextField.flash.set ($contestId)
       sendKeysEnter
 			sendKeysTab
 		end

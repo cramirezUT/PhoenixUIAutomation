@@ -41,23 +41,23 @@ RSpec.describe "Admin->Contest->Pay: Contest Pay verification test", :regression
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Pay link" do
-			eventMenuLinks("Pay").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Pay").wait_until_present.flash.click
 		end
 
 		it "Verifies the Contest Pay Modal" do
-			contestPayModal.flash(color: ["yellow"])
+			contestPayModal.flash
 		end
 
 		it "Sets an invalid Player id in search text field" do
-			contestPaySearchTextField.flash(color: ["yellow"]).set ($playerGroupdIdInvalid)
+			contestPaySearchTextField.flash.set ($playerGroupdIdInvalid)
 			sendKeysEnter
 			sendKeysTab
 		end
@@ -67,9 +67,9 @@ RSpec.describe "Admin->Contest->Pay: Contest Pay verification test", :regression
 		end
 
 		it "Sets a vaild Player id" do
-      contestPaySearchTextField.flash(color: ["yellow"]).click
+      contestPaySearchTextField.flash.click
 			sendKeysClear
-      contestPaySearchTextField.flash(color: ["yellow"]).set ($playerGroupdId)
+      contestPaySearchTextField.flash.set ($playerGroupdId)
       sendKeysEnter
 		end
 

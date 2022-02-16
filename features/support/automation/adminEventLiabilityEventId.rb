@@ -41,25 +41,25 @@ RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
 		it "Clicks on the liability link" do
-			eventMenuLinks("Liability").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Liability").wait_until_present.flash.click
 		end
 
 		it "Sets a valid Event id" do
-      eventLiabilityEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventId)
+      eventLiabilityEventDropdown.wait_until_present.flash.click
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($eventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
-      eventLiabilitySourceDropdown.flash(color: ["yellow"]).click
+      eventLiabilitySourceDropdown.flash.click
       eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceId)
       sendKeysEnter
       sendKeysTab
@@ -70,8 +70,8 @@ RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
     end
 
     it "Sets invalid Event ID" do
-      eventLiabilityEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventLiabilityEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidEventId)
+      eventLiabilityEventDropdown.wait_until_present.flash.click
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($invalidEventId)
     end
 
     it "Verifes the invalid Event search result" do

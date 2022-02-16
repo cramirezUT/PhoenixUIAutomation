@@ -43,23 +43,23 @@ RSpec.describe "Admin Seller Control functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Seller tab" do
-      adminMenuLinks("Seller").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Seller").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Control link" do
-      eventMenuLinks("Control").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Control").wait_until_present.flash.click
     end
 
 		it "Verifies Seller Control modal" do
-			adminSellerControlModal.flash(color: ["yellow"])
+			adminSellerControlModal.flash
 		end
 
 		it "Sets invalid Seller id in text field" do
-			adminSellerControlModalSellerTextField.flash(color: ["yellow"]).set ($sellerIdInvalid)
+			adminSellerControlModalSellerTextField.flash.set ($sellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,53 +68,53 @@ RSpec.describe "Admin Seller Control functionality test", :regression do
 		end
 
 		it "Sets a valid Seller id in text field" do
-			adminSellerControlModalSellerTextField.flash(color: ["yellow"]).click
+			adminSellerControlModalSellerTextField.flash.click
 			sendKeysClear
-			adminSellerControlModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
-			adminSellerControlModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
+			adminSellerControlModalSellerTextField.flash.set ($sellerId)
+			adminSellerControlModalSellerTextField.flash.set ($sellerId)
 			sendKeysTab
 		end
 
 		it "Verifies the Seller Lock button" do
-			adminSellerControlModalLockButton.flash(color: ["yellow"])
+			adminSellerControlModalLockButton.flash
 		end
 
 		it "Clicks on the Lock button" do
-			adminSellerControlModalLockButton.flash(color: ["yellow"]).click
+			adminSellerControlModalLockButton.flash.click
 		end
 
 		it "Verifies the Lock Seller modal" do
-			adminSellerControlLockSellerModal.flash(color: ["yellow"])
+			adminSellerControlLockSellerModal.flash
 		end
 
 		it "Sets the one character code in text field" do
-			adminSellerControlLockSellerModalTextField.flash(color: ["yellow"]).set ($lockSellerOneCharacter)
+			adminSellerControlLockSellerModalTextField.flash.set ($lockSellerOneCharacter)
 			sendKeysTab
 		end
 
 		it "Clicks on the Yes button" do
-			adminSellerControlLockSellerModalYesButton.flash(color: ["yellow"]).click
+			adminSellerControlLockSellerModalYesButton.flash.click
 			adminSellerControlLockSellerModalYesButton.wait_while_present
 		end
 
 		it "Verifies the Locked icon" do
-			adminSellerControlModalLockIcon.flash(color: ["yellow"])
+			adminSellerControlModalLockIcon.flash
 		end
 
 		it "Clicks on the Unlock button" do
-			adminSellerControlModalUnlockButton.flash(color: ["yellow"]).click
+			adminSellerControlModalUnlockButton.flash.click
 		end
 
 		it "Verifies the Unlock Seller modal" do
-			adminSellerControlUnlockSellerModal.flash(color: ["yellow"])
+			adminSellerControlUnlockSellerModal.flash
 		end
 
 		it "Clicks on the Yes button" do
-			adminSellerControlUnlockSellerModalYesButton.flash(color: ["yellow"]).click
+			adminSellerControlUnlockSellerModalYesButton.flash.click
 		end
 
 		it "Verifies the Unlock icon" do
-			adminSellerControlModalUnlockIcon.flash(color: ["yellow"])
+			adminSellerControlModalUnlockIcon.flash
 		end
 	ensure
 	after(:all) do

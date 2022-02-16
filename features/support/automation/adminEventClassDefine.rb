@@ -43,20 +43,20 @@ RSpec.describe "Event Class Define class test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
     it "Clicks on the Class link" do
-      eventMenuLinks("Class").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Class").wait_until_present.flash.click
     end
 
     it "Sets a valid Group ID" do
-      eventClassGroupDropdown.flash(color: ["yellow"]).click
-      eventClassGroupSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($groupId)
+      eventClassGroupDropdown.flash.click
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($groupId)
       sendKeysEnter
       sleep(1)
       sendKeysTab
@@ -64,11 +64,11 @@ RSpec.describe "Event Class Define class test", :regression do
     end
 
 		it "Defines the event class" do
-			eventClassButtonByIndex(0).wait_until_present.flash(color: ["yellow"]).click
+			eventClassButtonByIndex(0).wait_until_present.flash.click
 		end
 
 		it "Clicks on the save changes button" do
-			eventClassSaveChangesButton.wait_until_present.flash(color: ["yellow"]).click
+			eventClassSaveChangesButton.wait_until_present.flash.click
 		end
 
 		it "Verifies a class was defined" do
@@ -76,12 +76,12 @@ RSpec.describe "Event Class Define class test", :regression do
 		end
 
 		it "Reset class definition" do
-			eventClassButtonByIndex(0).wait_until_present.flash(color: ["yellow"]).click
-			eventClassButtonByIndex(0).wait_until_present.flash(color: ["yellow"]).click
+			eventClassButtonByIndex(0).wait_until_present.flash.click
+			eventClassButtonByIndex(0).wait_until_present.flash.click
 		end
 
 		it "Clicks on the save changes button" do
-			eventClassSaveChangesButton.wait_until_present.flash(color: ["yellow"]).click
+			eventClassSaveChangesButton.wait_until_present.flash.click
 		end
 
 		it "Verifies a class definition was reset" do

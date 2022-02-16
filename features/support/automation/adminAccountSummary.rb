@@ -41,20 +41,20 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Summary link" do
-      eventMenuLinks("Summary").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Summary").wait_until_present.flash.click
     end
 
 		it "Sets invalid currency" do
-			summaryAccountCurrencyDropdown.flash(color: ["yellow"]).click
-			summaryAccountCurrencySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($currencyInvalid)
+			summaryAccountCurrencyDropdown.flash.click
+			summaryAccountCurrencySearchTextField.wait_until_present.flash.set ($currencyInvalid)
 		end
 
 		it "Verifies invalid currency error" do
@@ -62,19 +62,19 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
     it "Sets currency to USD" do
-			summaryAccountCurrencyDropdown.flash(color: ["yellow"]).click
-			summaryAccountCurrencyDropdown.flash(color: ["yellow"]).click
-			summaryAccountCurrencySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($currencyUSD)
+			summaryAccountCurrencyDropdown.flash.click
+			summaryAccountCurrencyDropdown.flash.click
+			summaryAccountCurrencySearchTextField.wait_until_present.flash.set ($currencyUSD)
 			sendKeysEnter
 			sendKeysTab
     end
 
 		it "Clicks on the Deposit button" do
-			summaryAccountDepositButton.flash(color: ["yellow"]).click
+			summaryAccountDepositButton.flash.click
 		end
 
 		it "Clicks on the Cash button" do
-			summaryAccountCashButton.wait_until_present.flash(color: ["yellow"]).click
+			summaryAccountCashButton.wait_until_present.flash.click
 		end
 
 		it "Verifies the account Summary for Cash" do
@@ -82,7 +82,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Check button" do
-			summaryAccountCheckButton.flash(color: ["yellow"]).click
+			summaryAccountCheckButton.flash.click
 		end
 
 		it "Verifies the account Summary for Check" do
@@ -90,7 +90,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Total button" do
-			summaryAccountTotalButton.flash(color: ["yellow"]).click
+			summaryAccountTotalButton.flash.click
 		end
 
 		it "Verifies the account Summary for Totals" do
@@ -98,11 +98,11 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Withdraw button" do
-			summaryAccountWithdrawButton.flash(color: ["yellow"]).click
+			summaryAccountWithdrawButton.flash.click
 		end
 
 		it "Clicks on the Cash button" do
-			summaryAccountCashButton.flash(color: ["yellow"]).click
+			summaryAccountCashButton.flash.click
 		end
 
 		it "Verifies the account Summary for Totals" do
@@ -110,7 +110,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Check button" do
-			summaryAccountCheckButton.flash(color: ["yellow"]).click
+			summaryAccountCheckButton.flash.click
 		end
 
 		it "Verifies the account Summary for Check" do
@@ -118,7 +118,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Total button" do
-			summaryAccountTotalButton.flash(color: ["yellow"]).click
+			summaryAccountTotalButton.flash.click
 		end
 
 		it "Verifies the account Summary for Totals" do
@@ -126,7 +126,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Adjust button" do
-			summaryAccountAdjustButton.flash(color: ["yellow"]).click
+			summaryAccountAdjustButton.flash.click
 		end
 
 		it "Verifies the account Summary for Adjust" do
@@ -134,7 +134,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Cancel button" do
-			summaryAccountCancelButton.flash(color: ["yellow"]).click
+			summaryAccountCancelButton.flash.click
 		end
 
 		it "Verifies the account Summary for Adjust" do
@@ -142,7 +142,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 		end
 
 		it "Clicks on the Pay button" do
-			summaryAccountPayButton.flash(color: ["yellow"]).click
+			summaryAccountPayButton.flash.click
 		end
 
 		it "Verifies the account Summary for Pay" do

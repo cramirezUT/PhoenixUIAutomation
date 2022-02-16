@@ -43,23 +43,23 @@ RSpec.describe "Admin Seller Balance functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Seller tab" do
-      adminMenuLinks("Seller").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Seller").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Balance link" do
-      eventMenuLinks("Balance").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Balance").wait_until_present.flash.click
     end
 
 		it "Verifies Seller Balance modal" do
-			adminSellerBalanceModal.flash(color: ["yellow"])
+			adminSellerBalanceModal.flash
 		end
 
 		it "Sets an invalid Seller id in text field" do
-			adminSellerBalanceModalSellerTextField.flash(color: ["yellow"]).set ($sellerIdInvalid)
+			adminSellerBalanceModalSellerTextField.flash.set ($sellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,12 +68,12 @@ RSpec.describe "Admin Seller Balance functionality test", :regression do
 		end
 
 		it "Sets a valid Seller id in text field" do
-			adminSellerBalanceModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
+			adminSellerBalanceModalSellerTextField.flash.set ($sellerId)
 			sendKeysTab
 		end
 
 		it "Verifies the Seller Balance Balance modal" do
-			adminSellerBalanceResultModal.flash(color: ["yellow"])
+			adminSellerBalanceResultModal.flash
 		end
 
 		it "Verifies the Beginning balance" do

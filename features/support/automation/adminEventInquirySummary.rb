@@ -41,20 +41,20 @@ RSpec.describe "Event Inquiry Summary test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
 		it "Clicks on the liability link" do
-			eventMenuLinks("Inquire").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Inquire").wait_until_present.flash.click
 		end
 
 		it "Click on the Event By dropdown and select the ID" do
-      eventInquiryDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventInquirySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventById)
+      eventInquiryDropdown.wait_until_present.flash.click
+      eventInquirySearchTextField.wait_until_present.flash.set ($eventById)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -67,8 +67,8 @@ RSpec.describe "Event Inquiry Summary test", :regression do
     end
 
 		it "Click on the Event By dropdown and select the Name" do
-      eventInquiryDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventInquirySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventByName)
+      eventInquiryDropdown.wait_until_present.flash.click
+      eventInquirySearchTextField.wait_until_present.flash.set ($eventByName)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -81,8 +81,8 @@ RSpec.describe "Event Inquiry Summary test", :regression do
     end
 
 		it "Click on the Event By dropdown and select the Open Races" do
-      eventInquiryDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventInquirySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventByOpenRaces)
+      eventInquiryDropdown.wait_until_present.flash.click
+      eventInquirySearchTextField.wait_until_present.flash.set ($eventByOpenRaces)
       sendKeysEnter
 			sendKeysTab
 		end

@@ -44,20 +44,20 @@ RSpec.describe "Admin->Account->Pay: Account Pay Ticket validation", :regression
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Pay link" do
-      eventMenuLinks("Pay").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Pay").wait_until_present.flash.click
     end
 
     it "Sets an invalid Account Group Number" do
-      accountPayModal.wait_until_present.flash(color: ["yellow"])
-      accountPaySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountGroupIdInvalid)
+      accountPayModal.wait_until_present.flash
+      accountPaySearchTextField.wait_until_present.flash.set ($accountGroupIdInvalid)
       sendKeysEnter
     end
 
@@ -66,19 +66,19 @@ RSpec.describe "Admin->Account->Pay: Account Pay Ticket validation", :regression
 		end
 
 		it "Sets a vaild account Pay group id" do
-			accountPayModal.wait_until_present.flash(color: ["yellow"])
+			accountPayModal.wait_until_present.flash
 			accountPaySearchTextField.click
 			sendKeysClear
-      accountPaySearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountGroupId)
+      accountPaySearchTextField.wait_until_present.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 
 		it "Verifies the account Payee information mdoal" do
-			getAccountPayeeInformationModal.flash(color: ["yellow"])
+			getAccountPayeeInformationModal.flash
 		end
 
 		it "Clicks on the ticket by index" do
-			getAccountPayTicketByIndex(0).flash(color: ["yellow"]).click
+			getAccountPayTicketByIndex(0).flash.click
 		end
 
 		it "Verifies if information is missing from Payee Information modal" do

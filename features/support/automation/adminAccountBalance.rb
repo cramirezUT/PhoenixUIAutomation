@@ -41,20 +41,20 @@ RSpec.describe "Admin->Account->Balance: Account balance validation", :regressio
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Balance link" do
-      eventMenuLinks("Balance").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Balance").wait_until_present.flash.click
     end
 
     it "Sets the Account Group Number" do
-      accountBalanceModal.wait_until_present.flash(color: ["yellow"])
-      accountBalanceSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($invalidAccountGroupId)
+      accountBalanceModal.wait_until_present.flash
+      accountBalanceSearchTextField.wait_until_present.flash.set ($invalidAccountGroupId)
       sendKeysEnter
     end
 
@@ -63,16 +63,15 @@ RSpec.describe "Admin->Account->Balance: Account balance validation", :regressio
 		end
 
 		it "Sets a vaild account balance group id" do
-			accountBalanceModal.wait_until_present.flash(color: ["yellow"])
+			accountBalanceModal.wait_until_present.flash
 			accountBalanceSearchTextField.click
 			sendKeysClear
-      accountBalanceSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($accountGroupId)
+      accountBalanceSearchTextField.wait_until_present.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 
 		it "Verifies the account balance amount" do
-			getAccountBalance.flash(color: ["yellow"])
-			verifyAccountBalanceAmount('$73,420.02')
+			verifyAccountBalanceAmount('$73,419.02')
 		end
 	ensure
 	after(:all) do

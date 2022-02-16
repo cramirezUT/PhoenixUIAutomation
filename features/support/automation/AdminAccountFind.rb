@@ -41,26 +41,26 @@ RSpec.describe "Admin->Account->Find: Account find account holder by name", :reg
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Account tab" do
-      adminMenuLinks("Account").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Account").wait_until_present.flash.click
 		end
 
     it "Clicks on the Find link" do
-      eventMenuLinks("Find").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Find").wait_until_present.flash.click
     end
 
     it "Sets an invalid first and last name to search" do
-      findAccountFirstNameTextField.flash(color: ["yellow"]).set ($findAccountFirstNameInvalid)
+      findAccountFirstNameTextField.flash.set ($findAccountFirstNameInvalid)
       sendKeysTab
-      findAccountLastNameTextField.flash(color: ["yellow"]).set ($findAccountLastNameInvalid)
+      findAccountLastNameTextField.flash.set ($findAccountLastNameInvalid)
       sendKeysTab
     end
 
 		it "Clicks on the Search button" do
-			findAccountSearchButton.flash(color: ["yellow"]).click
+			findAccountSearchButton.flash.click
 		end
 
 		it "Verifies the account Find error" do
@@ -68,24 +68,24 @@ RSpec.describe "Admin->Account->Find: Account find account holder by name", :reg
 		end
 
 		it "Sets an valid first and last name to search" do
-			findAccountFirstNameTextField.flash(color: ["yellow"]).click
+			findAccountFirstNameTextField.flash.click
 			sendKeysClear
-      findAccountFirstNameTextField.flash(color: ["yellow"]).set ($findAccountFirstName)
-      findAccountFirstNameTextField.flash(color: ["yellow"]).set ($findAccountFirstName)
+      findAccountFirstNameTextField.flash.set ($findAccountFirstName)
+      findAccountFirstNameTextField.flash.set ($findAccountFirstName)
       sendKeysTab
-      findAccountLastNameTextField.flash(color: ["yellow"]).click
+      findAccountLastNameTextField.flash.click
       sendKeysClear
-      findAccountLastNameTextField.flash(color: ["yellow"]).set ($findAccountLastName)
-      findAccountLastNameTextField.flash(color: ["yellow"]).set ($findAccountLastName)
+      findAccountLastNameTextField.flash.set ($findAccountLastName)
+      findAccountLastNameTextField.flash.set ($findAccountLastName)
       sendKeysTab
     end
 
 		it "Clicks on the Search button" do
-			findAccountSearchButton.flash(color: ["yellow"]).click
+			findAccountSearchButton.flash.click
 		end
 
 		it "Verifies the account Find search result" do
-			getFindAccountAccountModal.flash(color: ["yellow"])
+			getFindAccountAccountModal.flash
 			verifyFindAccountSearchResults('Julie Anchorsteam')
 		end
 	ensure

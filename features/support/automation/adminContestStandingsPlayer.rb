@@ -41,27 +41,27 @@ RSpec.describe "Admin->Contest->Standings->Player: Contest Standings Player veri
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Hovers over the Review link" do
-			eventMenuLinks("Standings").wait_until_present.flash(color: ["yellow"]).hover
+			eventMenuLinks("Standings").wait_until_present.flash.hover
 		end
 
 		it "Clicks on the Player sub link" do
-			eventMenuInquireSubLinks("Player").flash(color: ["yellow"]).click
+			eventMenuInquireSubLinks("Player").flash.click
 		end
 
 		it "Verifies the Contest Standings Player modal" do
-			playerStandingsModal.flash(color: ["yellow"])
+			playerStandingsModal.flash
 		end
 
 		it "Sets an invalid Player id in the search text field" do
-			playerStandingsModalSearchTextField.flash(color: ["yellow"]).set ($playerIdInvalid)
+			playerStandingsModalSearchTextField.flash.set ($playerIdInvalid)
 			sendKeysEnter
 		end
 
@@ -70,14 +70,14 @@ RSpec.describe "Admin->Contest->Standings->Player: Contest Standings Player veri
 		end
 
 		it "Sets a vaild Player id in the search text field" do
-			playerStandingsModalSearchTextField.flash(color: ["yellow"]).click
+			playerStandingsModalSearchTextField.flash.click
 			sendKeysClear
-      playerStandingsModalSearchTextField.flash(color: ["yellow"]).set ($playerId)
+      playerStandingsModalSearchTextField.flash.set ($playerId)
       sendKeysEnter
 		end
 
 		it "Verifies the Player result modal" do
-			playerStandingsResultModal.flash(color: ["yellow"])
+			playerStandingsResultModal.flash
 		end
 	ensure
 	after(:all) do

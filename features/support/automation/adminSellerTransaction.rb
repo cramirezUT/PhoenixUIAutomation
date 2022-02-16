@@ -43,41 +43,41 @@ RSpec.describe "Admin Seller Transaction functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Seller tab" do
-      adminMenuLinks("Seller").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Seller").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Transaction link" do
-      eventMenuLinks("Transaction").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Transaction").wait_until_present.flash.click
     end
 
 		it "Verifies Seller Transaction modal" do
-			adminSellerTransactionModal.flash(color: ["yellow"])
+			adminSellerTransactionModal.flash
 		end
 		#### TYPE PAYMENT ####
 		it "Selects the Payment Type" do
-			adminSellerTransactionModalTypeDropdown.flash(color: ["yellow"]).click
-			adminSellerTransactionModalTypeSearchTextField.flash(color: ["yellow"]).set ($sellerTypeOptionPayment)
+			adminSellerTransactionModalTypeDropdown.flash.click
+			adminSellerTransactionModalTypeSearchTextField.flash.set ($sellerTypeOptionPayment)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets the Seller id in text field" do
-			adminSellerTransactionModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
-			adminSellerTransactionModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
 			sendKeysTab
 		end
 
 		it "Sets an amount in the amount text field" do
-			adminSellerTransactionModalCurrencyAmountTextField.flash(color: ["yellow"]).set ($sellerAmountOneDollar)
+			adminSellerTransactionModalCurrencyAmountTextField.flash.set ($sellerAmountOneDollar)
 			sendKeysTab
 		end
 
 		it "Clicks on the Submit button" do
-			adminSellerTransactionModalSubmitButton.flash(color: ["yellow"]).click
+			adminSellerTransactionModalSubmitButton.flash.click
 		end
 
 		it "Verifies the transaction amount was summited" do
@@ -85,25 +85,25 @@ RSpec.describe "Admin Seller Transaction functionality test", :regression do
 		end
 		#### TYPE ADUJUST ####
 		it "Selects the Adjust Type" do
-			adminSellerTransactionModalTypeDropdown.flash(color: ["yellow"]).click
-			adminSellerTransactionModalTypeSearchTextField.flash(color: ["yellow"]).set ($sellerTypeOptionAdjust)
+			adminSellerTransactionModalTypeDropdown.flash.click
+			adminSellerTransactionModalTypeSearchTextField.flash.set ($sellerTypeOptionAdjust)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets the Seller id in text field" do
-			adminSellerTransactionModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
-			adminSellerTransactionModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
 			sendKeysTab
 		end
 
 		it "Sets an amount in the amount text field" do
-			adminSellerTransactionModalCurrencyAmountTextField.flash(color: ["yellow"]).set ($sellerAmountOneDollar)
+			adminSellerTransactionModalCurrencyAmountTextField.flash.set ($sellerAmountOneDollar)
 			sendKeysTab
 		end
 
 		it "Clicks on the Submit button" do
-			adminSellerTransactionModalSubmitButton.flash(color: ["yellow"]).click
+			adminSellerTransactionModalSubmitButton.flash.click
 		end
 
 		it "Verifies the transaction amount was summited" do

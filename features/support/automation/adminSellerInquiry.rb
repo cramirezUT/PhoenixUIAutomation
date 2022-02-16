@@ -43,23 +43,23 @@ RSpec.describe "Admin Seller Inquiry functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Seller tab" do
-      adminMenuLinks("Seller").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Seller").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Inquiry link" do
-      eventMenuLinks("Inquiry").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Inquiry").wait_until_present.flash.click
     end
 
 		it "Verifies Seller Inquiry modal" do
-			adminSellerInquiryModal.flash(color: ["yellow"])
+			adminSellerInquiryModal.flash
 		end
 
 		it "Sets an invalid Seller id" do
-			adminSellerInquiryModalSellerTextField.flash(color: ["yellow"]).set ($sellerIdInvalid)
+			adminSellerInquiryModalSellerTextField.flash.set ($sellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,15 +68,15 @@ RSpec.describe "Admin Seller Inquiry functionality test", :regression do
 		end
 
 		it "Sets a valid Seller id" do
-			adminSellerInquiryModalSellerTextField.flash(color: ["yellow"]).click
+			adminSellerInquiryModalSellerTextField.flash.click
 			sendKeysClear
-			adminSellerInquiryModalSellerTextField.flash(color: ["yellow"]).click
-			adminSellerInquiryModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
+			adminSellerInquiryModalSellerTextField.flash.click
+			adminSellerInquiryModalSellerTextField.flash.set ($sellerId)
 			sendKeysTab
 		end
 
 		it "Verifies the search summary modal" do
-			adminSellerInquirySummaryModal.flash(color: ["yellow"])
+			adminSellerInquirySummaryModal.flash
 		end
 
 		it "Verifies the date in summary modal" do

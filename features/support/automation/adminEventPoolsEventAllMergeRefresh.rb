@@ -41,40 +41,40 @@ RSpec.describe "Event Pools All selection and Refresh test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Event tab" do
-      adminMenuLinks("Event").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Event").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Pools link" do
-			eventMenuLinks("Pools").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Pools").wait_until_present.flash.click
 		end
 
 		it "Sets a valid Event id" do
-      eventPoolsEventDropdown.wait_until_present.flash(color: ["yellow"]).click
-      eventPoolsEventSearchTextField.wait_until_present.flash(color: ["yellow"]).set ($eventId)
+      eventPoolsEventDropdown.wait_until_present.flash.click
+      eventPoolsEventSearchTextField.wait_until_present.flash.set ($eventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
-      eventPoolsSourceDropdown.flash(color: ["yellow"]).click
+      eventPoolsSourceDropdown.flash.click
       eventPoolsSourceSearchTextField.wait_until_present.set ($sourceId)
       sendKeysEnter
       sendKeysTab
     end
 
     it "Click on the Races dropdown" do
-      eventRacesDropdown.wait_until_present.flash(color: ["yellow"]).click
+      eventRacesDropdown.wait_until_present.flash.click
     end
 
 		it "Clicks on the All checkbox" do
-			eventRaceSearchSelectAllCheckbox.flash(color: ["yellow"]).click
+			eventRaceSearchSelectAllCheckbox.flash.click
 		end
 
 		it "Clicks on the Done button" do
-			eventRacesSearchDoneButton.flash(color: ["yellow"]).click
+			eventRacesSearchDoneButton.flash.click
 		end
 
 		it "Verifies the valid search result" do
@@ -83,7 +83,7 @@ RSpec.describe "Event Pools All selection and Refresh test", :regression do
     end
 
     it "Clicks on the Refresh button" do
-      eventPoolsRefreshButton.flash(color: ["yellow"]).click
+      eventPoolsRefreshButton.flash.click
     end
 
     it "Verifies the valid search result" do
@@ -91,14 +91,14 @@ RSpec.describe "Event Pools All selection and Refresh test", :regression do
     end
 
     it "Sets the Source" do
-      eventPoolsSourceDropdown.flash(color: ["yellow"]).click
+      eventPoolsSourceDropdown.flash.click
       eventPoolsSourceSearchTextField.wait_until_present.set ($sourceMeregeId)
       sendKeysEnter
       sendKeysTab
     end
 
     it "Clicks on the Refresh button" do
-      eventPoolsRefreshButton.flash(color: ["yellow"]).click
+      eventPoolsRefreshButton.flash.click
     end
 
     it "Verifies the valid search result" do

@@ -43,24 +43,24 @@ RSpec.describe "Admin Terminal Summary functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Terminal tab" do
-      adminMenuLinks("Terminal").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Terminal").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Summary link" do
-      eventMenuLinks("Summary").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Summary").wait_until_present.flash.click
     end
 
 		it "Verifies Terminal Summary modal" do
-			adminTerminalSummaryModal.flash(color: ["yellow"])
+			adminTerminalSummaryModal.flash
 		end
 
 		it "Sets an invalid group id in text field" do
-			adminTerminalSummaryModalGroupsDropdown.flash(color: ["yellow"]).click
-			adminTerminalSummaryModalGroupsSearchTextField.flash(color: ["yellow"]).set ($grouplIdInvalid)
+			adminTerminalSummaryModalGroupsDropdown.flash.click
+			adminTerminalSummaryModalGroupsSearchTextField.flash.set ($grouplIdInvalid)
 		end
 
 		it "Verifies the invalid group id error" do
@@ -68,15 +68,15 @@ RSpec.describe "Admin Terminal Summary functionality test", :regression do
 		end
 
 		it "Sets a valid group id in text field" do
-			adminTerminalSummaryModalGroupsSearchTextField.flash(color: ["yellow"]).click
-			adminTerminalSummaryModalGroupsSearchTextField.flash(color: ["yellow"]).click
-			adminTerminalSummaryModalGroupsSearchTextField.flash(color: ["yellow"]).set ($grouplId)
+			adminTerminalSummaryModalGroupsSearchTextField.flash.click
+			adminTerminalSummaryModalGroupsSearchTextField.flash.click
+			adminTerminalSummaryModalGroupsSearchTextField.flash.set ($grouplId)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Verifies results modal" do
-			adminTerminalGroupSummaryResultModal.flash(color: ["yellow"])
+			adminTerminalGroupSummaryResultModal.flash
 		end
 	ensure
 	after(:all) do

@@ -43,23 +43,23 @@ RSpec.describe "Admin Seller Message functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Seller tab" do
-      adminMenuLinks("Seller").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Seller").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Message link" do
-      eventMenuLinks("Message").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Message").wait_until_present.flash.click
     end
 
 		it "Verifies Seller Over Message modal" do
-			adminSellerMessageModal.flash(color: ["yellow"])
+			adminSellerMessageModal.flash
 		end
 
 		it "Sets an invalid Seller id in text field" do
-			adminSellerMessageModalSellerTextField.flash(color: ["yellow"]).set ($sellerIdInvalid)
+			adminSellerMessageModalSellerTextField.flash.set ($sellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,10 +68,10 @@ RSpec.describe "Admin Seller Message functionality test", :regression do
 		end
 
 		it "Sets a valid Seller id in text field" do
-			adminSellerMessageModalSellerTextField.flash(color: ["yellow"]).click
+			adminSellerMessageModalSellerTextField.flash.click
 			sendKeysClear
-			adminSellerMessageModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
-			adminSellerMessageModalSellerTextField.flash(color: ["yellow"]).set ($sellerId)
+			adminSellerMessageModalSellerTextField.flash.set ($sellerId)
+			adminSellerMessageModalSellerTextField.flash.set ($sellerId)
 			sendKeysTab
 		end
 

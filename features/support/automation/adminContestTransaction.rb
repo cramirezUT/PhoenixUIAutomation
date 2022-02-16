@@ -45,38 +45,38 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Contest tab" do
-      adminMenuLinks("Contest").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Contest").wait_until_present.flash.click
 		end
 
 		it "Clicks over the Transaction link" do
-			eventMenuLinks("Transaction").wait_until_present.flash(color: ["yellow"]).click
+			eventMenuLinks("Transaction").wait_until_present.flash.click
 		end
 
 		it "Verifies the Player Transaction modal" do
-			playerTransactionsModal.flash(color: ["yellow"])
+			playerTransactionsModal.flash
 		end
 
 		it "Sets a group id" do
-			playerTransactionsModalGroupDropdown.flash(color: ["yellow"]).click
-			playerTransactionsModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
+			playerTransactionsModalGroupDropdown.flash.click
+			playerTransactionsModalGroupSearchTextField.flash.set ($groupId)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Selects the Transaction type of Deposit" do
-			playerTransactionsModalTransactionDropdown.flash(color: ["yellow"]).click
-			playerTransactionsModalTransactionSearchTextField.flash(color: ["yellow"]).set ($transactionOptionDeposit)
+			playerTransactionsModalTransactionDropdown.flash.click
+			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionDeposit)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
 		it "Sets an invalid Player id" do
-			playerTransactionsModalPlayerTextField.flash(color: ["yellow"]).set ($playerIdInvalid)
+			playerTransactionsModalPlayerTextField.flash.set ($playerIdInvalid)
 			sendKeysEnter
 		end
 
@@ -85,17 +85,17 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 		end
 
 		it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash(color: ["yellow"]).set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($playerId)
 			sendKeysEnter
 		end
     #### DEPOSIT OPTION ####
 		it "Sets a USD Amount of $1.01" do
-			playerTransactionsModalAountTextField.flash(color: ["yellow"]).set ($depositAmount101Dollar)
+			playerTransactionsModalAountTextField.flash.set ($depositAmount101Dollar)
 			sendKeysTab
 		end
 
 		it "Clicks sumbit button" do
-			playerTransactionsModalSubmitButton.flash(color: ["yellow"]).click
+			playerTransactionsModalSubmitButton.flash.click
 		end
 
 		it "Verifies the deposit amount" do
@@ -104,25 +104,25 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 		end
     #### WITHDRAW OPTION ####
     it "Selects the Transaction type of Withdraw" do
-			playerTransactionsModalTransactionDropdown.flash(color: ["yellow"]).click
-			playerTransactionsModalTransactionSearchTextField.flash(color: ["yellow"]).set ($transactionOptionWithdraw)
+			playerTransactionsModalTransactionDropdown.flash.click
+			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionWithdraw)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash(color: ["yellow"]).set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($playerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $-1.02" do
-			playerTransactionsModalAountTextField.flash(color: ["yellow"]).set ($withdrawAmount102Dollar)
+			playerTransactionsModalAountTextField.flash.set ($withdrawAmount102Dollar)
 			sendKeysTab
 		end
 
 		it "Clicks sumbit button" do
-			playerTransactionsModalSubmitButton.flash(color: ["yellow"]).click
+			playerTransactionsModalSubmitButton.flash.click
 		end
 
 		it "Verifies the withdraw amount" do
@@ -131,25 +131,25 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 		end
     #### BALANCE OPTION ####
     it "Selects the Transaction type of Withdraw" do
-			playerTransactionsModalTransactionDropdown.flash(color: ["yellow"]).click
-			playerTransactionsModalTransactionSearchTextField.flash(color: ["yellow"]).set ($transactionOptionBalance)
+			playerTransactionsModalTransactionDropdown.flash.click
+			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionBalance)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash(color: ["yellow"]).set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($playerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $1.03" do
-			playerTransactionsModalAountTextField.flash(color: ["yellow"]).set ($balanceAmount103Dollar)
+			playerTransactionsModalAountTextField.flash.set ($balanceAmount103Dollar)
 			sendKeysTab
 		end
 
 		it "Clicks sumbit button" do
-			playerTransactionsModalSubmitButton.flash(color: ["yellow"]).click
+			playerTransactionsModalSubmitButton.flash.click
 		end
 
 		it "Verifies the balance amount" do
@@ -158,25 +158,25 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 		end
     #### WINNINGS OPTION ####
     it "Selects the Transaction type of Withdraw" do
-			playerTransactionsModalTransactionDropdown.flash(color: ["yellow"]).click
-			playerTransactionsModalTransactionSearchTextField.flash(color: ["yellow"]).set ($transactionOptionWinnings)
+			playerTransactionsModalTransactionDropdown.flash.click
+			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionWinnings)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash(color: ["yellow"]).set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($playerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $1.04" do
-			playerTransactionsModalAountTextField.flash(color: ["yellow"]).set ($winningsAmount104Dollar)
+			playerTransactionsModalAountTextField.flash.set ($winningsAmount104Dollar)
 			sendKeysTab
 		end
 
 		it "Clicks sumbit button" do
-			playerTransactionsModalSubmitButton.flash(color: ["yellow"]).click
+			playerTransactionsModalSubmitButton.flash.click
 		end
 
 		it "Verifies the winnings amount" do
@@ -185,25 +185,25 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 		end
     #### ENTRY OPTION ####
     it "Selects the Transaction type of Withdraw" do
-			playerTransactionsModalTransactionDropdown.flash(color: ["yellow"]).click
-			playerTransactionsModalTransactionSearchTextField.flash(color: ["yellow"]).set ($transactionOptionWinnings)
+			playerTransactionsModalTransactionDropdown.flash.click
+			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionWinnings)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash(color: ["yellow"]).set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($playerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $1.05" do
-			playerTransactionsModalAountTextField.flash(color: ["yellow"]).set ($entryAmount105Dollar)
+			playerTransactionsModalAountTextField.flash.set ($entryAmount105Dollar)
 			sendKeysTab
 		end
 
 		it "Clicks sumbit button" do
-			playerTransactionsModalSubmitButton.flash(color: ["yellow"]).click
+			playerTransactionsModalSubmitButton.flash.click
 		end
 
 		it "Verifies the entry amount" do

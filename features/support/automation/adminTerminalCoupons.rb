@@ -43,24 +43,24 @@ RSpec.describe "Admin Terminal Coupons functionality test", :regression do
     end
 
 		it "Clicks on the Admin tab in the main menu" do
-			mainMenuLinks("Admin").wait_until_present.flash(color: ["yellow"]).click
+			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Terminal tab" do
-      adminMenuLinks("Terminal").wait_until_present.flash(color: ["yellow"]).click
+      adminMenuLinks("Terminal").wait_until_present.flash.click
 		end
 
 		it "Clicks on the Coupons link" do
-      eventMenuLinks("Coupons").wait_until_present.flash(color: ["yellow"]).click
+      eventMenuLinks("Coupons").wait_until_present.flash.click
     end
 
 		it "Verifies Terminal Coupons modal" do
-			adminTerminalCouponsModal.flash(color: ["yellow"])
+			adminTerminalCouponsModal.flash
 		end
 
 		it "Sets an invalid group id in text field" do
-			adminTerminalCouponsModalGroupDropdown.flash(color: ["yellow"]).click
-			adminTerminalCouponsModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupIdInvalid)
+			adminTerminalCouponsModalGroupDropdown.flash.click
+			adminTerminalCouponsModalGroupSearchTextField.flash.set ($groupIdInvalid)
 		end
 
 		it "Verifies the invalid group id error" do
@@ -68,15 +68,15 @@ RSpec.describe "Admin Terminal Coupons functionality test", :regression do
 		end
 
 		it "Sets a valid terminal id in text field" do
-			adminTerminalCouponsModalGroupDropdown.flash(color: ["yellow"]).click
-			adminTerminalCouponsModalGroupDropdown.flash(color: ["yellow"]).click
-			adminTerminalCouponsModalGroupSearchTextField.flash(color: ["yellow"]).set ($groupId)
+			adminTerminalCouponsModalGroupDropdown.flash.click
+			adminTerminalCouponsModalGroupDropdown.flash.click
+			adminTerminalCouponsModalGroupSearchTextField.flash.set ($groupId)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Verifies the results modal" do
-			adminTerminalCouponsResultModal.flash(color: ["yellow"])
+			adminTerminalCouponsResultModal.flash
 		end
 	ensure
 	after(:all) do
