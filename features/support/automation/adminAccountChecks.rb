@@ -2,6 +2,11 @@
 ## Author: Carlos Ramirez
 ## NOTES: Need to find out how to get checks "held" in
 ## order to see more functionality open
+## go to transactions tab and set the source group as Test
+## select Deposit then select the checkbox
+## then set the Account to : TST-8683
+## Amount above $500
+## You can see the check help in the Checks tab
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
@@ -68,9 +73,14 @@ RSpec.describe "Admin->Account->Checks: Account Checks validation", :regression 
 			accountChecksModal.wait_until_present.flash
 			accountChecksSearchTextField.click
 			sendKeysClear
-      accountChecksSearchTextField.wait_until_present.flash.set ($accountGroupId)
+      accountChecksSearchTextField.flash.set ($accountGroupId)
+      accountChecksSearchTextField.flash.set ($accountGroupId)
       sendKeysEnter
 		end
+
+    it "Verifies the Account Held Checks result table" do
+      accountChecksResultTable.flash
+    end
 	ensure
 	after(:all) do
 		logOutFuction

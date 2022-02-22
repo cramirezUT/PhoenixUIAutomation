@@ -2,6 +2,8 @@
 ## Author: Carlos Ramirez
 ## NOTE: Need to find a valid Player group number for test
 ## to proceed
+## Need a wager for a ticket
+## Use TLC-8 or TLC-10
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
@@ -59,7 +61,7 @@ RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test",
 		end
 
 		it "Sets an invalid Group number" do
-			playerCancelTicketModalGroupNumberTextField.flash.set ($groupIdInvalid)
+			playerCancelTicketModalGroupNumberTextField.flash.set ($playerIdInvalid)
       sendKeysEnter
 		end
 
@@ -67,16 +69,18 @@ RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test",
 			verifycontestCancelErrorSearchResults('A group must be specified! <group id>-<number>')
 		end
 
-		# it "Sets a vaild group number" do
-    #   playerCancelTicketModalGroupNumberTextField.flash.click
-    #   playerCancelTicketModalGroupNumberTextField.flash.set ($groupId)
-    #   sendKeysEnter
-		# 	sendKeysTab
-		# end
-		#
-		# it "Verifies the valid search result" do
-		#
-    # end
+		it "Sets a vaild group number" do
+      playerCancelTicketModalGroupNumberTextField.flash.click
+      sendKeysClear
+      playerCancelTicketModalGroupNumberTextField.flash.set ($playerId)
+      playerCancelTicketModalGroupNumberTextField.flash.set ($playerId)
+      sendKeysEnter
+			sendKeysTab
+		end
+
+		it "Verifies the valid search result" do
+      verifycontestCancelErrorSearchResults('No tickets found to cancel for player TLC-10')
+    end
 	ensure
 	after(:all) do
 		logOutFuction

@@ -8,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountGroupId = "uqa-10032"
+$accountGroupId = "TST-8683"
 $accountGroupIdInvalid = "TNT"
 
 module AccountChecksPage
@@ -28,9 +28,12 @@ module AccountChecksPage
 		@browser.button(id: 'AccountChecks-Select-Refresh')
 	end
 
-
 	def accountChecksHelpButton
 		@browser.button(id: 'AccountChecks-Select-Help')
+	end
+
+	def accountChecksResultTable
+		@browser.table(id: 'AccountChecks-Checks')
 	end
 
 	#### GETTERS ####

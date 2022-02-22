@@ -9,7 +9,7 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 $accountGroupId = "TST - UNITED TOTE SYSTEM"
-$accountId = "TST-8683"
+$accountId = "8683"
 $accountIdInvalid = "TNT"
 $accountActionOptionView = "View"
 $accountActionOptionEdit = "Edit"
@@ -53,6 +53,14 @@ module AccountEditPage
   def accountEditAccountSearchTextField
     @browser.text_field(id: 'AccountEdit-Select-Account')
   end
+
+	def accountEditResultModalCloseButton
+		@browser.button(id: 'Account-Cancel')
+	end
+
+	def accountEditResultModalSaveButton
+		@browser.button(id: 'Account-Save')
+	end
 
   #### EDIT SELECTION CRITERIA MODAL ####
 	def editSelectionCriteriaModal
@@ -113,11 +121,22 @@ module AccountEditPage
 		@browser.label(id: 'AccountEdit-Error')
 	end
 
+	def getAccountExistingAccountAlert
+		@browser.label(id: 'Account-Error')
+	end
+
 	#### VERIFIERS ####
 	def verifyAccountEditError(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getAccountEditError.text).to include(expectedResult)
 		getAccountEditError.flash(color: ["yellow"])
+	end
+
+	def verifyAccountEditExistingAlert(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAccountExistingAccountAlert.text).to include(expectedResult)
+		getAccountExistingAccountAlert.flash(color: ["yellow"])
 	end
 end

@@ -10,7 +10,7 @@ require 'rspec/expectations'
 
 $accountGroupId = "TST-8683"
 $invalidAccountGroupId = "99"
-$numberOfDays = "1"
+$numberOfDays1 = "1"
 $donateAmount = "1"
 
 module AccountDonationPage
@@ -47,6 +47,10 @@ module AccountDonationPage
 	end
 
 	#### AUTO DONATION SETTINGS #####
+	def autoDonationSettingsModal
+		@browser.div(id: 'Edit')
+	end
+
 	def autoDonationSettingsModalCloseButton
 		@browser.button(id: 'Edit-Cancel')
 	end
@@ -104,6 +108,10 @@ module AccountDonationPage
 		@browser.label(id: 'AccountDonation-Amounts-Donation')
 	end
 
+	def getAcountDonationDaysLabel
+		@browser.label(id: 'AccountDonation-Select-Auto')
+	end
+
 	#### VERIFIERS ####
 	def verifyEventInformationResultByIndex(result)
 		sleep(1)
@@ -117,5 +125,12 @@ module AccountDonationPage
 		expectedResult = "#{result}"
 		expect(getAccountDonation.text).to include(expectedResult)
 		getAccountDonation.flash(color: ["yellow"])
+	end
+
+	def verifyAccountDonationDays(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAcountDonationDaysLabel.text).to include(expectedResult)
+		getAcountDonationDaysLabel.flash(color: ["yellow"])
 	end
 end

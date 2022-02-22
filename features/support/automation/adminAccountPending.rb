@@ -4,6 +4,9 @@
 ## missing data. And I need to find out how to create more account
 ## users in order to "Pending" a ticket.
 
+## Can't complete functionality in Phoenix need a wagering system
+## To place a wager and split the wager between two races
+
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"

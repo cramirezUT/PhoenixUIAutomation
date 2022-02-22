@@ -1,6 +1,7 @@
 ## e2e RSpec/Ruby Test
 ## Author: Carlos Ramirez
 ## NOTES: Need to find out how to get a valid account number
+## just need to enter the end of the account number 8683
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
@@ -82,12 +83,17 @@ RSpec.describe "Admin->Account->Edit: Account Edit validation", :regression do
 			accountEditAccountSearchTextField.flash.click
 			sendKeysClear
       accountEditAccountSearchTextField.flash.set ($accountId)
+      accountEditAccountSearchTextField.flash.set ($accountId)
       sendKeysEnter
 		end
 
 		it "Verifies the valid account id" do
-			verifyAccountEditError("Invalid account number 'TST-8683'!")
+			verifyAccountEditExistingAlert("Account TST-8683 has existing transactions!")
 		end
+
+    it "Clicks on the close button in the result modal" do
+      accountEditResultModalCloseButton.flash.click
+    end
 	ensure
 	after(:all) do
 		logOutFuction
