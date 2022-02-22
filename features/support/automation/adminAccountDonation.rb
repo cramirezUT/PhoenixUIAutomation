@@ -4,6 +4,7 @@
 ## setting the number of days works, but deleting and trying to
 ## the days blanks always sets the donation days to "0" which
 ## will set the donation period to never ending.
+## verified with Charley this is a bug!
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
@@ -79,57 +80,68 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
 			accountDonationEditButton.flash.click
 		end
 
+    it "Verifies the Auto Donation Modal" do
+      autoDonationSettingsModal.flash
+    end
+
 		it "Sets text in the Days text field" do
 			autoDonationSettingsModalDaysTextField.flash.click
 			sendKeysBackspace
 			autoDonationSettingsModalDaysTextField.flash.click
-			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays)
-			sendKeysTab
+			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays1)
 		end
 
-		it "Closes the Auto Donate warning" do
-			sleep(2)
-			if accountDonationZeroDonateWarningModal.present? == true
-				accountDonationZeroDonateWarningModal.flash
-				accountDonationZeroDonateWarningModalCloseButton.click
-			else
-				puts "There is no Auto Donate Warning Modal"
-			end
-		end
+    it "Clicks on the Auto donate checkbox" do
+      autoDonationSettingsModalCheckbox.flash.click
+    end
 
-		it "Clicks on the Auto donation label" do
-			autoDonationSettingsModalCheckbox.flash.click
-		end
+    it "Clicks on the save button" do
+      autoDonationSettingsModalSaveButton.flash.click
+    end
 
-		it "Clicks on the Save button" do
-			autoDonationSettingsModalSaveButton.wait_until_present.flash.click
-		end
+    it "Verifies the Donation days" do
+      verifyAccountDonationDays('AUTO DONATE ON FOR 1 DAYS')
+    end
 
-		it "Verifies the account Donation results table" do
-			accountDonationResultsModal.flash
-		end
+		# it "Closes the Auto Donate warning" do
+		# 	sleep(2)
+		# 	if accountDonationZeroDonateWarningModal.present? == true
+		# 		accountDonationZeroDonateWarningModal.flash
+		# 		accountDonationZeroDonateWarningModalCloseButton.click
+		# 	else
+		# 		puts "There is no Auto Donate Warning Modal"
+		# 	end
+		# end
 
-		it "Clicks on the Donate button" do
-			accountDonationDonateButton.flash.click
-		end
-
-		it "Clicks on the No button in the confirmation modal" do
-			accountDonationConfirmationModalNoButton.flash
-			accountDonationConfirmationModalNoButton.flash.click
-		end
-
-		it "Clicks on the Donate button" do
-			accountDonationDonateButton.flash.click
-		end
-
-		it "Sets a doation amount" do
-			accountDonationConfirmationModalTextField.flash.set ($donateAmount)
-			sendKeysTab
-		end
-
-		it "Clicks on the Yes button" do
-			accountDonationConfirmationModalYesButton.flash.click
-		end
+		# it "Clicks on the Save button" do
+		# 	autoDonationSettingsModalSaveButton.wait_until_present.flash.click
+		# end
+    #
+		# it "Verifies the account Donation results table" do
+		# 	accountDonationResultsModal.flash
+		# end
+    #
+		# it "Clicks on the Donate button" do
+		# 	accountDonationDonateButton.flash.click
+		# end
+    #
+		# it "Clicks on the No button in the confirmation modal" do
+		# 	accountDonationConfirmationModalNoButton.flash
+		# 	accountDonationConfirmationModalNoButton.flash.click
+		# end
+    #
+		# it "Clicks on the Donate button" do
+		# 	accountDonationDonateButton.flash.click
+		# end
+    #
+		# it "Sets a doation amount" do
+		# 	accountDonationConfirmationModalTextField.flash.set ($donateAmount)
+		# 	sendKeysTab
+		# end
+    #
+		# it "Clicks on the Yes button" do
+		# 	accountDonationConfirmationModalYesButton.flash.click
+		# end
 	ensure
 	after(:all) do
 		logOutFuction

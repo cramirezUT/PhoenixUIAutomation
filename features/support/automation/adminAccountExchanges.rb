@@ -2,6 +2,9 @@
 ## Author: Carlos Ramirez
 ## NOTES: Need to find out how to get exchanges on an account
 
+## Can't complete functionality in Phoenix need a wagering system
+## To place a wager and split the wager between two races
+
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
@@ -65,6 +68,7 @@ RSpec.describe "Admin->Account->Exchanges: Account Exchanges validation", :regre
 		it "Sets a vaild account id" do
 			accountExchangesAccountSearchTextField.flash.click
 			sendKeysClear
+      accountExchangesAccountSearchTextField.flash.set ($accountId)
       accountExchangesAccountSearchTextField.flash.set ($accountId)
       sendKeysEnter
 			sendKeysEnter

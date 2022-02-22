@@ -67,6 +67,7 @@ RSpec.describe "Admin->Account->Cancel: Account ticket cancelation validation", 
 			accountCancelSearchTextField.click
 			sendKeysClear
       accountCancelSearchTextField.flash.set ($accountGroupId)
+      accountCancelSearchTextField.flash.set ($accountGroupId)
       sendKeysEnter
 		end
 

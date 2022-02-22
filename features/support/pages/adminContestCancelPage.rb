@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$groupId = "uqa-10032"
-$groupIdInvalid = "TNT"
+$playerId = "TLC-10"
+$playerIdInvalid = "TNT"
 
 module ContestCancelPage
 	include RSpec::Matchers

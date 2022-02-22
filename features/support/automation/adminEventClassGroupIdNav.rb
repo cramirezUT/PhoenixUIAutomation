@@ -1,4 +1,4 @@
-features/support/automation/adminEventLiabilityEventAll.rb ## e2e RSpec/Ruby Test
+## e2e RSpec/Ruby Test
 ## Author: Carlos Ramirez
 
 require_relative "../pages/toteLoginPage.rb"

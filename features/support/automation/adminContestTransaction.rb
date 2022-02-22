@@ -5,6 +5,9 @@
 ## amount entered. And entry fee doens't add or subtract from
 ## the balance
 
+## Need to add a user in the Edit tab
+## Need a PIN and Tournament
+
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
