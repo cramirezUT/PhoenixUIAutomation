@@ -8,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$playerId = "TL1-1"
+$playerId = "TL1-10"
 $playerIdInvalid = "TNT"
 
 module ContestStandingsPlayerPage
@@ -31,14 +31,43 @@ module ContestStandingsPlayerPage
 	def playerStandingsModalHelpButton
 		@browser.button(id: 'PlayerStandings-Select-Help')
 	end
-
+	#### PLAYER RESULT MODAL ####
 	def playerStandingsResultModal
 		@browser.div(id: 'PlayerStandings-Standing')
 	end
+	#############################
 
 	#### GETTERS ####
 	def getPlayerResultError
 		@browser.label(id: 'PlayerStandings-Error')
+	end
+
+	def getPlayerStandingsResultModalWinnings
+		@browser.label(id: 'PlayerStandings-Standing-Winnings')
+	end
+
+	def getPlayerStandingsResultModalWagered
+		@browser.label(id: 'PlayerStandings-Standing-Wagered')
+	end
+
+	def getPlayerStandingsResultModalContest
+		@browser.label(id: 'PlayerStandings-Standing-Contest')
+	end
+
+	def getPlayerStandingsResultModalTournament
+		@browser.label(id: 'PlayerStandings-Standing-Tournament')
+	end
+
+	def getPlayerStandingsResultModalStatus
+		@browser.label(id: 'PlayerStandings-Standing-cStatus')
+	end
+
+	def getPlayerStandingsResultModalRank
+		@browser.label(id: 'PlayerStandings-Standing-cRank')
+	end
+
+	def getPlayerStandingsResultModalPrize
+		@browser.label(id: 'PlayerStandings-Standing-cPrize')
 	end
 
 	#### VERIFIERS ####
@@ -47,5 +76,31 @@ module ContestStandingsPlayerPage
 		expectedResult = "#{result}"
 		expect(getPlayerResultError.text).to include(expectedResult)
 		getPlayerResultError.flash(color: ["yellow"])
+	end
+
+
+	def verifyPlayerResultModalData(winnings, wagered, contest, tournament, status, rank, prize)
+		sleep(1)
+		expectedResultWinnings = "#{winnings}"
+		expectedResultWagered = "#{wagered}"
+		expectedResultContest = "#{contest}"
+		expectedResultTournament = "#{tournament}"
+		expectedResultStatus = "#{status}"
+		expectedResultRank = "#{rank}"
+		expectedResultPrize = "#{prize}"
+		expect(getPlayerStandingsResultModalWinnings.text).to include(expectedResultWinnings)
+		expect(getPlayerStandingsResultModalWagered.text).to include(expectedResultWagered)
+		expect(getPlayerStandingsResultModalContest.text).to include(expectedResultContest)
+		expect(getPlayerStandingsResultModalTournament.text).to include(expectedResultTournament)
+		expect(getPlayerStandingsResultModalStatus.text).to include(expectedResultStatus)
+		expect(getPlayerStandingsResultModalRank.text).to include(expectedResultRank)
+		expect(getPlayerStandingsResultModalPrize.text).to include(expectedResultPrize)
+		getPlayerStandingsResultModalWinnings.flash(color: ["yellow"])
+		getPlayerStandingsResultModalWagered.flash(color: ["yellow"])
+		getPlayerStandingsResultModalContest.flash(color: ["yellow"])
+		getPlayerStandingsResultModalTournament.flash(color: ["yellow"])
+		getPlayerStandingsResultModalStatus.flash(color: ["yellow"])
+		getPlayerStandingsResultModalRank.flash(color: ["yellow"])
+		getPlayerStandingsResultModalPrize.flash(color: ["yellow"])
 	end
 end
