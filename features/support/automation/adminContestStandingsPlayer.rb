@@ -79,6 +79,10 @@ RSpec.describe "Admin->Contest->Standings->Player: Contest Standings Player veri
 		it "Verifies the Player result modal" do
 			playerStandingsResultModal.flash
 		end
+
+    it "Verifies the Winnings, Wagered, Contest, Tournament, Status, Rank and Prize data" do
+      verifyPlayerResultModalData('$4.20', '$9.20', 'Tourney 2', 'Tourney 2', 'VERIFIED', '1', '')
+    end
 	ensure
 	after(:all) do
 		logOutFuction
