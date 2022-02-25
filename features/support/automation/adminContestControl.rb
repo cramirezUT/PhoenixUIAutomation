@@ -25,6 +25,8 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :re
       launchToteBrowser
       selectSiteTable
       logInFunction
+      puts "Current Time: #{$currentDateTime}"
+      puts "Current Time Plus 1 Day: #{$currentDateTimePlus1Day}"
     end
 
     after(:each) do |example|
@@ -81,7 +83,23 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :re
 			verifyContestControlContestModal
 		end
 
-		it "Closes the Contest modal" do
+    it "Edits the No Entry date and time" do
+      contestControlContestModalNoEntryTimeTextField.flash.click
+      sendKeysSelectAll
+      sendKeysDelete
+      contestControlContestModalNoEntryTimeTextField.flash.set ($currentDateTime)
+      sendKeysTab
+    end
+
+    it "Edits the End date and time" do
+      contestControlContestModalEndTimeTextField.flash.click
+      sendKeysSelectAll
+      sendKeysDelete
+      contestControlContestModalEndTimeTextField.flash.set ($currentDateTimePlus1Day)
+      sendKeysTab
+    end
+
+    it "Closes the Contest modal" do
 			contestControlContestModalCloseButton.flash.click
 		end
 	ensure

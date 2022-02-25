@@ -72,4 +72,8 @@ module SendKeys
   def sendKeysBackspace
     @browser.send_keys :backspace
   end
+
+	def sendKeysSelectAll
+    @browser.send_keys :command, "a"
+  end
 end

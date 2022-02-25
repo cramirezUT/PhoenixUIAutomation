@@ -8,8 +8,14 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$tournamentdId = "T04"
+$tournamentdId = "T02"
 $tournamentdIdInvalid = "T100"
+$dateTime = DateTime.now
+$dateTimePlus1Day = $dateTime + 1
+$dateTimePlus2Days = $dateTime + 2
+$currentDateTime = $dateTime.strftime("%d %b %Y")
+$currentDateTimePlus1Day = $dateTimePlus1Day.strftime("%d %b %Y")
+$currentDateTimePlus2Days = $dateTimePlus2Days.strftime("%d-%b-%Y %I:%M:%S %p")
 
 module ContestControlPage
 	include RSpec::Matchers
@@ -83,7 +89,52 @@ module ContestControlPage
   end
 
 	def contestControlContestModalNoEntryTimeTextField
-    @browser.text_field(id: 'inputContestControl-Contest-End')
+    @browser.text_field(id: 'inputContestControl-Contest-NoEntry')
+  end
+
+	def contestControlContestModalNoEntryCalendarButton
+    @browser.div(id: 'ContestControl-Contest-NoEntry-seconddiv')
+  end
+
+	def contestControlContestModalEndTimeCalendarButton
+    @browser.div(id: 'ContestControl-Contest-End-thirddiv')
+  end
+
+	def contestControlContestModalEndTimeCalendarTodayLink
+		sleep(1000)
+    @browser.element(xpath: "//*[contains(@id,'calendarFooterViewinnerCalendarjqxWidget12ae287bc525')]//a[contains(@class,'jqx-calendar-footer jqx-calendar-footer-summer') and contains(text(),'Today')]")
+  end
+
+	def contestControlContestModalEndTimeCalendarClearLink
+		sleep(1000)
+    @browser.element(xpath: "//*[contains(@id,'calendarFooterViewinnerCalendarjqxWidget12ae287bc525')]//a[contains(@class,'jqx-calendar-footer jqx-calendar-footer-summer') and contains(text(),'Clear')]")
+  end
+
+	def contestControlContestModalNoEntryCalendarTodayLink
+		sleep(1000)
+    # @browser.element(xpath: "//*[contains(@id,'calendarFooterViewinnerCalendarjqxWidget0bcdf0bb743c')]//a[contains(@class,'jqx-calendar-footer jqx-calendar-footer-summer') and contains(text(),'Today')]")
+		# @browser.element(xpath: "/html/body/div[4]/div[1]/div/div[2]/table/tbody/tr/td[1]/a")
+		@browser.td(xpath: "//*[contains(@id,'ViewinnerCalendarjqxWidget')]//*[contains(@id,'todayButtonViewinnerCalendarjqxWidget')]")
+
+  end
+
+	def contestControlContestModalNoEntryCalendarClearLink
+		sleep(1000)
+    # @browser.element(xpath: "//*[contains(@id,'calendarFooterViewinnerCalendarjqxWidget0bcdf0bb743c')]//a[contains(@class,'jqx-calendar-footer jqx-calendar-footer-summer') and contains(text(),'Clear')]")
+		# @browser.td(xpath: "/html/body/div[4]/div[1]/div/div[2]/table/tbody/tr/td[2]/a")
+		@browser.td(xpath: "//*[contains(@id,'ViewinnerCalendarjqxWidget')]//*[contains(@id,'doneButtonViewinnerCalendarjqxWidget')]")
+
+
+  end
+
+	def contestControlContestModalNoEntryCalendarByDay(day)
+		sleep(1000)
+    @browser.element(xpath: "//*[contains(@id,'cellTableViewinnerCalendarjqxWidgetb8a125ab341b')]//*[contains(@class,'jqx-rc-all jqx-rc-all-summer jqx-item jqx-item-summer jqx-calendar-cell jqx-calendar-cell-summer jqx-calendar-cell-month jqx-calendar-cell-month-summer') and contains(text(),'#{day}')]")
+  end
+
+	def contestControlContestModalEndTimeCalendarByDay(day)
+		sleep(1000)
+    @browser.element(xpath: "//*[contains(@id,'cellTableViewinnerCalendarjqxWidget7a75db07f3c9')]//*[contains(@class,'jqx-rc-all jqx-rc-all-summer jqx-item jqx-item-summer jqx-calendar-cell jqx-calendar-cell-summer jqx-calendar-cell-month jqx-calendar-cell-month-summer') and contains(text(),'#{day}')]")
   end
 	##########################################
 
