@@ -9,7 +9,12 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 $playerGroupdId = "TL1-1"
-$playerGroupdIdInvalid = "TNT"
+$dateTime = DateTime.now
+$dateTimePlus1Day = $dateTime + 1
+$dateTimePlus2Days = $dateTime + 2
+$currentDateTime = $dateTime.strftime("%d %m %Y")
+$currentDateTimePlus1Day = $dateTimePlus1Day.strftime("%d %m %Y")
+$currentDateTimePlus2Days = $dateTimePlus2Days.strftime("%d %m %Y")
 
 module ContestReviewPage
 	include RSpec::Matchers
@@ -52,6 +57,18 @@ module ContestReviewPage
 		sleep(1)
 		@browser.button(id: "ContestReview-Transactions-#{index}-TransactionBox-Transaction")
 	end
+
+	def contestPlayerBeginCalanerButton
+		@browser.element(xpath: "//div[@id='ContestReview-Filter-Time-Begin-seconddiv']/div")
+	end
+
+	def contestPlayerBeginDateTextField
+    @browser.text_field(id: 'inputContestReview-Filter-Time-Begin')
+  end
+
+	def contestPlayerEndDateTextField
+    @browser.text_field(id: 'inputContestReview-Filter-Time-End')
+  end
 
 	def contestPlayerTransactionResultHeader
 		@browser.div(utindex: 'ContestReview-Transaction-HT')
