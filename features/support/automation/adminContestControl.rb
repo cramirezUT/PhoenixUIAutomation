@@ -25,8 +25,6 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :re
       launchToteBrowser
       selectSiteTable
       logInFunction
-      puts "Current Time: #{$currentDateTime}"
-      puts "Current Time Plus 1 Day: #{$currentDateTimePlus1Day}"
     end
 
     after(:each) do |example|

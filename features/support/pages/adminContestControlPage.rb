@@ -13,9 +13,9 @@ $tournamentdIdInvalid = "T100"
 $dateTime = DateTime.now
 $dateTimePlus1Day = $dateTime + 1
 $dateTimePlus2Days = $dateTime + 2
-$currentDateTime = $dateTime.strftime("%d %b %Y")
-$currentDateTimePlus1Day = $dateTimePlus1Day.strftime("%d %b %Y")
-$currentDateTimePlus2Days = $dateTimePlus2Days.strftime("%d-%b-%Y %I:%M:%S %p")
+$currentDateTime = $dateTime.strftime("%d %m %Y")
+$currentDateTimePlus1Day = $dateTimePlus1Day.strftime("%d %m %Y")
+$currentDateTimePlus2Days = $dateTimePlus2Days.strftime("%d %m %Y")
 
 module ContestControlPage
 	include RSpec::Matchers
