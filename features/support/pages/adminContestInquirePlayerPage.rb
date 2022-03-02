@@ -18,6 +18,12 @@ $filterOptionCoupon = "Coupon"
 $filterOptionPending = "Pending"
 $filterOptionChanges = "Changes"
 $eventsOptionText = "A"
+$dateTime = DateTime.now
+$dateTimePlus1Day = $dateTime + 1
+$dateTimePlus2Days = $dateTime + 2
+$currentDateTime = $dateTime.strftime("%d %m %Y")
+$currentDateTimePlus1Day = $dateTimePlus1Day.strftime("%d %m %Y")
+$currentDateTimePlus2Days = $dateTimePlus2Days.strftime("%d %m %Y")
 
 module ContestInquirePlayerPage
 	include RSpec::Matchers
@@ -110,6 +116,14 @@ module ContestInquirePlayerPage
 
 	def playerInquiryResultModal
 		@browser.div(id: 'PlayerInquiry-ScreenOutput')
+	end
+
+	def playerInquiryModalBeginTextField
+		@browser.text_field(id: 'inputPlayerInquiry-Select-Time-Begin')
+	end
+
+	def playerInquiryModalEndTextField
+		@browser.text_field(id: 'inputPlayerInquiry-Select-Time-End')
 	end
 
 	#### GETTERS ####
