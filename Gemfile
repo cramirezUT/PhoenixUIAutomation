@@ -27,7 +27,8 @@ gem "watir", "~> 6.12"
 gem 'webdriver-user-agent', '~> 7.4'
 gem 'rb-readline', '~> 0.5.3'
 #gem 'allure-rspec', '~> 0.7.7'
-gem 'nokogiri', '~> 1.12', '>= 1.12.5'
+#gem 'nokogiri', '~> 1.12', '>= 1.12.5'
+gem "nokogiri", ">= 1.13.2"
 gem 'rspec-core', '~> 3.3', '>= 3.3.1'
 gem 'rack', '~> 1.6', '>= 1.6.5'
 gem 'bundler', '~> 1.17.3'
