@@ -1,4 +1,4 @@
-## e2e RSpec/Ruby Test
+ ## e2e RSpec/Ruby Test
 ## Author: Carlos Ramirez
 
 require_relative "../pages/toteLoginPage.rb"
@@ -21,20 +21,31 @@ end
 RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for various options", :regression do
   begin
     before(:all) do
+      $continue = true
       puts "adminAccountSummaryTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
     end
 
+    around(:each) do |example|
+      if $continue
+        $continue = false
+        example.run
+        $continue = true unless example.exception
+      else
+        example.skip
+      end
+    end
+
     after(:each) do |example|
-	    if example.exception
+      if example.exception
   	    screenshot_file = "features/support/automation_screenshots/filesAccountBlock-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
   	    @browser.driver.save_screenshot(screenshot_file)
         sleep 1
         @browser.quit
-	    end
-	  end
+      end
+    end
 
     it "Verifies the main system text in the header menu" do
       isMainSystemTextDisplayed

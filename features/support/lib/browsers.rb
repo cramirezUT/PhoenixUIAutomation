@@ -8,6 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 require 'webdriver-user-agent'
+require 'headless'
 require_relative 'environments.rb'
 
 module Browsers
@@ -23,9 +24,14 @@ module Browsers
     Watir.logger.ignore(:deprecations)
     puts "Launching Chrome Browser..."
 		Selenium::WebDriver::Chrome::Service.driver_path="/usr/local/bin/chromedriver" # Uncomment for MacOS only
-		@browser = Watir::Browser.new :chrome, switches: ['--ignore-certificate-errors']
-		@browser.driver.manage.timeouts.page_load = 30
-		@browser.window.maximize()
+		# @browser = Watir::Browser.new :chrome, switches: ['--ignore-certificate-errors']
+		@browser = Watir::Browser.new :chrome, headless: true, switches: ['--ignore-certificate-errors'] # Use for headless mode
+		@browser.driver.manage.timeouts.page_load = 60
+		puts "Window Size:#{@browser.driver.manage.window.size}"
+		target_size = Selenium::WebDriver::Dimension.new(1910, 1050)
+		@browser.driver.manage.window.size = target_size
+		puts "New Window Size:#{@browser.driver.manage.window.size}"
+		# @browser.window.maximize()
 		@website = $toteSiteUrl
 		@browser.goto @website
   end

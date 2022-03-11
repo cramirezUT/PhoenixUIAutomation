@@ -19,20 +19,31 @@ end
 RSpec.describe "Tote Log in Log out test", :smoke do
   begin
     before(:all) do
+      $continue = true
       puts "ToteloginLogoutTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
     end
 
+    around(:each) do |example|
+      if $continue
+        $continue = false
+        example.run
+        $continue = true unless example.exception
+      else
+        example.skip
+      end
+    end
+
     after(:each) do |example|
-	    if example.exception
-  	    screenshot_file = "features/support/automation_screenshots/ToteloginLogoutTest-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
+      if example.exception
+  	    screenshot_file = "features/support/automation_screenshots/filesAccountBlock-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
   	    @browser.driver.save_screenshot(screenshot_file)
         sleep 1
         @browser.quit
-	    end
-	  end
+      end
+    end
 
     it "Verify the main system text in the header" do
       isMainSystemTextDisplayed

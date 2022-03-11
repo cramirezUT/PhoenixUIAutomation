@@ -21,6 +21,7 @@ end
 RSpec.describe "Admin->Contest->Review: Contest Review Date verification test", :regression do
   begin
     before(:all) do
+      $continue = true
       puts "adminContestPlayerReviewDateTest"
       launchToteBrowser
       selectSiteTable
@@ -29,14 +30,24 @@ RSpec.describe "Admin->Contest->Review: Contest Review Date verification test", 
       puts "Current Time Plus 1 Day: #{$currentDateTimePlus1Day}"
     end
 
+    around(:each) do |example|
+      if $continue
+        $continue = false
+        example.run
+        $continue = true unless example.exception
+      else
+        example.skip
+      end
+    end
+
     after(:each) do |example|
-	    if example.exception
+      if example.exception
   	    screenshot_file = "features/support/automation_screenshots/filesAccountBlock-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
   	    @browser.driver.save_screenshot(screenshot_file)
         sleep 1
         @browser.quit
-	    end
-	  end
+      end
+    end
 
     it "Verifies the main system text in the header menu" do
       isMainSystemTextDisplayed
