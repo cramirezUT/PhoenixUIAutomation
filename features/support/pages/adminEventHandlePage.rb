@@ -49,6 +49,20 @@ module HandlePage
 		@browser.button(id: 'EventHandle-Select-Group-donebutton')
 	end
 
+	def eventHandlEventLink
+		@browser.div(id: 'EventHandle-View-0-1')
+	end
+
+	#### RACE HANDLE BAR CHART ####
+	def eventRaceHandleModal
+		@browser.div(id: 'BarChart')
+	end
+
+	def eventRaceHandleModalCloseButton
+		@browser.button(id: 'BarChart-Close')
+	end
+	###############################
+
 	#### HANDLE SELECTION CRITERIA ####
 	def eventHandleSelectionCriteriaModal
 		@browser.div(id: 'EventHandle-Select-Group-FilterDivrows')
@@ -115,10 +129,20 @@ module HandlePage
 		@browser.li(id: 'ut-ms-opt-EventHandle-Select-Group_noresults')
 	end
 
+	def getEventRaceHandleModalTitle
+		@browser.element(xpath: "//*[@id='BarChart']/div[1]")
+	end
+
 	#### VERIFIERS ####
 	def verifyEventHandleSearchResults(result)
 		expectedResult = "#{result}"
 		expect(getEventHandleSearchResults.text).to eq(expectedResult)
 		getEventHandleSearchResults.flash(color: ["yellow"])
+	end
+
+	def verifyEventHandleBarChartTitle(result)
+		expectedResult = "#{result}"
+		expect(getEventRaceHandleModalTitle.text).to eq(expectedResult)
+		getEventRaceHandleModalTitle.flash(color: ["yellow"])
 	end
 end

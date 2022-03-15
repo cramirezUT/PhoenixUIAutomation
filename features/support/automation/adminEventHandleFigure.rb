@@ -75,7 +75,18 @@ RSpec.describe "Event Handle figure validation on the Phoenix application", :reg
 
     it "Verifes the Handle price" do
       puts "Event Handle Price: #{getEventHandleViewBoxPrice.flash.text}"
-      puts "NEED THE RACE PRICE TO VALIDATE THE EVENT HANDLE PRICE AGAINST"
+    end
+
+    it "Clicks on the Event name" do
+      eventHandlEventLink.flash.click
+    end
+
+    it "Verifies the race handle bar chart" do
+      verifyEventHandleBarChartTitle('Race handles for CHF - CHURCHILL DOWNS')
+    end
+
+    it "Clicks the close button in the bar chart modal" do
+      eventRaceHandleModalCloseButton.flash.click
     end
 	ensure
 	after(:all) do
