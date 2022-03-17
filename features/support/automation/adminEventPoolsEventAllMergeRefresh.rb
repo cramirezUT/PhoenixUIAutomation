@@ -105,6 +105,13 @@ RSpec.describe "Event Pools All selection and Refresh test", :regression do
       sleep(1)
       verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
     end
+
+    it "Verifes the figures" do
+      eventPoolsResultsModal.flash
+      puts "Event Result Race: #{getEventResultsRaceTotal}"
+      puts "Event Result Pool: #{getEventResultsPool}"
+      puts "Event Result Total: #{getEventResultsTotalTotal}"
+    end
 	ensure
 	after(:all) do
 		logOutFuction
