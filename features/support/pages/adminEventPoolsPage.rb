@@ -188,12 +188,28 @@ module PoolsPage
 		@browser.button(id: 'EventPools-Select-Prev')
 	end
 
+	def eventPoolsResultsModal
+		@browser.div(id: 'EventPools-View')
+	end
+
 	#### GETTERS ####
 	def getEventResultView
 		@browser.div(id: 'EventPools-View-HT-0')
 	end
 
-	def getEvenSearchResults
+	def getEventResultsRaceTotal
+		@browser.div(id: 'EventPools-View-15-0').text
+	end
+
+	def getEventResultsPool
+		@browser.div(id: 'EventPools-View-15-1').text
+	end
+
+	def getEventResultsTotalTotal
+		@browser.div(id: 'EventPools-View-15-2').text
+	end
+
+	def getEventSearchResults
 		@browser.li(id: 'ut-ms-opt-EventPools-Select-Event_noresults')
 	end
 
@@ -206,7 +222,7 @@ module PoolsPage
 
 	def verifyEventSearchResultsInvalid(result)
 		expectedResult = "#{result}"
-		expect(getEvenSearchResults.text).to eq(expectedResult)
-		getEvenSearchResults.flash(color: ["yellow"])
+		expect(getEventSearchResults.text).to eq(expectedResult)
+		getEventSearchResults.flash(color: ["yellow"])
 	end
 	end
