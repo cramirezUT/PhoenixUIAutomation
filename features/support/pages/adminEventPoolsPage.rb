@@ -196,17 +196,16 @@ module PoolsPage
 	def getEventResultView
 		@browser.div(id: 'EventPools-View-HT-0')
 	end
-
-	def getEventResultsRaceTotal
-		@browser.div(id: 'EventPools-View-15-0').text
+	def getEventResultsRaceTotal(index)
+		@browser.div(id: "EventPools-View-#{index}-0").text
 	end
 
-	def getEventResultsPool
-		@browser.div(id: 'EventPools-View-15-1').text
+	def getEventResultsPool(index)
+		@browser.div(id: "EventPools-View-#{index}-1").text
 	end
 
-	def getEventResultsTotalTotal
-		@browser.div(id: 'EventPools-View-15-2').text
+	def getEventResultsTotalTotal(index)
+		@browser.div(id: "EventPools-View-#{index}-2").text
 	end
 
 	def getEventSearchResults
