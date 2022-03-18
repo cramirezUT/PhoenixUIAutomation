@@ -90,6 +90,13 @@ RSpec.describe "Event Pools Event Id valid and invalid and selects an advanced r
 		it "Clicks on the previous race arrow" do
 			eventPoolsLeftArrow.flash.click
 		end
+
+		it "Verifes the figures" do
+      eventPoolsResultsModal.flash
+      puts "Event Result Race: #{getEventResultsRaceTotal(14)}"
+      puts "Event Result Pool: #{getEventResultsPool(14)}"
+      puts "Event Result Total: #{getEventResultsTotalTotal(14)}"
+    end
 	ensure
 	after(:all) do
 		logOutFuction
