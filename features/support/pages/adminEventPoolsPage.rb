@@ -34,7 +34,7 @@ module PoolsPage
 		@browser.button(id: 'EventPools-Select-Help')
 	end
 
-	def eventPoolsHomeButton
+	def eventPoolsCurrentRaceButton
 		@browser.button(id: 'EventPools-Select-Current')
 	end
 
@@ -196,6 +196,7 @@ module PoolsPage
 	def getEventResultView
 		@browser.div(id: 'EventPools-View-HT-0')
 	end
+
 	def getEventResultsRaceTotal(index)
 		@browser.div(id: "EventPools-View-#{index}-0").text
 	end
@@ -206,6 +207,10 @@ module PoolsPage
 
 	def getEventResultsTotalTotal(index)
 		@browser.div(id: "EventPools-View-#{index}-2").text
+	end
+
+	def getEventResultsChangeTotal(index)
+		@browser.div(id: "EventPools-View-#{index}-3").text
 	end
 
 	def getEventSearchResults

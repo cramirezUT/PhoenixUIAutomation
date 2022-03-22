@@ -34,7 +34,7 @@ module LiabilityPage
 		@browser.button(id: 'EventLiability-Select-Help')
 	end
 
-	def eventLiabilityHomeButton
+	def eventLiabilityCurrentRaceButton
 		@browser.button(id: 'EventLiability-Select-Current')
 	end
 
@@ -213,32 +213,32 @@ module LiabilityPage
 		@browser.li(id: 'ut-ms-opt-EventLiability-Select-Event_noresults')
 	end
 
-	def getEventRacePayoffAmount
-		@browser.div(id: 'EventLiability-View-0-6')
+	def getEventRacePayoffAmount(index)
+		@browser.div(id: "EventLiability-View-#{index}-6")
 	end
 
-	def getEventRaceBreakageAmount
-		@browser.div(id: 'EventLiability-View-0-5')
+	def getEventRaceBreakageAmount(index)
+		@browser.div(id: "EventLiability-View-#{index}-5")
 	end
 
-	def getEventRaceCommissionAmount
-		@browser.div(id: 'EventLiability-View-0-4')
+	def getEventRaceCommissionAmount(index)
+		@browser.div(id: "EventLiability-View-#{index}-4")
 	end
 
-	def getEventRaceRefundAmount
-		@browser.div(id: 'EventLiability-View-0-3')
+	def getEventRaceRefundAmount(index)
+		@browser.div(id: "EventLiability-View-#{index}-3")
 	end
 
-	def getEventRaceTotalAmount
-		@browser.div(id: 'EventLiability-View-0-2')
+	def getEventRaceTotalAmount(index)
+		@browser.div(id: "EventLiability-View-#{index}-2")
 	end
 
-	def getEventRacePool
-		@browser.div(id: 'EventLiability-View-0-1')
+	def getEventRacePool(index)
+		@browser.div(id: "EventLiability-View-#{index}-1")
 	end
 
-	def getEventRaceRace
-		@browser.div(id: 'EventLiability-View-0-0')
+	def getEventRaceRace(index)
+		@browser.div(id: "EventLiability-View-#{index}-0")
 	end
 
 	#### VERIFIERS ####
