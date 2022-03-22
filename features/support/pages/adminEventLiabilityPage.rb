@@ -42,6 +42,10 @@ module LiabilityPage
 		@browser.button(id: 'EventLiability-Select-Past')
 	end
 
+	def eventLiabilityNextButton
+		@browser.button(id: 'EventLiability-Select-Next')
+	end
+
 	def eventLiabilityEventDropdown
 		@browser.button(id: 'EventLiability-Select-Event-mainbutton')
 	end
@@ -194,6 +198,10 @@ module LiabilityPage
 
 	def eventRaceSearchSelectAllCheckbox
 		@browser.checkbox(id: 'ut-ms-opt-EventLiability-Select-Races-selectallcheckbox')
+	end
+
+	def eventResultView
+		@browser.div(id: 'EventLiability-View')
 	end
 
 	#### GETTERS ####

@@ -60,13 +60,40 @@ RSpec.describe "Event Liability Event Id valid and invalid test", :regression do
 
     it "Sets the Source" do
       eventLiabilitySourceDropdown.flash.click
-      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceId)
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceMerge)
       sendKeysEnter
       sendKeysTab
     end
 
+    it "Click on the Races dropdown" do
+      eventLiabilityRacesDropdown.wait_until_present.flash.click
+    end
+
+		it "Clicks on the All checkbox" do
+			eventLiabilityRacesAllCheckbox.flash.click
+		end
+
+		it "Clicks on the Done button" do
+			eventLiabilityRacesDoneButton.flash.click
+		end
+
     it "Verifies the valid search result" do
       verifyEventSearchResults("CHF-CHURCHILL DOWNS Race")
+    end
+
+    it "Clicks on the Next button" do
+      eventLiabilityNextButton.flash.click
+    end
+
+    it "Verifies the figures view" do
+      eventResultView.flash
+      puts "Payoff Amount: #{getEventRacePayoffAmount.flash.text}"
+      puts "Payoff Amount: #{getEventRaceBreakageAmount.flash.text}"
+      puts "Payoff Amount: #{getEventRaceCommissionAmount.flash.text}"
+      puts "Payoff Amount: #{getEventRaceRefundAmount.flash.text}"
+      puts "Payoff Amount: #{getEventRaceTotalAmount.flash.text}"
+      puts "Payoff Amount: #{getEventRacePool.flash.text}"
+      puts "Payoff Amount: #{getEventRaceRace.flash.text}"
     end
 
     it "Sets invalid Event ID" do

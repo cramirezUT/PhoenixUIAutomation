@@ -80,6 +80,21 @@ RSpec.describe "Event Liability Event All selection test", :regression do
 		it "Verifies the valid search result" do
       verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-3")
     end
+
+     it "Clicks on the Next button" do
+       eventLiabilityNextButton.flash.click
+     end
+
+     it "Verifies the figures view" do
+       eventResultView.flash
+       puts "Payoff Amount: #{getEventRacePayoffAmount.flash.text}"
+       puts "Payoff Amount: #{getEventRaceBreakageAmount.flash.text}"
+       puts "Payoff Amount: #{getEventRaceCommissionAmount.flash.text}"
+       puts "Payoff Amount: #{getEventRaceRefundAmount.flash.text}"
+       puts "Payoff Amount: #{getEventRaceTotalAmount.flash.text}"
+       puts "Payoff Amount: #{getEventRacePool.flash.text}"
+       puts "Payoff Amount: #{getEventRaceRace.flash.text}"
+     end
 	ensure
 	after(:all) do
 		logOutFuction
