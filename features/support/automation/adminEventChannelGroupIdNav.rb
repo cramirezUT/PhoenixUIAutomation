@@ -80,6 +80,16 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
       eventChannelEeventResultsByIndex(0).flash
     end
 
+    it "Sets an invalid channel id" do
+      eventChannelEeventChannelTextFieldByIndex(0).flash.set ($invalidChannelId)
+      sendKeysEnter
+      sendKeysTab
+    end
+
+    it "Verifies the invalid error message" do
+      verifyEventChannelInvalidChannelIdError("Specified channel 'C' does not exist in any channel guides for UQA!")
+    end
+
     it "Clicks on the Help button" do
       eventChannelModalHelpButton.flash.click
     end
