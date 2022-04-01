@@ -46,6 +46,14 @@ module PricesPage
 		@browser.text_field(id: 'Prices-Select-Group-search')
 	end
 
+	def eventPricesLeftArrow
+		@browser.button(id: 'Prices-Select-Prev')
+	end
+
+	def eventPricesRightArrow
+		@browser.button(id: 'Prices-Select-Next')
+	end
+
 	#### PRICES GROUP EVENT SELECTION CRITERIA ####
 	def eventPricesGroupSelectionCriteriaModal
 		@browser.div(id: 'Prices-Select-Group-FilterDivrows')
@@ -185,8 +193,13 @@ module PricesPage
 		@browser.div(utclass: 'Prices-Price-Finishers')
 	end
 
+	def getEventErrorMessage
+		@browser.li(id: 'ut-ms-opt-Prices-Select-Event_noresults')
+	end
+
 	#### VERIFIERS ####
 	def verifyEventSearchResults(result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(getEventResultHeaderTitle.text).to include(expectedResult)
 		getEventResultHeaderTitle.flash(color: ["yellow"])
@@ -196,5 +209,11 @@ module PricesPage
 		expectedResult = "#{result}"
 		expect(getEventFinishResults.text).to eq(expectedResult)
 		getEventFinishResults.flash(color: ["yellow"])
+	end
+
+	def verifyEventErrorMessage(result)
+		expectedResult = "#{result}"
+		expect(getEventErrorMessage.text).to eq(expectedResult)
+		getEventErrorMessage.flash(color: ["yellow"])
 	end
 end

@@ -52,22 +52,32 @@ RSpec.describe "Event Prices Prices race test", :regression do
 			eventMenuLinks("Prices").wait_until_present.flash.click
 		end
 
+		it "Sets an invalid Event id" do
+			eventPricesEventDropdown.wait_until_present.flash.click
+      eventPricesEventSearchTextField.wait_until_present.flash.set ($invalidEventId)
+		end
+
+		it "Verifes the error message" do
+			verifyEventErrorMessage("No matches found")
+		end
+
 		it "Sets a valid Event id" do
-      eventPricesEventDropdown.wait_until_present.flash.click
+      eventPricesEventDropdown.flash.click
+			eventPricesEventDropdown.flash.click
       eventPricesEventSearchTextField.wait_until_present.flash.set ($eventId)
       sendKeysEnter
 			sendKeysTab
 		end
 
-		it "Sets Race" do
+		it "Sets Race 1" do
       eventPricesRaceDropdown.flash.click
-      eventPricesRaceSearchTextField.wait_until_present.set ($sourceId)
+      eventPricesRaceSearchTextField.wait_until_present.set ($raceNumber1)
       sendKeysEnter
       sendKeysTab
     end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF - CHURCHILL DOWNS Race 3 Prices Thu 30-Dec-2021")
+      verifyEventSearchResults("CHF - CHURCHILL DOWNS Race 1 Prices Thu 30-Dec-2021")
     end
 
 		it "Verifes the race finishers" do
@@ -76,7 +86,23 @@ RSpec.describe "Event Prices Prices race test", :regression do
       puts "2nd Place Finisher: #{eventFinishResultsModal2ndPlaceFinisher}"
       puts "3rd Place Finisher: #{eventFinishResultsModal3rdPlaceFinisher}"
 			puts "4th Place Finisher: #{eventFinishResultsModal4thPlaceFinisher}"
+		end
+
+		it "Sets Race 2 by click on arrow" do
+      eventPricesRightArrow.flash.click
     end
+
+		it "Verifies the valid search result" do
+      verifyEventSearchResults("CHF - CHURCHILL DOWNS Race 2 Prices Thu 30-Dec-2021")
+    end
+
+		it "Verifes the race finishers" do
+      eventFinishResultsModal.flash
+      puts "1st Place Finisher: #{eventFinishResultsModal1stPlaceFinisher}"
+      puts "2nd Place Finisher: #{eventFinishResultsModal2ndPlaceFinisher}"
+      puts "3rd Place Finisher: #{eventFinishResultsModal3rdPlaceFinisher}"
+			puts "4th Place Finisher: #{eventFinishResultsModal4thPlaceFinisher}"
+		end
 	ensure
 	after(:all) do
 		logOutFuction
