@@ -14,6 +14,7 @@ $sortById = "Id"
 $sortByName = "Name"
 $sortByNumber = "Number"
 $channelId = ""
+$invalidChannelId = "C"
 
 module EventChannelPage
 	include RSpec::Matchers
@@ -109,10 +110,18 @@ module EventChannelPage
 	def eventChannelEeventResultsByIndex(index)
 		@browser.div(id: "EventChannel-Events-#{index}-Event")
 	end
-	
+
+	def eventChannelEeventChannelTextFieldByIndex(index)
+		@browser.text_field(id: "EventChannel-Events-#{index}-Event-Channel")
+	end
+
 	#### GETTERS ####
 	def getEventChannelError
 		@browser.li(id: 'ut-ms-opt-EventChannel-Select-Group_noresults')
+	end
+
+	def getEventChannelResultError
+		@browser.label(id: 'EventChannel-Error')
 	end
 
 	#### VERIFIERS ####
@@ -144,5 +153,12 @@ module EventChannelPage
 		expectedResult = "#{result}"
 		expect(getEventInformationByRow(index).text).to include(expectedResult)
 		getEventInformationByRow(index).flash(color: ["yellow"])
+	end
+
+	def verifyEventChannelInvalidChannelIdError(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getEventChannelResultError.text).to include(expectedResult)
+		getEventChannelResultError.flash(color: ["yellow"])
 	end
 end
