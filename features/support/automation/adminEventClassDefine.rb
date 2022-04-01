@@ -71,12 +71,19 @@ RSpec.describe "Event Class Define class test", :regression do
 			eventClassSaveChangesButton.wait_until_present.flash.click
 		end
 
-		it "Verifies a class was defined" do
-			verifyEventClassDefinition(0)
+		it "Verifies 'B' class was defined" do
+			verifyEventClassDefinitionB(0)
 		end
 
 		it "Reset class definition" do
 			eventClassButtonByIndex(0).wait_until_present.flash.click
+		end
+
+    it "Verifies 'A' class was defined" do
+			verifyEventClassDefinitionA(0)
+		end
+
+    it "Reset class definition" do
 			eventClassButtonByIndex(0).wait_until_present.flash.click
 		end
 
@@ -84,7 +91,7 @@ RSpec.describe "Event Class Define class test", :regression do
 			eventClassSaveChangesButton.wait_until_present.flash.click
 		end
 
-		it "Verifies a class definition was reset" do
+		it "Verifies a blank class definition was reset" do
 			verifyEventClassDefinitionReset(0)
 		end
 	ensure

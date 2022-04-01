@@ -133,11 +133,18 @@ module ClassPage
 		getEventSearchResults.flash(color: ["yellow"])
 	end
 
-	def verifyEventClassDefinition(index)
+	def verifyEventClassDefinitionB(index)
 		expectedClassDenfinition = "B"
 		expect(getEventClassDefinition(index).text).to eq(expectedClassDenfinition)
 		getEventClassDefinition(index).flash(color: ["yellow"])
 	end
+
+	def verifyEventClassDefinitionA(index)
+		expectedClassDenfinition = "A"
+		expect(getEventClassDefinition(index).text).to eq(expectedClassDenfinition)
+		getEventClassDefinition(index).flash(color: ["yellow"])
+	end
+
 
 	def verifyEventClassDefinitionReset(index)
 		expectedClassDenfinition = " "
