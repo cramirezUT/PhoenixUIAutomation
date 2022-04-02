@@ -12,6 +12,7 @@ $eventById = "ID"
 $eventByName = "Name"
 $eventByPostTime = "PostTime"
 $eventByOpenRaces = "Open Races"
+$eventByInvalidId = "TNT"
 
 module InquirePage
 	include RSpec::Matchers
@@ -60,6 +61,10 @@ module InquirePage
 		@browser.div(id: "EventInquiry-View-#{row}-6")
 	end
 
+	def getEventInquiryErrorMessage
+		@browser.li(id: 'ut-ms-opt-EventInquiry-Select-Filter_noresults')
+	end
+
 	#### VERIFIERS ####
 	def verifyEventInquirySearchResultsForName(row, result)
 		expectedResult = "#{result}"
@@ -84,4 +89,11 @@ module InquirePage
 		expect(getEventInquiryResultStatusByRow(row).text).to include(expectedResult)
 		getEventInquiryResultStatusByRow(row).flash(color: ["yellow"])
 	end
+
+	def verifyEventInquiryResultsErrorMessage(result)
+		expectedResult = "#{result}"
+		expect(getEventInquiryErrorMessage.text).to include(expectedResult)
+		getEventInquiryErrorMessage.flash(color: ["yellow"])
+	end
+
 end

@@ -80,6 +80,21 @@ RSpec.describe "Event Inquiry Summary test", :regression do
 			verifyEventInquirySearchResultsForStatus(0, 'POST')
     end
 
+    it "Click on the Event By dropdown and select the Post" do
+      eventInquiryDropdown.wait_until_present.flash.click
+      eventInquirySearchTextField.wait_until_present.flash.set ($eventByPostTime)
+      sendKeysEnter
+			sendKeysTab
+		end
+
+		it "Verify the ID results for row 1" do
+      # NEED TO FIND OUT WHY THERE IS NO DATA DISPALYED
+			# verifyEventInquirySearchResultsForName(0, 'CHURCHILL DOWNS')
+			# verifyEventInquirySearchResultsForRaces(0, '1-8')
+			# verifyEventInquirySearchResultsForRace(0, '3')
+			# verifyEventInquirySearchResultsForStatus(0, 'FINAL')
+    end
+
 		it "Click on the Event By dropdown and select the Open Races" do
       eventInquiryDropdown.wait_until_present.flash.click
       eventInquirySearchTextField.wait_until_present.flash.set ($eventByOpenRaces)
@@ -92,6 +107,15 @@ RSpec.describe "Event Inquiry Summary test", :regression do
 			verifyEventInquirySearchResultsForRaces(0, '1-8')
 			verifyEventInquirySearchResultsForRace(0, '3')
 			verifyEventInquirySearchResultsForStatus(0, 'FINAL')
+    end
+
+    it "Sets an invalid id option" do
+      eventInquiryDropdown.wait_until_present.flash.click
+      eventInquirySearchTextField.wait_until_present.flash.set ($eventByInvalidId)
+    end
+
+    it "Verifies the invalid error message" do
+      verifyEventInquiryResultsErrorMessage('No matches found')
     end
 	ensure
 	after(:all) do
