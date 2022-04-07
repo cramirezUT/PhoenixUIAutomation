@@ -10,6 +10,8 @@ require 'rspec/expectations'
 
 $terminalId = "1"
 $terminalIdInvalid = "100"
+$groupOptionAll = "All"
+$groupOptionQa = "qa"
 
 module AdminTerminalInquiryPage
 	include RSpec::Matchers
@@ -116,6 +118,14 @@ module AdminTerminalInquiryPage
 	def terminalSelectionFilterModalCloseButton
 		@browser.button(id: 'Terminals-Cancel')
 	end
+
+	def terminalSelectionFilterModalAllOption
+		@browser.checkbox(id: 'ut-ms-opt-Terminals-Group-selectallcheckbox')
+	end
+
+	def terminalSelectionFilterModalApplyButton
+		@browser.button(id: 'Terminals-Apply')
+	end
 	#########################################
 
 
@@ -172,6 +182,25 @@ module AdminTerminalInquiryPage
 		@browser.button(id: 'cancelFilterButton')
 	end
 	##################################################
+
+	#### FILTER RESULT ####
+	def adminTerminalInquiryFilterResult
+		@browser.div(id: 'TerminalInquiry-Detail')
+	end
+
+	def adminTerminalInquiryFilterResultSellerName
+		@browser.div(id: 'TerminalInquiry-Detail-2-1')
+	end
+
+	def adminTerminalInquiryFilterResultStatus
+		@browser.div(id: 'TerminalInquiry-Detail-2-4')
+	end
+
+	def adminTerminalInquiryFilterResultAmount
+		@browser.div(id: 'TerminalInquiry-Detail-2-6')
+	end
+	#######################
+
 	def adminTerminalInquiryResultModal
 		@browser.div(id: 'TerminalInquiry-Summary')
 	end
@@ -179,6 +208,30 @@ module AdminTerminalInquiryPage
 	#### GETTERS ####
 	def getAdminTerminalInquiryResultError
 		@browser.label(id: 'TerminalInquiry-Error')
+	end
+
+	def getAdminTerminalInquiryResultTerminal
+		@browser.div(id: 'TerminalInquiry-Summary-2-0')
+	end
+
+	def getAdminTerminalInquiryResultFinal
+		@browser.div(id: 'TerminalInquiry-Summary-2-2')
+	end
+
+	def getAdminTerminalInquiryResultReturn
+		@browser.div(id: 'TerminalInquiry-Summary-2-3')
+	end
+
+	def getAdminTerminalInquiryResultDraw
+		@browser.div(id: 'TerminalInquiry-Summary-2-4')
+	end
+
+	def getAdminTerminalInquiryResultAdjust
+		@browser.div(id: 'TerminalInquiry-Summary-2-5')
+	end
+
+	def getAdminTerminalInquiryResultBalance
+		@browser.div(id: 'TerminalInquiry-Summary-2-6')
 	end
 
 	#### VERIFIERS ####
