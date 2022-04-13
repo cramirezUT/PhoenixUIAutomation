@@ -8,12 +8,13 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$terminalId = "1"
+$terminalId = "EBET01"
 $terminalIdInvalid = "100"
 $typeOptionDraw = "Draw"
 $typeOptionReturn = "Return"
 $typeOptionFinalReturn = "Final Return"
 $typeOptionAdjust = "Adjust"
+$moneyCount = "1"
 
 module AdminTerminalTransactionPage
 	include RSpec::Matchers
@@ -49,7 +50,7 @@ module AdminTerminalTransactionPage
 	end
 
 	def adminTerminalTransactionModalCurrencySearchTextField
-		@browser.text_field(id: '')
+		@browser.text_field(id: 'AdminTransaction-Command-Currency-search')
 	end
 
 	def adminTerminalTransactionModalAmountTextField
@@ -64,9 +65,60 @@ module AdminTerminalTransactionPage
 		@browser.button(id: 'AdminTransaction-Command-Clear')
 	end
 
+	def adminTerminalTransactionModalMoneyButton
+		@browser.button(id: 'AdminTransaction-Command-Money')
+	end
+
+	#### MONEY MODAL ####
+	def adminTerminalTransactionMoneyMondal
+		@browser.div(id: 'Money')
+	end
+
+	def adminTerminalTransactionMoneyMondalCount01TextField
+		@browser.text_field(id: 'Money-Value-1-Nbr')
+	end
+
+	def adminTerminalTransactionMoneyMondalCount05TextField
+		@browser.text_field(id: 'Money-Value-5-Nbr')
+	end
+
+	def adminTerminalTransactionMoneyMondalAmount01TextField
+		@browser.text_field(id: 'Money-Value-5-Nbr')
+	end
+
+	def adminTerminalTransactionMoneyMondalAmount05TextField
+		@browser.text_field(id: 'Money-Value-6-Amt')
+	end
+
+	def adminTerminalTransactionMoneyMondalUsdDropdown
+		@browser.button(id: 'Money-Currency-mainbutton')
+	end
+
+	def adminTerminalTransactionMoneyMondalUsdSearchTextField
+		@browser.text_field(id: 'Money-Currency-search')
+	end
+
+	def adminTerminalTransactionMoneyMondalSaveButton
+		@browser.button(id: 'Money-Save')
+	end
+
+	def adminTerminalTransactionMoneyMondalCancelButton
+		@browser.button(id: 'Money-Cancel')
+	end
+	#####################
+
 	#### GETTERS ####
 	def getAdminTerminalTransactionResultError
 		@browser.label(id: 'AdminTransaction-Error')
+	end
+
+	def getAdminTerminalTransactionNewBalance
+		sleep(2)
+		@browser.element(xpath: "//*[contains(@id,'AdminTransaction-Command') and contains(@id,'AdminTransaction-Command-Balance')]")
+	end
+
+	def getAdminTerminalTransactionHistoryEntry
+		@browser.div(xpath: "//*[contains(@id,'AdminTransaction-History-Container')]//*[contains(@id,'AdminTransaction-History-Content')]")
 	end
 
 	#### VERIFIERS ####
@@ -75,5 +127,19 @@ module AdminTerminalTransactionPage
 		expectedResult = "#{result}"
 		expect(getAdminTerminalTransactionResultError.text).to include(expectedResult)
 		getAdminTerminalTransactionResultError.flash(color: ["yellow"])
+	end
+
+	def verifyTerminalTransactionNewBalance(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAdminTerminalTransactionNewBalance.text).to include(expectedResult)
+		getAdminTerminalTransactionNewBalance.flash(color: ["yellow"])
+	end
+
+	def verifyTerminalTransactionHistoryText(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAdminTerminalTransactionHistoryEntry.text[11..62]).to include(expectedResult)
+		getAdminTerminalTransactionHistoryEntry.flash(color: ["yellow"])
 	end
 end
