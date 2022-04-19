@@ -167,6 +167,20 @@ module AdminTerminalBalancePage
 	end
 	##################################################
 
+	#### SELECTED TERMINAL ####
+	def selectedTerminalModal
+		@browser.div(id: 'TerminalView')
+	end
+
+	def selectedTerminalModalCloseButton
+		@browser.button(id: 'TerminalView-Close')
+	end
+
+	def selectedTerminalModalByRow(index)
+		@browser.div(id: "TerminalView-Terminals-#{index}")
+	end
+	###########################
+
 	#### GETTERS ####
 	def getAdminTerminalBalanceResultError
 		@browser.label(id: 'TerminalBalance-Error')

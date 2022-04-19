@@ -75,6 +75,22 @@ RSpec.describe "Admin Terminal Balance functionality test", :regression do
 		it "Verifies the terminal result modal" do
 			adminTerminalBalanceResultsModal.flash
 		end
+
+    it "Clicks on the view button" do
+      adminTerminalBalanceModalViewButton.flash.click
+    end
+
+    it "Verifies the balance result modal" do
+      selectedTerminalModal.flash
+    end
+
+    it "Verifies the selected terminal modals data" do
+      selectedTerminalModalByRow(0).flash
+    end
+
+    it "Closes the selected terminals modal" do
+      selectedTerminalModalCloseButton.flash.click
+    end
 	ensure
 	after(:all) do
 		logOutFuction
