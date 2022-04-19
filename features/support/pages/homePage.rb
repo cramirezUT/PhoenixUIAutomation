@@ -63,7 +63,7 @@ module HomePage
 
 	#### PAGE VERIFIERS ####
 	def isMainSystemTextDisplayed
-		expectedMainSystemText = " V433 FBM - UnitedTote QA FBM"
+		expectedMainSystemText = " V434 FBM - UnitedTote QA FBM"
 		if (expect(mainSystemText.text).to eq(expectedMainSystemText)) == true
 			then
 				mainSystemText.flash(color: ["yellow"])
