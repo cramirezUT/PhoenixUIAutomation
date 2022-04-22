@@ -15,15 +15,20 @@ module Browsers
   include Selenium
 
   #### VARIABLES ####
-  $toteSiteUrl = "https://phoenix.fbmtest.com/"
+  $toteSiteUrl = "https://pws.fbmtest.com/"
 
   #### METHODS ####
   def launchToteBrowser
     Watir.default_timeout = 30
     Watir.logger.ignore(:deprecations)
     puts "Launching Chrome Browser..."
-		Selenium::WebDriver::Chrome::Service.driver_path="/usr/local/bin/chromedriver" # Uncomment for MacOS only
-		@browser = Watir::Browser.new :chrome, switches: ['--ignore-certificate-errors']
+		caps = Selenium::WebDriver::Remote::Capabilities.chrome
+		client = Selenium::WebDriver::Remote::Http::Default.new
+		#client.timeout = 120
+		url = "http://localhost:9515"
+		@browser = Watir::Browser.new :remote, {desired_capabilities: caps, http_client: client, url: url}
+		#Selenium::WebDriver::Chrome::Service.driver_path="/mnt/c/Users/Administrator/Desktop/chromedriver" # Uncomment for MacOS only
+		#@browser = Watir::Browser.new :chrome, switches: ['--ignore-certificate-errors']
 		@browser.driver.manage.timeouts.page_load = 30
 		@browser.window.maximize()
 		@website = $toteSiteUrl
