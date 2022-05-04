@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin Seller Limit functionality test", :regression do
+RSpec.describe "Admin Seller Limit functionality test", :regression, :smoke do
   begin
     before(:all) do
       puts "adminSellerLimitTest"
@@ -29,12 +29,25 @@ RSpec.describe "Admin Seller Limit functionality test", :regression do
       logInFunction
     end
 
+    before :all do
+      $continue = true
+    end
+
+    around :each do |example|
+      if $continue
+        $continue = false
+        example.run
+        $continue = true unless example.exception
+      else
+        example.skip
+      end
+    end
+
     after(:each) do |example|
 	    if example.exception
-  	    screenshot_file = "features/support/automation_screenshots/filesAccountBlock-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
+  	    screenshot_file = "features/support/automation_screenshots/adminSellerLimit-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
   	    @browser.driver.save_screenshot(screenshot_file)
         sleep 1
-        @browser.quit
 	    end
 	  end
 

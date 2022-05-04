@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountBalancePage
 end
 
-RSpec.describe "Admin->Account->Balance: Account balance validation", :regression do
+RSpec.describe "Admin->Account->Balance: Account balance validation", :regression, :smoke do
   begin
     before(:all) do
       puts "adminAccountBalanceTest"
@@ -27,12 +27,25 @@ RSpec.describe "Admin->Account->Balance: Account balance validation", :regressio
       logInFunction
     end
 
+    before :all do
+      $continue = true
+    end
+
+    around :each do |example|
+      if $continue
+        $continue = false
+        example.run
+        $continue = true unless example.exception
+      else
+        example.skip
+      end
+    end
+
     after(:each) do |example|
 	    if example.exception
-  	    screenshot_file = "features/support/automation_screenshots/filesAccountBlock-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
+  	    screenshot_file = "features/support/automation_screenshots/adminAccountBlock-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
   	    @browser.driver.save_screenshot(screenshot_file)
         sleep 1
-        @browser.quit
 	    end
 	  end
 
@@ -59,7 +72,7 @@ RSpec.describe "Admin->Account->Balance: Account balance validation", :regressio
     end
 
 		it "Verifies the account balance error" do
-			verifyEventInformationResultByIndex('A group must be specified! <group id>-<number>')
+			verifyAccountBalanceError('A group must be specified! <group id>-<number>')
 		end
 
 		it "Sets a vaild account balance group id" do

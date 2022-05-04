@@ -82,7 +82,7 @@ module AccountInquirePage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventInformationResultByIndex(result)
+	def verifyAccountInquiryError(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getAccountInquiryError.text).to include(expectedResult)

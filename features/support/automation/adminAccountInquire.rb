@@ -59,7 +59,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regr
     end
 
 		it "Verifies the account Inquiry error" do
-			verifyEventInformationResultByIndex('A group must be specified! <group id>-<number>')
+			verifyAccountInquiryError('A group must be specified! <group id>-<number>')
 		end
 
 		it "Sets a vaild account Inquiry group id" do
