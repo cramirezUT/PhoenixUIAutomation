@@ -113,7 +113,7 @@ module AccountDonationPage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventInformationResultByIndex(result)
+	def verifyAccountDonationError(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getAccountDonationError.text).to include(expectedResult)

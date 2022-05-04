@@ -79,7 +79,7 @@ RSpec.describe "Event Class group Id valid and invalid test", :regression do
     end
 
 		it "Verifies the Group search result" do
-      verifyEventInformationResultByIndex(0, "CHF")
+      verifyGroupSearchResult(0, "CHF")
     end
 
     it "Clicks on the Help button" do

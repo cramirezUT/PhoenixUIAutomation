@@ -152,7 +152,7 @@ module ClassPage
 		getEventClassDefinition(index).flash(color: ["yellow"])
 	end
 
-	def verifyEventInformationResultByIndex(index, result)
+	def verifyGroupSearchResult(index, result)
 		expectedResult = "#{result}"
 		expect(getEventInformationByRow(index).text).to include(expectedResult)
 		getEventInformationByRow(index).flash(color: ["yellow"])

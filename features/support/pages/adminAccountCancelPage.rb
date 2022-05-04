@@ -71,7 +71,7 @@ module AccountCancelPage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventInformationResultByIndex(result)
+	def verifyAccountCancelError(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getAccountCancelError.text).to include(expectedResult)

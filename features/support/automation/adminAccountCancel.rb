@@ -59,7 +59,7 @@ RSpec.describe "Admin->Account->Cancel: Account ticket cancelation validation", 
     end
 
 		it "Verifies the account Cancel error" do
-			verifyEventInformationResultByIndex('A group must be specified! <group id>-<number>')
+			verifyAccountCancelError('A group must be specified! <group id>-<number>')
 		end
 
 		it "Sets a vaild account Cancel group id" do

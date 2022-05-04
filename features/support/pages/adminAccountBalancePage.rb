@@ -42,7 +42,7 @@ module AccountBalancePage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventInformationResultByIndex(result)
+	def verifyAccountBalanceError(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getAccountBalanceError.text).to include(expectedResult)

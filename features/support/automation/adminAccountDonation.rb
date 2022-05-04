@@ -64,7 +64,7 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
     end
 
 		it "Verifies the account Donation error" do
-			verifyEventInformationResultByIndex('A group must be specified! <group id>-<number>')
+			verifyAccountDonationError('A group must be specified! <group id>-<number>')
 		end
 
 		it "Sets a vaild account Donation group id" do
