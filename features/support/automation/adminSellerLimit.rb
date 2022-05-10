@@ -29,20 +29,6 @@ RSpec.describe "Admin Seller Limit functionality test", :regression, :smoke do
       logInFunction
     end
 
-    before :all do
-      $continue = true
-    end
-
-    around :each do |example|
-      if $continue
-        $continue = false
-        example.run
-        $continue = true unless example.exception
-      else
-        example.skip
-      end
-    end
-
     after(:each) do |example|
 	    if example.exception
   	    screenshot_file = "features/support/automation_screenshots/adminSellerLimit-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"

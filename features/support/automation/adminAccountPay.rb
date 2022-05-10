@@ -35,7 +35,7 @@ RSpec.describe "Admin->Account->Pay: Account Pay Ticket validation", :regression
 
     after(:each) do |example|
 	    if example.exception
-  	    screenshot_file = "features/support/automation_screenshots/filesAccountBlock-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
+  	    screenshot_file = "features/support/automation_screenshots/adminAccountPay-#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
   	    @browser.driver.save_screenshot(screenshot_file)
         sleep 1
         @browser.quit
