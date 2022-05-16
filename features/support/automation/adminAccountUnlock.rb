@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountUnlockPage
 end
 
-RSpec.describe "Account Unlock verification test", :regression do
+RSpec.describe "Admin->Account->Unlock: Account Unlock verification test", :regression do
   begin
     before(:all) do
       puts "adminAccountUnlockTest"

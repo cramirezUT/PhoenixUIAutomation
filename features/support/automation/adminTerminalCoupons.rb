@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin Terminal Coupons functionality test", :regression do
+RSpec.describe "Admin->Terminal->Coupons: Admin Terminal Coupons functionality test", :regression do
   begin
     before(:all) do
       puts "adminTerminalCouponsTest"

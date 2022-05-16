@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Event Class Define class test", :regression do
+RSpec.describe "Admin->Event->Class: Event Class Define class test", :regression do
   begin
     before(:all) do
       puts "adminEventClassDefineClassTest"

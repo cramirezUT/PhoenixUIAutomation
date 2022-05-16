@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Event Class group Id valid and invalid test", :regression do
+RSpec.describe "Admin->Event->Class: Event Class group Id valid and invalid test", :regression do
   begin
     before(:all) do
       puts "eventClassGroupIdTest"
