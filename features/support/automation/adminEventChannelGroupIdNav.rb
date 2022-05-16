@@ -90,7 +90,7 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
     end
 
     it "Clicks on the Help button" do
-      eventChannelModalHelpButton.flash.click
+      expect(eventChannelModalHelpButton.enabled?).to be_truthy
     end
 	ensure
 	after(:all) do
