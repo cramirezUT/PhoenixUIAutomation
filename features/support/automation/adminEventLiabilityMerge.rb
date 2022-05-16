@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include LiabilityPage
 end
 
-RSpec.describe "Event Liability Event Merge selection test", :regression do
+RSpec.describe "Admin->Event->Liability->Merge: Event Liability Event Merge selection test", :regression do
   begin
     before(:all) do
       puts "adminEventEventMergeTest"

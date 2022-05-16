@@ -36,7 +36,7 @@ RSpec.describe "Admin->Contest->Pay: Contest Pay verification test", :regression
 	    end
 	  end
 
-    it "Verifies the main system text in the header menu" do
+    it "Admin->Contest->Pay: Verifies the main system text in the header menu" do
       isMainSystemTextDisplayed
     end
 

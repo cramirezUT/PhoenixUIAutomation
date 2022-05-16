@@ -7,7 +7,7 @@ require_relative "../pages/siteSelectPage.rb"
 require_relative "../pages/adminEventLiabilityPage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/SendKeys.rb"
-require_relative "../lib/Users.rb"
+require_relative "../lib/gi tsUsers.rb"
 
 RSpec.configure do |c|
   c.include ToteLoginPage
@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include LiabilityPage
 end
 
-RSpec.describe "Event Liability Event All selection test", :regression do
+RSpec.describe "Admin->Event->Liability->EventAll: Event Liability Event All selection test", :regression do
   begin
     before(:all) do
       puts "adminEventEventAllTest"

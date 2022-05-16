@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include PoolsPage
 end
 
-RSpec.describe "Event Pools All selection and Refresh test", :regression do
+RSpec.describe "Admin->Event->Pools->Event->AllMerge: Event Pools All selection and Refresh test", :regression do
   begin
     before(:all) do
       puts "adminEventPoolsAllTest"

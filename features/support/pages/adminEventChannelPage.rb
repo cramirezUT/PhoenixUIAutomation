@@ -132,6 +132,7 @@ module EventChannelPage
 	end
 
 	def verifyEventSearchResultsInvalid(result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(getEventChannelError.text).to eq(expectedResult)
 		getEventChannelError.flash(color: ["yellow"])

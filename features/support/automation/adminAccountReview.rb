@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountReviewPage
 end
 
-RSpec.describe "Account Review verification test", :regression do
+RSpec.describe "Admin->Account->Review: Account Review verification test", :regression do
   begin
     before(:all) do
       puts "adminAccountReviewTest"

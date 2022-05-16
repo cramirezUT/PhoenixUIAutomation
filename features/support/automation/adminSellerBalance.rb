@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin Seller Balance functionality test", :regression do
+RSpec.describe "Admin-Seller->Balance: Admin Seller Balance functionality test", :regression do
   begin
     before(:all) do
       puts "adminSellerBalanceTest"

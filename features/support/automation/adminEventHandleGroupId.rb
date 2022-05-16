@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include HandlePage
 end
 
-RSpec.describe "Event Handle group Id valid and invalid test", :regression do
+RSpec.describe "Admin->Event->Handle->GroupID: Event Handle group Id valid and invalid test", :regression do
   begin
     before(:all) do
       puts "adminEventHandleGroupIdTest"

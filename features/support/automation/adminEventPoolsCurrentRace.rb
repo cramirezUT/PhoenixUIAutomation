@@ -18,7 +18,7 @@ RSpec.configure do |c|
 	c.include PoolsPage
 end
 
-RSpec.describe "Event Pools Current race test", :regression do
+RSpec.describe "Admin->Event->Pools->CurrentRace: Event Pools Current race test", :regression do
 	begin
 		before(:all) do
 			puts "adminEventPoolsCurrentRaceTest"
