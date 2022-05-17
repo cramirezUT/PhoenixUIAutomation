@@ -184,7 +184,7 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 
 		it "Verifies the winnings amount" do
 			puts "Transaction winnings: #{getDepositAmountTotal.text}"
-			verifyDepositAmount('1.03')
+			verifyDepositAmount('1.04')
 		end
     #### ENTRY OPTION ####
     it "Selects the Transaction type of Withdraw" do

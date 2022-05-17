@@ -108,14 +108,14 @@ RSpec.describe "Event Pools All selection and Refresh test", :regression do
 
     it "Verifes the figures" do
       eventPoolsResultsModal.flash
-      puts "Event Result Race: #{getEventResultsRaceTotal}"
-      puts "Event Result Pool: #{getEventResultsPool}"
-      puts "Event Result Total: #{getEventResultsTotalTotal}"
+      puts "Event Result Race: #{getEventResultsRaceTotal(0)}"
+      puts "Event Result Pool: #{getEventResultsPool(0)}"
+      puts "Event Result Total: #{getEventResultsTotalTotal(0)}"
     end
 	ensure
 	after(:all) do
-		logOutFuction
-		close_browser
+	#	logOutFuction
+	#	close_browser
 	end
 	end
 end

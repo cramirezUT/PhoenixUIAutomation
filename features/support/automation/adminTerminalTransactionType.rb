@@ -114,7 +114,7 @@ RSpec.describe "Admin Terminal Transaction Types functionality test", :regressio
 		end
 
 		it "Verifies the history text" do
-			verifyTerminalTransactionHistoryText("DRAW $0.06 to terminal EBET01 for balance of $#{$newTotalBalance.round(3)}")
+			verifyTerminalTransactionHistoryText("$0.06 to terminal EBET01 for balance of $#{$newTotalBalance.round(3)}")
 		end
 	ensure
 	after(:all) do

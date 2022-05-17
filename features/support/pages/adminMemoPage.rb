@@ -87,23 +87,23 @@ module AdminMemoPage
 
 	#### SUBJECT MODAL ####
 	def adminMemoSubjectModal
-		@browser.div(id: 'Memo')
+		@browser.div(id: 'EditMemo')
 	end
 
 	def adminMemoSubjectModalSubjectTextField
-		@browser.text_field(id: 'Memo-Subject')
+		@browser.text_field(id: 'EditMemo-Subject')
 	end
 
 	def adminMemoSubjectModalBodyTextArea
-		@browser.textarea(id: 'Memo-Body')
+		@browser.textarea(id: 'EditMemo-Body')
 	end
 
 	def adminMemoSubjectModalSaveButton
-		@browser.button(id: 'Memo-Save')
+		@browser.button(id: 'EditMemo-Save')
 	end
 
 	def adminMemoSubjectModalCloseButton
-		@browser.button(id: 'Memo-Close')
+		@browser.button(id: 'EditMemo-Close')
 	end
 	####################
 

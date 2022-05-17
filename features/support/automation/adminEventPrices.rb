@@ -77,7 +77,7 @@ RSpec.describe "Event Prices Prices race test", :regression do
     end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF - CHURCHILL DOWNS Race 1 Prices Thu 30-Dec-2021")
+      verifyEventSearchResults("CHF - CHURCHILL DOWNS Race 3 Prices Mon 26-Dec-2022")
     end
 
 		it "Verifes the race finishers" do
@@ -93,7 +93,7 @@ RSpec.describe "Event Prices Prices race test", :regression do
     end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF - CHURCHILL DOWNS Race 2 Prices Thu 30-Dec-2021")
+      verifyEventSearchResults("No Prices Available")
     end
 
 		it "Verifes the race finishers" do

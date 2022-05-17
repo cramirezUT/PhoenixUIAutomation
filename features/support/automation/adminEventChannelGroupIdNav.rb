@@ -93,10 +93,10 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
     it "Clicks on the Help button" do
       eventChannelModalHelpButton.flash.click
     end
-	ensure
-	after(:all) do
-		logOutFuction
-		close_browser
+	# ensure
+	# after(:all) do
+	# 	logOutFuction
+	# 	close_browser
 	end
 	end
 end

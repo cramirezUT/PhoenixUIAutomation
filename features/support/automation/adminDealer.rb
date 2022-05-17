@@ -89,10 +89,11 @@ RSpec.describe "Admin Dealer verification test", :regression do
 			adminDealerBalanceModal.flash
 		end
 
-		it "Sets the balance amount to 0.00" do
-			adminDealerBalanceModalCashTextField.wait_until_present.flash
-			adminDealerBalanceModalCashTextField.set ($cashBalanceAmountZero)
-		end
+		# it "Sets the balance amount to 0.00" do
+		# 	adminDealerBalanceModalCashTextField.wait_until_present.flash
+		# 	adminDealerBalanceModalCashTextField.set ($cashBalanceAmountZero)
+    #
+		# end
 
 		it "Click the Transaction button" do
 			adminDealerCommandModalTransactionButton.flash.click

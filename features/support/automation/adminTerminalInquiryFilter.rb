@@ -85,6 +85,7 @@ RSpec.describe "Admin Terminal Inquiry Filter test", :regression do
 
     it "Select the Facility from drop down" do
       terminalSelectionFilterModalFacilityDropdown.flash.click
+      terminalSelectionFilterModalFacilityDropdown.flash.click
       terminalSelectionFilterModalFacilitySearchTextField.flash.set ($groupOptionQa)
       sendKeysEnter
       sendKeysTab
