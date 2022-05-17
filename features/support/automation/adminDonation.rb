@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AdminDonationPage
 end
 
-RSpec.describe "Admin Donation verification test", :regression do
+RSpec.describe "Admin->Donation: Admin Donation verification test", :regression do
   begin
     before(:all) do
       puts "adminDonationTest"

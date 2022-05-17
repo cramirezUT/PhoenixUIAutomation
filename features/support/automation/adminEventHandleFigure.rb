@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include HandlePage
 end
 
-RSpec.describe "Event Handle figure validation on the Phoenix application", :regression do
+RSpec.describe "Admin->Event->Handle->Figure: Event Handle figure validation on the Phoenix application", :regression do
   begin
     before(:all) do
       puts "adminEventHandleFigureTest"

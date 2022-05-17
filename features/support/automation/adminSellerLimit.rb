@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin Seller Limit functionality test", :regression, :smoke do
+RSpec.describe "Admin->Seller->Limit: Admin Seller Limit functionality test", :regression, :smoke do
   begin
     before(:all) do
       puts "adminSellerLimitTest"

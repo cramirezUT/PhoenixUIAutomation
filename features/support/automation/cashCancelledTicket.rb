@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include BettingTicketPage
 end
 
-RSpec.describe "Cash Cancelled Ticket from Phoenix application", :regression do
+RSpec.describe "Betting->Ticket->Cancelled: Cash Cancelled Ticket from Phoenix application", :regression do
   begin
     before(:all) do
       puts "cashcancelledTicketTest"

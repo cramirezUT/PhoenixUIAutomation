@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Event Channel group Id valid and invalid test", :regression do
+RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid test", :regression do
   begin
     before(:all) do
       puts "adminEventChannelGroupIdTest"
@@ -59,7 +59,6 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
 		end
 
     it "Sets invalid Group ID" do
-      eventChannelModal.flash
       eventChannelModalGroupDropdown.flash.click
       eventChannelModalGroupSearchTextField.flash.set ($groupIdInvalid)
     end
@@ -91,7 +90,7 @@ RSpec.describe "Event Channel group Id valid and invalid test", :regression do
     end
 
     it "Clicks on the Help button" do
-      eventChannelModalHelpButton.flash.click
+      expect(eventChannelModalHelpButton.enabled?).to be_truthy
     end
 	# ensure
 	# after(:all) do

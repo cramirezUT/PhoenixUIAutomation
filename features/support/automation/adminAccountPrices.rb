@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountPricesPage
 end
 
-RSpec.describe "Event Prices verification test", :regression do
+RSpec.describe "Admin->Event-Prices: Event Prices verification test", :regression do
   begin
     before(:all) do
       puts "adminAccountPricesTest"

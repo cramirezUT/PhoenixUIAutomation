@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin Terminal Transaction Types functionality test", :regression do
+RSpec.describe "Admin->Terminal->Transaction->Type: Admin Terminal Transaction Types functionality test", :regression do
   begin
     before(:all) do
       puts "adminTerminalTransactionTypesTest"

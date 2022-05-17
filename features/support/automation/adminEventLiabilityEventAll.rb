@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include LiabilityPage
 end
 
-RSpec.describe "Event Liability Event All selection test", :regression do
+RSpec.describe "Admin->Event->Liability->EventAll: Event Liability Event All selection test", :regression do
   begin
     before(:all) do
       puts "adminEventEventAllTest"
@@ -87,13 +87,13 @@ RSpec.describe "Event Liability Event All selection test", :regression do
 
      it "Verifies the figures view" do
        eventResultView.flash
-       puts "Payoff Amount: #{getEventRacePayoffAmount.flash.text}"
-       puts "Payoff Amount: #{getEventRaceBreakageAmount.flash.text}"
-       puts "Payoff Amount: #{getEventRaceCommissionAmount.flash.text}"
-       puts "Payoff Amount: #{getEventRaceRefundAmount.flash.text}"
-       puts "Payoff Amount: #{getEventRaceTotalAmount.flash.text}"
-       puts "Payoff Amount: #{getEventRacePool.flash.text}"
-       puts "Payoff Amount: #{getEventRaceRace.flash.text}"
+       puts "Payoff Amount: #{getEventRacePayoffAmount(0).flash.text}"
+       puts "Breakage Amount: #{getEventRaceBreakageAmount(0).flash.text}"
+       puts "Commission Amount: #{getEventRaceCommissionAmount(0).flash.text}"
+       puts "Refund Amount: #{getEventRaceRefundAmount(0).flash.text}"
+       puts "Total Amount: #{getEventRaceTotalAmount(0).flash.text}"
+       puts "Race Pool: #{getEventRacePool(0).flash.text}"
+       puts "Race: #{getEventRaceRace(0).flash.text}"
      end
 	ensure
 	after(:all) do
