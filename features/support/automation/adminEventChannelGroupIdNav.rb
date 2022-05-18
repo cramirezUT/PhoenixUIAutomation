@@ -81,7 +81,7 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
 
     it "Sets an invalid channel id" do
       eventChannelEeventChannelTextFieldByIndex(0).flash.set ($invalidChannelId)
-      sendKeysEnter
+    #  sendKeysEnter
       sendKeysTab
     end
 
@@ -98,4 +98,4 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
 	# 	close_browser
 	end
 	end
-end
+#end

@@ -87,13 +87,13 @@ RSpec.describe "Admin->Event->Liability->EventRace: Event Liability Event Race t
     end
 
 		it "Prints the Payoff amount" do
-			puts "Payoff amount : #{getEventRacePayoffAmount.text}"
-			puts "Breakage amount : #{getEventRaceBreakageAmount.text}"
-			puts "Commission amount : #{getEventRaceCommissionAmount.text}"
-			puts "Refund amount : #{getEventRaceRefundAmount.text}"
-			puts "Total amount : #{getEventRaceTotalAmount.text}"
-			puts "Pool : #{getEventRacePool.text}"
-			puts "Race : #{getEventRaceRace.text}"
+			puts "Payoff amount : #{getEventRacePayoffAmount(0).text}"
+			puts "Breakage amount : #{getEventRaceBreakageAmount(0).text}"
+			puts "Commission amount : #{getEventRaceCommissionAmount(0).text}"
+			puts "Refund amount : #{getEventRaceRefundAmount(0).text}"
+			puts "Total amount : #{getEventRaceTotalAmount(0).text}"
+			puts "Pool : #{getEventRacePool(0).text}"
+			puts "Race : #{getEventRaceRace(0).text}"
 		end
 	ensure
 	after(:all) do
