@@ -85,64 +85,26 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
     end
 
 		it "Sets text in the Days text field" do
-			autoDonationSettingsModalDaysTextField.flash.click
-			sendKeysBackspace
-			autoDonationSettingsModalDaysTextField.flash.click
-			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays1)
+			if (getAcountDonationDaysLabel.text) == ('AUTO DONATE ON FOREVER')
+        autoDonationSettingsModalDaysTextField.flash.click
+  			sendKeysBackspace
+  			autoDonationSettingsModalDaysTextField.flash.click
+  			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays1)
+        sendKeysEnter
+        autoDonationSettingsModalSaveButton.flash.click
+        verifyAccountDonationDays('AUTO DONATE ON FOR 1 DAYS')
+      else if (getAcountDonationDaysLabel.text) == ('AUTO DONATE ON FOR 1 DAYS')
+        autoDonationSettingsModalDaysTextField.flash.click
+  			sendKeysBackspace
+  			autoDonationSettingsModalDaysTextField.flash.click
+  			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays1)
+        autoDonationSettingsModalCheckbox.flash.click
+        autoDonationSettingsModalCheckbox.flash.click
+        autoDonationSettingsModalSaveButton.flash.click
+        verifyAccountDonationDays('AUTO DONATE ON FOREVER')
+      end
+      end
 		end
-
-    it "Clicks on the Auto donate checkbox" do
-      autoDonationSettingsModalCheckbox.flash.click
-      sleep 3
-    end
-
-    it "Clicks on the save button" do
-      autoDonationSettingsModalSaveButton.flash.click
-    end
-
-    it "Verifies the Donation days" do
-      verifyAccountDonationDays('AUTO DONATE ON FOREVER')
-    end
-
-		# it "Closes the Auto Donate warning" do
-		# 	sleep(2)
-		# 	if accountDonationZeroDonateWarningModal.present? == true
-		# 		accountDonationZeroDonateWarningModal.flash
-		# 		accountDonationZeroDonateWarningModalCloseButton.click
-		# 	else
-		# 		puts "There is no Auto Donate Warning Modal"
-		# 	end
-		# end
-
-		# it "Clicks on the Save button" do
-		# 	autoDonationSettingsModalSaveButton.wait_until_present.flash.click
-		# end
-    #
-		# it "Verifies the account Donation results table" do
-		# 	accountDonationResultsModal.flash
-		# end
-    #
-		# it "Clicks on the Donate button" do
-		# 	accountDonationDonateButton.flash.click
-		# end
-    #
-		# it "Clicks on the No button in the confirmation modal" do
-		# 	accountDonationConfirmationModalNoButton.flash
-		# 	accountDonationConfirmationModalNoButton.flash.click
-		# end
-    #
-		# it "Clicks on the Donate button" do
-		# 	accountDonationDonateButton.flash.click
-		# end
-    #
-		# it "Sets a doation amount" do
-		# 	accountDonationConfirmationModalTextField.flash.set ($donateAmount)
-		# 	sendKeysTab
-		# end
-    #
-		# it "Clicks on the Yes button" do
-		# 	accountDonationConfirmationModalYesButton.flash.click
-		# end
 	ensure
 	after(:all) do
 		logOutFuction
