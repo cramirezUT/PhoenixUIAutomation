@@ -70,25 +70,25 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :regr
       contestPlayerReviewModalPlayerTextField.flash.set ($playerGroupdId)
       sendKeysEnter
 		end
-		#### ENTRY RESULT ####
-		it "Clicks on the Player Transaction search result for Entry" do
+		#### ENTRY RESULT #### LEAVING THIS HERE IN CASE WE USE A DIFFERNT GROUP ID THAT HAS ENTRY
+		# it "Clicks on the Player Transaction search result for Entry" do
+		# 	contestPlayerTransactionResultByIndex(0).flash.click
+		# end
+
+		# it "Verifies the Transaction result header for Entry" do
+		# 	verifyContestPlayerReviewHeaderResult('Entry')
+		# end
+		#### ADJUST RESULT ####
+		it "Clicks on the Player Transaction search result for Winnings" do
 			contestPlayerTransactionResultByIndex(0).flash.click
 		end
 
-		it "Verifies the Transaction result header for Entry" do
-			verifyContestPlayerReviewHeaderResult('Entry')
-		end
-		#### ADJUST RESULT ####
-		it "Clicks on the Player Transaction search result for Adjust" do
-			contestPlayerTransactionResultByIndex(1).flash.click
-		end
-
-		it "Verifies the Transaction result header for Adjust" do
-			verifyContestPlayerReviewHeaderResult('Adjust')
+		it "Verifies the Transaction result header for Winnings" do
+			verifyContestPlayerReviewHeaderResult('Winnings')
 		end
 		#### WITHDRAW RESULT ####
 		it "Clicks on the Player Transaction search result for Withdraw" do
-			contestPlayerTransactionResultByIndex(3).flash.click
+			contestPlayerTransactionResultByIndex(1).flash.click
 		end
 
 		it "Verifies the Transaction result header for Withdraw" do
@@ -96,7 +96,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :regr
 		end
 		#### DEPOSIT RESULT ####
 		it "Clicks on the Player Transaction search result for Deposit" do
-			contestPlayerTransactionResultByIndex(4).flash.click
+			contestPlayerTransactionResultByIndex(3).flash.click
 		end
 
 		it "Verifies the Transaction result header for Deposit" do
