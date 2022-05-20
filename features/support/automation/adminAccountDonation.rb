@@ -93,6 +93,7 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
 
     it "Clicks on the Auto donate checkbox" do
       autoDonationSettingsModalCheckbox.flash.click
+      sleep 3
     end
 
     it "Clicks on the save button" do
@@ -100,7 +101,7 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :reg
     end
 
     it "Verifies the Donation days" do
-      verifyAccountDonationDays('AUTO DONATE ON FOR 1 DAYS')
+      verifyAccountDonationDays('AUTO DONATE ON FOREVER')
     end
 
 		# it "Closes the Auto Donate warning" do

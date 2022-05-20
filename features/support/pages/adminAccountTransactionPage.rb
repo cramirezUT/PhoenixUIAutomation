@@ -115,6 +115,10 @@ module AccountTransactionPage
 		@browser.button(id: 'AccountTransaction-Select-View')
 	end
 
+	def accountTransactionSelectBalanceClick
+		@browser.label(id: 'AccountTransaction-Select-Balance')
+	end
+
 	#### GETTERS ####
 	def getAccountTransactionError
 		@browser.li(id: 'ut-ms-opt-AccountTransaction-Select-Group_noresults')

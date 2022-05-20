@@ -60,7 +60,8 @@ module AccountDonationPage
 	end
 
 	def autoDonationSettingsModalCheckbox
-		@browser.td(data_value: 'Auto donate change from each winnings')
+	  @browser.td(data_value: 'Auto donate change from each winnings')
+	 # @browser.*(xpath: "//tbody/tr[@data-utrow='0']/td//div//*/*[1]")
 	end
 
 	def autoDonationSettingsModalSaveButton

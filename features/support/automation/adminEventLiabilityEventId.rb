@@ -87,13 +87,13 @@ RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid
 
     it "Verifies the figures view" do
       eventResultView.flash
-      puts "Payoff Amount: #{getEventRacePayoffAmount.flash.text}"
-      puts "Payoff Amount: #{getEventRaceBreakageAmount.flash.text}"
-      puts "Payoff Amount: #{getEventRaceCommissionAmount.flash.text}"
-      puts "Payoff Amount: #{getEventRaceRefundAmount.flash.text}"
-      puts "Payoff Amount: #{getEventRaceTotalAmount.flash.text}"
-      puts "Payoff Amount: #{getEventRacePool.flash.text}"
-      puts "Payoff Amount: #{getEventRaceRace.flash.text}"
+      puts "Payoff Amount: #{getEventRacePayoffAmount(0).flash.text}"
+      puts "Payoff Amount: #{getEventRaceBreakageAmount(0).flash.text}"
+      puts "Payoff Amount: #{getEventRaceCommissionAmount(0).flash.text}"
+      puts "Payoff Amount: #{getEventRaceRefundAmount(0).flash.text}"
+      puts "Payoff Amount: #{getEventRaceTotalAmount(0).flash.text}"
+      puts "Payoff Amount: #{getEventRacePool(0).flash.text}"
+      puts "Payoff Amount: #{getEventRaceRace(0).flash.text}"
     end
 
     it "Sets invalid Event ID" do

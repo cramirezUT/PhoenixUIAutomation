@@ -129,6 +129,8 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 
 		it "Sets the Account From number" do
 			accountTransactionAccountFromTextfield.flash.set ($accountGroupId)
+      sleep 2
+      accountTransactionSelectBalanceClick.flash.click
 		end
 
 		it "Clicks on the view from account button" do
