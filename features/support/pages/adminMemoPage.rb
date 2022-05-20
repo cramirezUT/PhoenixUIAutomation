@@ -9,7 +9,7 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 @random = rand(9999)
-$newMemoText = "new test memo #{@random}"
+$newMemoText = "new test memo"
 $newSubjectText = "New Subject #{@random}"
 $newBodyText = "Body Text #{@random}"
 

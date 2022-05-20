@@ -55,7 +55,7 @@ RSpec.describe "Admin->Event-Prices: Event Prices verification test", :regressio
 		it "Sets an invalid Event id" do
 			accountPricesEventDropdown.wait_until_present.flash.click
       accountPricesEventSearchTextField.flash.set ($eventIdInvalid)
-      sendKeysEnter
+      #sendKeysEnter
 		end
 
 		it "Verifies the No matches found error" do

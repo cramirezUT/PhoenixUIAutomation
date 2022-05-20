@@ -55,7 +55,8 @@ RSpec.describe "Admin->Event->Handle->GroupID: Event Handle group Id valid and i
     it "Sets invalid Group ID" do
       eventHandleGourpDropdown.wait_until_present.flash.click
       eventHandleGroupSerachTextField.wait_until_present.flash.set ($invalidGroupId)
-      sendKeysEnter
+    #  sendKeysEnter
+      sleep 5
     end
 
     it "Verifes the Handle search result" do
@@ -69,9 +70,9 @@ RSpec.describe "Admin->Event->Handle->GroupID: Event Handle group Id valid and i
       sendKeysEnter
 		end
 
-		it "Verifes the Handle search result" do
-      verifyEventHandleSearchResults("No matches found")
-    end
+	#	it "Verifes the Handle search result" do
+  #    verifyEventHandleSearchResults("No matches found")
+  #  end
 	ensure
 	after(:all) do
 		logOutFuction
