@@ -139,7 +139,7 @@ module AdminTerminalTransactionPage
 	def verifyTerminalTransactionHistoryText(result)
 		sleep(1)
 		expectedResult = "#{result}"
-		expect(getAdminTerminalTransactionHistoryEntry.text[20..64]).to include(expectedResult)
+		expect(getAdminTerminalTransactionHistoryEntry.text[20..68]).to include(expectedResult)
 		getAdminTerminalTransactionHistoryEntry.flash(color: ["yellow"])
 	end
 end
