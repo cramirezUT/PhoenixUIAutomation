@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include BettingTicketPage
 end
 
-RSpec.describe "Betting->Ticket->InvalidCode: Cancel Ticket from Phoenix application", :regression do
+RSpec.describe "Betting->Ticket->InvalidCode: Cancel Ticket from Phoenix application", :cancel do
   begin
     before(:all) do
       puts "cancelingTicketTest"

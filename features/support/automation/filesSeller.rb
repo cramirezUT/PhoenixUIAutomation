@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include FilesSellerPage
 end
 
-RSpec.describe "Files->Seller: Verify the table options in the Displayed Columns modal", :regression do
+RSpec.describe "Files->Seller: Verify the table options in the Displayed Columns modal", :files do
   begin
     before(:all) do
       puts "filesAccountBlock"

@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid test", :regression do
+RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid test", :adminEvent do
   begin
     before(:all) do
       puts "adminEventChannelGroupIdTest"

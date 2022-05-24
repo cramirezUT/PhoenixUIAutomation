@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountSummaryPage
 end
 
-RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for various options", :regression do
+RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for various options", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountSummaryTest"

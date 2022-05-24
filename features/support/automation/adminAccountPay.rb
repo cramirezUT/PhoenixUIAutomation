@@ -24,7 +24,7 @@ RSpec.configure do |c|
   c.include AccountPayPage
 end
 
-RSpec.describe "Admin->Account->Pay: Account Pay Ticket validation", :regression do
+RSpec.describe "Admin->Account->Pay: Account Pay Ticket validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountPayTest"

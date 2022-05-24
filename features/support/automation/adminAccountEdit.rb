@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include AccountEditPage
 end
 
-RSpec.describe "Admin->Account->Edit: Account Edit validation", :regression do
+RSpec.describe "Admin->Account->Edit: Account Edit validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountEditTest"

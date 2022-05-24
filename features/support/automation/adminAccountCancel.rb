@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountCancelPage
 end
 
-RSpec.describe "Admin->Account->Cancel: Account ticket cancelation validation", :regression do
+RSpec.describe "Admin->Account->Cancel: Account ticket cancelation validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountCancelTest"

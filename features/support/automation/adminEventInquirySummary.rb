@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include InquirePage
 end
 
-RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :regression do
+RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent do
   begin
     before(:all) do
       puts "adminEventInquirySummaryTest"

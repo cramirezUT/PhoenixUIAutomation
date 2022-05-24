@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include BettingTicketPage
 end
 
-RSpec.describe "Betting->Ticket: Verify the table options in the Displayed Columns modal", :regression do
+RSpec.describe "Betting->Ticket: Verify the table options in the Displayed Columns modal", :claim do
   begin
     before(:all) do
       puts "claimingTicketTest"

@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountTransactionPage
 end
 
-RSpec.describe "Admin->Account->Transaction: Account Transaction verification test", :regression do
+RSpec.describe "Admin->Account->Transaction: Account Transaction verification test", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountTransactionTest"

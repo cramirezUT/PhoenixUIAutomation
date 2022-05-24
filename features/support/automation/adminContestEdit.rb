@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include ContestEditPage
 end
 
-RSpec.describe "Admin->Contest->Edit: Contest Edit verification test", :regression do
+RSpec.describe "Admin->Contest->Edit: Contest Edit verification test", :adminContest do
   begin
     before(:all) do
       puts "adminContestEditTest"

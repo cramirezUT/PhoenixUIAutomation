@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountFindPage
 end
 
-RSpec.describe "Admin->Account->Find: Account find account holder by name", :regression do
+RSpec.describe "Admin->Account->Find: Account find account holder by name", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountFindTest"

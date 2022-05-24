@@ -25,7 +25,7 @@ RSpec.configure do |c|
   c.include ContestTransactionPage
 end
 
-RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification test", :regression do
+RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification test", :adminContest do
   begin
     before(:all) do
       puts "adminContestTransactionTest"

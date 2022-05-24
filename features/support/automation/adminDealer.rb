@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AdminDealerPage
 end
 
-RSpec.describe "Admin->Dealer: Admin Dealer verification test", :regression do
+RSpec.describe "Admin->Dealer: Admin Dealer verification test", :adminDealer do
   begin
     before(:all) do
       puts "adminDealerTest"

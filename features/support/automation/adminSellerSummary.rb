@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Seller->Summary: Admin Seller Summary functionality test", :regression do
+RSpec.describe "Admin->Seller->Summary: Admin Seller Summary functionality test", :adminSeller do
   begin
     before(:all) do
       puts "adminSellerSummaryTest"

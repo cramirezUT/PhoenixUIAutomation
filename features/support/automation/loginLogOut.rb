@@ -16,7 +16,7 @@ RSpec.configure do |c|
   c.include SendKeys
 end
 
-RSpec.describe "Login->Logout: Tote Log in Log out test", :smoke do
+RSpec.describe "Login->Logout: Tote Log in Log out test", :loginOut do
   begin
     before(:all) do
       puts "ToteloginLogoutTest"

@@ -18,7 +18,7 @@ RSpec.configure do |c|
 	c.include PricesPage
 end
 
-RSpec.describe "Admin->Event->Prices: Event Prices Prices race test", :regression do
+RSpec.describe "Admin->Event->Prices: Event Prices Prices race test", :adminEvent do
 	begin
 		before(:all) do
 			puts "adminEventPricesCurrentRaceTest"

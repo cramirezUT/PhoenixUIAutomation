@@ -25,7 +25,7 @@ RSpec.configure do |c|
   c.include AccountChecksPage
 end
 
-RSpec.describe "Admin->Account->Checks: Account Checks validation", :regression do
+RSpec.describe "Admin->Account->Checks: Account Checks validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountChecksTest"

@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Terminal->Inquiry->Total: Admin Terminal Inquiry Total test", :regression do
+RSpec.describe "Admin->Terminal->Inquiry->Total: Admin Terminal Inquiry Total test", :adminTerminal do
   begin
     before(:all) do
       puts "adminTerminalInquiryTotalTest"

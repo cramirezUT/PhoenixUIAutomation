@@ -22,7 +22,7 @@ RSpec.configure do |c|
   c.include ContestCancelPage
 end
 
-RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test", :regression do
+RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test", :adminContest do
   begin
     before(:all) do
       puts "adminContestCancelTest"

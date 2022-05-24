@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :regression do
+RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adminMemo do
   begin
     before(:all) do
       puts "adminMemoAddDeleteTest"

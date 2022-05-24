@@ -18,7 +18,7 @@ RSpec.configure do |c|
 	c.include PoolsPage
 end
 
-RSpec.describe "Admin->Event->Pools->Event->ID: Event Pools Event Id valid and invalid and selects an advanced race test", :regression do
+RSpec.describe "Admin->Event->Pools->Event->ID: Event Pools Event Id valid and invalid and selects an advanced race test", :adminEvent do
 	begin
 		before(:all) do
 			puts "adminEventPoolsIdTest"

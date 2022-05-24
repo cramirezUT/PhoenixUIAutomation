@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include ContestPayPage
 end
 
-RSpec.describe "Admin->Contest->Pay: Contest Pay verification test", :regression do
+RSpec.describe "Admin->Contest->Pay: Contest Pay verification test", :adminContest do
   begin
     before(:all) do
       puts "adminContestPayTest"

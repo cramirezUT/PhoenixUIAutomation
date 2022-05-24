@@ -22,7 +22,7 @@ RSpec.configure do |c|
   c.include AccountExchangesPage
 end
 
-RSpec.describe "Admin->Account->Exchanges: Account Exchanges validation", :regression do
+RSpec.describe "Admin->Account->Exchanges: Account Exchanges validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountExchangesTest"

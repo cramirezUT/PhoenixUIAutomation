@@ -24,7 +24,7 @@ RSpec.configure do |c|
   c.include AccountPendingPage
 end
 
-RSpec.describe "Admin->Account->Pending: Account Pending validation", :regression do
+RSpec.describe "Admin->Account->Pending: Account Pending validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountPendingTest"

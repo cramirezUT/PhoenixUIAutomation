@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountStatusPage
 end
 
-RSpec.describe "Admin->Account->Status: Account Status verification test", :regression do
+RSpec.describe "Admin->Account->Status: Account Status verification test", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountStatusTest"

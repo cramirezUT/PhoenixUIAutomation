@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AdminBalanceSheetPage
 end
 
-RSpec.describe "Admin->Balance:  Balance Sheet validation", :regression do
+RSpec.describe "Admin->Balance:  Balance Sheet validation", :adminBalance do
   begin
     before(:all) do
       puts "AdminBalanceSheetPage"

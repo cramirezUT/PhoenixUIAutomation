@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include HandlePage
 end
 
-RSpec.describe "Betting->Ticket-Cancel: Cancel Ticket from Phoenix application", :regression do
+RSpec.describe "Betting->Ticket-Cancel: Cancel Ticket from Phoenix application", :cancel do
   begin
     before(:all) do
       puts "cancelingTicketTest"

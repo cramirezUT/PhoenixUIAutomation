@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include LiabilityPage
 end
 
-RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid and invalid test", :regression do
+RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid and invalid test", :adminEvent do
   begin
     before(:all) do
       puts "adminEventGroupEventIdTest"

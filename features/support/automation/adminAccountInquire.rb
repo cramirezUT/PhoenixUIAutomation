@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountInquirePage
 end
 
-RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :regression do
+RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountInquiryTest"

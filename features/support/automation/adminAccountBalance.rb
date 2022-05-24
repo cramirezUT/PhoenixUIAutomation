@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AccountBalancePage
 end
 
-RSpec.describe "Admin->Account->Balance: Account balance validation", :regression, :smoke do
+RSpec.describe "Admin->Account->Balance: Account balance validation", :adminAccount do
   begin
     before(:all) do
       puts "adminAccountBalanceTest"

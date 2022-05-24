@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include LiabilityPage
 end
 
-RSpec.describe "Admin->Event->Liability->EventRace: Event Liability Event Race test", :regression do
+RSpec.describe "Admin->Event->Liability->EventRace: Event Liability Event Race test", :adminEvent do
   begin
     before(:all) do
       puts "adminEventLiablityEventRaceTest"

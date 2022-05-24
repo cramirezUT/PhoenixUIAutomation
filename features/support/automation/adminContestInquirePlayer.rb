@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include ContestInquirePlayerPage
 end
 
-RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verification test", :regression do
+RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player verification test", :adminContest do
   begin
     before(:all) do
       puts "adminContestInquirePlayerTest"

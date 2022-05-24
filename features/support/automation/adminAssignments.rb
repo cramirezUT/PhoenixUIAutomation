@@ -18,7 +18,7 @@ RSpec.configure do |c|
   c.include AdminAssignmentsPage
 end
 
-RSpec.describe "Admin->Assignments:  Assignments validation", :regression do
+RSpec.describe "Admin->Assignments:  Assignments validation", :adminAssignments do
   begin
     before(:all) do
       puts "AdminAssignmentsPage"
