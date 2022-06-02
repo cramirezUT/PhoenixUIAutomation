@@ -9,9 +9,14 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 @random = rand(9999)
+@randomMemoGreaterThan96Char = (rand(96..9999))
+@randomMemoGreaterThan79Char = (rand(80..9999))
+@randomMemoGreaterThan1000Char = (rand(1001..9999))
 $newMemoText = "new test memo"
 $newSubjectText = "New Subject #{@random}"
 $newBodyText = "Body Text #{@random}"
+$newMemoTextGreaterThan95Char = "#{@randomMemoGreaterThan95Char}"
+$memoErrorText ="!!!!"
 
 
 module AdminMemoPage
@@ -83,6 +88,10 @@ module AdminMemoPage
 	def adminMemoNewMemoModalNoButton
 		@browser.button(id: 'Confirm-No')
 	end
+
+	def adminMemoNewMemoModalErrorText
+		@browser.button(id: 'Confirm-Error')
+	end
 	#######################
 
 	#### SUBJECT MODAL ####
@@ -126,11 +135,40 @@ module AdminMemoPage
 		@browser.element(xpath: "//*[@id='AdminMemo-Error']")
 	end
 
+	def adminMemoDeletedByText(value)
+		@browser.element(xpath: "//*[@text()='"+value+"']")
+	end
+
 	#### VERIFIERS ####
+
+	def verifyNewMemoBodyText(result)
+		expectedResult = "#{result}"
+		expect(adminMemoSubjectModalBodyTextArea.text).to include(expectedResult)
+		adminMemoSubjectModalBodyTextArea.flash(color: ["yellow"])
+	end
+
+	def verifyNewMemoSubjectText(result)
+		expectedResult = "#{result}"
+		expect(adminMemoSubjectModalSubjectTextField.text).to include(expectedResult)
+    adminMemoSubjectModalSubjectTextField.flash(color: ["yellow"])
+	end
+
 	def verifyNewMemoText(index, result)
 		expectedResult = "#{result}"
 		expect(adminMemoModalMemoByIndex(index).text).to include(expectedResult)
 		adminMemoModalMemoByIndex(index).flash(color: ["yellow"])
+	end
+
+	def verifyErrorMemoText(result)
+		expectedResult = "#{result}"
+		expect(adminMemoNewMemoModalErrorText.text).to include(expectedResult)
+		adminMemoModalMemoByIndex(index).flash(color: ["yellow"])
+	end
+
+	def verifyNewMemoTextMoreThanGivenChar(result)
+		expectedResult = "#{result}"
+		expect(adminMemoNewMemoModalErrorText.text).to eq(expectedResult)
+		adminMemoNewMemoModalErrorText.flash(color: ["yellow"])
 	end
 
 	def verifyDeletedSuccessMessageText(message)
