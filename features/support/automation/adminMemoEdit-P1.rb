@@ -54,13 +54,16 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-    it "Select a memo" do
-    adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
 		end
 
+    it "Select a memo" do
+      adminMemoModalEditButton.wait_until_present.flash.click
+		end
 
 		it "Verifies the subject modal" do
-			adminMemoSubjectModal.flash
+		  	adminMemoSubjectModal.flash
 		end
 
 		it "Sets a new subject in text field" do
@@ -73,23 +76,19 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Clicks on the close button" do
+      sleep 5
 			adminMemoSubjectModalCloseButton.flash.click
+      adminMemoSubjectModalCloseButton.flash.click
 		end
 
-		it "Click memo Confirm No " do
-		   adminMemoDeleteModalNoButton.flash.click
-		end
-
-    it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
+		it "Click memo Confirm Yes " do
+		   adminMemoDeleteModalYesButton.flash.click
 		end
 
     it "Verifies the memo was set" do
-      adminMemoModalMemoByIndex(0).flash.Click
-      verifyNewMemoBodyText($newMemoText)
+      adminMemoModalMemoByIndex(0).flash.click
+      verifyNewMemoText(0, adminMemoModalMemoByIndex(0).text)
     end
-
-
 	ensure
 	after(:all) do
 		logOutFuction

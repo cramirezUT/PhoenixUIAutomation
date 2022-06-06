@@ -10,6 +10,7 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
+@var
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -59,13 +60,13 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ("test")
+      @var=$random.concat("test")
+			adminMemoNewMemoModalMemoNameField.flash.set (@var)
 			sendKeysTab
 		end
 
 		it "Clicks on the Yes button" do
 			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
-      adminMemoNewMemoModalYesButton.wait_while_present
 		end
 
 		it "Verifies the subject modal" do
@@ -73,25 +74,26 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ("test")
+			adminMemoSubjectModalSubjectTextField.flash.set ($random.concat("test"))
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ("test")
+			adminMemoSubjectModalBodyTextArea.flash.set ($random.concat("test"))
 		end
 
 		it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
+      adminMemoSubjectModalSaveButton.flash.click
 		end
 
 		it "Verifies the memo was set" do
-			adminMemoModalMemoByIndex(0).flash
-			verifyNewMemoText(0, "test")
+			adminMemoModalMemoByIndex(0).flash.click
+			verifyNewMemoText(0, @var)
 		end
     #### DELETE NEW MEMO ####
     it "Clicks on the new memo line" do
-      adminMemoDeletedByText("test").flash.click
+      adminMemoDeletedByText(@var).flash.click
     end
 
     it "Clicks on the trash can icon" do
@@ -106,27 +108,6 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
       adminMemoDeleteModalYesButton.flash.click
     end
 
-
-    #### DELETE NEW MEMO AGAIN ####
-    it "Clicks on the new memo line" do
-      adminMemoDeletedByText("test").flash.click
-    end
-
-    it "Clicks on the trash can icon" do
-      adminMemoModalDeleteButton.flash.click
-    end
-
-    it "Verifies the Delete Modal" do
-      adminMemoDeleteModal.flash
-    end
-
-    it "Clicks on the Yes button" do
-      adminMemoDeleteModalYesButton.flash.click
-    end
-
-    it "Verifies the newly created memo deleted error message" do
-      verifyDeletedSuccessMessageText("memo doesn't exist")
-    end
 	ensure
 	after(:all) do
 		logOutFuction

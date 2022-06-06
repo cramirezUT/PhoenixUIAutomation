@@ -54,8 +54,12 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    end
+
     it "Select a memo" do
-    adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+      adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
 
@@ -64,9 +68,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
-      sendKeysBackspace.flash.click
-      sendKeysBackspace.flash.click
+			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText+"Test")
 		end
 
 		it "Sets body text" do
@@ -76,6 +78,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
+      adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm No " do
@@ -87,8 +90,9 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
     it "Verifies the memo was set" do
-      adminMemoModalMemoByIndex(0).flash.Click
-      verifyNewMemoSubjectText($newMemoText)
+      adminMemoModalMemoByIndex(0).flash.click
+      expect(adminMemoModalMemoSubjectByIndex(0).text).to include($newMemoText+"Edit")
+      adminMemoModalMemoSubjectByIndex(0).flash(color: ["yellow"])
     end
 
 

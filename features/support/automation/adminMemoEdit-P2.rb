@@ -54,27 +54,31 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    end
+
     it "Select a memo" do
-    adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+      adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
 
 		it "Verifies the subject modal" do
-			adminMemoSubjectModal.flash
+		  	adminMemoSubjectModal.flash
 		end
 
 		it "Sets a new subject in text field" do
 			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
-      adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText+"Test")
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText+"Edit")
 		end
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
+      adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm No " do
@@ -86,8 +90,8 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
     it "Verifies the memo was set" do
-      adminMemoModalMemoByIndex(0).flash.Click
-      verifyNewMemoSubjectText($newMemoText)
+      adminMemoModalMemoByIndex(0).flash.click
+      verifyNewMemoText(0, $newMemoText)
     end
 
 

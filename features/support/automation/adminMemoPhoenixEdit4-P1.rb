@@ -10,6 +10,8 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
+@value
+@valueAfter
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -54,8 +56,12 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    end
+
     it "Select a memo" do
-    adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+      adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
 
@@ -69,11 +75,23 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText+"Edit")
+			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+      @value= adminMemoSubjectModalBodyTextArea.text.length
+      sendKeysBackspace
+    #  sendKeysBackspace.flash.click
 		end
+
+    it "Get body length after deletion" do
+        @valueAfter= adminMemoSubjectModalBodyTextArea.text.length
+    end
+
+    it "Verify deletion is success" do
+        expect(@value == @valueAfter)
+    end
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
+      adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm No " do
@@ -83,12 +101,6 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
     it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
 		end
-
-    it "Verifies the memo was set" do
-      adminMemoModalMemoByIndex(0).flash.Click
-      verifyNewMemoBodyText($newMemoText)
-    end
-
 
 	ensure
 	after(:all) do

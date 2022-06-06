@@ -10,6 +10,8 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
+@value
+@valueAfter
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -50,32 +52,55 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-		it "Clicks on the Add button" do
-			adminMemoModalAddButton.wait_until_present.flash.click
-		end
-    #### ADD NEW MEMO AND VERIFY INVALID MEMO ####
-		it "Verifies the New Memo modal" do
-			adminMemoNewMemoModal.flash
+    it "Clicks on the Memo tab" do
+      adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoTextGreaterThan96Char)
-			sendKeysTab
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    end
+
+    it "Select a memo" do
+      adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
-		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
-      adminMemoNewMemoModalYesButton.wait_while_present
+
+		it "Verifies the subject modal" do
+			adminMemoSubjectModal.flash
+		end
+
+		it "Sets a new subject in text field" do
+			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+		end
+
+		it "Sets body text" do
+      adminMemoSubjectModalBodyTextArea.flash.click
+			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+      @value= adminMemoSubjectModalBodyTextArea.text.length
+      adminMemoSubjectModalBodyTextArea.flash.click
+      sendKeysSelectAll
+      sendKeysBackspace
+		end
+
+    it "Get body length after deletion" do
+        @valueAfter= adminMemoSubjectModalBodyTextArea.text.length
+    end
+
+    it "Verify deletion is success" do
+        expect(0 == @valueAfter)
+    end
+
+		it "Clicks on the close button" do
+			adminMemoSubjectModalCloseButton.flash.click
+		end
+
+		it "Click memo Confirm No " do
+		   adminMemoDeleteModalNoButton.flash.click
 		end
 
     it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
 		end
-
-    it "Verifies Invalid Memo" do
-      adminMemoNewMemoModalErrorText.wait_until_present.flash
-      verifyNewMemoTextMoreThanGivenChar("Memo name is longer than 96 characters!")
-    end
 
 	ensure
 	after(:all) do

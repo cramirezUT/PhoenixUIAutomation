@@ -59,22 +59,13 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoTextGreaterThan1000Char)
+			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoTextGreaterThan79Char)
 			sendKeysTab
 		end
 
-		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
-      adminMemoNewMemoModalYesButton.wait_while_present
-		end
-
-    it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
-		end
-    
     it "Verifies Invalid Memo" do
       adminMemoNewMemoModalErrorText.wait_until_present.flash
-      verifyNewMemoTextMoreThanGivenChar("No Maximum Should Be Enforced!")
+      verifyNewMemoTextMoreThanGivenChar("Memo name is longer than 80 characters!")
     end
 
 	ensure

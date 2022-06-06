@@ -9,13 +9,17 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 @random = rand(9999)
-@randomMemoGreaterThan96Char = (rand(96..9999))
-@randomMemoGreaterThan79Char = (rand(80..9999))
-@randomMemoGreaterThan1000Char = (rand(1001..9999))
+
+@randomMemoGreaterThan96Char = 100.times.map { rand(10)  }
+@randomMemoGreaterThan79Char = 80.times.map { rand(10)  }
+@randomMemoGreaterThan1000Char = 1001.times.map { rand(10)  }
 $newMemoText = "new test memo"
 $newSubjectText = "New Subject #{@random}"
 $newBodyText = "Body Text #{@random}"
-$newMemoTextGreaterThan95Char = "#{@randomMemoGreaterThan95Char}"
+$newMemoTextGreaterThan96Char = "#{@randomMemoGreaterThan96Char}"
+$newMemoTextGreaterThan79Char = "#{@randomMemoGreaterThan79Char}"
+$newMemoTextGreaterThan1000Char = "#{@randomMemoGreaterThan1000Char}"
+$random = "#{@random}"
 $memoErrorText ="!!!!"
 
 
@@ -72,6 +76,10 @@ module AdminMemoPage
 		@browser.div(id: "AdminMemo-Select-Catalog-#{index}-0")
 	end
 
+	def adminMemoModalMemoSubjectByIndex(index)
+		@browser.div(id: "AdminMemo-Select-Catalog-#{index}-1")
+	end
+
 	#### NEW MEMO MODAL ####
 	def adminMemoNewMemoModal
 		@browser.div(id: 'Confirm')
@@ -90,7 +98,7 @@ module AdminMemoPage
 	end
 
 	def adminMemoNewMemoModalErrorText
-		@browser.button(id: 'Confirm-Error')
+		@browser.label(id: 'Confirm-Error')
 	end
 	#######################
 

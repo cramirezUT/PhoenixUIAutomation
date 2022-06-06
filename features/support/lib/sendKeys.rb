@@ -74,6 +74,6 @@ module SendKeys
   end
 
 	def sendKeysSelectAll
-    @browser.send_keys :command, "a"
+    @browser.send_keys :control, "a"
   end
 end

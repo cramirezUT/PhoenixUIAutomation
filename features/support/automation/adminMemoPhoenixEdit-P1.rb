@@ -50,12 +50,12 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-    it "Clicks on the Memo tab" do
-      adminMenuLinks("Memo").wait_until_present.flash.click
-		end
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    end
 
     it "Select a memo" do
-    adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+      adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
 
@@ -74,19 +74,20 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
+      adminMemoSubjectModalCloseButton.flash.click
 		end
 
-		it "Click memo Confirm Yes " do
-		   adminMemoDeleteModalYesButton.flash.click
+		it "Click memo Confirm No " do
+		   adminMemoDeleteModalNoButton.flash.click
 		end
 
     it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
 		end
-    
+
     it "Verifies the memo was set" do
-      adminMemoModalMemoByIndex(0).flash.Click
-      verifyNewMemoBodyText($newMemoText+"Edit")
+      adminMemoModalMemoByIndex(0).flash.click
+      verifyNewMemoText(0,$newMemoText)
     end
 
 

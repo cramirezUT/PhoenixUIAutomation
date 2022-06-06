@@ -50,46 +50,23 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-    it "Clicks on the Memo tab" do
-      adminMenuLinks("Memo").wait_until_present.flash.click
+		it "Clicks on the Add button" do
+			adminMemoModalAddButton.wait_until_present.flash.click
+		end
+    #### ADD NEW MEMO AND VERIFY INVALID MEMO ####
+		it "Verifies the New Memo modal" do
+			adminMemoNewMemoModal.flash
 		end
 
-    it "Select a memo" do
-    adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+		it "Sets a new Memo name in text field" do
+			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoTextGreaterThan96Char)
+			sendKeysTab
 		end
 
-
-		it "Verifies the subject modal" do
-			adminMemoSubjectModal.flash
-		end
-
-		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
-      adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText+"Test")
-		end
-
-		it "Sets body text" do
-      adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
-		end
-
-		it "Clicks on the close button" do
-			adminMemoSubjectModalCloseButton.flash.click
-		end
-
-		it "Click memo Confirm No " do
-		   adminMemoDeleteModalNoButton.flash.click
-		end
-
-    it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
-		end
-
-    it "Verifies the memo was set" do
-      adminMemoModalMemoByIndex(0).flash.Click
-      verifyNewMemoSubjectText($newMemoText)
+    it "Verifies Invalid Memo" do
+      adminMemoNewMemoModalErrorText.wait_until_present.flash
+      verifyNewMemoTextMoreThanGivenChar("Memo name is longer than 96 characters!")
     end
-
 
 	ensure
 	after(:all) do

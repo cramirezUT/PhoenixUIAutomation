@@ -53,14 +53,15 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		it "Clicks on the Add button" do
 			adminMemoModalAddButton.wait_until_present.flash.click
 		end
-    #### ADD NEW MEMO AND VERIFY INVALID MEMO ####
+    #### ADD NEW MEMO ####
 		it "Verifies the New Memo modal" do
 			adminMemoNewMemoModal.flash
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoTextGreaterThan79Char)
+			adminMemoNewMemoModalMemoNameField.flash.set ($memoErrorText)
 			sendKeysTab
+      verifyNewMemoTextMoreThanGivenChar("Special Charecters are not allowed using Phoenix")
 		end
 
 		it "Clicks on the Yes button" do
@@ -68,15 +69,26 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMemoNewMemoModalYesButton.wait_while_present
 		end
 
-    it "Clicks on the save button" do
+		it "Verifies the subject modal" do
+			adminMemoSubjectModal.flash
+		end
+
+		it "Sets a new subject in text field" do
+			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+		end
+
+		it "Sets body text" do
+      adminMemoSubjectModalBodyTextArea.flash.click
+			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+		end
+
+		it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
 		end
 
-    it "Verifies Invalid Memo" do
-      adminMemoNewMemoModalErrorText.wait_until_present.flash
-      verifyNewMemoTextMoreThanGivenChar("Memo name is longer than 80 characters!")
-    end
-
+		it "Verifies the memo was set" do
+			adminMemoModalMemoByIndex(0).flash
+		end
 	ensure
 	after(:all) do
 		logOutFuction
