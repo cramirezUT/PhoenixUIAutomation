@@ -115,7 +115,7 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
     #### DELETE NEW MEMO AGAIN ####
     it "Clicks on the new memo line" do
     #  adminMemoDeletedByText("test").flash.clic
-      expect($verifyNewMemoText(0, @var).to be_in([false]))
+    #  expect($verifyNewMemoText(0, @var).to include("false"))
       #expect(false,verifyNewMemoText(0, @var))
     end
 	ensure
