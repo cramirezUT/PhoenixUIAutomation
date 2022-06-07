@@ -134,7 +134,7 @@ module AccountEditPage
 	end
 
 	def verifyAccountEditExistingAlert(result)
-		sleep(1)
+		sleep(2)
 		expectedResult = "#{result}"
 		expect(getAccountExistingAccountAlert.text).to include(expectedResult)
 		getAccountExistingAccountAlert.flash(color: ["yellow"])
