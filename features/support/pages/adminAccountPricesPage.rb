@@ -186,7 +186,7 @@ module AccountPricesPage
 	end
 
 	def verifyPricesEventSearchResultsFirstPlaceHorse(result)
-		sleep(1)
+		sleep(2)
 		expectedResult = "#{result}"
 		expect(getEventFinishResultHorseNameByIndex(2).text).to eq(expectedResult)
 		getEventFinishResultHorseNameByIndex(2).flash(color: ["yellow"])
