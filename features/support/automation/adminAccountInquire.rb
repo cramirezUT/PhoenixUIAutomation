@@ -107,6 +107,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 			accountInquiryEventsSearchTextField.flash.set ($eventOptionAQD)
 			sendKeysEnter
 			sendKeysEnter
+      sendKeysTab
 		end
 
 		it "Clicks on the Races dropdown" do
@@ -117,6 +118,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 			accountInquiryRacesTextField.flash.set ($eventRaceOption)
 			sendKeysEnter
 			sendKeysEnter
+      sendKeysTab
 		end
 
 		it "Clicks on the Pools dropdown" do
