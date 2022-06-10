@@ -61,6 +61,7 @@ module AccountInquirePage
 	end
 
 	def accountInquiryPoolsDropdown
+		sleep(2)
 		@browser.button(id: 'AccountInquiry-Select-Pool-Pools-mainbutton')
 	end
 
