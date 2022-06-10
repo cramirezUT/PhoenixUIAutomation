@@ -23,7 +23,7 @@ end
 RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreateTest"
+      puts "adminMemoCreate-P1"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -82,12 +82,13 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Clicks on the save button" do
+      sleep 10
 			adminMemoSubjectModalSaveButton.flash.click
+      adminMemoSubjectModalSaveButton.flash.click
 		end
 
 		it "Verifies the memo was set" do
-			adminMemoModalMemoByIndex(0).flash
-			verifyNewMemoText(0, $newMemoText)
+			verifyNewMemoText($newMemoText)
 		end
 	ensure
 	after(:all) do

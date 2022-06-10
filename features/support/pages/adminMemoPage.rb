@@ -13,14 +13,14 @@ require 'rspec/expectations'
 @randomMemoGreaterThan96Char = 100.times.map { rand(10)  }
 @randomMemoGreaterThan79Char = 80.times.map { rand(10)  }
 @randomMemoGreaterThan1000Char = 1001.times.map { rand(10)  }
-$newMemoText = "new test memo"
 $newSubjectText = "New Subject #{@random}"
 $newBodyText = "Body Text #{@random}"
 $newMemoTextGreaterThan96Char = "#{@randomMemoGreaterThan96Char}"
 $newMemoTextGreaterThan79Char = "#{@randomMemoGreaterThan79Char}"
 $newMemoTextGreaterThan1000Char = "#{@randomMemoGreaterThan1000Char}"
 $random = "#{@random}"
-$memoErrorText ="!!!!"
+$newMemoText = "new test memo"+$random
+$memoErrorText ="!!!!**..."
 
 
 module AdminMemoPage
@@ -74,6 +74,10 @@ module AdminMemoPage
 
 	def adminMemoModalMemoByIndex(index)
 		@browser.div(id: "AdminMemo-Select-Catalog-#{index}-0")
+	end
+
+	def adminMemoModalMemoByValue()
+		@browser.div(xpath: "//*[text()='#{$newMemoText}']")
 	end
 
 	def adminMemoModalMemoSubjectByIndex(index)
@@ -161,7 +165,13 @@ module AdminMemoPage
     adminMemoSubjectModalSubjectTextField.flash(color: ["yellow"])
 	end
 
-	def verifyNewMemoText(index, result)
+	def verifyNewMemoText(result)
+		expectedResult = "#{result}"
+		expect(adminMemoModalMemoByValue.text).to include(expectedResult)
+		adminMemoModalMemoByValue.flash(color: ["yellow"])
+	end
+
+	def verifyNewMemoTextByIndex(index,result)
 		expectedResult = "#{result}"
 		expect(adminMemoModalMemoByIndex(index).text).to include(expectedResult)
 		adminMemoModalMemoByIndex(index).flash(color: ["yellow"])

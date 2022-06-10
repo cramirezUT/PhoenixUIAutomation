@@ -10,6 +10,7 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
+@var
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -20,10 +21,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo do
+RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreateTest"
+      puts "adminMemoEdit-N1"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -46,7 +47,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 			mainMenuLinks("Admin").wait_until_present.flash.click
 		end
 
-		it "Clicks on the Memo tab" do
+    it "Clicks on the Memo tab" do
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
@@ -54,8 +55,12 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    end
+
     it "Select a memo" do
-    adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+      adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
 
@@ -64,7 +69,8 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText+"Edit")
+      @var=$newSubjectText
+			adminMemoSubjectModalSubjectTextField.flash.set ("#{@var}"+"Edit")
 		end
 
 		it "Sets body text" do
@@ -74,6 +80,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
+      	adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm No " do
@@ -85,8 +92,10 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
     it "Verifies the memo subject" do
-      adminMemoModalMemoByIndex(0).flash.Click
-      verifyNewMemoSubjectText($newMemoText+"Edit")
+      adminMemoModalMemoByIndex(0).flash.click
+      value="#{@var}"+"Test"
+      expect(adminMemoModalMemoSubjectByIndex(0).text).to include("#{@value}")
+      adminMemoModalMemoSubjectByIndex(0).flash(color: ["yellow"])
     end
 
 

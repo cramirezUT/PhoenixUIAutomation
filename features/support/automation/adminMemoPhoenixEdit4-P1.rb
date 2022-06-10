@@ -22,10 +22,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo do
+RSpec.describe "Admin->Memo: Admin Memo Edit Phoenix functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreateTest"
+      puts "adminMemoPhoenixEdit4-P1"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -86,7 +86,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
     end
 
     it "Verify deletion is success" do
-        expect(@value == @valueAfter)
+        expect("#{@value}" == "#{@valueAfter}")
     end
 
 		it "Clicks on the close button" do

@@ -23,7 +23,7 @@ end
 RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreateTest"
+      puts "adminMemoAddCreate-P3"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -65,7 +65,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 
     it "Verifies Invalid Memo" do
       adminMemoNewMemoModalErrorText.wait_until_present.flash
-      verifyNewMemoTextMoreThanGivenChar("Memo name is longer than 80 characters!")
+      verifyNewMemoTextMoreThanGivenChar("Memo name is longer than 128 characters!")
     end
 
 	ensure

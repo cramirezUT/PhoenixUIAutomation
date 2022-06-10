@@ -10,6 +10,7 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
+@var
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -20,10 +21,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo do
+RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreateTest"
+      puts "adminMemoPhoenixEdit3-P1"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -68,7 +69,8 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText+"Test")
+      @var=$newSubjectText
+			adminMemoSubjectModalSubjectTextField.flash.set ("#{@var}"+"Test")
 		end
 
 		it "Sets body text" do
@@ -91,7 +93,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 
     it "Verifies the memo was set" do
       adminMemoModalMemoByIndex(0).flash.click
-      expect(adminMemoModalMemoSubjectByIndex(0).text).to include($newMemoText+"Edit")
+      expect(adminMemoModalMemoSubjectByIndex(0).text).to include("#{@var}"+"Test")
       adminMemoModalMemoSubjectByIndex(0).flash(color: ["yellow"])
     end
 

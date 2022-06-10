@@ -20,10 +20,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo do
+RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreateTest"
+      puts "adminMemoEdit-P2"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -91,7 +91,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 
     it "Verifies the memo was set" do
       adminMemoModalMemoByIndex(0).flash.click
-      verifyNewMemoText(0, $newMemoText)
+      verifyNewMemoTextByIndex(0,adminMemoModalMemoByIndex(0).text)
     end
 
 

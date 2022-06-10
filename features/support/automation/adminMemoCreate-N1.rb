@@ -23,7 +23,7 @@ end
 RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreateTest"
+      puts "AdminMemoCreate-N1"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -61,33 +61,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		it "Sets a new Memo name in text field" do
 			adminMemoNewMemoModalMemoNameField.flash.set ($memoErrorText)
 			sendKeysTab
-      verifyNewMemoTextMoreThanGivenChar("Special Charecters are not allowed using Phoenix")
-		end
-
-		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
-      adminMemoNewMemoModalYesButton.wait_while_present
-		end
-
-		it "Verifies the subject modal" do
-			adminMemoSubjectModal.flash
-		end
-
-		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
-		end
-
-		it "Sets body text" do
-      adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
-		end
-
-		it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
-		end
-
-		it "Verifies the memo was set" do
-			adminMemoModalMemoByIndex(0).flash
+      verifyNewMemoTextMoreThanGivenChar("Invalid memo name")
 		end
 	ensure
 	after(:all) do
