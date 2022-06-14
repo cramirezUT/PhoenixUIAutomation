@@ -117,7 +117,6 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 		it "Sets the race number in the text field" do
 			accountInquiryRacesTextField.flash.set ($eventRaceOption)
 			sendKeysEnter
-			sendKeysEnter
       sendKeysTab
 		end
 
