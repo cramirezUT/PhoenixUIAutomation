@@ -76,8 +76,8 @@ module AdminMemoPage
 		@browser.div(id: "AdminMemo-Select-Catalog-#{index}-0")
 	end
 
-	def adminMemoModalMemoByValue()
-		@browser.div(xpath: "//*[text()='#{$newMemoText}']")
+	def adminMemoModalMemoByValue(value)
+		@browser.element(xpath: "//*[text()='#{value}']")
 	end
 
 	def adminMemoModalMemoSubjectByIndex(index)
@@ -148,7 +148,7 @@ module AdminMemoPage
 	end
 
 	def adminMemoDeletedByText(value)
-		@browser.element(xpath: "//*[@text()='"+value+"']")
+		@browser.element(xpath: "//*[@text()='#{value}']")
 	end
 
 	#### VERIFIERS ####
@@ -167,7 +167,7 @@ module AdminMemoPage
 
 	def verifyNewMemoText(result)
 		expectedResult = "#{result}"
-		expect(adminMemoModalMemoByValue.text).to include(expectedResult)
+		expect(adminMemoModalMemoByValue(expectedResult).text).to include(expectedResult)
 		adminMemoModalMemoByValue.flash(color: ["yellow"])
 	end
 

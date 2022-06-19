@@ -89,12 +89,9 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 
 		it "Verifies the memo was set" do
 			adminMemoModalMemoByIndex(0).flash.click
-			verifyNewMemoText(0, @var)
+			#verifyNewMemoText("#{@var}")
 		end
     #### DELETE NEW MEMO ####
-    it "Clicks on the new memo line" do
-      adminMemoDeletedByText(@var).flash.click
-    end
 
     it "Clicks on the trash can icon" do
       adminMemoModalDeleteButton.flash.click

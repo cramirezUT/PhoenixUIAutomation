@@ -92,12 +92,9 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
     #  $random["test"]=""
     #  random1=puts $random
     #  random1= $random.gsub("test","")
-			verifyNewMemoText(0, @var)
+
 		end
     #### DELETE NEW MEMO ####
-    it "Clicks on the new memo line" do
-      adminMemoDeletedByText(@var).flash.click
-    end
 
     it "Clicks on the trash can icon" do
       adminMemoModalDeleteButton.flash.click
@@ -114,9 +111,12 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 
     #### DELETE NEW MEMO AGAIN ####
     it "Clicks on the new memo line" do
-    #  adminMemoDeletedByText("test").flash.clic
-    #  expect($verifyNewMemoText(0, @var).to include("false"))
-      #expect(false,verifyNewMemoText(0, @var))
+      adminMemoModalMemoByIndex(0).flash.click
+      begin
+            expect(adminMemoModalMemoByIndex(0).text).to include("#{@var}")
+      ensure
+             print "Model doesn't exist since its already deleted"
+      end
     end
 	ensure
 	after(:all) do
