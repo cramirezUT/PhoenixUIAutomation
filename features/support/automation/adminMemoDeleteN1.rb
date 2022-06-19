@@ -21,10 +21,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adminMemo do
+RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddDeleteTest"
+      puts "adminMemoDeleteTest-N1"
       launchToteBrowser
       selectSiteTable
       logInFunction
