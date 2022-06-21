@@ -60,7 +60,7 @@ RSpec.describe "Admin->Terminal->Text: Admin Terminal Text functionality test", 
 
 		it "Sets an invalid group id in text field" do
 			adminTerminalTextModalGroupDropdown.flash.click
-			adminTerminalTextModalGroupSearchTextField.flash.set ($grouplIdInvalid)
+			adminTerminalTextModalGroupSearchTextField.flash.set ($adminTerminalTextGrouplIdInvalid)
 		end
 
 		it "Verifiesathe invalid group id error" do
@@ -70,7 +70,7 @@ RSpec.describe "Admin->Terminal->Text: Admin Terminal Text functionality test", 
 		it "Sets a valid group id in text field" do
 			adminTerminalTextModalGroupDropdown.flash.click
 			adminTerminalTextModalGroupDropdown.flash.click
-			adminTerminalTextModalGroupSearchTextField.flash.set ($grouplId)
+			adminTerminalTextModalGroupSearchTextField.flash.set ($adminTerminalTextGrouplId)
 			sendKeysEnter
 			sendKeysTab
 		end
@@ -82,12 +82,12 @@ RSpec.describe "Admin->Terminal->Text: Admin Terminal Text functionality test", 
 		it "Set text in Blurbs and welcome text fields" do
 			adminTerminalTextDataModalBlurb1TextField.flash.click
 			sendKeysClear
-			adminTerminalTextDataModalBlurb1TextField.flash.set ($testBlurb1Text)
+			adminTerminalTextDataModalBlurb1TextField.flash.set ($adminTerminalTextTestBlurb1Text)
 			adminTerminalTextDataModalBlurb2TextField.flash.click
 			sendKeysClear
-			adminTerminalTextDataModalBlurb2TextField.flash.set ($testBlurb2Text)
-			adminTerminalTextDataModalWelcomeTextField.flash.set ($testWelcomText)
-			adminTerminalTextDataModalWelcomeTextField.flash.set ($testWelcomText)
+			adminTerminalTextDataModalBlurb2TextField.flash.set ($adminTerminalTextTestBlurb2Text)
+			adminTerminalTextDataModalWelcomeTextField.flash.set ($adminTerminalTextTestWelcomText)
+			adminTerminalTextDataModalWelcomeTextField.flash.set ($adminTerminalTextTestWelcomText)
 		end
 
 		it "Clicks on the Save button" do

@@ -59,7 +59,7 @@ RSpec.describe "Admin->Terminal->Cash: Admin Terminal Cash functionality test", 
 		end
 
 		it "Sets an invalid terminal id in text field" do
-			adminTerminalCashModalTerminalsTextField.flash.set ($terminalIdInvalid)
+			adminTerminalCashModalTerminalsTextField.flash.set ($adminTerminalCashTerminalIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,7 +68,7 @@ RSpec.describe "Admin->Terminal->Cash: Admin Terminal Cash functionality test", 
 		end
 
 		it "Sets a valid terminal id in text field" do
-			adminTerminalCashModalTerminalsTextField.flash.set ($terminalId)
+			adminTerminalCashModalTerminalsTextField.flash.set ($adminTerminalCashTerminalId)
 			sendKeysTab
 		end
 

@@ -58,7 +58,7 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :ad
 
 		it "Sets an invalid Tournament id" do
 			contestControlTournamentDropdown.flash.click
-			contestControlTournamentSearchTextField.flash.set ($tournamentdIdInvalid)
+			contestControlTournamentSearchTextField.flash.set ($adminContestControlTournamentdIdInvalid)
 		end
 
 		it "Verifies the No matches found error" do
@@ -68,7 +68,7 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :ad
 		it "Sets a vaild Tournament id" do
       contestControlTournamentDropdown.flash.click
 			contestControlTournamentDropdown.flash.click
-      contestControlTournamentSearchTextField.flash.set ($tournamentdId)
+      contestControlTournamentSearchTextField.flash.set ($adminContestControlTournamentId)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -85,7 +85,7 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :ad
       contestControlContestModalNoEntryTimeTextField.flash.click
       sendKeysSelectAll
       sendKeysDelete
-      contestControlContestModalNoEntryTimeTextField.flash.set ($currentDateTime)
+      contestControlContestModalNoEntryTimeTextField.flash.set ($adminContestControlCurrentDateTime)
       sendKeysTab
     end
 
@@ -93,7 +93,7 @@ RSpec.describe "Admin->Contest->Control: Contest Control verification test", :ad
       contestControlContestModalEndTimeTextField.flash.click
       sendKeysSelectAll
       sendKeysDelete
-      contestControlContestModalEndTimeTextField.flash.set ($currentDateTimePlus1Day)
+      contestControlContestModalEndTimeTextField.flash.set ($adminContestControlCurrentDateTimePlus1Day)
       sendKeysTab
     end
 

@@ -54,13 +54,13 @@ RSpec.describe "Admin->Event->Liability->EventAll: Event Liability Event All sel
 
 		it "Sets a valid Event id" do
       eventLiabilityEventDropdown.wait_until_present.flash.click
-      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($adminEventLiabilityEventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
       eventLiabilitySourceDropdown.flash.click
-      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceId)
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($adminEventLiabilitySourceId)
       sendKeysEnter
       sendKeysTab
     end

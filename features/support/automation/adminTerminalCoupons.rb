@@ -60,7 +60,7 @@ RSpec.describe "Admin->Terminal->Coupons: Admin Terminal Coupons functionality t
 
 		it "Sets an invalid group id in text field" do
 			adminTerminalCouponsModalGroupDropdown.flash.click
-			adminTerminalCouponsModalGroupSearchTextField.flash.set ($groupIdInvalid)
+			adminTerminalCouponsModalGroupSearchTextField.flash.set ($adminTerminalCouponsGroupIdInvalid)
 		end
 
 		it "Verifies the invalid group id error" do
@@ -70,7 +70,7 @@ RSpec.describe "Admin->Terminal->Coupons: Admin Terminal Coupons functionality t
 		it "Sets a valid terminal id in text field" do
 			adminTerminalCouponsModalGroupDropdown.flash.click
 			adminTerminalCouponsModalGroupDropdown.flash.click
-			adminTerminalCouponsModalGroupSearchTextField.flash.set ($groupId)
+			adminTerminalCouponsModalGroupSearchTextField.flash.set ($adminTerminalCouponsGroupId)
 			sendKeysEnter
 			sendKeysTab
 		end

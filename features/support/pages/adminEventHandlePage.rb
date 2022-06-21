@@ -8,9 +8,9 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$groupUtsId = "UTS"
-$invalidGroupId = "TNT"
-$wildCharacterGroupId = "*All"
+$adminEventHandleGroupUtsId = "UTS"
+$adminEventHandleGroupIdInvalid = "TNT"
+$adminEventHandleWildCharacterGroupId = "*All"
 
 module HandlePage
 	include RSpec::Matchers

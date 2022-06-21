@@ -54,7 +54,7 @@ RSpec.describe "Admin->Account->Status: Account Status verification test", :admi
 
 		it "Sets an invalid Event id" do
 			accountStatusSearchTextField.wait_until_present.flash.click
-      accountStatusSearchTextField.flash.set ($accountIdInvalid)
+      accountStatusSearchTextField.flash.set ($adminAccountStatusIdInvalid)
 			accountStatusSearchButton.flash.click
 		end
 
@@ -65,7 +65,7 @@ RSpec.describe "Admin->Account->Status: Account Status verification test", :admi
 		it "Sets the Event id" do
       accountStatusSearchTextField.flash.click
 			accountStatusSearchTextField.flash.click
-      accountStatusSearchTextField.flash.set ($accountId)
+      accountStatusSearchTextField.flash.set ($adminAccountStatusId)
       accountStatusSearchButton.flash.click
 			accountStatusSearchButton.flash.click
 		end

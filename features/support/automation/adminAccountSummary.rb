@@ -54,7 +54,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
 
 		it "Sets invalid currency" do
 			summaryAccountCurrencyDropdown.flash.click
-			summaryAccountCurrencySearchTextField.wait_until_present.flash.set ($currencyInvalid)
+			summaryAccountCurrencySearchTextField.wait_until_present.flash.set ($adminAccountSummaryCurrencyInvalid)
 		end
 
 		it "Verifies invalid currency error" do
@@ -64,7 +64,7 @@ RSpec.describe "Admin->Account->Summary: Account Summary verify summaries for va
     it "Sets currency to USD" do
 			summaryAccountCurrencyDropdown.flash.click
 			summaryAccountCurrencyDropdown.flash.click
-			summaryAccountCurrencySearchTextField.wait_until_present.flash.set ($currencyUSD)
+			summaryAccountCurrencySearchTextField.wait_until_present.flash.set ($adminAccountSummaryCurrencyUSD)
 			sendKeysEnter
 			sendKeysTab
     end

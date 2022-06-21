@@ -8,11 +8,11 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$firstName = "Johnny"
-$firstNameInvalid = "TNT"
-$middleName = "B"
-$lastName = "Goode"
-$lastNameInvalid = "TNT"
+$adminSellerFindFirstName = "Johnny"
+$adminSellerFindFirstNameInvalid = "TNT"
+$adminSellerFindMiddleName = "B"
+$adminSellerFindLastName = "Goode"
+$adminSellerFindLastNameInvalid = "TNT"
 
 module AdminSellerFindPage
 	include RSpec::Matchers

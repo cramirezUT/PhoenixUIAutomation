@@ -60,7 +60,7 @@ RSpec.describe "Admin->Seller->Summary: Admin Seller Summary functionality test"
 
 		it "Sets an invalid Group id in text field" do
 			adminSellerGroupSummaryModalGroupsDropdown.flash.click
-			adminSellerGroupSummaryModalGroupsSearchTextField.flash.set ($groupsIdInvalid)
+			adminSellerGroupSummaryModalGroupsSearchTextField.flash.set ($adminSellerSummaryGroupsIdInvalid)
 		end
 
 		it "Verifies the invalid Seller id error" do
@@ -70,7 +70,7 @@ RSpec.describe "Admin->Seller->Summary: Admin Seller Summary functionality test"
 		it "Sets a valid Seller id in text field" do
 			adminSellerGroupSummaryModalGroupsDropdown.flash.click
 			adminSellerGroupSummaryModalGroupsDropdown.flash.click
-			adminSellerGroupSummaryModalGroupsSearchTextField.flash.set ($groupsId)
+			adminSellerGroupSummaryModalGroupsSearchTextField.flash.set ($adminSellerSummaryGroupsId)
 			sendKeysEnter
 			sendKeysEnter
 			sendKeysTab

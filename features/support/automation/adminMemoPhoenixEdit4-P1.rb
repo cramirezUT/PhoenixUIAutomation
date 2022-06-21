@@ -70,12 +70,12 @@ RSpec.describe "Admin->Memo: Admin Memo Edit Phoenix functionality test", :admin
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
       @value= adminMemoSubjectModalBodyTextArea.text.length
       sendKeysBackspace
     #  sendKeysBackspace.flash.click

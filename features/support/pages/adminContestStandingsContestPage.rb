@@ -8,17 +8,18 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$tournamentId = "T02"
-$tournamentIdInvalid = "TNT"
-$contestId = "S02"
-$contestIdInvalid = "TNT"
+$adminContestStandingsContestTournamentId = "T02"
+$adminContestStandingsContestTournamentIdInvalid = "TNT"
+$adminContestStandingsContestId = "S02"
+$adminContestStandingsContestIdInvalid = "TNT"
 
 module ContestStandingsContestPage
 	include RSpec::Matchers
 	include Selenium
 
 	#### CONTEST STANDINGS METHODS / LOCATORS ####
-	def eventMenuInquireSubLinks(string)
+	def contestMenuStandingsSubLinks(string)
+		sleep(1)
 		@browser.element(xpath: "//*[@id='Command-Menu-Standings-#{string}']")
 	end
 

@@ -53,9 +53,9 @@ RSpec.describe "Admin->Account->Find: Account find account holder by name", :adm
     end
 
     it "Sets an invalid first and last name to search" do
-      findAccountFirstNameTextField.flash.set ($findAccountFirstNameInvalid)
+      findAccountFirstNameTextField.flash.set ($adminAccountFindFirstNameInvalid)
       sendKeysTab
-      findAccountLastNameTextField.flash.set ($findAccountLastNameInvalid)
+      findAccountLastNameTextField.flash.set ($adminAccountFindLastNameInvalid)
       sendKeysTab
     end
 
@@ -70,13 +70,13 @@ RSpec.describe "Admin->Account->Find: Account find account holder by name", :adm
 		it "Sets an valid first and last name to search" do
 			findAccountFirstNameTextField.flash.click
 			sendKeysClear
-      findAccountFirstNameTextField.flash.set ($findAccountFirstName)
-      findAccountFirstNameTextField.flash.set ($findAccountFirstName)
+      findAccountFirstNameTextField.flash.set ($adminAccountFindFirstName)
+      findAccountFirstNameTextField.flash.set ($adminAccountFindFirstName)
       sendKeysTab
       findAccountLastNameTextField.flash.click
       sendKeysClear
-      findAccountLastNameTextField.flash.set ($findAccountLastName)
-      findAccountLastNameTextField.flash.set ($findAccountLastName)
+      findAccountLastNameTextField.flash.set ($adminAccountFindLastName)
+      findAccountLastNameTextField.flash.set ($adminAccountFindLastName)
       sendKeysTab
     end
 

@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$terminalId = "1"
-$terminalIdInvalid = "100"
-$groupOptionAll = "All"
-$groupOptionQa = "qa"
+$adminTerminalInquiryTerminalId = "1"
+$adminTerminalInquiryTerminalIdInvalid = "100"
+$adminTerminalInquiryGroupOptionAll = "All"
+$adminTerminalInquiryGroupOptionQa = "qa"
 
 module AdminTerminalInquiryPage
 	include RSpec::Matchers

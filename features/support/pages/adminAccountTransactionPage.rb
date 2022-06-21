@@ -8,13 +8,13 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountGroupId =  "uqa-10032"
-$accountSourceGroupIdInvalid = "TNT"
-$accountSourceGroupId = "UQA - United Tote QA"
-$accountTransactionIdDeposit = "Deposit"
-$accountTransactionIdWithdraw = "Withdraw"
-$accountTransactionIdAdjust = "Adjust"
-$accountTransactionIdTransfer = "Transfer"
+$adminAccountTransactionGroupId =  "uqa-10032"
+$adminAccountTransactionSourceGroupIdInvalid = "TNT"
+$adminAccountTransactionSourceGroupId = "UQA - United Tote QA"
+$adminAccountTransactionIdDeposit = "Deposit"
+$adminAccountTransactionIdWithdraw = "Withdraw"
+$adminAccountTransactionIdAdjust = "Adjust"
+$adminAccountTransactionIdTransfer = "Transfer"
 
 module AccountTransactionPage
 	include RSpec::Matchers

@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$sourceId = "CHD"
-$sourceMeregeId = "Merged"
-$invalidEventId = "TNT"
+$adminEventPoolsEventId = "CHF"
+$adminEventPoolsSourceId = "CHD"
+$adminEventPoolsSourceMeregeId = "Merged"
+$adminEventPoolsEventIdInvalid = "TNT"
 
 module PoolsPage
 	include RSpec::Matchers

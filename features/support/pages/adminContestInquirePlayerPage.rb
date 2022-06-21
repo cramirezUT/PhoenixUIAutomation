@@ -29,8 +29,9 @@ module ContestInquirePlayerPage
 	include RSpec::Matchers
 	include Selenium
 
-	#### CONTEST INQUIRE PLAYER METHODS / LOCATORS ####
-	def eventMenuInquireSubLinks(string)
+	#### PLAYER INQUIRE PLAYER METHODS / LOCATORS ####
+	def playerMenuInquireSubLinks(string)
+		sleep(1)
 		@browser.element(xpath: "//*[@id='Command-Menu-Inquire-#{string}']")
 	end
 

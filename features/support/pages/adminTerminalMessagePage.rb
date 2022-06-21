@@ -8,9 +8,9 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$terminalId = "1"
-$terminalIdInvalid = "100"
-$testMessage = "Testing Outgoing Messages"
+$adminTerminalMessageTerminalId = "1"
+$adminTerminalMessageTerminalIdInvalid = "100"
+$adminTerminalMessageTestMessage = "Testing Outgoing Messages"
 
 module AdminTerminalMessagePage
 	include RSpec::Matchers

@@ -8,15 +8,15 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$grouplId = "UTS"
-$grouplIdInvalid = "TNT"
-$randomNum = rand(9999)
-$testBlurb1Text = "Test blurb 1 #{$randomNum}"
-$testBlurb2Text = "Test blurb 2 #{$randomNum}"
-$testWelcomText = "Test welcome #{$randomNum}"
-$testAdvertisementText = "Test advertisement"
-$testSurchargeText = "Test surcharge"
-$testPictureText = "Test picture"
+$adminTerminalTextGrouplId = "UTS"
+$adminTerminalTextGrouplIdInvalid = "TNT"
+$adminTerminalTextRandomNum = rand(9999)
+$adminTerminalTextTestBlurb1Text = "Test blurb 1 #{$adminTerminalTextRandomNum}"
+$adminTerminalTextTestBlurb2Text = "Test blurb 2 #{$adminTerminalTextRandomNum}"
+$adminTerminalTextTestWelcomText = "Test welcome #{$adminTerminalTextRandomNum}"
+$adminTerminalTextTestAdvertisementText = "Test advertisement"
+$adminTerminalTextTestSurchargeText = "Test surcharge"
+$adminTerminalTextTestPictureText = "Test picture"
 
 module AdminTerminalTextPage
 	include RSpec::Matchers

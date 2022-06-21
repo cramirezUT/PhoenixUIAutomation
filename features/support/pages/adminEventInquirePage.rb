@@ -8,11 +8,11 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventById = "ID"
-$eventByName = "Name"
-$eventByPostTime = "PostTime"
-$eventByOpenRaces = "Open Races"
-$eventByInvalidId = "TNT"
+$adminEventInquiryEventById = "ID"
+$adminEventInquiryEventByName = "Name"
+$adminEventInquiryEventByPostTime = "PostTime"
+$adminEventInquiryEventByOpenRaces = "Open Races"
+$adminEventInquiryEventByInvalidId = "TNT"
 
 module InquirePage
 	include RSpec::Matchers

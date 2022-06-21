@@ -54,7 +54,7 @@ RSpec.describe "Admin->Account->Prices: Account Prices verification test", :admi
 
 		it "Sets an invalid Event id" do
 			accountPricesEventDropdown.wait_until_present.flash.click
-      accountPricesEventSearchTextField.flash.set ($eventIdInvalid)
+      accountPricesEventSearchTextField.flash.set ($adminAccountPricesIdInvalid)
       #sendKeysEnter
 		end
 
@@ -65,7 +65,7 @@ RSpec.describe "Admin->Account->Prices: Account Prices verification test", :admi
 		it "Sets the Event id" do
       accountPricesEventDropdown.flash.click
 			accountPricesEventDropdown.flash.click
-      accountPricesEventSearchTextField.flash.set ($eventId)
+      accountPricesEventSearchTextField.flash.set ($adminAccountPricesId)
       sendKeysEnter
 			sendKeysTab
 		end

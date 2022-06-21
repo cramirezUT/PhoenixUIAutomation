@@ -54,7 +54,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 
     it "Sets the Account Group Number" do
       accountInquiryModal.wait_until_present.flash
-      accountInquirySearchTextField.wait_until_present.flash.set ($invalidAccountGroupId)
+      accountInquirySearchTextField.wait_until_present.flash.set ($adminAccountInquiryGroupIdInvalid)
       sendKeysEnter
     end
 
@@ -66,8 +66,8 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 			accountInquiryModal.wait_until_present.flash
 			accountInquirySearchTextField.click
 			sendKeysClear
-      accountInquirySearchTextField.flash.set ($accountGroupId)
-			accountInquirySearchTextField.flash.set ($accountGroupId)
+      accountInquirySearchTextField.flash.set ($adminAccountInquiryGroupId)
+			accountInquirySearchTextField.flash.set ($adminAccountInquiryGroupId)
       sendKeysEnter
 		end
 
@@ -104,7 +104,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 		end
 
 		it "Sets the Event in text field" do
-			accountInquiryEventsSearchTextField.flash.set ($eventOptionAQD)
+			accountInquiryEventsSearchTextField.flash.set ($adminAccountInquiryOptionAQD)
 			sendKeysEnter
 			sendKeysEnter
       sendKeysTab
@@ -115,7 +115,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 		end
 
 		it "Sets the race number in the text field" do
-			accountInquiryRacesTextField.flash.set ($eventRaceOption)
+			accountInquiryRacesTextField.flash.set ($adminAccountInquiryRaceOption)
 			sendKeysEnter
       sendKeysTab
 		end
@@ -125,7 +125,7 @@ RSpec.describe "Admin->Account->Inquiry: Account Group Number validation", :admi
 		end
 
 		it "Sets the Pools option in text field" do
-			accountInquiryPoolsSearchTextField.flash.set ($eventPoolOption)
+			accountInquiryPoolsSearchTextField.flash.set ($adminAccountInquiryPoolOption)
 			sendKeysEnter
 			sendKeysEnter
 		end

@@ -67,7 +67,7 @@ RSpec.describe "Admin->Account->Balance: Account balance validation", :adminAcco
 
     it "Sets the Account Group Number" do
       accountBalanceModal.wait_until_present.flash
-      accountBalanceSearchTextField.wait_until_present.flash.set ($invalidAccountGroupId)
+      accountBalanceSearchTextField.wait_until_present.flash.set ($adminAccountBalanceInvalidGroupId)
       sendKeysEnter
     end
 
@@ -79,7 +79,7 @@ RSpec.describe "Admin->Account->Balance: Account balance validation", :adminAcco
 			accountBalanceModal.wait_until_present.flash
 			accountBalanceSearchTextField.click
 			sendKeysClear
-      accountBalanceSearchTextField.wait_until_present.flash.set ($accountGroupId)
+      accountBalanceSearchTextField.wait_until_present.flash.set ($adminAccountBalanceGroupId)
       sendKeysEnter
 		end
 

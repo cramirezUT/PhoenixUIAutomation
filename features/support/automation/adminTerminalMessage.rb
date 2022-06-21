@@ -59,7 +59,7 @@ RSpec.describe "Admin->Terminal->Message: Admin Terminal Message functionality t
 		end
 
 		it "Sets an invalid terminal id in text field" do
-			adminTerminalMessageModalTerminalsTextField.flash.set ($terminalIdInvalid)
+			adminTerminalMessageModalTerminalsTextField.flash.set ($adminTerminalMessageTerminalIdInvalid)
 			sendKeysTab
 		end
 
@@ -70,13 +70,13 @@ RSpec.describe "Admin->Terminal->Message: Admin Terminal Message functionality t
 		it "Sets a valid terminal id in text field" do
 			adminTerminalMessageModalTerminalsTextField.flash.click
 			sendKeysClear
-			adminTerminalMessageModalTerminalsTextField.flash.set ($terminalId)
-			adminTerminalMessageModalTerminalsTextField.flash.set ($terminalId)
+			adminTerminalMessageModalTerminalsTextField.flash.set ($adminTerminalMessageTerminalId)
+			adminTerminalMessageModalTerminalsTextField.flash.set ($adminTerminalMessageTerminalId)
 			sendKeysEnter
 		end
 
 		it "Sets text in the Message text field" do
-			adminTerminalMessageModalMessageTextField.flash.set ($testMessage)
+			adminTerminalMessageModalMessageTextField.flash.set ($adminTerminalMessageTestMessage)
 			sendKeysTab
 		end
 

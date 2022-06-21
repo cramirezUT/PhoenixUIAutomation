@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-@random = rand(9999)
-$sellerId = "UTS1"
-$sellerIdInvalid = "TNT"
-$lockSellerOneCharacter = "A"
+@adminSellerControlRandom = rand(9999)
+$adminSellerControlSellerId = "UTS1"
+$adminSellerControlSellerIdInvalid = "TNT"
+$adminSellerControlLockSellerOneCharacter = "A"
 
 module AdminSellerControlPage
 	include RSpec::Matchers

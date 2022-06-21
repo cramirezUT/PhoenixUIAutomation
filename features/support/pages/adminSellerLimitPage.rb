@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$sellerId = "UTS1"
-$sellerIdInvalid = "TNT"
+$adminSellerLimitSellerId = "UTS1"
+$adminSellerLimitSellerIdInvalid = "TNT"
 
 module AdminSellerLimitPage
 	include RSpec::Matchers

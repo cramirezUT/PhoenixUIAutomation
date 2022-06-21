@@ -54,13 +54,13 @@ RSpec.describe "Admin->Event->Pools->CurrentRace: Event Pools Current race test"
 
 		it "Sets a valid Event id" do
       eventPoolsEventDropdown.wait_until_present.flash.click
-      eventPoolsEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventPoolsEventSearchTextField.wait_until_present.flash.set ($adminEventPoolsEventId)
       sendKeysEnter
 		end
 
 		it "Sets the Source" do
       eventPoolsSourceDropdown.flash.click
-      eventPoolsSourceSearchTextField.wait_until_present.set ($sourceId)
+      eventPoolsSourceSearchTextField.wait_until_present.set ($adminEventPoolsSourceId)
       sendKeysEnter
       sendKeysTab
     end

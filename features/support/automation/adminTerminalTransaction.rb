@@ -60,13 +60,13 @@ RSpec.describe "Admin->Terminal->Transacation: Admin Terminal Transaction functi
 
 		it "Selects Draw from the Type dropdown" do
 			adminTerminalTransactionModalTypeDropdown.flash.click
-			adminTerminalTransactionModalTypeSearchTransactionField.flash.set ($typeOptionDraw)
+			adminTerminalTransactionModalTypeSearchTransactionField.flash.set ($adminTerminalTransactionTypeOptionDraw)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets an invalid Termial id in text field" do
-			adminTerminalTransactionModalTerminalTextField.flash.set ($terminalIdInvalid)
+			adminTerminalTransactionModalTerminalTextField.flash.set ($adminTerminalTransactionTerminalIdInvalid)
 			sendKeysTab
 		end
 

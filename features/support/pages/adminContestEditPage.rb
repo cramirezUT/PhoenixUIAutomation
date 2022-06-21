@@ -8,16 +8,16 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$playerId = "1"
-$playerIdInvalid = "TNT"
-$playerActionOptionView = "View"
-$playerActionOptionEdit = "Edit"
-$playerActionOptionNew = "New"
-$playerActionOptionDelete = "Delete"
-$playerActionOptionUndelete = "Undelete"
-$playerActionOptionNumber = "Number"
-$playerActionOptionPin = "Pin"
-$playerActionOptionPassword = "Password"
+$adminContestEditPlayerId = "1"
+$adminContestEditPlayerIdInvalid = "TNT"
+$adminContestEditPlayerActionOptionView = "View"
+$adminContestEditPlayerActionOptionEdit = "Edit"
+$adminContestEditPlayerActionOptionNew = "New"
+$adminContestEditPlayerActionOptionDelete = "Delete"
+$adminContestEditPlayerActionOptionUndelete = "Undelete"
+$adminContestEditPlayerActionOptionNumber = "Number"
+$adminContestEditPlayerActionOptionPin = "Pin"
+$adminContestEditPlayerActionOptionPassword = "Password"
 
 module ContestEditPage
 	include RSpec::Matchers
@@ -106,6 +106,7 @@ module ContestEditPage
 	end
 
 	def playerEditAccountModal
+		sleep(1)
 		@browser.div(id: 'Account')
 	end
 

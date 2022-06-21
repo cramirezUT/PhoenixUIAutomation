@@ -59,7 +59,7 @@ RSpec.describe "Admin->Terminal->Balance: Admin Terminal Balance functionality t
 		end
 
 		it "Sets an invalid terminal id in text field" do
-			adminTerminalBalanceModalTerminalsTextField.flash.set ($terminalIdInvalid)
+			adminTerminalBalanceModalTerminalsTextField.flash.set ($adminTerminalBalanceTerminalIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,7 +68,7 @@ RSpec.describe "Admin->Terminal->Balance: Admin Terminal Balance functionality t
 		end
 
 		it "Sets a valid terminal id in text field" do
-			adminTerminalBalanceModalTerminalsTextField.flash.set ($terminalId)
+			adminTerminalBalanceModalTerminalsTextField.flash.set ($adminTerminalBalanceTerminalId)
 			sendKeysTab
 		end
 

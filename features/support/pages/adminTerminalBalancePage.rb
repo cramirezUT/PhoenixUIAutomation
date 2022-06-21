@@ -8,11 +8,11 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$terminalId = "1"
-$terminalIdInvalid = "100"
-$terminalTypeOptionPayment = "Payment"
-$terminalTypeOptionAdjust = "Adjust"
-$terminalAmountOneDollar = "1.00"
+$adminTerminalBalanceTerminalId = "1"
+$adminTerminalBalanceTerminalIdInvalid = "100"
+$adminTerminalBalanceTerminalTypeOptionPayment = "Payment"
+$adminTerminalBalanceTerminalTypeOptionAdjust = "Adjust"
+$adminTerminalBalanceTerminalAmountOneDollar = "1.00"
 
 module AdminTerminalBalancePage
 	include RSpec::Matchers

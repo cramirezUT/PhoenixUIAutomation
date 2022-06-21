@@ -59,7 +59,7 @@ RSpec.describe "Admin->Seller->Message: Admin Seller Message functionality test"
 		end
 
 		it "Sets an invalid Seller id in text field" do
-			adminSellerMessageModalSellerTextField.flash.set ($sellerIdInvalid)
+			adminSellerMessageModalSellerTextField.flash.set ($adminSellerMessageSellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -70,8 +70,8 @@ RSpec.describe "Admin->Seller->Message: Admin Seller Message functionality test"
 		it "Sets a valid Seller id in text field" do
 			adminSellerMessageModalSellerTextField.flash.click
 			sendKeysClear
-			adminSellerMessageModalSellerTextField.flash.set ($sellerId)
-			adminSellerMessageModalSellerTextField.flash.set ($sellerId)
+			adminSellerMessageModalSellerTextField.flash.set ($adminSellerMessageSellerId)
+			adminSellerMessageModalSellerTextField.flash.set ($adminSellerMessageSellerId)
 			sendKeysTab
 		end
 

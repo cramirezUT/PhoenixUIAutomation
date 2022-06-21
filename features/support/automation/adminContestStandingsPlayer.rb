@@ -53,7 +53,7 @@ RSpec.describe "Admin->Contest->Standings->Player: Contest Standings Player veri
 		end
 
 		it "Clicks on the Player sub link" do
-			eventMenuInquireSubLinks("Player").flash.click
+			playerMenuStandingsSubLinks("Player").flash.click
 		end
 
 		it "Verifies the Contest Standings Player modal" do
@@ -72,7 +72,7 @@ RSpec.describe "Admin->Contest->Standings->Player: Contest Standings Player veri
 		it "Sets a vaild Player id in the search text field" do
 			playerStandingsModalSearchTextField.flash.click
 			sendKeysClear
-      playerStandingsModalSearchTextField.flash.set ($playerId)
+      playerStandingsModalSearchTextField.flash.set ($adminContestStandingsPlayerId)
       sendKeysEnter
 		end
 

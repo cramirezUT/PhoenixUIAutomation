@@ -65,7 +65,7 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :adminAssignments 
 		end
 
 		it "Clicks on the next day label for the newly added Assignment" do
-			adminAssignmentsResultsCheckboxByDate($nextDay).flash.click
+			adminAssignmentsResultsCheckboxByDate($adminAssignmentsNextDay).flash.click
 		end
 		#### EDIT ASSIGNMENT ####
 		it "Clicks on the Edit icon" do
@@ -81,7 +81,7 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :adminAssignments 
 		end
 		#### COPY ASSIGNMENT ####
 		it "Clicks on the next day label for the newly added Assignment" do
-			adminAssignmentsResultsCheckboxByDate($nextDay).flash.click
+			adminAssignmentsResultsCheckboxByDate($adminAssignmentsNextDay).flash.click
 		end
 
 		it "Clicks on the Copy icon" do
@@ -97,7 +97,7 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :adminAssignments 
 		end
 
 		it "Clicks the newly copied Assignment date" do
-			adminAssignmentsResultsCheckboxByDate($twoDaysFromNow).flash.click
+			adminAssignmentsResultsCheckboxByDate($adminAssignmentsTwoDaysFromNow).flash.click
 		end
 		#### DELETE ASSIGNMENTS ####
 		it "Clicks on the trash can icon" do
@@ -113,7 +113,7 @@ RSpec.describe "Admin->Assignments:  Assignments validation", :adminAssignments 
 		end
 
 		it "Clicks on the next day label for the newly added Assignment" do
-			adminAssignmentsResultsCheckboxByDate($nextDay).flash.click
+			adminAssignmentsResultsCheckboxByDate($adminAssignmentsNextDay).flash.click
 		end
 
 		it "Clicks on the trash can icon" do

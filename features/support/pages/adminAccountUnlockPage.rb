@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountId = "uqa-10032"
-$accountIdInvalid = "TNT"
+$adminAccountUnlockId = "uqa-10032"
+$adminAccountUnlockIdInvalid = "TNT"
 
 module AccountUnlockPage
 	include RSpec::Matchers

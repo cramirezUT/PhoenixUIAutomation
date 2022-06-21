@@ -60,13 +60,13 @@ RSpec.describe "Admin->Terminal->Transaction->Type: Admin Terminal Transaction T
 
 		it "Selects Draw from the Type dropdown" do
 			adminTerminalTransactionModalTypeDropdown.flash.click
-			adminTerminalTransactionModalTypeSearchTransactionField.flash.set ($typeOptionDraw)
+			adminTerminalTransactionModalTypeSearchTransactionField.flash.set ($adminTerminalTransactionTypeOptionDraw)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets the Terminal id" do
-			adminTerminalTransactionModalTerminalTextField.flash.set ($terminalId)
+			adminTerminalTransactionModalTerminalTextField.flash.set ($adminTerminalTransactionTerminalId)
 			sendKeysTab
 		end
 
@@ -86,12 +86,12 @@ RSpec.describe "Admin->Terminal->Transaction->Type: Admin Terminal Transaction T
 		end
 
 		it "Sets a count in the first text field" do
-			adminTerminalTransactionMoneyMondalCount01TextField.flash.set ($moneyCount)
+			adminTerminalTransactionMoneyMondalCount01TextField.flash.set ($adminTerminalTransactionMoneyCount)
 			sendKeysTab
 		end
 
 		it "Sets a count in the second text field" do
-			adminTerminalTransactionMoneyMondalCount05TextField.flash.set ($moneyCount)
+			adminTerminalTransactionMoneyMondalCount05TextField.flash.set ($adminTerminalTransactionMoneyCount)
 			sendKeysTab
 		end
 
