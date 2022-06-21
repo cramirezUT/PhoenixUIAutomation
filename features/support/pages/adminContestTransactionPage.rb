@@ -8,19 +8,19 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$depositAmount101Dollar = "1.01"
-$withdrawAmount102Dollar = "1.02"
-$balanceAmount103Dollar = "1.03"
-$winningsAmount104Dollar = "1.04"
-$entryAmount105Dollar = "1.05"
-$groupId = "TL1"
-$playerId = "TL1-1"
-$playerIdInvalid = "TNT"
-$transactionOptionDeposit = "Deposit"
-$transactionOptionWithdraw = "Withdraw"
-$transactionOptionBalance = "Balance"
-$transactionOptionWinnings = "Winnings"
-$transactionOptionEntry = "Entry"
+$adminContestTransactionDepositAmount101Dollar = "1.01"
+$adminContestTransactionWithdrawAmount102Dollar = "1.02"
+$adminContestTransactionBalanceAmount103Dollar = "1.03"
+$adminContestTransactionWinningsAmount104Dollar = "1.04"
+$adminContestTransactionEntryAmount105Dollar = "1.05"
+$adminContestTransactionGroupId = "TL1"
+$adminContestTransactionPlayerId = "TL1-1"
+$adminContestTransactionPlayerIdInvalid = "TNT"
+$adminContestTransactionOptionDeposit = "Deposit"
+$adminContestTransactionOptionWithdraw = "Withdraw"
+$adminContestTransactionOptionBalance = "Balance"
+$adminContestTransactionOptionWinnings = "Winnings"
+$adminContestTransactionOptionEntry = "Entry"
 
 module ContestTransactionPage
 	include RSpec::Matchers

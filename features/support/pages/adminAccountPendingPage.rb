@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountGroupId = "uqa-10032"
-$accountGroupIdInvalid = "99"
+$adminAccountPendingGroupId = "uqa-10032"
+$adminAccountPendingGroupIdInvalid = "99"
 
 module AccountPendingPage
 	include RSpec::Matchers

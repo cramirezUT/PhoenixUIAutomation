@@ -54,7 +54,7 @@ RSpec.describe "Admin->Dealer: Admin Dealer verification test", :adminDealer do
 
 		it "Sets an invalid Dealer id" do
       adminDealerModalDealerTextField.flash.click
-      adminDealerModalDealerTextField.flash.set ($dealerIdInvalid)
+      adminDealerModalDealerTextField.flash.set ($adminDealerIdInvalid)
     	sendKeysTab
 		end
 
@@ -66,14 +66,14 @@ RSpec.describe "Admin->Dealer: Admin Dealer verification test", :adminDealer do
 			adminDealerModal.flash
       adminDealerModalDealerTextField.wait_until_present.flash
 			sendKeysClear
-      adminDealerModalDealerTextField.flash.set ($dealerId)
-			adminDealerModalDealerTextField.flash.set ($dealerId)
+      adminDealerModalDealerTextField.flash.set ($adminDealerId)
+			adminDealerModalDealerTextField.flash.set ($adminDealerId)
     	sendKeysTab
 		end
 
 		it "Sets the dealer pin" do
 			adminDealerModalPinTextField.flash.click
-			adminDealerModalPinTextField.flash.set ($dealerPin)
+			adminDealerModalPinTextField.flash.set ($adminDealerPin)
 			sendKeysTab
 		end
 
@@ -105,13 +105,13 @@ RSpec.describe "Admin->Dealer: Admin Dealer verification test", :adminDealer do
 
 		it "Sets the Type option to Draw from dropdown" do
 			adminDealerUserModalTypeDropdown.flash.click
-			adminDealerUserModalTypeSearchTextField.flash.set ($typeOptionDraw)
+			adminDealerUserModalTypeSearchTextField.flash.set ($adminDealerTypeOptionDraw)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets the Amount in Amount text field" do
-			adminDealerUserModalAmountTextfield.flash.set ($amountOneDollar)
+			adminDealerUserModalAmountTextfield.flash.set ($adminDealerAmountOneDollar)
 			sendKeysEnter
 		end
 

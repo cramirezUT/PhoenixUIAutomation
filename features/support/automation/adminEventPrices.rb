@@ -54,7 +54,7 @@ RSpec.describe "Admin->Event->Prices: Event Prices Prices race test", :adminEven
 
 		it "Sets an invalid Event id" do
 			eventPricesEventDropdown.wait_until_present.flash.click
-      eventPricesEventSearchTextField.wait_until_present.flash.set ($invalidEventId)
+      eventPricesEventSearchTextField.wait_until_present.flash.set ($adminEventPricesEventIdInvalid)
 		end
 
 		it "Verifes the error message" do
@@ -64,14 +64,14 @@ RSpec.describe "Admin->Event->Prices: Event Prices Prices race test", :adminEven
 		it "Sets a valid Event id" do
       eventPricesEventDropdown.flash.click
 			eventPricesEventDropdown.flash.click
-      eventPricesEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventPricesEventSearchTextField.wait_until_present.flash.set ($adminEventPricesEventId)
       sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets Race 1" do
       eventPricesRaceDropdown.flash.click
-      eventPricesRaceSearchTextField.wait_until_present.set ($raceNumber1)
+      eventPricesRaceSearchTextField.wait_until_present.set ($adminEventPricesRaceNumber1)
       sendKeysEnter
       sendKeysTab
     end

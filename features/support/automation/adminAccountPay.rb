@@ -60,7 +60,7 @@ RSpec.describe "Admin->Account->Pay: Account Pay Ticket validation", :adminAccou
 
     it "Sets an invalid Account Group Number" do
       accountPayModal.wait_until_present.flash
-      accountPaySearchTextField.wait_until_present.flash.set ($accountGroupIdInvalid)
+      accountPaySearchTextField.wait_until_present.flash.set ($adminAccountPayGroupIdInvalid)
       sendKeysEnter
     end
 
@@ -72,7 +72,7 @@ RSpec.describe "Admin->Account->Pay: Account Pay Ticket validation", :adminAccou
 			accountPayModal.wait_until_present.flash
 			accountPaySearchTextField.click
 			sendKeysClear
-      accountPaySearchTextField.wait_until_present.flash.set ($accountGroupId)
+      accountPaySearchTextField.wait_until_present.flash.set ($adminAccountPayGroupId)
       sendKeysEnter
 		end
 

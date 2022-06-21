@@ -56,7 +56,7 @@ RSpec.describe "Admin->Event->Class: Event Class Define class test", :adminEvent
 
     it "Sets a valid Group ID" do
       eventClassGroupDropdown.flash.click
-      eventClassGroupSearchTextField.wait_until_present.flash.set ($groupId)
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($adminEventClassGroupId)
       sendKeysEnter
       sleep(1)
       sendKeysTab

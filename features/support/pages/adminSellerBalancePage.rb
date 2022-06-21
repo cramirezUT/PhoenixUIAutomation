@@ -8,9 +8,9 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-@random = rand(9999)
-$sellerId = "UTS1"
-$sellerIdInvalid = "TNT"
+@adminSellerBalanceRandom = rand(9999)
+$adminSellerBalanceSellerId = "UTS1"
+$adminSellerBalanceSellerIdInvalid = "TNT"
 
 module AdminSellerBalancePage
 	include RSpec::Matchers

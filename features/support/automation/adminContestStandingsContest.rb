@@ -53,7 +53,7 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
 		end
 
 		it "Clicks on the Contest sub link" do
-			eventMenuInquireSubLinks("Contest").flash.click
+			contestMenuStandingsSubLinks("Contest").flash.click
 		end
 
 		it "Verifies the Contest Standings Contest modal" do
@@ -62,7 +62,7 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
 
 		it "Sets an invalid Tournament id in the search text field" do
 			contestStandingsModalTournamentDropdown.flash.click
-			contestStandingsModalTournamentSearchTextField.flash.set ($tournamentIdInvalid)
+			contestStandingsModalTournamentSearchTextField.flash.set ($adminContestStandingsContestTournamentIdInvalid)
 		end
 
 		it "Verifies the No matches found error for Tournament" do
@@ -72,7 +72,7 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
 		it "Sets a vaild Tournament id in the search text field" do
 			contestStandingsModalTournamentDropdown.flash.click
 			contestStandingsModalTournamentDropdown.flash.click
-      contestStandingsModalTournamentSearchTextField.flash.set ($tournamentId)
+      contestStandingsModalTournamentSearchTextField.flash.set ($adminContestStandingsContestTournamentId)
       sendKeysEnter
       sendKeysTab
       sendKeysTab
@@ -84,7 +84,7 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
 
 		it "Sets an invalid Contest id in the search text field" do
 			contestStandingsModalContestDropdown.flash.click
-			contestStandingsModalContestSearchTextField.flash.set ($contestIdInvalid)
+			contestStandingsModalContestSearchTextField.flash.set ($adminContestStandingsContestIdInvalid)
 		end
 
 		it "Verifies the No matches found error for Tournament" do
@@ -94,7 +94,7 @@ RSpec.describe "Admin->Contest->Standings->Contest: Contest Standings Contest ve
 		it "Sets a vaild Contest id in the search text field" do
 			contestStandingsModalContestDropdown.flash.click
 			contestStandingsModalContestDropdown.flash.click
-      contestStandingsModalContestSearchTextField.flash.set ($contestId)
+      contestStandingsModalContestSearchTextField.flash.set ($adminContestStandingsContestId)
       sendKeysEnter
       sendKeysTab
 		end

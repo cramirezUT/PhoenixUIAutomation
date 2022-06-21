@@ -9,8 +9,8 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 require 'date'
 
-$groupId = "UTS - UNITED TOTE SYSTEMS"
-$textForField = "Test"
+$adminBalanceGroupId = "UTS - UNITED TOTE SYSTEMS"
+$adminBalanceTextForField = "Test"
 
 module AdminBalanceSheetPage
 	include RSpec::Matchers

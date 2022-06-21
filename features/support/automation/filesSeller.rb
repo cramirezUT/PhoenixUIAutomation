@@ -62,7 +62,7 @@ RSpec.describe "Files->Seller: Verify the table options in the Displayed Columns
 		end
 
 		it "Sets the Seller group number" do
-			sellerConfigurationModalSellerTextField.flash.set ($sellerGroupNumber)
+			sellerConfigurationModalSellerTextField.flash.set ($filesSellerGroupNumber)
 			sendKeysEnter
 		end
 

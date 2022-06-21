@@ -54,13 +54,13 @@ RSpec.describe "Admin->Event->Pools->Event->ID: Event Pools Event Id valid and i
 
 		it "Sets a valid Event id" do
       eventPoolsEventDropdown.wait_until_present.flash.click
-      eventPoolsEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventPoolsEventSearchTextField.wait_until_present.flash.set ($adminEventPoolsEventId)
       sendKeysEnter
 		end
 
 		it "Sets the Source" do
       eventPoolsSourceDropdown.flash.click
-      eventPoolsSourceSearchTextField.wait_until_present.set ($sourceId)
+      eventPoolsSourceSearchTextField.wait_until_present.set ($adminEventPoolsSourceId)
       sendKeysEnter
       sendKeysTab
     end
@@ -71,7 +71,7 @@ RSpec.describe "Admin->Event->Pools->Event->ID: Event Pools Event Id valid and i
 
 		it "Sets invalid Event ID" do
       eventPoolsEventDropdown.wait_until_present.flash.click
-      eventPoolsEventSearchTextField.wait_until_present.flash.set ($invalidEventId)
+      eventPoolsEventSearchTextField.wait_until_present.flash.set ($adminEventPoolsEventIdInvalid)
     end
 
     it "Verifes the invalid Event search result" do

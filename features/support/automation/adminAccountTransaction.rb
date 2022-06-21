@@ -55,7 +55,7 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 		it "Sets an invalid Event id" do
 			accountTransactionsSourceGroupDropdown.flash.click
 			accountTransactionsSourceGroupSearchTextField.wait_until_present.flash.click
-      accountTransactionsSourceGroupSearchTextField.flash.set ($accountSourceGroupIdInvalid)
+      accountTransactionsSourceGroupSearchTextField.flash.set ($adminAccountTransactionSourceGroupIdInvalid)
 		end
 
 		it "Verifies the No matches found error" do
@@ -66,21 +66,21 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 			accountTransactionsSourceGroupDropdown.flash.click
 			accountTransactionsSourceGroupDropdown.flash.click
       accountTransactionsSourceGroupSearchTextField.flash.click
-			accountTransactionsSourceGroupSearchTextField.flash.set ($accountSourceGroupId)
-      accountTransactionsSourceGroupSearchTextField.flash.set ($accountSourceGroupId)
+			accountTransactionsSourceGroupSearchTextField.flash.set ($adminAccountTransactionSourceGroupId)
+      accountTransactionsSourceGroupSearchTextField.flash.set ($adminAccountTransactionSourceGroupId)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets a Transaction type Deposit" do
 			accountTransactionTransactionDropdown.flash.click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdDeposit)
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdDeposit)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets an Account Id" do
-			accountTransactionAccountSearchTextField.flash.set ($accountGroupId)
+			accountTransactionAccountSearchTextField.flash.set ($adminAccountTransactionGroupId)
 			sendKeysTab
 		end
 
@@ -90,13 +90,13 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 
 		it "Sets a Transaction type Withdraw" do
 			accountTransactionTransactionDropdown.flash.click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdWithdraw)
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdWithdraw)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets an Account Id" do
-			accountTransactionAccountSearchTextField.flash.set ($accountGroupId)
+			accountTransactionAccountSearchTextField.flash.set ($adminAccountTransactionGroupId)
 			sendKeysTab
 		end
 
@@ -106,13 +106,13 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 
 		it "Sets a Transaction type Adjust" do
 			accountTransactionTransactionDropdown.flash.click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdAdjust)
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdAdjust)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets an Account Id" do
-			accountTransactionAccountSearchTextField.flash.set ($accountGroupId)
+			accountTransactionAccountSearchTextField.flash.set ($adminAccountTransactionGroupId)
 			sendKeysTab
 		end
 
@@ -122,13 +122,13 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 
 		it "Sets a Transaction type Transfer" do
 			accountTransactionTransactionDropdown.flash.click
-			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($accountTransactionIdTransfer)
+			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdTransfer)
 			sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets the Account From number" do
-			accountTransactionAccountFromTextfield.flash.set ($accountGroupId)
+			accountTransactionAccountFromTextfield.flash.set ($adminAccountTransactionGroupId)
       sleep 2
       accountTransactionSelectBalanceClick.flash.click
 		end

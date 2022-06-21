@@ -69,13 +69,13 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
 		end
 
 		it "Sets a new subject in text field" do
-      @var=$newSubjectText
+      @var=$adminMemoNewSubjectText
 			adminMemoSubjectModalSubjectTextField.flash.set ("#{@var}"+"Test")
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
 		end
 
 		it "Clicks on the close button" do
@@ -96,8 +96,6 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
       expect(adminMemoModalMemoSubjectByIndex(0).text).to include("#{@var}"+"Test")
       adminMemoModalMemoSubjectByIndex(0).flash(color: ["yellow"])
     end
-
-
 	ensure
 	after(:all) do
 		logOutFuction

@@ -8,13 +8,13 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$groupId = "UQA - United Tote QA"
-$groupIdInvalid = "TNT"
-$sortById = "Id"
-$sortByName = "Name"
-$sortByNumber = "Number"
-$channelId = ""
-$invalidChannelId = "C"
+$adminEventChannelGroupId = "UQA - United Tote QA"
+$adminEventChannelGroupIdInvalid = "TNT"
+$adminEventChannelSortById = "Id"
+$adminEventChannelSortByName = "Name"
+$adminEventChannelSortByNumber = "Number"
+$adminEventChannelId = ""
+$adminEventChannelChannelIdInvalid = "C"
 
 module EventChannelPage
 	include RSpec::Matchers
@@ -22,6 +22,7 @@ module EventChannelPage
 
 	#### CHANNEL METHODS / LOCATORS ####
 	def eventMenuInquireSubLinks(string)
+		sleep(1)
 		@browser.element(xpath: "//*[@id='Command-Menu-#{string}']")
 	end
 

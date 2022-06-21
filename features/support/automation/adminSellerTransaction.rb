@@ -60,19 +60,19 @@ RSpec.describe "Admin->Seller->Transaction: Admin Seller Transaction functionali
 		#### TYPE PAYMENT ####
 		it "Selects the Payment Type" do
 			adminSellerTransactionModalTypeDropdown.flash.click
-			adminSellerTransactionModalTypeSearchTextField.flash.set ($sellerTypeOptionPayment)
+			adminSellerTransactionModalTypeSearchTextField.flash.set ($adminSellerTransactionSellerTypeOptionPayment)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets the Seller id in text field" do
-			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
-			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($adminSellerTransactionSellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($adminSellerTransactionSellerId)
 			sendKeysTab
 		end
 
 		it "Sets an amount in the amount text field" do
-			adminSellerTransactionModalCurrencyAmountTextField.flash.set ($sellerAmountOneDollar)
+			adminSellerTransactionModalCurrencyAmountTextField.flash.set ($adminSellerTransactionSellerAmountOneDollar)
 			sendKeysTab
 		end
 
@@ -86,19 +86,19 @@ RSpec.describe "Admin->Seller->Transaction: Admin Seller Transaction functionali
 		#### TYPE ADUJUST ####
 		it "Selects the Adjust Type" do
 			adminSellerTransactionModalTypeDropdown.flash.click
-			adminSellerTransactionModalTypeSearchTextField.flash.set ($sellerTypeOptionAdjust)
+			adminSellerTransactionModalTypeSearchTextField.flash.set ($adminSellerTransactionSellerTypeOptionAdjust)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets the Seller id in text field" do
-			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
-			adminSellerTransactionModalSellerTextField.flash.set ($sellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($adminSellerTransactionSellerId)
+			adminSellerTransactionModalSellerTextField.flash.set ($adminSellerTransactionSellerId)
 			sendKeysTab
 		end
 
 		it "Sets an amount in the amount text field" do
-			adminSellerTransactionModalCurrencyAmountTextField.flash.set ($sellerAmountOneDollar)
+			adminSellerTransactionModalCurrencyAmountTextField.flash.set ($adminSellerTransactionSellerAmountOneDollar)
 			sendKeysTab
 		end
 

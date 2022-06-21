@@ -59,7 +59,7 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoText)
+			adminMemoNewMemoModalMemoNameField.flash.set ($adminMemoNewMemoText)
 			sendKeysTab
 		end
 
@@ -73,12 +73,12 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
 		end
 
 		it "Clicks on the save button" do
@@ -87,7 +87,7 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 
 		it "Verifies the memo was set" do
 			adminMemoModalMemoByIndex(0).flash
-			verifyNewMemoText(0, $newMemoText)
+			verifyNewMemoText(0, $adminMemoNewMemoText)
 		end
     #### DELETE NEW MEMO ####
     it "Clicks on the new memo line" do
@@ -107,7 +107,7 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
     end
 
     it "Verifies the newly created memo deleted success message" do
-      verifyDeletedSuccessMessageText($newMemoText)
+      verifyDeletedSuccessMessageText($adminMemoNewMemoText)
     end
 	ensure
 	after(:all) do

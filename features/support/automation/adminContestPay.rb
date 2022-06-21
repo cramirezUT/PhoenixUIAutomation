@@ -57,7 +57,7 @@ RSpec.describe "Admin->Contest->Pay: Contest Pay verification test", :adminConte
 		end
 
 		it "Sets an invalid Player id in search text field" do
-			contestPaySearchTextField.flash.set ($playerGroupdIdInvalid)
+			contestPaySearchTextField.flash.set ($adminContestPayPlayerGroupdIdInvalid)
 			sendKeysEnter
 			sendKeysTab
 		end
@@ -69,7 +69,7 @@ RSpec.describe "Admin->Contest->Pay: Contest Pay verification test", :adminConte
 		it "Sets a vaild Player id" do
       contestPaySearchTextField.flash.click
 			sendKeysClear
-      contestPaySearchTextField.flash.set ($playerGroupdId)
+      contestPaySearchTextField.flash.set ($adminContestPayPlayerGroupdId)
       sendKeysEnter
 		end
 

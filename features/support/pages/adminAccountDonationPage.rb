@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountGroupId = "TST-8683"
-$invalidAccountGroupId = "99"
-$numberOfDays1 = "1"
-$donateAmount = "1"
+$adminAccountDonationGroupId = "TST-8683"
+$adminAccountDonationInvalidGroupId = "99"
+$adminAccountDonationNumberOfDays1 = "1"
+$adminAccountDonationAmount = "1"
 
 module AccountDonationPage
 	include RSpec::Matchers

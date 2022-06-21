@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$playerId = "TLC-10"
-$playerIdInvalid = "TNT"
+$adminContestCancelPlayerId = "TLC-10"
+$adminContestCancelPlayerIdInvalid = "TNT"
 
 module ContestCancelPage
 	include RSpec::Matchers
@@ -43,7 +43,7 @@ module ContestCancelPage
 
 	#### VERIFIERS ####
 	def verifycontestCancelErrorSearchResults(result)
-		sleep(1)
+		sleep(2)
 		expectedResult = "#{result}"
 		expect(getContestCancelError.text).to include(expectedResult)
 		getContestCancelError.flash(color: ["yellow"])

@@ -60,7 +60,7 @@ RSpec.describe "Admin->Terminal->Inquiry->Filter: Admin Terminal Inquiry Filter 
 
 		it "Sets a valid terminal id in text field" do
 			adminTerminalInquiryModalTerminalsTextField.flash.click
-			adminTerminalInquiryModalTerminalsTextField.flash.set ($terminalId)
+			adminTerminalInquiryModalTerminalsTextField.flash.set ($adminTerminalInquiryTerminalId)
 			sendKeysEnter
 			sendKeysTab
 		end
@@ -86,7 +86,7 @@ RSpec.describe "Admin->Terminal->Inquiry->Filter: Admin Terminal Inquiry Filter 
     it "Select the Facility from drop down" do
       terminalSelectionFilterModalFacilityDropdown.flash.click
       terminalSelectionFilterModalFacilityDropdown.flash.click
-      terminalSelectionFilterModalFacilitySearchTextField.flash.set ($groupOptionQa)
+      terminalSelectionFilterModalFacilitySearchTextField.flash.set ($adminTerminalInquiryGroupOptionQa)
       sendKeysEnter
       sendKeysTab
     end

@@ -57,7 +57,7 @@ RSpec.describe "Admin->Event->Class: Event Class group Id valid and invalid test
     it "Sets invalid Group ID" do
       eventClassGroupDropdown.wait_until_present.flash.click
       sleep 5
-      eventClassGroupSearchTextField.wait_until_present.flash.set ($invalidGroupId)
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($adminEventClassGroupIdInvalid)
       sleep 5
       #sendKeysEnter
     end
@@ -69,7 +69,7 @@ RSpec.describe "Admin->Event->Class: Event Class group Id valid and invalid test
     it "Sets a valid Group ID" do
       eventClassGroupDropdown.flash.click
       eventClassGroupDropdown.flash.click
-      eventClassGroupSearchTextField.wait_until_present.flash.set ($groupId)
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($adminEventClassGroupId)
       sendKeysEnter
       sleep(1)
       sendKeysTab

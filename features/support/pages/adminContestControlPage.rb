@@ -8,14 +8,14 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$tournamentdId = "T02"
-$tournamentdIdInvalid = "T100"
-$dateTime = DateTime.now
-$dateTimePlus1Day = $dateTime + 1
-$dateTimePlus2Days = $dateTime + 2
-$currentDateTime = $dateTime.strftime("%d %m %Y")
-$currentDateTimePlus1Day = $dateTimePlus1Day.strftime("%d %m %Y")
-$currentDateTimePlus2Days = $dateTimePlus2Days.strftime("%d %m %Y")
+$adminContestControlTournamentId = "T02"
+$adminContestControlTournamentdIdInvalid = "T100"
+$adminContestControlDateTime = DateTime.now
+$adminContestControlDateTimePlus1Day = $adminContestControlDateTime + 1
+$adminContestControlDateTimePlus2Days = $adminContestControlDateTime + 2
+$adminContestControlCurrentDateTime = $adminContestControlDateTime.strftime("%d %m %Y")
+$adminContestControlCurrentDateTimePlus1Day = $adminContestControlDateTimePlus1Day.strftime("%d %m %Y")
+$adminContestControlCurrentDateTimePlus2Days = $adminContestControlDateTimePlus2Days.strftime("%d %m %Y")
 
 module ContestControlPage
 	include RSpec::Matchers

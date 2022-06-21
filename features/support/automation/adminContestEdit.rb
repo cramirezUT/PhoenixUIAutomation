@@ -58,13 +58,13 @@ RSpec.describe "Admin->Contest->Edit: Contest Edit verification test", :adminCon
 
 		it "Sets the View option in the Action search text field" do
 			playerEditModalActionDropdown.flash.click
-			playerEditModalActionSearchTextField.flash.set ($playerActionOptionView)
+			playerEditModalActionSearchTextField.flash.set ($adminContestEditPlayerActionOptionView)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Sets an invalid Player id" do
-			playerEditPlayerTextField.flash.set ($playerIdInvalid)
+			playerEditPlayerTextField.flash.set ($adminContestEditPlayerIdInvalid)
 			sendKeysEnter
 			sendKeysTab
 		end
@@ -76,7 +76,7 @@ RSpec.describe "Admin->Contest->Edit: Contest Edit verification test", :adminCon
 		it "Sets a valid Player id" do
 			playerEditPlayerTextField.flash.click
 			sendKeysClear
-			playerEditPlayerTextField.flash.set ($playerId)
+			playerEditPlayerTextField.flash.set ($adminContestEditPlayerId)
 			sendKeysEnter
 		end
 

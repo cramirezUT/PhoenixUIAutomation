@@ -8,11 +8,11 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$sellerId = "UTS1"
-$sellerIdInvalid = "TNT"
-$sellerTypeOptionPayment = "Payment"
-$sellerTypeOptionAdjust = "Adjust"
-$sellerAmountOneDollar = "1.00"
+$adminSellerTransactionSellerId = "UTS1"
+$adminSellerTransactionSellerIdInvalid = "TNT"
+$adminSellerTransactionSellerTypeOptionPayment = "Payment"
+$adminSellerTransactionSellerTypeOptionAdjust = "Adjust"
+$adminSellerTransactionSellerAmountOneDollar = "1.00"
 
 module AdminSellerTransactionPage
 	include RSpec::Matchers

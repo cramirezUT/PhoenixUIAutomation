@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$groupId = "CHD"
-$invalidGroupId = "TNT"
-$sourceMeregeId = "Merged"
+$adminEventClassEventId = "CHF"
+$adminEventClassGroupId = "CHD"
+$adminEventClassGroupIdInvalid = "TNT"
+$adminEventClassSourceMeregeId = "Merged"
 
 module ClassPage
 	include RSpec::Matchers

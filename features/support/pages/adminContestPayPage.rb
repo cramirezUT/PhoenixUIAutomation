@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$playerGroupdId = "TL1-1"
-$playerGroupdIdInvalid = "TNT"
+$adminContestPayPlayerGroupdId = "TL1-1"
+$adminContestPayPlayerGroupdIdInvalid = "TNT"
 
 module ContestPayPage
 	include RSpec::Matchers

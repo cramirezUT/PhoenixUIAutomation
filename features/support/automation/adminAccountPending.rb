@@ -60,7 +60,7 @@ RSpec.describe "Admin->Account->Pending: Account Pending validation", :adminAcco
 
     it "Sets an invalid Account Group Number" do
       accountPendingModal.wait_until_present.flash
-      accountPendingSearchTextField.wait_until_present.flash.set ($accountGroupIdInvalid)
+      accountPendingSearchTextField.wait_until_present.flash.set ($adminAccountPendingGroupIdInvalid)
       sendKeysEnter
     end
 
@@ -72,7 +72,7 @@ RSpec.describe "Admin->Account->Pending: Account Pending validation", :adminAcco
 			accountPendingModal.wait_until_present.flash
 			accountPendingSearchTextField.click
 			sendKeysClear
-      accountPendingSearchTextField.flash.set ($accountGroupId)
+      accountPendingSearchTextField.flash.set ($adminAccountPendingGroupId)
       sendKeysEnter
 		end
 

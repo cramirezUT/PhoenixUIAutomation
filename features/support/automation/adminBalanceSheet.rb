@@ -57,7 +57,7 @@ RSpec.describe "Admin->Balance:  Balance Sheet validation", :adminBalance do
 		end
 
 		it "Sets the Group Id" do
-			adminBalanceModalGroupSearchTextField.flash.set ($groupId)
+			adminBalanceModalGroupSearchTextField.flash.set ($adminBalanceGroupId)
 			sendKeysEnter
 			sendKeysTab
 		end
@@ -79,7 +79,7 @@ RSpec.describe "Admin->Balance:  Balance Sheet validation", :adminBalance do
 		end
 
 		it "Sets text in the Label text field" do
-			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($textForField)
+			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($adminBalanceTextForField)
 		end
 
 		it "Clicks on the right arrow" do
@@ -97,7 +97,7 @@ RSpec.describe "Admin->Balance:  Balance Sheet validation", :adminBalance do
 		end
 
 		it "Sets text in the Label text field" do
-			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($textForField)
+			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($adminBalanceTextForField)
 		end
 
 		it "Clicks on the right arrow" do
@@ -115,7 +115,7 @@ RSpec.describe "Admin->Balance:  Balance Sheet validation", :adminBalance do
 		end
 
 		it "Sets text in the Label text field" do
-			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($textForField)
+			adminBalanceSheetCellEditorModalLabelTextField.flash.set ($adminBalanceTextForField)
 		end
 
 		it "Clicks on the right arrow" do

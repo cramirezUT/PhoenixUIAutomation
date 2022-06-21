@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$invalidEventId = "TNT"
-$sourceId = "CHD"
-$sourceMerge = "Merge"
+$adminEventLiabilityEventId = "CHF"
+$adminEventLiabilityEventIdInvalid = "TNT"
+$adminEventLiabilitySourceId = "CHD"
+$adminEventLiabilitySourceMerge = "Merge"
 
 module LiabilityPage
 	include RSpec::Matchers

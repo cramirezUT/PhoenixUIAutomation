@@ -8,11 +8,11 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountGroupId = "TST-8683"
-$invalidAccountGroupId = "99"
-$eventOptionAQD = "AQD"
-$eventRaceOption = "1"
-$eventPoolOption = "Win"
+$adminAccountInquiryGroupId = "TST-8683"
+$adminAccountInquiryGroupIdInvalid = "99"
+$adminAccountInquiryOptionAQD = "AQD"
+$adminAccountInquiryRaceOption = "1"
+$adminAccountInquiryPoolOption = "Win"
 
 
 module AccountInquirePage

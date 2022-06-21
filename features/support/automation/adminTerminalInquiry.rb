@@ -59,7 +59,7 @@ RSpec.describe "Admin->Terminal->Inquiry: Admin Terminal Inquiry functionality t
 		end
 
 		it "Sets an invalid terminal id in text field" do
-			adminTerminalInquiryModalTerminalsTextField.flash.set ($terminalIdInvalid)
+			adminTerminalInquiryModalTerminalsTextField.flash.set ($adminTerminalInquiryTerminalIdInvalid)
 			sendKeysTab
 		end
 
@@ -69,7 +69,7 @@ RSpec.describe "Admin->Terminal->Inquiry: Admin Terminal Inquiry functionality t
 
 		it "Sets a valid terminal id in text field" do
 			adminTerminalInquiryModalTerminalsTextField.flash.click
-			adminTerminalInquiryModalTerminalsTextField.flash.set ($terminalId)
+			adminTerminalInquiryModalTerminalsTextField.flash.set ($adminTerminalInquiryTerminalId)
 			sendKeysEnter
 			sendKeysTab
 		end

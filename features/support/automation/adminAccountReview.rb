@@ -55,7 +55,7 @@ RSpec.describe "Admin->Account->Review: Account Review verification test", :admi
 		it "Sets an invalid Account id" do
 			accountReviewModal.wait_until_present.flash
 			accountReviewSearchTextField.flash.click
-      accountReviewSearchTextField.flash.set ($invalidGroupId)
+      accountReviewSearchTextField.flash.set ($adminAccountReviewInvalidGroupId)
       sendKeysEnter
 		end
 
@@ -65,7 +65,7 @@ RSpec.describe "Admin->Account->Review: Account Review verification test", :admi
 
 		it "Sets the valid Account id" do
 			accountReviewSearchTextField.flash.click
-      accountReviewSearchTextField.flash.set ($accountGroupId)
+      accountReviewSearchTextField.flash.set ($adminAccountReviewGroupId)
       sendKeysEnter
 			sendKeysTab
 		end

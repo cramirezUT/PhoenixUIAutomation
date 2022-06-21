@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$raceNumber1 = "1"
-$sourceMeregeId = "Merged"
-$invalidEventId = "TNT"
+$adminEventPricesEventId = "CHF"
+$adminEventPricesEventIdInvalid = "TNT"
+$adminEventPricesRaceNumber1 = "1"
+$adminEventPricesSourceMeregeId = "Merged"
 
 module PricesPage
 	include RSpec::Matchers

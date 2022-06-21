@@ -59,7 +59,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($memoErrorText)
+			adminMemoNewMemoModalMemoNameField.flash.set ($adminMemoErrorText)
 			sendKeysTab
       verifyNewMemoTextMoreThanGivenChar("Invalid memo name")
 		end

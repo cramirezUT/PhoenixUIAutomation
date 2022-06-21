@@ -59,7 +59,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoTextGreaterThan1000Char)
+			adminMemoNewMemoModalMemoNameField.flash.set ($adminMemoNewMemoTextGreaterThan1000Char)
 			sendKeysTab
 		end
 
@@ -67,7 +67,6 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
       adminMemoNewMemoModalErrorText.wait_until_present.flash
       verifyNewMemoTextMoreThanGivenChar("Memo name is longer than 128 characters!")
     end
-
 	ensure
 	after(:all) do
 		logOutFuction

@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountId = "TST-8683"
-$accountIdInvalid = "TNT"
+$adminAccountExchangesId = "TST-8683"
+$adminAccountExchangesIdInvalid = "TNT"
 
 module AccountExchangesPage
 	include RSpec::Matchers
