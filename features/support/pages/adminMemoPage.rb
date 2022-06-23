@@ -153,6 +153,18 @@ module AdminMemoPage
 
 	#### VERIFIERS ####
 
+	def verifyNewMemoBodyAfterInsertText(result)
+		expectedResult = "#{result}"
+		expect(adminMemoSubjectModalBodyTextArea.text).to include(expectedResult)
+		adminMemoSubjectModalBodyTextArea.flash(color: ["yellow"])
+	end
+
+	def verifyNewMemoBodyAfterremovingCharacters(result)
+		expectedResult = "#{result}"
+		expect(adminMemoSubjectModalBodyTextArea.text).to include(expectedResult)
+		adminMemoSubjectModalBodyTextArea.flash(color: ["yellow"])
+	end
+
 	def verifyNewMemoBodyText(result)
 		expectedResult = "#{result}"
 		expect(adminMemoSubjectModalBodyTextArea.text).to include(expectedResult)
