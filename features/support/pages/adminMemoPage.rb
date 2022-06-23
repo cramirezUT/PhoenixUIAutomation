@@ -18,7 +18,7 @@ $adminMemoNewMemoTextGreaterThan96Char = "#{@adminMemoRandomMemoGreaterThan96Cha
 $adminMemoNewMemoTextGreaterThan79Char = "#{@adminMemoRandomMemoGreaterThan79Char}"
 $adminMemoNewMemoTextGreaterThan1000Char = "#{@adminMemoRandomMemoGreaterThan1000Char}"
 $adminMemoRan = "#{@adminMemoRandom}"
-$adminMemoNewMemoText = "new test memo"+$adminMemoRandom
+$adminMemoNewMemoText = "new test memo"+$adminMemoRan
 $adminMemoErrorText ="!!!!**..."
 
 module AdminMemoPage
@@ -150,7 +150,6 @@ module AdminMemoPage
 	end
 
 	#### VERIFIERS ####
-
 	def verifyNewMemoBodyText(result)
 		expectedResult = "#{result}"
 		expect(adminMemoSubjectModalBodyTextArea.text).to include(expectedResult)

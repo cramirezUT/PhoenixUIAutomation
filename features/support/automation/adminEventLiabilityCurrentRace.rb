@@ -82,7 +82,7 @@ RSpec.describe "Admin->Event->Liability->CurrentRace: Event Liability Event Merg
 		end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 3")
+      verifyAdminEventLiabilityCurrentRaceEventSearchResults("CHF-CHURCHILL DOWNS Race 3")
     end
 
 		it "Verifies the figures view" do

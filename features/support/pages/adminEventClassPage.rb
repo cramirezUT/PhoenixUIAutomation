@@ -108,7 +108,7 @@ module ClassPage
 		@browser.div(id: 'EventClass-View-HT-0')
 	end
 
-	def getEventSearchResults
+	def getAdminEventClassEventSearchResults
 		@browser.li(id: 'ut-ms-opt-EventClass-Select-Group_noresults')
 	end
 
@@ -120,17 +120,28 @@ module ClassPage
 		@browser.div(id: "Information-View-#{index}-1")
 	end
 
+	def getEventClassDefinitionForCleanUp
+		if getEventClassDefinition(0).text == 'B'
+			eventClassButtonByIndex(0).wait_until_present.flash.click
+			eventClassButtonByIndex(0).wait_until_present.flash.click
+		elsif getEventClassDefinition(0).text == 'A'
+			eventClassButtonByIndex(0).wait_until_present.flash.click
+		else
+			puts "No clean up needed moving to next step"
+		end
+	end
+
 	#### VERIFIERS ####
-	def verifyEventSearchResults(result)
+	def verifyAdminEventClassEventSearchResults(result)
 		expectedResult = "#{result}"
 		expect(getEventResultView.text).to include(expectedResult)
 		getEventResultView.flash(color: ["yellow"])
 	end
 
-	def verifyEventSearchResultsInvalid(result)
+	def verifyAdminEventClassEventSearchResultsInvalid(result)
 		expectedResult = "#{result}"
-		expect(getEventSearchResults.text).to eq(expectedResult)
-		getEventSearchResults.flash(color: ["yellow"])
+		expect(getAdminEventClassEventSearchResults.text).to eq(expectedResult)
+		getAdminEventClassEventSearchResults.flash(color: ["yellow"])
 	end
 
 	def verifyEventClassDefinitionB(index)

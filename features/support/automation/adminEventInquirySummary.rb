@@ -81,7 +81,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
     end
 
     it "Click on the Event By dropdown and select the Post" do
-      eventInquiryDropdown.wait_until_present.flash.click
+      eventInquiryDropdown.flash.click
       eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByPostTime)
       sendKeysEnter
 			sendKeysTab

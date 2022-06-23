@@ -78,7 +78,7 @@ RSpec.describe "Admin->Event->Liability->EventAll: Event Liability Event All sel
 		end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-3")
+      verifyAdminEventLiabilityEventAllEventSearchResults("CHF-CHURCHILL DOWNS Races 1-3")
     end
 
      it "Clicks on the Next button" do

@@ -64,7 +64,7 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
     end
 
     it "Verifies the Channel search result" do
-      verifyEventSearchResultsInvalid("No matches found")
+      verifyAdminEventChannelEventSearchResultsInvalid("No matches found")
     end
 
     it "Sets a valid Group ID" do
@@ -88,7 +88,7 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
       verifyEventChannelInvalidChannelIdError("Specified channel 'C' does not exist in any channel guides for UQA!")
     end
 
-    it "Clicks on the Help button" do
+    it "Verifies the Help button" do
       expect(eventChannelModalHelpButton.enabled?).to be_truthy
     end
 	ensure

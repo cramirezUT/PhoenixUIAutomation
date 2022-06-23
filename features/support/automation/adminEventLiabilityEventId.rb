@@ -78,7 +78,7 @@ RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid
 		end
 
     it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race")
+      verifyAdminEventLiabilityEventIdSearchResults1("CHF-CHURCHILL DOWNS Race")
     end
 
     it "Clicks on the Next button" do
@@ -102,7 +102,7 @@ RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid
     end
 
     it "Verifes the invalid Event search result" do
-      verifyEventSearchResultsInvalid("No matches found")
+      verifyAdminEventLiabilityEventSearchResultsInvalid("No matches found")
     end
 	ensure
 	after(:all) do

@@ -70,7 +70,7 @@ RSpec.describe "Admin->Event->Pools->CurrentRace: Event Pools Current race test"
 		end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 3 FINAL")
+      verifyAdminEventPoolsEventSearchResults("CHF-CHURCHILL DOWNS Race 3 FINAL")
     end
 
 		it "Verifes the figures" do

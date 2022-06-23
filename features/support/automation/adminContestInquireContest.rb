@@ -80,7 +80,7 @@ RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verifi
 			contestInquiryModalTournamentDropdown.flash.click
       contestInquiryModalTournamentSearchTextField.flash.set ($tournamentId)
       sendKeysEnter
-			sendKeysTab
+			sendKeysEnter
 		end
 
 		it "Clicks on the Contest dropdown" do

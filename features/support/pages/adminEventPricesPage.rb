@@ -198,7 +198,7 @@ module PricesPage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventSearchResults(result)
+	def verifyAdminEventPricesEventSearchResults(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getEventResultHeaderTitle.text).to include(expectedResult)
