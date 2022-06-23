@@ -56,7 +56,7 @@ RSpec.describe "Admin->Contest->Inquire->Player: Contest Inquire Player Date ver
 		end
 
 		it "Clicks on the Player sub link" do
-			playerMenuStandingsSubLinks("Player").flash.click
+			playerMenuInquireSubLinks("Player").flash.click
 		end
 
 		it "Verifies the Player Inquiry modal" do

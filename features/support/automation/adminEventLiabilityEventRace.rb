@@ -83,7 +83,7 @@ RSpec.describe "Admin->Event->Liability->EventRace: Event Liability Event Race t
 		end
 
     it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 1")
+      verifyAdminEventLiabilityEventRaceEventSearchResults("CHF-CHURCHILL DOWNS Race 1")
     end
 
 		it "Prints the Payoff amount" do

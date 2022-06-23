@@ -63,11 +63,19 @@ RSpec.describe "Admin->Event->Class: Event Class Define class test", :adminEvent
       sendKeysTab
     end
 
-		it "Defines the event class" do
-			eventClassButtonByIndex(0).wait_until_present.flash.click
+		it "Determines if clean up is needed" do
+			getEventClassDefinitionForCleanUp
 		end
 
 		it "Clicks on the save changes button" do
+			eventClassSaveChangesButton.wait_until_present.flash.click
+		end
+
+    it "Defines the event class" do
+      eventClassButtonByIndex(0).wait_until_present.flash.click
+    end
+
+    it "Clicks on the save changes button" do
 			eventClassSaveChangesButton.wait_until_present.flash.click
 		end
 

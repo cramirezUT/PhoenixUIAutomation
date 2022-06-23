@@ -78,7 +78,7 @@ RSpec.describe "Admin->Event->Liability->Merge: Event Liability Event Merge sele
 		end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-3")
+      verifyAdminEventLiabilityMergeEventSearchResults("CHF-CHURCHILL DOWNS Races 1-3")
     end
 	ensure
 	after(:all) do

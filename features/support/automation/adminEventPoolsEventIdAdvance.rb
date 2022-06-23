@@ -66,7 +66,7 @@ RSpec.describe "Admin->Event->Pools->Event->ID: Event Pools Event Id valid and i
     end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race")
+      verifyAdminEventPoolsEventSearchResults("CHF-CHURCHILL DOWNS Race")
     end
 
 		it "Sets invalid Event ID" do
@@ -75,7 +75,7 @@ RSpec.describe "Admin->Event->Pools->Event->ID: Event Pools Event Id valid and i
     end
 
     it "Verifes the invalid Event search result" do
-      verifyEventSearchResultsInvalid("No matches found")
+      verifyAdminEventPoolsEventSearchResultsInvalid("No matches found")
     end
 
 		it "Clicks on a advance race arrow" do
@@ -84,7 +84,7 @@ RSpec.describe "Admin->Event->Pools->Event->ID: Event Pools Event Id valid and i
 		end
 
 		it "Verifies an advanced race is selected" do
-			verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 4 OPEN")
+			verifyAdminEventPoolsEventSearchResults("CHF-CHURCHILL DOWNS Race 4 OPEN")
 		end
 
 		it "Clicks on the previous race arrow" do
