@@ -10,8 +10,6 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
-@value
-@valueAfter
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -64,7 +62,6 @@ RSpec.describe "Admin->Memo: Admin Memo Edit Phoenix functionality test", :admin
       adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
-
 		it "Verifies the subject modal" do
 			adminMemoSubjectModal.flash
 		end
@@ -76,22 +73,20 @@ RSpec.describe "Admin->Memo: Admin Memo Edit Phoenix functionality test", :admin
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
 			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
-      @value= adminMemoSubjectModalBodyTextArea.text.length
+      $value = adminMemoSubjectModalBodyTextArea.text.length
       sendKeysBackspace
-    #  sendKeysBackspace.flash.click
 		end
 
     it "Get body length after deletion" do
-        @valueAfter= adminMemoSubjectModalBodyTextArea.text.length
+      $valueAfter = adminMemoSubjectModalBodyTextArea.text.length
     end
 
     it "Verify deletion is success" do
-        expect("#{@value}" == "#{@valueAfter}")
+      expect($value == $valueAfter)
     end
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
-      adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm No " do
@@ -101,7 +96,6 @@ RSpec.describe "Admin->Memo: Admin Memo Edit Phoenix functionality test", :admin
     it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
 		end
-
 	ensure
 	after(:all) do
 		logOutFuction

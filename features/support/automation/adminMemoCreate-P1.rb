@@ -82,9 +82,8 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Clicks on the save button" do
-      sleep 10
+      sleep 1
 			adminMemoSubjectModalSaveButton.flash.click
-      adminMemoSubjectModalSaveButton.flash.click
 		end
 
 		it "Verifies the memo was set" do

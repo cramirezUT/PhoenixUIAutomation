@@ -64,7 +64,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality Phoenix test", :adm
 		end
 
 		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
+			adminMemoNewMemoModalYesButton.flash.click
       adminMemoNewMemoModalYesButton.wait_while_present
 		end
 
@@ -83,7 +83,6 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality Phoenix test", :adm
 
 		it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
-      adminMemoSubjectModalSaveButton.flash.click
 		end
 
 		it "Verifies the memo was set" do
