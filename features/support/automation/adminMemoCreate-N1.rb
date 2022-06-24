@@ -63,6 +63,10 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 			sendKeysTab
       verifyNewMemoTextMoreThanGivenChar("Invalid memo name")
 		end
+
+    it "Clicks on the No button in the New Memo modal" do
+      adminMemoDeleteModalNoButton.flash.click
+    end
 	ensure
 	after(:all) do
 		logOutFuction
