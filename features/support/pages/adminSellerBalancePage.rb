@@ -9,7 +9,7 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 @adminSellerBalanceRandom = rand(9999)
-$adminSellerBalanceSellerId = "UTS1"
+$adminSellerBalanceSellerId = "TST-10"
 $adminSellerBalanceSellerIdInvalid = "TNT"
 
 module AdminSellerBalancePage

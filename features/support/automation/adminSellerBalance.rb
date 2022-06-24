@@ -64,12 +64,18 @@ RSpec.describe "Admin-Seller->Balance: Admin Seller Balance functionality test",
 		end
 
 		it "Verifies the Seller Balance invalid id error" do
-			verifySellerBalanceError("Seller 'TNT' not found!")
+			verifySellerBalanceError("Seller number 'TNT' is invalid!")
 		end
 
 		it "Sets a valid Seller id in text field" do
+      adminSellerBalanceModalSellerTextField.flash.click
+      sendKeysBackspace
+      sendKeysBackspace
+      sendKeysBackspace
+      sleep(1)
 			adminSellerBalanceModalSellerTextField.flash.set ($adminSellerBalanceSellerId)
-			sendKeysTab
+      sleep(1)
+			sendKeysEnter
 		end
 
 		it "Verifies the Seller Balance Balance modal" do
