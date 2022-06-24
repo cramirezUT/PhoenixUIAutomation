@@ -64,7 +64,7 @@ RSpec.describe "Admin->Seller->Inquiry: Admin Seller Inquiry functionality test"
 		end
 
 		it "Verifies the invalid name error messgae" do
-			verifySellerInquiryError("Seller 'TNT' not found!")
+			verifySellerInquiryError("Seller number 'TNT' is invalid!")
 		end
 
 		it "Sets a valid Seller id" do

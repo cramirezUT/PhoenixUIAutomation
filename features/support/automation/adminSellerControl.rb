@@ -64,7 +64,7 @@ RSpec.describe "Admin->Seller->Control: Admin Seller Control functionality test"
 		end
 
 		it "Verifies the Seller Balance invalid id error" do
-			verifySellerControlError("Seller 'TNT' not found!")
+			verifySellerControlError("Seller number 'TNT' is invalid!")
 		end
 
 		it "Sets a valid Seller id in text field" do

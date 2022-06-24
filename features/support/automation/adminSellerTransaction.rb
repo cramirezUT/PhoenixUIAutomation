@@ -81,7 +81,7 @@ RSpec.describe "Admin->Seller->Transaction: Admin Seller Transaction functionali
 		end
 
 		it "Verifies the transaction amount was summited" do
-			verifySellerTransactionHistrory('PAYMENT $1.00 for seller (UTS1)')
+			verifySellerTransactionHistrory('PAYMENT $1.00 for seller (TST-10)')
 		end
 		#### TYPE ADUJUST ####
 		it "Selects the Adjust Type" do
@@ -107,7 +107,7 @@ RSpec.describe "Admin->Seller->Transaction: Admin Seller Transaction functionali
 		end
 
 		it "Verifies the transaction amount was summited" do
-			verifySellerTransactionHistrory('ADJUST $1.00 for seller (UTS1)')
+			verifySellerTransactionHistrory('ADJUST $1.00 for seller (TST-10)')
 		end
 	ensure
 	after(:all) do
