@@ -85,7 +85,6 @@ RSpec.describe "Admin->Terminal->Inquiry->Filter: Admin Terminal Inquiry Filter 
 
     it "Select the Facility from drop down" do
       terminalSelectionFilterModalFacilityDropdown.flash.click
-      terminalSelectionFilterModalFacilityDropdown.flash.click
       terminalSelectionFilterModalFacilitySearchTextField.flash.set ($adminTerminalInquiryGroupOptionQa)
       sendKeysEnter
       sendKeysTab
