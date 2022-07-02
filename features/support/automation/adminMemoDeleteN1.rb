@@ -86,15 +86,14 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
 			adminMemoSubjectModalSaveButton.flash.click
 		end
 
+    it "Clicks on the refresh button" do
+      adminMemoModalRefreshButton.flash.click
+    end
+
 		it "Verifies the memo was set" do
 			adminMemoModalMemoByIndex(0).flash.click
-    #  $random["test"]=""
-    #  random1=puts $random
-    #  random1= $random.gsub("test","")
-
 		end
     #### DELETE NEW MEMO ####
-
     it "Clicks on the trash can icon" do
       adminMemoModalDeleteButton.flash.click
     end
@@ -106,7 +105,6 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
     it "Clicks on the Yes button" do
       adminMemoDeleteModalYesButton.flash.click
     end
-
     #### DELETE NEW MEMO AGAIN ####
     it "Clicks on the new memo line" do
       adminMemoModalMemoByIndex(0).flash.click

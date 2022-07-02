@@ -69,6 +69,10 @@ RSpec.describe "Files->Seller: Verify the table options in the Displayed Columns
 		it "Verifies the Seller modal" do
 			sellerModal.flash
 		end
+
+    it "Closes the Seller modal" do
+      
+    end
   ensure
     after(:all) do
       logOutFuction

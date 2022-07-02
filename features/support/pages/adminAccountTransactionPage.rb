@@ -124,10 +124,9 @@ module AccountTransactionPage
 		@browser.li(id: 'ut-ms-opt-AccountTransaction-Select-Group_noresults')
 	end
 
-	def getAccountName
+	def getAdminAccountTransactionAccountName
 		@browser.label(id: 'AccountTransaction-Select-Name')
 	end
-
 
 	#### VERIFIERS ####
 	def verifyAccountTransactionErrorSearchResults(result)
@@ -140,7 +139,7 @@ module AccountTransactionPage
 	def verifyAccountTransactionSearchResultsName(result)
 		sleep(1)
 		expectedResult = "#{result}"
-		expect(getAccountName.text).to include(expectedResult)
-		getAccountName.flash(color: ["yellow"])
+		expect(getAdminAccountTransactionAccountName.text).to include(expectedResult)
+		getAdminAccountTransactionAccountName.flash(color: ["yellow"])
 	end
 end

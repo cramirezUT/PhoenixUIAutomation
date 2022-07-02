@@ -10,7 +10,6 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
-@var
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -60,8 +59,8 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
 		end
 
 		it "Sets a new Memo name in text field" do
-      @var=$adminMemoRandom.to_s.concat(" test")
-			adminMemoNewMemoModalMemoNameField.flash.set (@var)
+      $var=$adminMemoRandom.to_s.concat(" test")
+			adminMemoNewMemoModalMemoNameField.flash.set ($var)
 			sendKeysTab
 		end
 
@@ -85,6 +84,10 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
 		it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
 		end
+
+    it "Clicks on the refresh button" do
+      adminMemoModalRefreshButton.flash.click
+    end
 
 		it "Verifies the memo was set" do
 			adminMemoModalMemoByIndex(0).flash.click

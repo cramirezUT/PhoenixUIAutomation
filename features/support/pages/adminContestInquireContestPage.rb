@@ -62,7 +62,7 @@ module ContestInquireContestPage
 	end
 
 	#### VERIFIERS ####
-	def verifyContestInquiryError(string, result)
+	def verifyAdminContestInquiryError(string, result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getContestInquiryModalError(string).text).to include(expectedResult)
