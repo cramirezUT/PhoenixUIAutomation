@@ -9,7 +9,7 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 
 @adminSellerControlRandom = rand(9999)
-$adminSellerControlSellerId = "UTS1"
+$adminSellerControlSellerId = "UTS-1"
 $adminSellerControlSellerIdInvalid = "TNT"
 $adminSellerControlLockSellerOneCharacter = "A"
 

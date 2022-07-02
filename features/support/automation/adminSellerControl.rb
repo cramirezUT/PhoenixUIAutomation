@@ -69,9 +69,13 @@ RSpec.describe "Admin->Seller->Control: Admin Seller Control functionality test"
 
 		it "Sets a valid Seller id in text field" do
 			adminSellerControlModalSellerTextField.flash.click
-			sendKeysClear
+			sendKeysBackspace
+      sendKeysBackspace
+      sendKeysBackspace
+      sendKeysBackspace
+      sendKeysBackspace
 			adminSellerControlModalSellerTextField.flash.set ($adminSellerControlSellerId)
-			adminSellerControlModalSellerTextField.flash.set ($adminSellerControlSellerId)
+      sendKeysEnter
 			sendKeysTab
 		end
 

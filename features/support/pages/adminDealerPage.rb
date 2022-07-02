@@ -8,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$adminDealerId = "UQA8"
+$adminDealerId = "UQA-8"
 $adminDealerIdInvalid = "TNT"
 $adminDealerPin = "1234"
 $adminDealerCashBalanceAmountZero = "0.00"

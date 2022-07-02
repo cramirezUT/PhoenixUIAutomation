@@ -81,7 +81,7 @@ module ContestReviewPage
 	end
 
 	#### VERIFIERS ####
-	def verifyContestInquiryError(result)
+	def verifyAdminContestReviewError(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getContestPlayerReviewError.text).to include(expectedResult)

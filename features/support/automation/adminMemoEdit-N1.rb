@@ -62,7 +62,6 @@ RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
       adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
-
 		it "Verifies the subject modal" do
 			adminMemoSubjectModal.flash
 		end
@@ -81,7 +80,7 @@ RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
 			adminMemoSubjectModalCloseButton.flash.click
 		end
 
-		it "Click memo Confirm No " do
+		it "Click memo Confirm No" do
 		   adminMemoDeleteModalNoButton.flash.click
 		end
 

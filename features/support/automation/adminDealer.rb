@@ -59,7 +59,7 @@ RSpec.describe "Admin->Dealer: Admin Dealer verification test", :adminDealer do
 		end
 
 		it "Verifies invalid Admin Dealer error" do
-			verifyAdminDealerError("Invalid seller 'TNT'!")
+			verifyAdminDealerError("Seller number 'TNT' is invalid!")
 		end
 
 		it "Sets a valid Dealer id" do
@@ -68,7 +68,8 @@ RSpec.describe "Admin->Dealer: Admin Dealer verification test", :adminDealer do
 			sendKeysClear
       adminDealerModalDealerTextField.flash.set ($adminDealerId)
 			adminDealerModalDealerTextField.flash.set ($adminDealerId)
-    	sendKeysTab
+    	sendKeysEnter
+      sendKeysTab
 		end
 
 		it "Sets the dealer pin" do

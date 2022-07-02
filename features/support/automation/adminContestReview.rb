@@ -62,7 +62,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :admi
 		end
 
 		it "Verifies the Player group most be specified error" do
-			verifyContestInquiryError('A group must be specified! <group id>-<number>')
+			verifyAdminContestReviewError('A group must be specified! <group id>-<number>')
 		end
 
 		it "Sets a vaild Player id" do

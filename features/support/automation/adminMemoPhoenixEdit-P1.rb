@@ -58,7 +58,6 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
       adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
-
 		it "Verifies the subject modal" do
 			adminMemoSubjectModal.flash
 		end
