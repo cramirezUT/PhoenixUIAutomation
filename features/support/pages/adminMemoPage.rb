@@ -136,10 +136,12 @@ module AdminMemoPage
 	end
 
 	def adminMemoDeleteModalYesButton
+		sleep(1)
 		@browser.button(id: 'Confirm-Yes')
 	end
 
 	def adminMemoDeleteModalNoButton
+		sleep(1)
 		@browser.button(id: 'Confirm-No')
 	end
 	###########################
@@ -183,6 +185,7 @@ module AdminMemoPage
 	end
 
 	def verifyNewMemoText(result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(adminMemoModalMemoByValue(expectedResult).text).to include(result)
 		adminMemoModalMemoByValue(expectedResult).flash(color: ["yellow"])

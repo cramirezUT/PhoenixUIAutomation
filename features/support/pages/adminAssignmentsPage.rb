@@ -10,9 +10,9 @@ require 'rspec/expectations'
 require 'date'
 
 $adminAssignmentsTime = Time.now + 86400
-$adminAssignmentsNextDay = $adminAssignmentsTime.strftime("%a %d-%b-%Y")
+$adminAssignmentsNextDay = $adminAssignmentsTime.strftime("%a %-d-%b-%Y")
 $adminAssignmentsTwoDays = $adminAssignmentsTime + 86400
-$adminAssignmentsTwoDaysFromNow = $adminAssignmentsTwoDays.strftime("%a %d-%b-%Y")
+$adminAssignmentsTwoDaysFromNow = $adminAssignmentsTwoDays.strftime("%a %-d-%b-%Y")
 
 module AdminAssignmentsPage
 	include RSpec::Matchers

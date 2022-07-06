@@ -64,7 +64,7 @@ RSpec.describe "Admin->Seller->Message: Admin Seller Message functionality test"
 		end
 
 		it "Verifies the invalid Seller id error" do
-			verifySellerMessageError("Seller 'TNT' not found")
+			verifySellerMessageError("Seller number 'TNT' is invalid!")
 		end
 
 		it "Sets a valid Seller id in text field" do

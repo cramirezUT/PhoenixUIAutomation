@@ -8,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$adminSellerTransactionSellerId = "UTS1"
+$adminSellerTransactionSellerId = "TST-10"
 $adminSellerTransactionSellerIdInvalid = "TNT"
 $adminSellerTransactionSellerTypeOptionPayment = "Payment"
 $adminSellerTransactionSellerTypeOptionAdjust = "Adjust"

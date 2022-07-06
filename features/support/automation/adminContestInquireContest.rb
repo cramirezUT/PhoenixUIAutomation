@@ -69,7 +69,7 @@ RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verifi
 		end
 
 		it "Verifies the Tournament No match error" do
-			verifyContestInquiryError('Tournament','No matches found')
+			verifyAdminContestInquiryError('Tournament','No matches found')
 		end
 
 		it "Clicks on the Tournament dropdown" do
@@ -92,7 +92,7 @@ RSpec.describe "Admin->Contest->Inquire->Contest: Contest Inquire Contest verifi
 		end
 
 		it "Verifies the Contest No match error" do
-			verifyContestInquiryError('Contest','No matches found')
+			verifyAdminContestInquiryError('Contest','No matches found')
 		end
 		#### VALID CONTEST INQUIRY TEST ####
 		it "Sets a vaild Tournament id" do
