@@ -8,11 +8,11 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventById = "ID"
-$eventByName = "Name"
-$eventByPostTime = "PostTime"
-$eventByOpenRaces = "Open Races"
-$eventByInvalidId = "TNT"
+$adminEventInquiryEventById = "ID"
+$adminEventInquiryEventByName = "Name"
+$adminEventInquiryEventByPostTime = "PostTime"
+$adminEventInquiryEventByOpenRaces = "Open Races"
+$adminEventInquiryEventByInvalidId = "TNT"
 
 module InquirePage
 	include RSpec::Matchers
@@ -24,10 +24,12 @@ module InquirePage
 	end
 
 	def eventInquiryDropdown
+		sleep(1)
 		@browser.button(id: 'EventInquiry-Select-Filter-mainbutton')
 	end
 
 	def eventInquirySearchTextField
+		sleep(1)
 		@browser.text_field(id: 'EventInquiry-Select-Filter-search')
 	end
 
@@ -42,7 +44,6 @@ module InquirePage
 	def eventInquiryResultView
 		@browser.div(id: 'EventInquiry-View')
 	end
-
 
 	#### GETTERS ####
 	def getEventInquiryResultNameByRow(row)

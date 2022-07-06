@@ -54,7 +54,7 @@ RSpec.describe "Admin->Event->Handle->Figure: Event Handle figure validation on 
 
     it "Sets the Group ID" do
       eventHandleGourpDropdown.wait_until_present.flash.click
-      eventHandleGroupSerachTextField.wait_until_present.flash.set ($groupUtsId)
+      eventHandleGroupSerachTextField.wait_until_present.flash.set ($adminEventHandleGroupUtsId)
       sendKeysEnter
     end
 

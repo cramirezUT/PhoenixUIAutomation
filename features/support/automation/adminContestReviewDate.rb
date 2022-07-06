@@ -25,8 +25,8 @@ RSpec.describe "Admin->Contest->Review: Contest Review Date verification test", 
       launchToteBrowser
       selectSiteTable
       logInFunction
-      puts "Current Time: #{$currentDateTime}"
-      puts "Current Time Plus 1 Day: #{$currentDateTimePlus1Day}"
+      puts "Current Time: #{$adminContestReviewCurrentDateTime}"
+      puts "Current Time Plus 1 Day: #{$adminContestReviewCurrentDateTimePlus1Day}"
     end
 
     after(:each) do |example|
@@ -60,7 +60,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review Date verification test", 
 
 		it "Sets a vaild Player id" do
 			contestPlayerReviewModalPlayerTextField.flash.click
-      contestPlayerReviewModalPlayerTextField.flash.set ($playerGroupdId)
+      contestPlayerReviewModalPlayerTextField.flash.set ($adminContestReviewPlayerGroupdId)
       sendKeysEnter
 		end
 
@@ -68,7 +68,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review Date verification test", 
 			contestPlayerBeginDateTextField.flash.click
       sendKeysSelectAll
       sendKeysDelete
-			contestPlayerBeginDateTextField.flash.set ($currentDateTime)
+			contestPlayerBeginDateTextField.flash.set ($adminContestReviewCurrentDateTime)
       sendKeysTab
 		end
 
@@ -76,7 +76,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review Date verification test", 
       contestPlayerEndDateTextField.flash.click
       sendKeysSelectAll
       sendKeysDelete
-      contestPlayerEndDateTextField.flash.set ($currentDateTimePlus1Day)
+      contestPlayerEndDateTextField.flash.set ($adminContestReviewCurrentDateTimePlus1Day)
       sendKeysTab
     end
 	ensure

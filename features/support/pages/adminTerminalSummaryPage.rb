@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$grouplId = "TL1"
-$grouplIdInvalid = "TNT"
+$adminTerminalSummaryGrouplId = "TL1"
+$adminTerminalSummaryGrouplIdInvalid = "TNT"
 
 module AdminTerminalSummaryPage
 	include RSpec::Matchers

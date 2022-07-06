@@ -8,8 +8,8 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$currencyUSD = "USD"
-$currencyInvalid = "XXX"
+$adminAccountSummaryCurrencyUSD = "USD"
+$adminAccountSummaryCurrencyInvalid = "XXX"
 
 module AccountSummaryPage
 	include RSpec::Matchers

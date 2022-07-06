@@ -61,7 +61,7 @@ RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test",
 		end
 
 		it "Sets an invalid Group number" do
-			playerCancelTicketModalGroupNumberTextField.flash.set ($playerIdInvalid)
+			playerCancelTicketModalGroupNumberTextField.flash.set ($adminContestCancelPlayerIdInvalid)
       sendKeysEnter
 		end
 
@@ -72,8 +72,8 @@ RSpec.describe "Admin->Contest->Cancel: Player Cancel Ticket verification test",
 		it "Sets a vaild group number" do
       playerCancelTicketModalGroupNumberTextField.flash.click
       sendKeysClear
-      playerCancelTicketModalGroupNumberTextField.flash.set ($playerId)
-      playerCancelTicketModalGroupNumberTextField.flash.set ($playerId)
+      playerCancelTicketModalGroupNumberTextField.flash.set ($adminContestCancelPlayerId)
+      playerCancelTicketModalGroupNumberTextField.flash.set ($adminContestCancelPlayerId)
       sendKeysEnter
 			sendKeysTab
 		end

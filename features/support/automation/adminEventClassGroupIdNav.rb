@@ -57,19 +57,18 @@ RSpec.describe "Admin->Event->Class: Event Class group Id valid and invalid test
     it "Sets invalid Group ID" do
       eventClassGroupDropdown.wait_until_present.flash.click
       sleep 5
-      eventClassGroupSearchTextField.wait_until_present.flash.set ($invalidGroupId)
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($adminEventClassGroupIdInvalid)
       sleep 5
-      #sendKeysEnter
     end
 
     it "Verifies the Class search result" do
-      verifyEventSearchResultsInvalid("No matches found")
+      verifyAdminEventClassEventSearchResultsInvalid("No matches found")
     end
 
     it "Sets a valid Group ID" do
       eventClassGroupDropdown.flash.click
       eventClassGroupDropdown.flash.click
-      eventClassGroupSearchTextField.wait_until_present.flash.set ($groupId)
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($adminEventClassGroupId)
       sendKeysEnter
       sleep(1)
       sendKeysTab
@@ -84,8 +83,8 @@ RSpec.describe "Admin->Event->Class: Event Class group Id valid and invalid test
       verifyGroupSearchResult(0, "CHF")
     end
 
-    it "Clicks on the Help button" do
-      eventClassHelpButton.flash.click
+    it "Verifies the Help button" do
+      expect(eventClassHelpButton.enabled?).to be_truthy
     end
 	ensure
 	after(:all) do

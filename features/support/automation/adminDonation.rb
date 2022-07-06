@@ -54,7 +54,7 @@ RSpec.describe "Admin->Donation: Admin Donation verification test", :adminDOnati
 
 		it "Sets an invalid Group id" do
       adminDonationGroupModalGroupDropdown.flash.click
-      adminDonationGroupModalGroupSearchTextField.flash.set ($groupIdInvalid)
+      adminDonationGroupModalGroupSearchTextField.flash.set ($adminDonationGroupIdInvalid)
 		end
 
 		it "Verifies invalid Group Id error" do
@@ -65,7 +65,7 @@ RSpec.describe "Admin->Donation: Admin Donation verification test", :adminDOnati
 			adminDonationGroupModal.flash
       adminDonationGroupModalGroupDropdown.flash.click
 			adminDonationGroupModalGroupDropdown.flash.click
-      adminDonationGroupModalGroupSearchTextField.flash.set ($groupId)
+      adminDonationGroupModalGroupSearchTextField.flash.set ($adminDonationGroupId)
 			sendKeysEnter
     	sendKeysTab
 		end
@@ -83,7 +83,7 @@ RSpec.describe "Admin->Donation: Admin Donation verification test", :adminDOnati
 		end
 
 		it "Sets $2.00 dollar in the Donation Amount text field" do
-			donationCharityDonateToModalDonationAmountTextField.flash.set ($donationAmountTwoDollar)
+			donationCharityDonateToModalDonationAmountTextField.flash.set ($adminDonationAmountTwoDollar)
 			sendKeysTab
 		end
 
@@ -100,7 +100,7 @@ RSpec.describe "Admin->Donation: Admin Donation verification test", :adminDOnati
 		end
 
 		it "Sets $1.00 dollar in the Withdraw Amount text field" do
-			donationCharityWithdrawToModalWithdrawAmountTextField.flash.set ($withdrawAmountOneDollar)
+			donationCharityWithdrawToModalWithdrawAmountTextField.flash.set ($adminDonationWithdrawAmountOneDollar)
 			sendKeysTab
 		end
 

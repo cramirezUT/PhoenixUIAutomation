@@ -60,7 +60,7 @@ RSpec.describe "Admin->Terminal->Summary: Admin Terminal Summary functionality t
 
 		it "Sets an invalid group id in text field" do
 			adminTerminalSummaryModalGroupsDropdown.flash.click
-			adminTerminalSummaryModalGroupsSearchTextField.flash.set ($grouplIdInvalid)
+			adminTerminalSummaryModalGroupsSearchTextField.flash.set ($adminTerminalSummaryGrouplIdInvalid)
 		end
 
 		it "Verifies the invalid group id error" do
@@ -70,7 +70,7 @@ RSpec.describe "Admin->Terminal->Summary: Admin Terminal Summary functionality t
 		it "Sets a valid group id in text field" do
 			adminTerminalSummaryModalGroupsSearchTextField.flash.click
 			adminTerminalSummaryModalGroupsSearchTextField.flash.click
-			adminTerminalSummaryModalGroupsSearchTextField.flash.set ($grouplId)
+			adminTerminalSummaryModalGroupsSearchTextField.flash.set ($adminTerminalSummaryGrouplId)
 			sendKeysEnter
 			sendKeysTab
 		end

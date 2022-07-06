@@ -9,10 +9,10 @@ require 'selenium-webdriver'
 require 'rspec/expectations'
 require 'date'
 
-$time = Time.now + 86400
-$nextDay = $time.strftime("%a %d-%b-%Y")
-$twoDays = $time + 86400
-$twoDaysFromNow = $twoDays.strftime("%a %d-%b-%Y")
+$adminAssignmentsTime = Time.now + 86400
+$adminAssignmentsNextDay = $adminAssignmentsTime.strftime("%a %d-%b-%Y")
+$adminAssignmentsTwoDays = $adminAssignmentsTime + 86400
+$adminAssignmentsTwoDaysFromNow = $adminAssignmentsTwoDays.strftime("%a %d-%b-%Y")
 
 module AdminAssignmentsPage
 	include RSpec::Matchers

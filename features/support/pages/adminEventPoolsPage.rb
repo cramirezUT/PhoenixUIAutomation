@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$sourceId = "CHD"
-$sourceMeregeId = "Merged"
-$invalidEventId = "TNT"
+$adminEventPoolsEventId = "CHF"
+$adminEventPoolsSourceId = "CHD"
+$adminEventPoolsSourceMeregeId = "Merged"
+$adminEventPoolsEventIdInvalid = "TNT"
 
 module PoolsPage
 	include RSpec::Matchers
@@ -172,7 +172,7 @@ module PoolsPage
 		@browser.text_field(id: 'EventPools-Select-Races-searchdiv')
 	end
 
-	def eventRacesSearchDoneButton
+	def adminEventPoolEventRacesSearchDoneButton
 		@browser.button(id: 'EventPools-Select-Races-donebutton')
 	end
 
@@ -218,13 +218,13 @@ module PoolsPage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventSearchResults(result)
+	def verifyAdminEventPoolsEventSearchResults(result)
 		expectedResult = "#{result}"
 		expect(getEventResultView.text).to include(expectedResult)
 		getEventResultView.flash(color: ["yellow"])
 	end
 
-	def verifyEventSearchResultsInvalid(result)
+	def verifyAdminEventPoolsEventSearchResultsInvalid(result)
 		expectedResult = "#{result}"
 		expect(getEventSearchResults.text).to eq(expectedResult)
 		getEventSearchResults.flash(color: ["yellow"])

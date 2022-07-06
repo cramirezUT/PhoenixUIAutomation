@@ -61,7 +61,7 @@ RSpec.describe "Admin->Account->Checks: Account Checks validation", :adminAccoun
 
     it "Sets an invalid Account Group Number" do
       accountChecksModal.wait_until_present.flash
-      accountChecksSearchTextField.wait_until_present.flash.set ($accountGroupIdInvalid)
+      accountChecksSearchTextField.wait_until_present.flash.set ($adminAccountChecksGroupIdInvalid)
       sendKeysEnter
     end
 
@@ -73,8 +73,8 @@ RSpec.describe "Admin->Account->Checks: Account Checks validation", :adminAccoun
 			accountChecksModal.wait_until_present.flash
 			accountChecksSearchTextField.click
 			sendKeysClear
-      accountChecksSearchTextField.flash.set ($accountGroupId)
-      accountChecksSearchTextField.flash.set ($accountGroupId)
+      accountChecksSearchTextField.flash.set ($adminAccountChecksGroupId)
+      accountChecksSearchTextField.flash.set ($adminAccountChecksGroupId)
       sendKeysEnter
 		end
 

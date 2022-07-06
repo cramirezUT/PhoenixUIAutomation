@@ -12,20 +12,20 @@ module BettingTicketPage
 	include RSpec::Matchers
 	include Selenium
 
-	$ticketNumber = "8b635-0825f"
-	$buyTicketNumber = "96e7b-06bc0"
-	$ticketPrice = "$1.00"
-	$ticketType = "Sold-SA"
-	$ticketTerminal ="UTQATL"
-	$ticketGroup ="TST"
-	$ticketDateTime ="TST"
-	$time = Time.new
-	$currentDateTime = $time.strftime("%d-%b-%y %I:%M:%S")
-	$claimReason = "Lost"
-	$unclaimReason = "Found"
-	$cancelTicketNumber = "3e200-b007c"
-	$cancelVerificationCode = "omit"
-	$invalidCancelVerificationCode = "wrong"
+	$bettingTicketNumber = "8b635-0825f"
+	$bettingTicketBuyTicketNumber = "96e7b-06bc0"
+	$bettingTicketTicketPrice = "$1.00"
+	$bettingTicketTicketType = "Sold-SA"
+	$bettingTicketTicketTerminal ="UTQATL"
+	$bettingTicketTicketGroup ="TST"
+	$bettingTicketTicketDateTime ="TST"
+	$bettingTicketTime = Time.new
+	$bettingTicketCurrentDateTime = $bettingTicketTime.strftime("%d-%b-%y %I:%M:%S")
+	$bettingTicketClaimReason = "Lost"
+	$bettingTicketUnclaimReason = "Found"
+	$bettingTicketCancelTicketNumber = "3e200-b007c"
+	$bettingTicketCancelVerificationCode = "omit"
+	$bettingTicketInvalidCancelVerificationCode = "wrong"
 
 	#### Ticket Inquiry METHODS / LOCATORS ####
 	def ticketSubMenuTab

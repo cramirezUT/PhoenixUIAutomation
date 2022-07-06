@@ -54,7 +54,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
 
 		it "Click on the Event By dropdown and select the ID" do
       eventInquiryDropdown.wait_until_present.flash.click
-      eventInquirySearchTextField.wait_until_present.flash.set ($eventById)
+      eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventById)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -68,7 +68,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
 
 		it "Click on the Event By dropdown and select the Name" do
       eventInquiryDropdown.wait_until_present.flash.click
-      eventInquirySearchTextField.wait_until_present.flash.set ($eventByName)
+      eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByName)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -81,8 +81,8 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
     end
 
     it "Click on the Event By dropdown and select the Post" do
-      eventInquiryDropdown.wait_until_present.flash.click
-      eventInquirySearchTextField.wait_until_present.flash.set ($eventByPostTime)
+      eventInquiryDropdown.flash.click
+      eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByPostTime)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -97,7 +97,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
 
 		it "Click on the Event By dropdown and select the Open Races" do
       eventInquiryDropdown.wait_until_present.flash.click
-      eventInquirySearchTextField.wait_until_present.flash.set ($eventByOpenRaces)
+      eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByOpenRaces)
       sendKeysEnter
 			sendKeysTab
 		end
@@ -111,7 +111,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
 
     it "Sets an invalid id option" do
       eventInquiryDropdown.wait_until_present.flash.click
-      eventInquirySearchTextField.wait_until_present.flash.set ($eventByInvalidId)
+      eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByInvalidId)
     end
 
     it "Verifies the invalid error message" do

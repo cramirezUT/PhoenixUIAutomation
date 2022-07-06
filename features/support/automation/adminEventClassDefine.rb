@@ -56,18 +56,26 @@ RSpec.describe "Admin->Event->Class: Event Class Define class test", :adminEvent
 
     it "Sets a valid Group ID" do
       eventClassGroupDropdown.flash.click
-      eventClassGroupSearchTextField.wait_until_present.flash.set ($groupId)
+      eventClassGroupSearchTextField.wait_until_present.flash.set ($adminEventClassGroupId)
       sendKeysEnter
       sleep(1)
       sendKeysTab
       sendKeysTab
     end
 
-		it "Defines the event class" do
-			eventClassButtonByIndex(0).wait_until_present.flash.click
+		it "Determines if clean up is needed" do
+			getEventClassDefinitionForCleanUp
 		end
 
 		it "Clicks on the save changes button" do
+			eventClassSaveChangesButton.wait_until_present.flash.click
+		end
+
+    it "Defines the event class" do
+      eventClassButtonByIndex(0).wait_until_present.flash.click
+    end
+
+    it "Clicks on the save changes button" do
 			eventClassSaveChangesButton.wait_until_present.flash.click
 		end
 

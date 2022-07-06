@@ -8,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$sellerGroupNumber = "UTS3"
+$filesSellerGroupNumber = "UTS3"
 
 module FilesSellerPage
 	include RSpec::Matchers

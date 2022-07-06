@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$raceNumber1 = "1"
-$sourceMeregeId = "Merged"
-$invalidEventId = "TNT"
+$adminEventPricesEventId = "CHF"
+$adminEventPricesEventIdInvalid = "TNT"
+$adminEventPricesRaceNumber1 = "1"
+$adminEventPricesSourceMeregeId = "Merged"
 
 module PricesPage
 	include RSpec::Matchers
@@ -198,7 +198,7 @@ module PricesPage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventSearchResults(result)
+	def verifyAdminEventPricesEventSearchResults(result)
 		sleep(1)
 		expectedResult = "#{result}"
 		expect(getEventResultHeaderTitle.text).to include(expectedResult)

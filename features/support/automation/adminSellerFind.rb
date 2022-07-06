@@ -60,13 +60,13 @@ RSpec.describe "Admin->Seller->Find: Admin Seller Find functionality test", :adm
 
 		it "Sets an invalid First name in the text field" do
 			adminSellerFindModalFirstNameTextField.flash.click
-			adminSellerFindModalFirstNameTextField.flash(color: ["yelllow"]).set ($firstNameInvalid)
+			adminSellerFindModalFirstNameTextField.flash(color: ["yelllow"]).set ($adminSellerFindFirstNameInvalid)
 			sendKeysTab
 		end
 
 		it "Sets an invalid Last name in the text field" do
 			adminSellerFindModalLastNameTextField.flash.click
-			adminSellerFindModalLastNameTextField.flash(color: ["yelllow"]).set ($lastNameInvalid)
+			adminSellerFindModalLastNameTextField.flash(color: ["yelllow"]).set ($adminSellerFindLastNameInvalid)
 			sendKeysTab
 		end
 
@@ -80,21 +80,21 @@ RSpec.describe "Admin->Seller->Find: Admin Seller Find functionality test", :adm
 
 		it "Sets a valid First name in the text field" do
 			adminSellerFindModalFirstNameTextField.flash.click
-			adminSellerFindModalFirstNameTextField.flash.set ($firstName)
-			adminSellerFindModalFirstNameTextField.flash.set ($firstName)
+			adminSellerFindModalFirstNameTextField.flash.set ($adminSellerFindFirstName)
+			adminSellerFindModalFirstNameTextField.flash.set ($adminSellerFindFirstName)
 			sendKeysTab
 		end
 
 		it "Sets a valid Middle Initial in the text field" do
 			adminSellerFindModalInitialTextField.flash.click
-			adminSellerFindModalInitialTextField.flash.set ($middleName)
+			adminSellerFindModalInitialTextField.flash.set ($adminSellerFindMiddleName)
 			sendKeysTab
 		end
 
 		it "Sets a valid Last name in the text field" do
 			adminSellerFindModalLastNameTextField.flash.click
-			adminSellerFindModalLastNameTextField.flash.set ($lastName)
-			adminSellerFindModalLastNameTextField.flash.set ($lastName)
+			adminSellerFindModalLastNameTextField.flash.set ($adminSellerFindLastName)
+			adminSellerFindModalLastNameTextField.flash.set ($adminSellerFindLastName)
 			sendKeysTab
 		end
 

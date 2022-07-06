@@ -57,7 +57,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :admi
 		end
 
 		it "Sets an invalid Player id in search text field" do
-			contestPlayerReviewModalPlayerTextField.flash.set ($playerGroupdIdInvalid)
+			contestPlayerReviewModalPlayerTextField.flash.set ($adminContestReviewPlayerGroupdIdInvalid)
 			sendKeysEnter
 		end
 
@@ -67,7 +67,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :admi
 
 		it "Sets a vaild Player id" do
 			contestPlayerReviewModalPlayerTextField.flash.click
-      contestPlayerReviewModalPlayerTextField.flash.set ($playerGroupdId)
+      contestPlayerReviewModalPlayerTextField.flash.set ($adminContestReviewPlayerGroupdId)
       sendKeysEnter
 		end
 		#### ENTRY RESULT #### LEAVING THIS HERE IN CASE WE USE A DIFFERNT GROUP ID THAT HAS ENTRY
@@ -88,7 +88,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :admi
 		end
 		#### WITHDRAW RESULT ####
 		it "Clicks on the Player Transaction search result for Withdraw" do
-			contestPlayerTransactionResultByIndex(1).flash.click
+			contestPlayerTransactionResultByIndex(2).flash.click
 		end
 
 		it "Verifies the Transaction result header for Withdraw" do
@@ -96,7 +96,7 @@ RSpec.describe "Admin->Contest->Review: Contest Review verification test", :admi
 		end
 		#### DEPOSIT RESULT ####
 		it "Clicks on the Player Transaction search result for Deposit" do
-			contestPlayerTransactionResultByIndex(3).flash.click
+			contestPlayerTransactionResultByIndex(4).flash.click
 		end
 
 		it "Verifies the Transaction result header for Deposit" do

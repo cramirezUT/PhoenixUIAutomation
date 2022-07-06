@@ -8,21 +8,22 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$playerId = "TL1-10"
-$playerIdInvalid = "TNT"
-$dateTime = DateTime.now
-$dateTimePlus1Day = $dateTime + 1
-$dateTimePlus2Days = $dateTime + 2
-$currentDateTime = $dateTime.strftime("%d %m %Y")
-$currentDateTimePlus1Day = $dateTimePlus1Day.strftime("%d %m %Y")
-$currentDateTimePlus2Days = $dateTimePlus2Days.strftime("%d %m %Y")
+$adminContestStandingsPlayerId = "TL1-10"
+$adminContestStandingsPlayerIdInvalid = "TNT"
+$adminContestStandingsPlayerDateTime = DateTime.now
+$adminContestStandingsPlayerDateTimePlus1Day = $adminContestStandingsPlayerDateTime + 1
+$adminContestStandingsPlayerDateTimePlus2Days = $adminContestStandingsPlayerDateTime + 2
+$adminContestStandingsPlayerCurrentDateTime = $dateTime.strftime("%d %m %Y")
+$adminContestStandingsPlayerCurrentDateTimePlus1Day = $adminContestStandingsPlayerDateTimePlus1Day.strftime("%d %m %Y")
+$adminContestStandingsPlayerCurrentDateTimePlus2Days = $adminContestStandingsPlayerDateTimePlus2Days.strftime("%d %m %Y")
 
 module ContestStandingsPlayerPage
 	include RSpec::Matchers
 	include Selenium
 
 	#### player STANDINGS METHODS / LOCATORS ####
-	def eventMenuInquireSubLinks(string)
+	def playerMenuStandingsSubLinks(string)
+		sleep(1)
 		@browser.element(xpath: "//*[@id='Command-Menu-Standings-#{string}']")
 	end
 

@@ -54,13 +54,13 @@ RSpec.describe "Admin->Event->Liability->EventRace: Event Liability Event Race t
 
 		it "Sets a valid Event id" do
       eventLiabilityEventDropdown.wait_until_present.flash.click
-      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($adminEventLiabilityEventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
       eventLiabilitySourceDropdown.flash.click
-      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceId)
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($adminEventLiabilitySourceId)
       sendKeysEnter
       sendKeysTab
     end
@@ -83,7 +83,7 @@ RSpec.describe "Admin->Event->Liability->EventRace: Event Liability Event Race t
 		end
 
     it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 1")
+      verifyAdminEventLiabilityEventRaceEventSearchResults("CHF-CHURCHILL DOWNS Race 1")
     end
 
 		it "Prints the Payoff amount" do

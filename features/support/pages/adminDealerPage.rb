@@ -8,14 +8,14 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$dealerId = "UQA8"
-$dealerIdInvalid = "TNT"
-$dealerPin = "1234"
-$cashBalanceAmountZero = "0.00"
-$typeOptionDraw = "Draw"
-$typeOptionReturn = "Return"
-$typeOptionFinalReturn = "Final Return"
-$amountOneDollar = "1.00"
+$adminDealerId = "UQA8"
+$adminDealerIdInvalid = "TNT"
+$adminDealerPin = "1234"
+$adminDealerCashBalanceAmountZero = "0.00"
+$adminDealerTypeOptionDraw = "Draw"
+$adminDealerTypeOptionReturn = "Return"
+$adminDealerTypeOptionFinalReturn = "Final Return"
+$adminDealerAmountOneDollar = "1.00"
 
 
 module AdminDealerPage

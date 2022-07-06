@@ -23,21 +23,6 @@ RSpec.describe "Login->Logout: Tote Log in Log out test", :loginOut do
       launchToteBrowser
       selectSiteTable
       logInFunction
-      $continue = true
-    end
-
-    # before :all do
-    #   $continue = true
-    # end
-
-    around :each do |example|
-      if $continue
-        $continue = false
-        example.run
-        $continue = true unless example.exception
-      else
-        example.skip
-      end
     end
 
     after(:each) do |example|

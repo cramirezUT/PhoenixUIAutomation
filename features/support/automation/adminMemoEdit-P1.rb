@@ -67,18 +67,16 @@ RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText+"Edit")
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText.concat(" Edit"))
 		end
 
 		it "Clicks on the close button" do
-      sleep 5
 			adminMemoSubjectModalCloseButton.flash.click
-      adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm Yes " do

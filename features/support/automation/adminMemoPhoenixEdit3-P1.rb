@@ -10,7 +10,6 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
-@var
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -69,18 +68,17 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
 		end
 
 		it "Sets a new subject in text field" do
-      @var=$newSubjectText
-			adminMemoSubjectModalSubjectTextField.flash.set ("#{@var}"+"Test")
+      $var = $adminMemoNewSubjectText
+			adminMemoSubjectModalSubjectTextField.flash.set ($var.concat(" Test"))
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
 		end
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
-      adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm No " do
@@ -91,13 +89,15 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
 			adminMemoSubjectModalSaveButton.flash.click
 		end
 
+    it "Clicks on the Refresh button" do
+			adminMemoModalRefreshButton.flash.click
+		end
+
     it "Verifies the memo was set" do
       adminMemoModalMemoByIndex(0).flash.click
-      expect(adminMemoModalMemoSubjectByIndex(0).text).to include("#{@var}"+"Test")
+      expect(adminMemoModalMemoSubjectByIndex(0).text).to include($var)
       adminMemoModalMemoSubjectByIndex(0).flash(color: ["yellow"])
     end
-
-
 	ensure
 	after(:all) do
 		logOutFuction

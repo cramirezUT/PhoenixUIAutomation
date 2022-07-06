@@ -64,17 +64,16 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText+"Edit")
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText.concat(" Edit"))
 		end
 
 		it "Clicks on the close button" do
 			adminMemoSubjectModalCloseButton.flash.click
-      adminMemoSubjectModalCloseButton.flash.click
 		end
 
 		it "Click memo Confirm No " do
@@ -89,8 +88,6 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
       adminMemoModalMemoByIndex(0).flash.click
       verifyNewMemoTextByIndex(0,adminMemoModalMemoByIndex(0).text)
     end
-
-
 	ensure
 	after(:all) do
 		logOutFuction

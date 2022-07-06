@@ -65,21 +65,21 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 
 		it "Sets a group id" do
 			playerTransactionsModalGroupDropdown.flash.click
-			playerTransactionsModalGroupSearchTextField.flash.set ($groupId)
+			playerTransactionsModalGroupSearchTextField.flash.set ($adminContestTransactionGroupId)
 			sendKeysEnter
 			sendKeysTab
 		end
 
 		it "Selects the Transaction type of Deposit" do
 			playerTransactionsModalTransactionDropdown.flash.click
-			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionDeposit)
+			playerTransactionsModalTransactionSearchTextField.flash.set ($adminContestTransactionOptionDeposit)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
 		it "Sets an invalid Player id" do
-			playerTransactionsModalPlayerTextField.flash.set ($playerIdInvalid)
+			playerTransactionsModalPlayerTextField.flash.set ($adminContestTransactionPlayerIdInvalid)
 			sendKeysEnter
 		end
 
@@ -88,12 +88,12 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
 		end
 
 		it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash.set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($adminContestTransactionPlayerId)
 			sendKeysEnter
 		end
     #### DEPOSIT OPTION ####
 		it "Sets a USD Amount of $1.01" do
-			playerTransactionsModalAountTextField.flash.set ($depositAmount101Dollar)
+			playerTransactionsModalAountTextField.flash.set ($adminContestTransactionDepositAmount101Dollar)
 			sendKeysTab
 		end
 
@@ -108,19 +108,19 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
     #### WITHDRAW OPTION ####
     it "Selects the Transaction type of Withdraw" do
 			playerTransactionsModalTransactionDropdown.flash.click
-			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionWithdraw)
+			playerTransactionsModalTransactionSearchTextField.flash.set ($adminContestTransactionOptionWithdraw)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash.set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($adminContestTransactionPlayerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $-1.02" do
-			playerTransactionsModalAountTextField.flash.set ($withdrawAmount102Dollar)
+			playerTransactionsModalAountTextField.flash.set ($adminContestTransactionWithdrawAmount102Dollar)
 			sendKeysTab
 		end
 
@@ -135,19 +135,19 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
     #### BALANCE OPTION ####
     it "Selects the Transaction type of Withdraw" do
 			playerTransactionsModalTransactionDropdown.flash.click
-			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionBalance)
+			playerTransactionsModalTransactionSearchTextField.flash.set ($adminContestTransactionOptionBalance)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash.set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($adminContestTransactionPlayerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $1.03" do
-			playerTransactionsModalAountTextField.flash.set ($balanceAmount103Dollar)
+			playerTransactionsModalAountTextField.flash.set ($adminContestTransactionBalanceAmount103Dollar)
 			sendKeysTab
 		end
 
@@ -162,19 +162,19 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
     #### WINNINGS OPTION ####
     it "Selects the Transaction type of Withdraw" do
 			playerTransactionsModalTransactionDropdown.flash.click
-			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionWinnings)
+			playerTransactionsModalTransactionSearchTextField.flash.set ($adminContestTransactionOptionWinnings)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash.set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($adminContestTransactionPlayerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $1.04" do
-			playerTransactionsModalAountTextField.flash.set ($winningsAmount104Dollar)
+			playerTransactionsModalAountTextField.flash.set ($adminContestTransactionWinningsAmount104Dollar)
 			sendKeysTab
 		end
 
@@ -189,19 +189,19 @@ RSpec.describe "Admin->Contest->Transaction: Contest Transaction verification te
     #### ENTRY OPTION ####
     it "Selects the Transaction type of Withdraw" do
 			playerTransactionsModalTransactionDropdown.flash.click
-			playerTransactionsModalTransactionSearchTextField.flash.set ($transactionOptionWinnings)
+			playerTransactionsModalTransactionSearchTextField.flash.set ($adminContestTransactionOptionWinnings)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
     it "Sets a valid Player id" do
-			playerTransactionsModalPlayerTextField.flash.set ($playerId)
+			playerTransactionsModalPlayerTextField.flash.set ($adminContestTransactionPlayerId)
 			sendKeysEnter
 		end
 
 		it "Sets a USD Amount of $1.05" do
-			playerTransactionsModalAountTextField.flash.set ($entryAmount105Dollar)
+			playerTransactionsModalAountTextField.flash.set ($adminContestTransactionEntryAmount105Dollar)
 			sendKeysTab
 		end
 

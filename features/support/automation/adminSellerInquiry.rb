@@ -59,7 +59,7 @@ RSpec.describe "Admin->Seller->Inquiry: Admin Seller Inquiry functionality test"
 		end
 
 		it "Sets an invalid Seller id" do
-			adminSellerInquiryModalSellerTextField.flash.set ($sellerIdInvalid)
+			adminSellerInquiryModalSellerTextField.flash.set ($adminSellerInquirySellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -71,7 +71,7 @@ RSpec.describe "Admin->Seller->Inquiry: Admin Seller Inquiry functionality test"
 			adminSellerInquiryModalSellerTextField.flash.click
 			sendKeysClear
 			adminSellerInquiryModalSellerTextField.flash.click
-			adminSellerInquiryModalSellerTextField.flash.set ($sellerId)
+			adminSellerInquiryModalSellerTextField.flash.set ($adminSellerInquirySellerId)
 			sendKeysTab
 		end
 

@@ -60,17 +60,17 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
 
     it "Sets invalid Group ID" do
       eventChannelModalGroupDropdown.flash.click
-      eventChannelModalGroupSearchTextField.flash.set ($groupIdInvalid)
+      eventChannelModalGroupSearchTextField.flash.set ($adminEventChannelGroupIdInvalid)
     end
 
     it "Verifies the Channel search result" do
-      verifyEventSearchResultsInvalid("No matches found")
+      verifyAdminEventChannelEventSearchResultsInvalid("No matches found")
     end
 
     it "Sets a valid Group ID" do
       eventChannelModalGroupDropdown.flash.click
       eventChannelModalGroupDropdown.flash.click
-      eventChannelModalGroupSearchTextField.flash.set ($groupId)
+      eventChannelModalGroupSearchTextField.flash.set ($adminEventChannelGroupId)
       sendKeysEnter
       sendKeysTab
     end
@@ -80,8 +80,7 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
     end
 
     it "Sets an invalid channel id" do
-      eventChannelEeventChannelTextFieldByIndex(0).flash.set ($invalidChannelId)
-    #  sendKeysEnter
+      eventChannelEeventChannelTextFieldByIndex(0).flash.set ($adminEventChannelChannelIdInvalid)
       sendKeysTab
     end
 
@@ -89,13 +88,13 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
       verifyEventChannelInvalidChannelIdError("Specified channel 'C' does not exist in any channel guides for UQA!")
     end
 
-    it "Clicks on the Help button" do
+    it "Verifies the Help button" do
       expect(eventChannelModalHelpButton.enabled?).to be_truthy
     end
-	# ensure
-	# after(:all) do
-	# 	logOutFuction
-	# 	close_browser
+	ensure
+	after(:all) do
+		logOutFuction
+		close_browser
 	end
 	end
-#end
+end

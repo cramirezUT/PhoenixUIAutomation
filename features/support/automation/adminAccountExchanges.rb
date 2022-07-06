@@ -57,7 +57,7 @@ RSpec.describe "Admin->Account->Exchanges: Account Exchanges validation", :admin
     end
 
 		it "Sets an invalid account id" do
-			accountExchangesAccountSearchTextField.flash.set ($accountIdInvalid)
+			accountExchangesAccountSearchTextField.flash.set ($adminAccountExchangesIdInvalid)
 			sendKeysEnter
 		end
 
@@ -68,8 +68,8 @@ RSpec.describe "Admin->Account->Exchanges: Account Exchanges validation", :admin
 		it "Sets a vaild account id" do
 			accountExchangesAccountSearchTextField.flash.click
 			sendKeysClear
-      accountExchangesAccountSearchTextField.flash.set ($accountId)
-      accountExchangesAccountSearchTextField.flash.set ($accountId)
+      accountExchangesAccountSearchTextField.flash.set ($adminAccountExchangesId)
+      accountExchangesAccountSearchTextField.flash.set ($adminAccountExchangesId)
       sendKeysEnter
 			sendKeysEnter
 		end

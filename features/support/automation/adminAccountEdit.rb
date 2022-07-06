@@ -57,21 +57,21 @@ RSpec.describe "Admin->Account->Edit: Account Edit validation", :adminAccount do
     it "Sets the Action option to View" do
       accountEditModal.wait_until_present.flash
 			accountEditActionDropdown.flash.click
-      accountEditActionSearchTextField.wait_until_present.flash.set ($accountActionOptionView)
+      accountEditActionSearchTextField.wait_until_present.flash.set ($adminAccountEditActionOptionView)
       sendKeysEnter
 			sendKeysTab
     end
 
 		it "Sets the Group option" do
 			accountEditGroupDropdown.flash.click
-			accountEditGroupSearchTextField.flash.set ($accountGroupId)
+			accountEditGroupSearchTextField.flash.set ($adminAccountEditGroupId)
 			sendKeysEnter
 			sendKeysTab
 			sendKeysTab
 		end
 
 		it "Sets an invalid account id" do
-			accountEditAccountSearchTextField.flash.set ($accountIdInvalid)
+			accountEditAccountSearchTextField.flash.set ($adminAccountEditIdInvalid)
 			sendKeysEnter
 		end
 
@@ -82,8 +82,8 @@ RSpec.describe "Admin->Account->Edit: Account Edit validation", :adminAccount do
 		it "Sets a vaild account id" do
 			accountEditAccountSearchTextField.flash.click
 			sendKeysClear
-      accountEditAccountSearchTextField.flash.set ($accountId)
-      accountEditAccountSearchTextField.flash.set ($accountId)
+      accountEditAccountSearchTextField.flash.set ($adminAccountEditaccountId)
+      accountEditAccountSearchTextField.flash.set ($adminAccountEditaccountId)
       sendKeysEnter
 		end
 

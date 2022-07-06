@@ -8,13 +8,13 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$terminalId = "EBET01"
-$terminalIdInvalid = "100"
-$typeOptionDraw = "Draw"
-$typeOptionReturn = "Return"
-$typeOptionFinalReturn = "Final Return"
-$typeOptionAdjust = "Adjust"
-$moneyCount = "1"
+$adminTerminalTransactionTerminalId = "EBET01"
+$adminTerminalTransactionTerminalIdInvalid = "100"
+$adminTerminalTransactionTypeOptionDraw = "Draw"
+$adminTerminalTransactionTypeOptionReturn = "Return"
+$adminTerminalTransactionTypeOptionFinalReturn = "Final Return"
+$adminTerminalTransactionTypeOptionAdjust = "Adjust"
+$adminTerminalTransactionMoneyCount = "1"
 
 module AdminTerminalTransactionPage
 	include RSpec::Matchers

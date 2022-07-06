@@ -54,13 +54,13 @@ RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid
 
 		it "Sets a valid Event id" do
       eventLiabilityEventDropdown.wait_until_present.flash.click
-      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($adminEventLiabilityEventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
       eventLiabilitySourceDropdown.flash.click
-      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceMerge)
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($adminEventLiabilitySourceMerge)
       sendKeysEnter
       sendKeysTab
     end
@@ -78,7 +78,7 @@ RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid
 		end
 
     it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race")
+      verifyAdminEventLiabilityEventIdSearchResults1("CHF-CHURCHILL DOWNS Race")
     end
 
     it "Clicks on the Next button" do
@@ -98,11 +98,11 @@ RSpec.describe "Admin->Event->Liability->EventId: Event Liability Event Id valid
 
     it "Sets invalid Event ID" do
       eventLiabilityEventDropdown.wait_until_present.flash.click
-      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($invalidEventId)
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($adminEventLiabilityEventIdInvalid)
     end
 
     it "Verifes the invalid Event search result" do
-      verifyEventSearchResultsInvalid("No matches found")
+      verifyAdminEventLiabilityEventSearchResultsInvalid("No matches found")
     end
 	ensure
 	after(:all) do

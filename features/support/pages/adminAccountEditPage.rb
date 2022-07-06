@@ -8,17 +8,17 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$accountGroupId = "TST - UNITED TOTE SYSTEM"
-$accountId = "8683"
-$accountIdInvalid = "TNT"
-$accountActionOptionView = "View"
-$accountActionOptionEdit = "Edit"
-$accountActionOptionNew = "New"
-$accountActionOptionDelete = "Delete"
-$accountActionOptionUndelete = "Undelete"
-$accountActionOptionNumber = "Number"
-$accountActionOptionPin = "PIN"
-$accountActionOptionPassword = "Password"
+$adminAccountEditGroupId = "TST - UNITED TOTE SYSTEM"
+$adminAccountEditaccountId = "8683"
+$adminAccountEditIdInvalid = "TNT"
+$adminAccountEditActionOptionView = "View"
+$adminAccountEditActionOptionEdit = "Edit"
+$adminAccountEditActionOptionNew = "New"
+$adminAccountEditActionOptionDelete = "Delete"
+$adminAccountEditActionOptionUndelete = "Undelete"
+$adminAccountEditActionOptionNumber = "Number"
+$adminAccountEditActionOptionPin = "PIN"
+$adminAccountEditActionOptionPassword = "Password"
 
 
 module AccountEditPage

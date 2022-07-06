@@ -8,10 +8,10 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$eventId = "CHF"
-$invalidEventId = "TNT"
-$sourceId = "CHD"
-$sourceMerge = "Merge"
+$adminEventLiabilityEventId = "CHF"
+$adminEventLiabilityEventIdInvalid = "TNT"
+$adminEventLiabilitySourceId = "CHD"
+$adminEventLiabilitySourceMerge = "Merge"
 
 module LiabilityPage
 	include RSpec::Matchers
@@ -205,7 +205,7 @@ module LiabilityPage
 	end
 
 	#### GETTERS ####
-	def getEventResultView
+	def getAdminEventLiabilityEventResultView
 		@browser.div(id: 'EventLiability-View-HT-0')
 	end
 
@@ -242,14 +242,42 @@ module LiabilityPage
 	end
 
 	#### VERIFIERS ####
-	def verifyEventSearchResults(result)
+	def verifyAdminEventLiabilityCurrentRaceEventSearchResults(result)
 		sleep(1)
 		expectedResult = "#{result}"
-		expect(getEventResultView.text).to include(expectedResult)
-		getEventResultView.flash(color: ["yellow"])
+		expect(getAdminEventLiabilityEventResultView.text).to include(expectedResult)
+		getAdminEventLiabilityEventResultView.flash(color: ["yellow"])
 	end
 
-	def verifyEventSearchResultsInvalid(result)
+	def verifyAdminEventLiabilityEventAllEventSearchResults(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAdminEventLiabilityEventResultView.text).to include(expectedResult)
+		getAdminEventLiabilityEventResultView.flash(color: ["yellow"])
+	end
+
+	def verifyAdminEventLiabilityEventRaceEventSearchResults(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAdminEventLiabilityEventResultView.text).to include(expectedResult)
+		getAdminEventLiabilityEventResultView.flash(color: ["yellow"])
+	end
+
+	def verifyAdminEventLiabilityMergeEventSearchResults(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAdminEventLiabilityEventResultView.text).to include(expectedResult)
+		getAdminEventLiabilityEventResultView.flash(color: ["yellow"])
+	end
+
+	def verifyAdminEventLiabilityEventIdSearchResults1(result)
+		sleep(1)
+		expectedResult = "#{result}"
+		expect(getAdminEventLiabilityEventResultView.text).to include(expectedResult)
+		getAdminEventLiabilityEventResultView.flash(color: ["yellow"])
+	end
+
+	def verifyAdminEventLiabilityEventSearchResultsInvalid(result)
 		expectedResult = "#{result}"
 		expect(getEvenSearchResults.text).to eq(expectedResult)
 		getEvenSearchResults.flash(color: ["yellow"])

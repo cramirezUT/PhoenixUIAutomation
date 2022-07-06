@@ -54,13 +54,13 @@ RSpec.describe "Admin->Event->Pools->Event->AllMerge: Event Pools All selection 
 
 		it "Sets a valid Event id" do
       eventPoolsEventDropdown.wait_until_present.flash.click
-      eventPoolsEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventPoolsEventSearchTextField.wait_until_present.flash.set ($adminEventPoolsEventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
       eventPoolsSourceDropdown.flash.click
-      eventPoolsSourceSearchTextField.wait_until_present.set ($sourceId)
+      eventPoolsSourceSearchTextField.wait_until_present.set ($adminEventPoolsSourceId)
       sendKeysEnter
       sendKeysTab
     end
@@ -73,13 +73,13 @@ RSpec.describe "Admin->Event->Pools->Event->AllMerge: Event Pools All selection 
 			eventRaceSearchSelectAllCheckbox.flash.click
 		end
 
-		it "Clicks on the Done button" do
-			eventRacesSearchDoneButton.flash.click
-		end
+    it "Click on the Races dropdown" do
+      eventRacesDropdown.flash.click
+    end
 
 		it "Verifies the valid search result" do
       sleep(1)
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
+      verifyAdminEventPoolsEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
     end
 
     it "Clicks on the Refresh button" do
@@ -87,12 +87,12 @@ RSpec.describe "Admin->Event->Pools->Event->AllMerge: Event Pools All selection 
     end
 
     it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
+      verifyAdminEventPoolsEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
     end
 
     it "Sets the Source" do
       eventPoolsSourceDropdown.flash.click
-      eventPoolsSourceSearchTextField.wait_until_present.set ($sourceMeregeId)
+      eventPoolsSourceSearchTextField.wait_until_present.set ($adminEventPoolsSourceMeregeId)
       sendKeysEnter
       sendKeysTab
     end
@@ -103,7 +103,7 @@ RSpec.describe "Admin->Event->Pools->Event->AllMerge: Event Pools All selection 
 
     it "Verifies the valid search result" do
       sleep(1)
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
+      verifyAdminEventPoolsEventSearchResults("CHF-CHURCHILL DOWNS Races 1-8")
     end
 
     it "Verifes the figures" do
@@ -114,8 +114,8 @@ RSpec.describe "Admin->Event->Pools->Event->AllMerge: Event Pools All selection 
     end
 	ensure
 	after(:all) do
-	#	logOutFuction
-	#	close_browser
+		logOutFuction
+		close_browser
 	end
 	end
 end

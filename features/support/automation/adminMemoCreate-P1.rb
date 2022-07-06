@@ -59,7 +59,7 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($newMemoText)
+			adminMemoNewMemoModalMemoNameField.flash.set ($adminMemoNewMemoText)
 			sendKeysTab
 		end
 
@@ -73,22 +73,21 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality test", :adminMemo d
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
 		end
 
 		it "Clicks on the save button" do
-      sleep 10
+      sleep 1
 			adminMemoSubjectModalSaveButton.flash.click
-      adminMemoSubjectModalSaveButton.flash.click
 		end
 
 		it "Verifies the memo was set" do
-			verifyNewMemoText($newMemoText)
+			verifyNewMemoText($adminMemoNewMemoText)
 		end
 	ensure
 	after(:all) do

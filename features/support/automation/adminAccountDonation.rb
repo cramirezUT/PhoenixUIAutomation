@@ -59,7 +59,7 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :adm
 
     it "Sets the Account Group Number" do
       accountDonationModal.wait_until_present.flash
-      accountDonationSearchTextField.wait_until_present.flash.set ($invalidAccountGroupId)
+      accountDonationSearchTextField.wait_until_present.flash.set ($adminAccountDonationInvalidGroupId)
       sendKeysEnter
     end
 
@@ -71,8 +71,8 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :adm
 			accountDonationModal.wait_until_present.flash
 			accountDonationSearchTextField.click
 			sendKeysClear
-      accountDonationSearchTextField.flash.set ($accountGroupId)
-			accountDonationSearchTextField.flash.set ($accountGroupId)
+      accountDonationSearchTextField.flash.set ($adminAccountDonationGroupId)
+			accountDonationSearchTextField.flash.set ($adminAccountDonationGroupId)
       sendKeysEnter
 		end
 
@@ -89,7 +89,7 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :adm
         autoDonationSettingsModalDaysTextField.flash.click
   			sendKeysBackspace
   			autoDonationSettingsModalDaysTextField.flash.click
-  			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays1)
+  			autoDonationSettingsModalDaysTextField.flash.set ($adminAccountDonationNumberOfDays1)
         sendKeysEnter
         autoDonationSettingsModalSaveButton.flash.click
         verifyAccountDonationDays('AUTO DONATE ON FOR 1 DAYS')
@@ -97,7 +97,7 @@ RSpec.describe "Admin->Account->Donation: Account Group Number validation", :adm
         autoDonationSettingsModalDaysTextField.flash.click
   			sendKeysBackspace
   			autoDonationSettingsModalDaysTextField.flash.click
-  			autoDonationSettingsModalDaysTextField.flash.set ($numberOfDays1)
+  			autoDonationSettingsModalDaysTextField.flash.set ($adminAccountDonationNumberOfDays1)
         autoDonationSettingsModalCheckbox.flash.click
         autoDonationSettingsModalCheckbox.flash.click
         autoDonationSettingsModalSaveButton.flash.click

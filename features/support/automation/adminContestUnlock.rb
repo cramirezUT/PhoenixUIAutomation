@@ -54,7 +54,7 @@ RSpec.describe "Admin->Contest->Unlock: Account Unlock verification test", :admi
 
 		it "Sets an invalid Player id" do
 			unlockplayerModalSearchTextField.wait_until_present.flash.click
-      unlockplayerModalSearchTextField.flash.set ($playerIdInvalid)
+      unlockplayerModalSearchTextField.flash.set ($adminContestUnlockPlayerIdInvalid)
 			sendKeysTab
 		end
 
@@ -65,7 +65,7 @@ RSpec.describe "Admin->Contest->Unlock: Account Unlock verification test", :admi
 		it "Sets a valid Player id" do
       unlockplayerModalSearchTextField.flash.click
 			unlockplayerModalSearchTextField.flash.click
-      unlockplayerModalSearchTextField.flash.set ($playerId)
+      unlockplayerModalSearchTextField.flash.set ($adminContestUnlockPlayerId)
     	sendKeysTab
 		end
 

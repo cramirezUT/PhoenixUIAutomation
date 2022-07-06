@@ -54,8 +54,7 @@ RSpec.describe "Admin->Event->Handle->GroupID: Event Handle group Id valid and i
 
     it "Sets invalid Group ID" do
       eventHandleGourpDropdown.wait_until_present.flash.click
-      eventHandleGroupSerachTextField.wait_until_present.flash.set ($invalidGroupId)
-    #  sendKeysEnter
+      eventHandleGroupSerachTextField.wait_until_present.flash.set ($adminEventHandleGroupIdInvalid)
       sleep 5
     end
 
@@ -66,7 +65,7 @@ RSpec.describe "Admin->Event->Handle->GroupID: Event Handle group Id valid and i
 		it "Sets wild card character in search field" do
 			eventHandleGroupSerachTextField.click
 			sendKeysClear
-      eventHandleGroupSerachTextField.wait_until_present.flash.set ($wildCharacterGroupId)
+      eventHandleGroupSerachTextField.wait_until_present.flash.set ($adminEventHandleWildCharacterGroupId)
       sendKeysEnter
 		end
 

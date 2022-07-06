@@ -60,7 +60,7 @@ RSpec.describe "Admin->Terminal->Inquiry->Total: Admin Terminal Inquiry Total te
 
 		it "Sets a valid terminal id in text field" do
 			adminTerminalInquiryModalTerminalsTextField.flash.click
-			adminTerminalInquiryModalTerminalsTextField.flash.set ($terminalId)
+			adminTerminalInquiryModalTerminalsTextField.flash.set ($adminTerminalInquiryTerminalId)
 			sendKeysEnter
 			sendKeysTab
 		end

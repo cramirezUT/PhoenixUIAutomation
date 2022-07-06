@@ -59,7 +59,7 @@ RSpec.describe "Admin-Seller->Balance: Admin Seller Balance functionality test",
 		end
 
 		it "Sets an invalid Seller id in text field" do
-			adminSellerBalanceModalSellerTextField.flash.set ($sellerIdInvalid)
+			adminSellerBalanceModalSellerTextField.flash.set ($adminSellerBalanceSellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -68,7 +68,7 @@ RSpec.describe "Admin-Seller->Balance: Admin Seller Balance functionality test",
 		end
 
 		it "Sets a valid Seller id in text field" do
-			adminSellerBalanceModalSellerTextField.flash.set ($sellerId)
+			adminSellerBalanceModalSellerTextField.flash.set ($adminSellerBalanceSellerId)
 			sendKeysTab
 		end
 

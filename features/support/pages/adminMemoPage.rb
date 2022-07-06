@@ -8,20 +8,18 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-@random = rand(9999)
-
-@randomMemoGreaterThan96Char = 100.times.map { rand(10)  }
-@randomMemoGreaterThan79Char = 80.times.map { rand(10)  }
-@randomMemoGreaterThan1000Char = 1001.times.map { rand(10)  }
-$newSubjectText = "New Subject #{@random}"
-$newBodyText = "Body Text #{@random}"
-$newMemoTextGreaterThan96Char = "#{@randomMemoGreaterThan96Char}"
-$newMemoTextGreaterThan79Char = "#{@randomMemoGreaterThan79Char}"
-$newMemoTextGreaterThan1000Char = "#{@randomMemoGreaterThan1000Char}"
-$random = "#{@random}"
-$newMemoText = "new test memo"+$random
-$memoErrorText ="!!!!**..."
-
+$adminMemoRandom = rand(9999)
+@adminMemoRandomMemoGreaterThan96Char = 100.times.map { rand(10)  }
+@adminMemoRandomMemoGreaterThan79Char = 80.times.map { rand(10)  }
+@adminMemoRandomMemoGreaterThan1000Char = 1001.times.map { rand(10)  }
+$adminMemoNewSubjectText = "New Subject #{$adminMemoRandom}"
+$adminMemoNewBodyText = "Body Text #{$adminMemoRandom}"
+$adminMemoNewMemoTextGreaterThan96Char = "#{@adminMemoRandomMemoGreaterThan96Char}"
+$adminMemoNewMemoTextGreaterThan79Char = "#{@adminMemoRandomMemoGreaterThan79Char}"
+$adminMemoNewMemoTextGreaterThan1000Char = "#{@adminMemoRandomMemoGreaterThan1000Char}"
+$adminMemoRan = "#{$adminMemoRandom}"
+$adminMemoNewMemoText = "new test memo" + $adminMemoRan
+$adminMemoErrorText = "!!!!**..."
 
 module AdminMemoPage
 	include RSpec::Matchers
@@ -73,6 +71,7 @@ module AdminMemoPage
 	end
 
 	def adminMemoModalMemoByIndex(index)
+		sleep(1)
 		@browser.div(id: "AdminMemo-Select-Catalog-#{index}-0")
 	end
 
@@ -94,6 +93,7 @@ module AdminMemoPage
 	end
 
 	def adminMemoNewMemoModalYesButton
+		sleep(1)
 		@browser.button(id: 'Confirm-Yes')
 	end
 
@@ -120,10 +120,12 @@ module AdminMemoPage
 	end
 
 	def adminMemoSubjectModalSaveButton
+		sleep(1)
 		@browser.button(id: 'EditMemo-Save')
 	end
 
 	def adminMemoSubjectModalCloseButton
+		sleep(1)
 		@browser.button(id: 'EditMemo-Close')
 	end
 	####################
@@ -152,6 +154,7 @@ module AdminMemoPage
 	end
 
 	#### VERIFIERS ####
+<<<<<<< HEAD
 
 	def verifyNewMemoBodyAfterInsertText(result)
 		expectedResult = "#{result}"
@@ -165,6 +168,8 @@ module AdminMemoPage
 		adminMemoSubjectModalBodyTextArea.flash(color: ["yellow"])
 	end
 
+=======
+>>>>>>> c50696d76a9cad2dc56ad73648a66a97aee27f4a
 	def verifyNewMemoBodyText(result)
 		expectedResult = "#{result}"
 		expect(adminMemoSubjectModalBodyTextArea.text).to include(expectedResult)
@@ -179,8 +184,8 @@ module AdminMemoPage
 
 	def verifyNewMemoText(result)
 		expectedResult = "#{result}"
-		expect(adminMemoModalMemoByValue(expectedResult).text).to include(expectedResult)
-		adminMemoModalMemoByValue.flash(color: ["yellow"])
+		expect(adminMemoModalMemoByValue(expectedResult).text).to include(result)
+		adminMemoModalMemoByValue(expectedResult).flash(color: ["yellow"])
 	end
 
 	def verifyNewMemoTextByIndex(index,result)
@@ -196,6 +201,7 @@ module AdminMemoPage
 	end
 
 	def verifyNewMemoTextMoreThanGivenChar(result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(adminMemoNewMemoModalErrorText.text).to eq(expectedResult)
 		adminMemoNewMemoModalErrorText.flash(color: ["yellow"])

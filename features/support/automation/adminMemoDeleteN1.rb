@@ -60,7 +60,7 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
 		end
 
 		it "Sets a new Memo name in text field" do
-      @var=$random.concat("test")
+      @var=$adminMemoRandom.to_s.concat(" test")
 			adminMemoNewMemoModalMemoNameField.flash.set (@var)
 			sendKeysTab
 		end
@@ -74,17 +74,16 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($random.concat("test"))
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoRandom.to_s.concat(" test"))
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($random.concat("test"))
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoRandom.to_s.concat(" test"))
 		end
 
 		it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
-      adminMemoSubjectModalSaveButton.flash.click
 		end
 
 		it "Verifies the memo was set" do
@@ -107,7 +106,6 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
     it "Clicks on the Yes button" do
       adminMemoDeleteModalYesButton.flash.click
     end
-
 
     #### DELETE NEW MEMO AGAIN ####
     it "Clicks on the new memo line" do

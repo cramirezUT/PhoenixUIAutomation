@@ -54,13 +54,13 @@ RSpec.describe "Admin->Event->Liability->CurrentRace: Event Liability Event Merg
 
 		it "Sets a valid Event id" do
       eventLiabilityEventDropdown.wait_until_present.flash.click
-      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($eventId)
+      eventLiabilityEventSearchTextField.wait_until_present.flash.set ($adminEventLiabilityEventId)
       sendKeysEnter
 		end
 
     it "Sets the Source" do
       eventLiabilitySourceDropdown.flash.click
-      eventLiabilitySourceSearchTextField.wait_until_present.set ($sourceMerge)
+      eventLiabilitySourceSearchTextField.wait_until_present.set ($adminEventLiabilitySourceMerge)
       sendKeysEnter
       sendKeysTab
     end
@@ -82,7 +82,7 @@ RSpec.describe "Admin->Event->Liability->CurrentRace: Event Liability Event Merg
 		end
 
 		it "Verifies the valid search result" do
-      verifyEventSearchResults("CHF-CHURCHILL DOWNS Race 3")
+      verifyAdminEventLiabilityCurrentRaceEventSearchResults("CHF-CHURCHILL DOWNS Race 3")
     end
 
 		it "Verifies the figures view" do

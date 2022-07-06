@@ -59,7 +59,7 @@ RSpec.describe "Admin->Seller->Control: Admin Seller Control functionality test"
 		end
 
 		it "Sets invalid Seller id in text field" do
-			adminSellerControlModalSellerTextField.flash.set ($sellerIdInvalid)
+			adminSellerControlModalSellerTextField.flash.set ($adminSellerControlSellerIdInvalid)
 			sendKeysTab
 		end
 
@@ -70,8 +70,8 @@ RSpec.describe "Admin->Seller->Control: Admin Seller Control functionality test"
 		it "Sets a valid Seller id in text field" do
 			adminSellerControlModalSellerTextField.flash.click
 			sendKeysClear
-			adminSellerControlModalSellerTextField.flash.set ($sellerId)
-			adminSellerControlModalSellerTextField.flash.set ($sellerId)
+			adminSellerControlModalSellerTextField.flash.set ($adminSellerControlSellerId)
+			adminSellerControlModalSellerTextField.flash.set ($adminSellerControlSellerId)
 			sendKeysTab
 		end
 
@@ -88,7 +88,7 @@ RSpec.describe "Admin->Seller->Control: Admin Seller Control functionality test"
 		end
 
 		it "Sets the one character code in text field" do
-			adminSellerControlLockSellerModalTextField.flash.set ($lockSellerOneCharacter)
+			adminSellerControlLockSellerModalTextField.flash.set ($adminSellerControlLockSellerOneCharacter)
 			sendKeysTab
 		end
 

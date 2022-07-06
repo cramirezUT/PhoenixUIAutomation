@@ -54,7 +54,7 @@ RSpec.describe "Admin->Account->Unlock: Account Unlock verification test", :admi
 
 		it "Sets an invalid Event id" do
 			accountUnlockSearchTextField.wait_until_present.flash.click
-      accountUnlockSearchTextField.flash.set ($accountIdInvalid)
+      accountUnlockSearchTextField.flash.set ($adminAccountUnlockIdInvalid)
 			accountUnlockSearchButton.flash.click
 		end
 
@@ -65,7 +65,7 @@ RSpec.describe "Admin->Account->Unlock: Account Unlock verification test", :admi
 		it "Sets the Event id" do
       accountUnlockSearchTextField.flash.click
 			accountUnlockSearchTextField.flash.click
-      accountUnlockSearchTextField.flash.set ($accountId)
+      accountUnlockSearchTextField.flash.set ($adminAccountUnlockId)
       accountUnlockSearchButton.flash.click
 			accountUnlockSearchButton.flash.click
 		end

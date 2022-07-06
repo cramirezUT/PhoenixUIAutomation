@@ -19,7 +19,8 @@ module ContestInquireContestPage
 	include Selenium
 
 	#### CONTEST INQUIRE METHODS / LOCATORS ####
-	def eventMenuInquireSubLinks(string)
+	def contestMenuInquireSubLinks(string)
+		sleep(1)
 		@browser.element(xpath: "//*[@id='Command-Menu-Inquire-#{string}']")
 	end
 
