@@ -82,6 +82,7 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 		it "Sets an Account Id" do
 			accountTransactionAccountSearchTextField.flash.set ($adminAccountTransactionGroupId)
 			sendKeysEnter
+      sendKeysTab
 		end
 
 		it "Verifies the valid search result" do
