@@ -55,6 +55,18 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit Abdandon functionality test
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
+    it "Verifies if there is an existing memo present" do
+      if (adminMemoModalMemoByIndex(0).present?) == true
+        deleteMemoFuncationality
+      else
+        puts "There is no existing memo present"
+      end
+    end
+    #### ADD NEW MEMO ####
+    it "Adds a new memo" do
+      addNewMemoFunctionality
+    end
+
     it "Click a memo" do
       adminMemoModalMemoByIndex(0).wait_until_present.flash.click
     end
@@ -63,27 +75,26 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit Abdandon functionality test
       adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
-
 		it "Verifies the subject modal" do
 			adminMemoSubjectModal.flash
 		end
 
 		it "Sets a new subject in text field" do
-      @var=$newSubjectText
-			adminMemoSubjectModalSubjectTextField.flash.set ("#{@var}"+"Test")
+      @var = $adminMemoNewSubjectText
+			adminMemoSubjectModalSubjectTextField.flash.set (@var.concat("Test"))
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText)
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
 		end
 
 		it "Clicks on the close button" do
-			adminMemoSubjectModalCloseButton.flash.click
-      adminMemoSubjectModalCloseButton.flash.click
+			adminMemoSubjectModalCloseButton.focus
+      adminMemoSubjectModalCloseButton.click
 		end
 
-    it "Click memo Confirm Yes " do
+    it "Click memo Confirm Yes" do
        adminMemoDeleteModalYesButton.flash.click
     end
 
@@ -91,8 +102,14 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit Abdandon functionality test
       adminMemoModalMemoByIndex(0).flash.click
       verifyNewMemoTextByIndex(0,adminMemoModalMemoByIndex(0).text)
     end
+    #### DELETE NEW MEMO ####
+    it "Deletes the newly created memo" do
+      deleteMemoFuncationality
+    end
 
-
+    it "Verifies the newly created memo deleted success message" do
+      verifyDeletedSuccessMessageText($adminMemoRandom.to_s.concat(" test"))
+    end    
 	ensure
 	after(:all) do
 		logOutFuction

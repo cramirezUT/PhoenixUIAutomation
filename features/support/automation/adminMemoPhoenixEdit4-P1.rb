@@ -94,15 +94,17 @@ RSpec.describe "Admin->Memo: Admin Memo Edit Phoenix functionality test", :admin
     end
 
 		it "Clicks on the close button" do
-			adminMemoSubjectModalCloseButton.flash.click
+			adminMemoSubjectModalCloseButton.focus
+      adminMemoSubjectModalCloseButton.click
 		end
 
-		it "Click memo Confirm No " do
+		it "Click memo Confirm No" do
 		   adminMemoDeleteModalNoButton.flash.click
 		end
 
     it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
+			adminMemoSubjectModalSaveButton.focus
+      adminMemoSubjectModalSaveButton.click
 		end
     #### DELETE NEW MEMO ####
     it "Deletes the newly created memo" do

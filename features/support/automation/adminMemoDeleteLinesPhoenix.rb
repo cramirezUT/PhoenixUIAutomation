@@ -10,7 +10,6 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
-@value
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -51,6 +50,18 @@ RSpec.describe "Admin->Memo: Admin Memo Remove Lines body functionality test", :
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
+    it "Verifies if there is an existing memo present" do
+      if (adminMemoModalMemoByIndex(0).present?) == true
+        deleteMemoFuncationality
+      else
+        puts "There is no existing memo present"
+      end
+    end
+    #### ADD NEW MEMO ####
+    it "Adds a new memo" do
+      addNewMemoFunctionality
+    end
+
     it "Click a memo" do
       adminMemoModalMemoByIndex(0).wait_until_present.flash.click
     end
@@ -59,19 +70,18 @@ RSpec.describe "Admin->Memo: Admin Memo Remove Lines body functionality test", :
       adminMemoModalEditButton.wait_until_present.flash.click
     end
 
-
 		it "Verifies the subject modal" do
 			adminMemoSubjectModal.flash
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-      @value="\n"+$newBodyText
-			adminMemoSubjectModalBodyTextArea.flash.set ("#{@value}".strip)
+      @value = "\n" + $adminMemoNewBodyText
+			adminMemoSubjectModalBodyTextArea.flash.set (@value.strip)
 		end
 
     it "Verify Body position after Removing Extra line" do
@@ -79,16 +89,17 @@ RSpec.describe "Admin->Memo: Admin Memo Remove Lines body functionality test", :
     end
 
 		it "Clicks on the close button" do
-			adminMemoSubjectModalCloseButton.flash.click
-      adminMemoSubjectModalCloseButton.flash.click
+			adminMemoSubjectModalCloseButton.focus
+      adminMemoSubjectModalCloseButton.click
 		end
 
-		it "Click memo Confirm No " do
+		it "Click memo Confirm No" do
 		   adminMemoDeleteModalNoButton.flash.click
 		end
 
     it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
+			adminMemoSubjectModalSaveButton.focus
+      adminMemoSubjectModalSaveButton.click
 		end
 
     it "Clicks on the Refresh button" do
@@ -97,11 +108,17 @@ RSpec.describe "Admin->Memo: Admin Memo Remove Lines body functionality test", :
 
     it "Verifies the memo subject" do
       adminMemoModalMemoByIndex(0).flash.click
-      expect(adminMemoModalMemoSubjectByIndex(0).text).to include($newSubjectText)
+      expect(adminMemoModalMemoSubjectByIndex(0).text).to include($adminMemoNewSubjectText)
       adminMemoModalMemoSubjectByIndex(0).flash(color: ["yellow"])
     end
+    #### DELETE NEW MEMO ####
+    it "Deletes the newly created memo" do
+      deleteMemoFuncationality
+    end
 
-
+    it "Verifies the newly created memo deleted success message" do
+      verifyDeletedSuccessMessageText($adminMemoRandom.to_s.concat(" test"))
+    end
 	ensure
 	after(:all) do
 		logOutFuction

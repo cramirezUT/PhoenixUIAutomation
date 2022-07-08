@@ -157,7 +157,8 @@ module AdminMemoPage
 		adminMemoSubjectModalSubjectTextField.flash.set (@var)
 		adminMemoSubjectModalBodyTextArea.flash.click
 		adminMemoSubjectModalBodyTextArea.flash.set (@var)
-		adminMemoSubjectModalSaveButton.flash.click
+		adminMemoSubjectModalSaveButton.focus
+		adminMemoSubjectModalSaveButton.click
 		adminMemoModalRefreshButton.flash.click
 	end
 
