@@ -121,7 +121,8 @@ module AdminMemoPage
 
 	def adminMemoSubjectModalSaveButton
 		sleep(1)
-		@browser.button(id: 'EditMemo-Save')
+		# @browser.button(id: 'EditMemo-Save')
+		@browser.element(xpath: "//*[@id='EditMemo-Save']")
 	end
 
 	def adminMemoSubjectModalCloseButton
