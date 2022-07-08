@@ -20,7 +20,7 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adminMemoAddDelete do
+RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adminMemo do
   begin
     before(:all) do
       puts "adminMemoAddDeleteTest"
@@ -87,23 +87,11 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
 
 		it "Verifies the memo was set" do
 			adminMemoModalMemoByIndex(0).flash
-			verifyNewMemoText(0, $adminMemoNewMemoText)
+			verifyNewMemoText($adminMemoNewMemoText)
 		end
     #### DELETE NEW MEMO ####
-    it "Clicks on the new memo line" do
-      adminMemoModalMemoByIndex(0).flash.click
-    end
-
-    it "Clicks on the trash can icon" do
-      adminMemoModalDeleteButton.flash.click
-    end
-
-    it "Verifies the Delete Modal" do
-      adminMemoDeleteModal.flash
-    end
-
-    it "Clicks on the Yes button" do
-      adminMemoDeleteModalYesButton.flash.click
+    it "Deletes the newly created memo" do
+      deleteMemoFuncationality
     end
 
     it "Verifies the newly created memo deleted success message" do

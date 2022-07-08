@@ -10,6 +10,8 @@ require_relative "../lib/SendKeys.rb"
 require_relative "../lib/Users.rb"
 require_relative "../lib/windows.rb"
 
+@value
+@value1
 RSpec.configure do |c|
   c.include ToteLoginPage
   c.include HomePage
@@ -20,10 +22,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Memo: Admin Memo Create functionality Phoenix test", :adminMemo do
+RSpec.describe "Admin->Memo: Admin Memo Remove multiple characters functionality test", :adminMemo do
   begin
     before(:all) do
-      puts "adminMemoAddCreatePhoenix-P1"
+      puts "adminMemoRemoveMultipleCharactersTest"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -50,44 +52,59 @@ RSpec.describe "Admin->Memo: Admin Memo Create functionality Phoenix test", :adm
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-		it "Clicks on the Add button" do
-			adminMemoModalAddButton.wait_until_present.flash.click
-		end
-    #### ADD NEW MEMO ####
-		it "Verifies the New Memo modal" do
-			adminMemoNewMemoModal.flash
-		end
+    it "Click a memo" do
+      adminMemoModalMemoByIndex(0).wait_until_present.flash.click
+    end
 
-		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($adminMemoNewMemoText)
-			sendKeysTab
-		end
+    it "Select a memo" do
+      adminMemoModalEditButton.wait_until_present.flash.click
+    end
 
-		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.flash.click
-      adminMemoNewMemoModalYesButton.wait_while_present
-		end
 
 		it "Verifies the subject modal" do
 			adminMemoSubjectModal.flash
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
+			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
+      @value=$newBodyText
+      @value1=@value[@value.length-3,@value.length-1]
+			adminMemoSubjectModalBodyTextArea.flash.set ("#{@value}")
+      adminMemoSubjectModalBodyTextArea.flash.set ("#{@value1}")
 		end
 
-		it "Clicks on the save button" do
+    it "Verify Body after Removing Extra Characters" do
+       verifyNewMemoBodyAfterremovingCharacters(@value1)
+    end
+
+		it "Clicks on the close button" do
+			adminMemoSubjectModalCloseButton.flash.click
+      adminMemoSubjectModalCloseButton.flash.click
+		end
+
+		it "Click memo Confirm No " do
+		   adminMemoDeleteModalNoButton.flash.click
+		end
+
+    it "Clicks on the save button" do
 			adminMemoSubjectModalSaveButton.flash.click
 		end
 
-		it "Verifies the memo was set" do
-		   verifyNewMemoText($adminMemoNewMemoText)
+    it "Clicks on the Refresh button" do
+			adminMemoModalRefreshButton.flash.click
 		end
+
+    it "Verifies the memo subject" do
+      adminMemoModalMemoByIndex(0).flash.click
+      expect(adminMemoModalMemoSubjectByIndex(0).text).to include($newSubjectText)
+      adminMemoModalMemoSubjectByIndex(0).flash(color: ["yellow"])
+    end
+
+
 	ensure
 	after(:all) do
 		logOutFuction
