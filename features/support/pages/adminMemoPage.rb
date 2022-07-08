@@ -144,6 +144,28 @@ module AdminMemoPage
 		sleep(1)
 		@browser.button(id: 'Confirm-No')
 	end
+
+	def addNewMemoFunctionality
+		adminMemoModalAddButton.wait_until_present.flash.click
+		adminMemoNewMemoModal.flash
+		@var = $adminMemoRandom.to_s.concat(" test")
+		adminMemoNewMemoModalMemoNameField.flash.set (@var)
+		sendKeysTab
+		adminMemoNewMemoModalYesButton.wait_until_present.flash.click
+		adminMemoSubjectModal.flash
+		adminMemoSubjectModalSubjectTextField.flash.set (@var)
+		adminMemoSubjectModalBodyTextArea.flash.click
+		adminMemoSubjectModalBodyTextArea.flash.set (@var)
+		adminMemoSubjectModalSaveButton.flash.click
+		adminMemoModalRefreshButton.flash.click
+	end
+
+	def deleteMemoFuncationality
+    adminMemoModalMemoByIndex(0).flash.click
+    adminMemoModalDeleteButton.flash.click
+    adminMemoDeleteModal.flash
+    adminMemoDeleteModalYesButton.flash.click
+	end
 	###########################
 
 	#### GETTERS ####

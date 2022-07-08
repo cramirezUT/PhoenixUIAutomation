@@ -50,48 +50,21 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-		it "Clicks on the Add button" do
-			adminMemoModalAddButton.wait_until_present.flash.click
-		end
+    it "Verifies if there is an existing memo present" do
+      if (adminMemoModalMemoByIndex(0).present?) == true
+        deleteMemoFuncationality
+      else
+        puts "There is no existing memo present"
+      end
+    end
     #### ADD NEW MEMO ####
-		it "Verifies the New Memo modal" do
-			adminMemoNewMemoModal.flash
-		end
-
-		it "Sets a new Memo name in text field" do
-      $var=$adminMemoRandom.to_s.concat(" test")
-			adminMemoNewMemoModalMemoNameField.flash.set ($var)
-			sendKeysTab
-		end
-
-		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
-		end
-
-		it "Verifies the subject modal" do
-			adminMemoSubjectModal.flash
-		end
-
-		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoRandom.to_s.concat(" test"))
-		end
-
-		it "Sets body text" do
-      adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoRandom.to_s.concat(" test"))
-		end
-
-		it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
-		end
-
-    it "Clicks on the refresh button" do
-      adminMemoModalRefreshButton.flash.click
+    it "Adds a new memo" do
+      addNewMemoFunctionality
     end
 
-		it "Verifies the memo was set" do
-			adminMemoModalMemoByIndex(0).flash.click
-		end
+    it "Verifies the memo was set" do
+      adminMemoModalMemoByIndex(0).flash.click
+    end
     #### DELETE NEW MEMO ####
     it "Clicks on the trash can icon" do
       adminMemoModalDeleteButton.flash.click
@@ -103,6 +76,14 @@ RSpec.describe "Admin->Memo: Admin Memo delete functionality test", :adminMemo d
 
     it "Clicks on the Yes button" do
       adminMemoDeleteModalYesButton.flash.click
+    end
+    #### DELETE NEW MEMO AGAIN ####
+    it "Verifies the deleted memo is no longer displayed" do
+      if (adminMemoModalMemoByIndex(0).present?) && adminMemoModalMemoByIndex(0).text == ($adminMemoRandom.to_s)
+        expect { raise StandardError, "The expected deleted memo with the random id of: #{$adminMemoRandom.to_s} is NOT deleted."}.should raise_error('STEP FAILED')
+      else
+        puts "The deleted memo with random id #{$adminMemoRandom.to_s} has been successfully deleted"
+      end
     end
 	ensure
 	after(:all) do

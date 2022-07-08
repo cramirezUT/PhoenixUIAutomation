@@ -50,9 +50,17 @@ RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-    it "Clicks on the Memo tab" do
-      adminMenuLinks("Memo").wait_until_present.flash.click
-		end
+    it "Verifies if there is an existing memo present" do
+      if (adminMemoModalMemoByIndex(0).present?) == true
+        deleteMemoFuncationality
+      else
+        puts "There is no existing memo present"
+      end
+    end
+    #### ADD NEW MEMO ####
+    it "Adds a New Memo" do
+      addNewMemoFunctionality
+    end
 
     it "Click a memo" do
       adminMemoModalMemoByIndex(0).wait_until_present.flash.click
@@ -79,13 +87,21 @@ RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
 			adminMemoSubjectModalCloseButton.flash.click
 		end
 
-		it "Click memo Confirm Yes " do
+		it "Click memo Confirm Yes" do
 		   adminMemoDeleteModalYesButton.flash.click
 		end
 
     it "Verifies the memo was set" do
       adminMemoModalMemoByIndex(0).flash.click
       verifyNewMemoTextByIndex(0,adminMemoModalMemoByIndex(0).text)
+    end
+    #### DELETE NEW MEMO ####
+    it "Deletes the newly created memo" do
+      deleteMemoFuncationality
+    end
+
+    it "Verifies the newly created memo deleted success message" do
+      verifyDeletedSuccessMessageText($adminMemoRandom.to_s.concat(" test"))
     end
 	ensure
 	after(:all) do
