@@ -50,9 +50,17 @@ RSpec.describe "Admin->Memo: Admin Memo Blank line insert in body functionality 
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-    it "Clicks on the Memo tab" do
-      adminMenuLinks("Memo").wait_until_present.flash.click
-		end
+    it "Verifies if there is an existing memo present" do
+      if (adminMemoModalMemoByIndex(0).present?) == true
+        deleteMemoFuncationality
+      else
+        puts "There is no existing memo present"
+      end
+    end
+    #### ADD NEW MEMO ####
+    it "Adds a new memo" do
+      addNewMemoFunctionality
+    end
 
     it "Click a memo" do
       adminMemoModalMemoByIndex(0).wait_until_present.flash.click
@@ -62,39 +70,39 @@ RSpec.describe "Admin->Memo: Admin Memo Blank line insert in body functionality 
       adminMemoModalEditButton.wait_until_present.flash.click
 		end
 
-
 		it "Verifies the subject modal" do
 		  	adminMemoSubjectModal.flash
 		end
 
 		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($newSubjectText)
+      adminMemoSubjectModalSubjectTextField.click
+      sendKeysClear
+			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
 		end
 
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($newBodyText+"Edit")
+			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText.to_s.concat(" Edit"))
 		end
 
 		it "Clicks on the close button" do
-			adminMemoSubjectModalCloseButton.flash.click
-      adminMemoSubjectModalCloseButton.flash.click
+			adminMemoSubjectModalCloseButton.focus
+      adminMemoSubjectModalCloseButton.click
 		end
 
-		it "Click memo Confirm No " do
+		it "Click memo Confirm No" do
 		   adminMemoDeleteModalNoButton.flash.click
 		end
 
     it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
+			adminMemoSubjectModalSaveButton.focus
+      adminMemoSubjectModalSaveButton.click
 		end
 
     it "Verifies the memo was set" do
       adminMemoModalMemoByIndex(0).flash.click
       verifyNewMemoTextByIndex(0,adminMemoModalMemoByIndex(0).text)
     end
-
-
 	ensure
 	after(:all) do
 		logOutFuction

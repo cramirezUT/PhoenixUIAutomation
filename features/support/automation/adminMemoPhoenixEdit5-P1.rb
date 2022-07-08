@@ -83,14 +83,14 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
 		it "Sets body text" do
       adminMemoSubjectModalBodyTextArea.flash.click
 			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
-      @value= adminMemoSubjectModalBodyTextArea.text.length
+      @value = adminMemoSubjectModalBodyTextArea.text.length
       adminMemoSubjectModalBodyTextArea.flash.click
       sendKeysSelectAll
       sendKeysBackspace
 		end
 
     it "Get body length after deletion" do
-        @valueAfter= adminMemoSubjectModalBodyTextArea.text.length
+        @valueAfter = adminMemoSubjectModalBodyTextArea.text.length
     end
 
     it "Verify deletion is success" do
@@ -98,7 +98,8 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
     end
 
 		it "Clicks on the close button" do
-			adminMemoSubjectModalCloseButton.flash.click
+			adminMemoSubjectModalCloseButton.focus
+      adminMemoSubjectModalCloseButton.click
 		end
 
 		it "Click memo Confirm No" do
@@ -106,7 +107,8 @@ RSpec.describe "Admin->Memo: Admin Memo Phoenix Edit functionality test", :admin
 		end
 
     it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
+			adminMemoSubjectModalSaveButton.focus
+      adminMemoSubjectModalSaveButton.click
 		end
     #### DELETE NEW MEMO ####
     it "Deletes the newly created memo" do

@@ -84,7 +84,8 @@ RSpec.describe "Admin->Memo: Admin Memo Edit functionality test", :adminMemo do
 		end
 
 		it "Clicks on the close button" do
-			adminMemoSubjectModalCloseButton.flash.click
+			adminMemoSubjectModalCloseButton.focus
+      adminMemoSubjectModalCloseButton.click
 		end
 
 		it "Click memo Confirm Yes" do

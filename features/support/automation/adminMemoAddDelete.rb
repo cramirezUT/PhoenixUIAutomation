@@ -50,44 +50,21 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
       adminMenuLinks("Memo").wait_until_present.flash.click
 		end
 
-		it "Clicks on the Add button" do
-			adminMemoModalAddButton.wait_until_present.flash.click
-		end
+    it "Verifies if there is an existing memo present" do
+      if (adminMemoModalMemoByIndex(0).present?) == true
+        deleteMemoFuncationality
+      else
+        puts "There is no existing memo present"
+      end
+    end
     #### ADD NEW MEMO ####
-		it "Verifies the New Memo modal" do
-			adminMemoNewMemoModal.flash
-		end
-
-		it "Sets a new Memo name in text field" do
-			adminMemoNewMemoModalMemoNameField.flash.set ($adminMemoNewMemoText)
-			sendKeysTab
-		end
-
-		it "Clicks on the Yes button" do
-			adminMemoNewMemoModalYesButton.wait_until_present.flash.click
-      adminMemoNewMemoModalYesButton.wait_while_present
-		end
-
-		it "Verifies the subject modal" do
-			adminMemoSubjectModal.flash
-		end
-
-		it "Sets a new subject in text field" do
-			adminMemoSubjectModalSubjectTextField.flash.set ($adminMemoNewSubjectText)
-		end
-
-		it "Sets body text" do
-      adminMemoSubjectModalBodyTextArea.flash.click
-			adminMemoSubjectModalBodyTextArea.flash.set ($adminMemoNewBodyText)
-		end
-
-		it "Clicks on the save button" do
-			adminMemoSubjectModalSaveButton.flash.click
-		end
+    it "Adds a new memo" do
+      addNewMemoFunctionality
+    end
 
 		it "Verifies the memo was set" do
 			adminMemoModalMemoByIndex(0).flash
-			verifyNewMemoText($adminMemoNewMemoText)
+			verifyNewMemoText($adminMemoRandom.to_s.concat(" test"))
 		end
     #### DELETE NEW MEMO ####
     it "Deletes the newly created memo" do
@@ -95,7 +72,7 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
     end
 
     it "Verifies the newly created memo deleted success message" do
-      verifyDeletedSuccessMessageText($adminMemoNewMemoText)
+      verifyDeletedSuccessMessageText($adminMemoRandom.to_s.concat(" test"))
     end
 	ensure
 	after(:all) do
