@@ -65,13 +65,14 @@ RSpec.describe "Admin->Seller->Edit admin Seller TaxId-N2", :sellerEdit do
 		end
 
     it "Edit tax Id" do
+       sellerEdit.flash(color: ["yelllow"]).click
        sellerTaxID.flash(color: ["yelllow"])
        sellerTaxID.set ("123-45-678q")
        sendKeysTab
     end
 
-    it "Enter Save Button" do
-      sellerSave.flash(color: ["yelllow"]).click
+    it "Verify Error" do
+       verifyError("Invalid tax Id")
     end
 
 	ensure

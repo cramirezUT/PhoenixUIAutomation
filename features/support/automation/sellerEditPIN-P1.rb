@@ -69,7 +69,9 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit PIN-P1", :sellerEdit do
 		end
 
     it "Edit PIN" do
+      sellerPIN.flash(color: ["yelllow"]).click
       sellerPIN.flash(color: ["yelllow"]).clear
+      sellerPIN.flash(color: ["yelllow"]).click
 			sellerPIN.flash(color: ["yelllow"]).set ("1234")
       sendKeysTab
 		end

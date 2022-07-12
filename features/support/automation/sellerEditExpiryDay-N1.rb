@@ -56,7 +56,7 @@ RSpec.describe "Admin->Seller->Edit ExpiryDay-N1", :sellerEdit do
 		end
 
 		it "Click on Seller" do
-			sellerEditMenu.flash.click
+			sellerEditMenu.flash(color: ["yelllow"]).click
 		end
 
 		it "enter Seller group Number" do
@@ -65,13 +65,14 @@ RSpec.describe "Admin->Seller->Edit ExpiryDay-N1", :sellerEdit do
 		end
 
     it "Edit Expiry Day" do
-       sellerExpires.flash(color: ["yelllow"])
-       sellerExpires.set ("10q")
+      sellerEdit.flash(color: ["yelllow"]).click
+      sellerExpires.flash(color: ["yelllow"])
+      sellerExpires.set ("10q")
        sendKeysTab
     end
 
-    it "Enter Save Button" do
-      sellerSave.flash(color: ["yelllow"]).click
+    it "Verify Error" do
+       verifyError("Invalid expiration days")
     end
 
 	ensure

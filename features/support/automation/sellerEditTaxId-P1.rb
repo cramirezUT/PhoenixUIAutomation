@@ -65,6 +65,7 @@ RSpec.describe "Admin->Seller->Edit admin Seller TaxId-P1", :sellerEdit do
 		end
 
     it "Edit tax Id" do
+       sellerEdit.flash(color: ["yelllow"]).click
        sellerTaxID.flash(color: ["yelllow"])
        sellerTaxID.set ("123-45-6789")
        sendKeysTab

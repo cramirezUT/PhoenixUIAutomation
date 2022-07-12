@@ -65,13 +65,10 @@ RSpec.describe "Admin->Seller->Edit ExpiryDay-P2", :sellerEdit do
 		end
 
     it "Edit Expiry Day" do
+       sellerEdit.flash(color: ["yelllow"]).click
        sellerExpires.flash(color: ["yelllow"])
        sellerExpires.set ("100000000")
        sendKeysTab
-    end
-
-    it "Enter Save Button" do
-      sellerSave.flash(color: ["yelllow"]).click
     end
 
 	ensure

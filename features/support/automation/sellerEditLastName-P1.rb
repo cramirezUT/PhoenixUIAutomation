@@ -70,7 +70,8 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit Last Name-P1", :sellerEdit
 
     it "Edit Last Name" do
 			sellerLastName.flash(color: ["yelllow"]).clear
-      sellerLastName.flash(color: ["yelllow"]).set ("Aron5")
+       $Random = rand(9999)
+      sellerLastName.flash(color: ["yelllow"]).set ("Aron5"+"#{@Random}")
       sendKeysTab
 		end
 

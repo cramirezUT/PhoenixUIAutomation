@@ -20,10 +20,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Seller->Edit admin Seller UnLock", :sellerEdit do
+RSpec.describe "Admin->Seller->Edit admin Seller Undelete-N1", :sellerEdit do
   begin
     before(:all) do
-      puts "adminSellerEditUnLock"
+      puts "adminSellerEditUndelete-N1"
       launchToteBrowser
       selectSiteTable
       logInFunction
@@ -64,11 +64,12 @@ RSpec.describe "Admin->Seller->Edit admin Seller UnLock", :sellerEdit do
       sendKeysTab
 		end
 
-    it "Lock Seller" do
-       sellerLock.flash(color: ["yelllow"])
-       sellerLock.click
-       sellerConfirmMessage.flash(color: ["yelllow"])..set ("confirm")
-       sellerDeleteConfirmNo.flash(color: ["yelllow"]).click
+    it "lock Seller" do
+      ##First Lock
+       sellerLock.flash(color: ["yelllow"]).click
+       sellerConfirmMessage.flash(color: ["yelllow"]).set ("lock")
+       sendKeysTab
+       sellerDeleteConfirmYes.flash(color: ["yelllow"]).click
     end
 
 	ensure

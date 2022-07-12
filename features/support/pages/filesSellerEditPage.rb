@@ -87,28 +87,32 @@ module AdminSellerFindPage
 		@browser.button(id: 'FileSeller-Clear')
 	end
 
+	def sellerError
+		@browser.label(id: 'FileSeller-Error')
+	end
+
 	def sellerConfirmMessage
-		@browser.input(id: 'Confirm-Text')
+		@browser.text_field(id: 'Confirm-Text')
 	end
 
 	def sellerFirstName
-		@browser.input(id: 'FileSeller-First')
+		@browser.text_field(id: 'FileSeller-First')
 	end
 
 	def sellerLastName
-		@browser.input(id: 'FileSeller-Last')
+		@browser.text_field(id: 'FileSeller-Last')
 	end
 
 	def sellerPIN
-		@browser.input(id: 'FileSeller-PIN')
+		@browser.text_field(id: 'FileSeller-PIN')
 	end
 
 	def sellerTaxID
-		@browser.input(id: 'FileSeller-TaxId')
+		@browser.text_field(id: 'FileSeller-TaxId')
 	end
 
 	def sellerExpires
-		@browser.input(id: 'FileSeller-Expires')
+		@browser.text_field(id: 'FileSeller-Expires')
 	end
 
 	#### MATCHING SELLERS MODAL ####
@@ -126,6 +130,11 @@ module AdminSellerFindPage
 		@browser.label(id: 'SellerFind-Error')
 	end
 
+	def verifyError(result)
+		expectedResult = "#{result}"
+		expect(sellerError.text).to include(expectedResult)
+		sellerError.flash(color: ["yellow"])
+	end
 	#### VERIFIERS ####
 	def verifySellerisPresent()
 		sleep(1)

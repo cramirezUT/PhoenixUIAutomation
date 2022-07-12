@@ -64,10 +64,15 @@ RSpec.describe "Admin->Seller->Edit admin Seller Undelete-P1", :sellerEdit do
       sendKeysTab
 		end
 
-    it "Delete Seller" do
-       sellerDelete.flash(color: ["yelllow"])
-       sellerDelete.click
-       sellerDeleteConfirmNo.flash(color: ["yelllow"]).click
+    it "Unlock Seller" do
+      ##First Lock
+       sellerLock.flash(color: ["yelllow"]).click
+       sellerConfirmMessage.flash(color: ["yelllow"]).set ("lock")
+       sendKeysTab
+       sellerDeleteConfirmYes.flash(color: ["yelllow"]).click
+       ##unlock
+       sellerLock.flash(color: ["yelllow"]).click
+       sellerDeleteConfirmYes.flash(color: ["yelllow"]).click
     end
 
 	ensure

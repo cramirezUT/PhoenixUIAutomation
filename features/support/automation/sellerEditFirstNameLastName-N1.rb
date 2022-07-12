@@ -74,10 +74,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit First Name Last Name-N1", 
       sendKeysTab
 		end
 
-    it "Enter Save Button" do
-      sellerSave.flash(color: ["yelllow"]).click
-    end
-
 	ensure
 	after(:all) do
 		logOutFuction
