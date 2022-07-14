@@ -1,5 +1,5 @@
 ## e2e RSpec/Ruby Test
-## Author: Carlos Ramirez
+## Author: Peri
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
@@ -20,10 +20,10 @@ RSpec.configure do |c|
   c.include WindowsHelpers
 end
 
-RSpec.describe "Admin->Seller->Edit admin Seller Undelete-N1", :sellerEdit do
+RSpec.describe "Admin->Seller->Edit admin Seller Unlock-N1", :sellerEdit do
   begin
     before(:all) do
-      puts "adminSellerEditUndelete-N1"
+      puts "adminSellerEditUnlock-N1"
       launchToteBrowser
       selectSiteTable
       logInFunction

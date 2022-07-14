@@ -1,5 +1,5 @@
 ## e2e RSpec/Ruby Test
-## Author: Carlos Ramirez
+## Author: Peri
 
 require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
@@ -74,10 +74,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit First Name-P1", :sellerEdi
       sellerFirstName.flash(color: ["yelllow"]).set ("Aron"+"#{@Random}")
       sendKeysTab
 		end
-
-    it "Enter Save Button" do
-      sellerSave.flash(color: ["yelllow"]).click
-    end
 
 	ensure
 	after(:all) do
