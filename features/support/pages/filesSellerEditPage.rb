@@ -111,6 +111,18 @@ module AdminSellerFindPage
 		@browser.text_field(id: 'FileSeller-TaxId')
 	end
 
+	def sellerFingerPrint
+		@browser.text_field(id: 'FileSeller-Fingerprint')
+	end
+
+	def sellerTerminals
+		@browser.text_field(id: 'FileSeller-Terminals')
+	end
+
+	def sellerSeniority
+		@browser.text_field(id: 'FileSeller-Seniority')
+	end
+
 	def sellerExpires
 		@browser.text_field(id: 'FileSeller-Expires')
 	end
