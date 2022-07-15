@@ -137,7 +137,7 @@ module AccountTransactionPage
 	end
 
 	def verifyAccountTransactionSearchResultsName(result)
-		sleep(1)
+		sleep(2)
 		expectedResult = "#{result}"
 		expect(getAdminAccountTransactionAccountName.text).to include(expectedResult)
 		getAdminAccountTransactionAccountName.flash(color: ["yellow"])

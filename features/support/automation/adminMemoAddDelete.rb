@@ -61,7 +61,11 @@ RSpec.describe "Admin->Memo: Admin Memo Add and delete functionality test", :adm
     it "Adds a new memo" do
       addNewMemoFunctionality
     end
+<<<<<<< Updated upstream
 
+=======
+    
+>>>>>>> Stashed changes
 		it "Verifies the memo was set" do
 			adminMemoModalMemoByIndex(0).flash
 			verifyNewMemoText($adminMemoRandom.to_s.concat(" test"))

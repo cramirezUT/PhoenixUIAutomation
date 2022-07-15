@@ -56,7 +56,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
       eventInquiryDropdown.wait_until_present.flash.click
       eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventById)
       sendKeysEnter
-			sendKeysTab
+			sendKeysEnter
 		end
 
     it "Verify the ID results for row 1" do
@@ -70,7 +70,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
       eventInquiryDropdown.wait_until_present.flash.click
       eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByName)
       sendKeysEnter
-			sendKeysTab
+			eventInquiryDropdown.flash.click
 		end
 
 		it "Verify the ID results for row 1" do
@@ -81,10 +81,10 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
     end
 
     it "Click on the Event By dropdown and select the Post" do
-      eventInquiryDropdown.flash.click
+      eventInquiryDropdown.wait_until_present.flash.click
       eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByPostTime)
       sendKeysEnter
-			sendKeysTab
+			eventInquiryDropdown.flash.click
 		end
 
 		it "Verify the ID results for row 1" do
@@ -99,7 +99,7 @@ RSpec.describe "Admin->Event->Inquiry: Event Inquiry Summary test", :adminEvent 
       eventInquiryDropdown.wait_until_present.flash.click
       eventInquirySearchTextField.wait_until_present.flash.set ($adminEventInquiryEventByOpenRaces)
       sendKeysEnter
-			sendKeysTab
+			eventInquiryDropdown.flash.click
 		end
 
 		it "Verify the ID results for row 1" do

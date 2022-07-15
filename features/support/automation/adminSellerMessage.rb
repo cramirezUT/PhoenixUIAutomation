@@ -76,7 +76,7 @@ RSpec.describe "Admin->Seller->Message: Admin Seller Message functionality test"
 		end
 
 		it "Verifies the Seller is not logged on error" do
-			verifySellerNotLoggedOnError('Seller UTS1-Goode, Johnny B is not logged on to any terminal')
+			verifySellerNotLoggedOnError('Seller UTS-1-Goode, Johnny B is not logged on to any terminal')
 		end
 	ensure
 	after(:all) do

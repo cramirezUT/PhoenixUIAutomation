@@ -8,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$adminSellerMessageSellerId = "UTS1"
+$adminSellerMessageSellerId = "UTS-1"
 $adminSellerMessageSellerIdInvalid = "TNT"
 
 module AdminSellerMessagePage
