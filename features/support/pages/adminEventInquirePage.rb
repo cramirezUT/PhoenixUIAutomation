@@ -10,7 +10,7 @@ require 'rspec/expectations'
 
 $adminEventInquiryEventById = "ID"
 $adminEventInquiryEventByName = "Name"
-$adminEventInquiryEventByPostTime = "PostTime"
+$adminEventInquiryEventByPostTime = "Post Time"
 $adminEventInquiryEventByOpenRaces = "Open Races"
 $adminEventInquiryEventByInvalidId = "TNT"
 
@@ -47,6 +47,7 @@ module InquirePage
 
 	#### GETTERS ####
 	def getEventInquiryResultNameByRow(row)
+		sleep(1)
 		@browser.div(id: "EventInquiry-View-#{row}-1")
 	end
 

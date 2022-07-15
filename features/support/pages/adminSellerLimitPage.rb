@@ -8,7 +8,7 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
-$adminSellerLimitSellerId = "UTS1"
+$adminSellerLimitSellerId = "UTS-1"
 $adminSellerLimitSellerIdInvalid = "TNT"
 
 module AdminSellerLimitPage

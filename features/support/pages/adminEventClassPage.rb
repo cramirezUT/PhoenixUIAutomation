@@ -126,6 +126,8 @@ module ClassPage
 			eventClassButtonByIndex(0).wait_until_present.flash.click
 		elsif getEventClassDefinition(0).text == 'A'
 			eventClassButtonByIndex(0).wait_until_present.flash.click
+		elsif getEventClassDefinition(0).text == ' '
+			eventClassButtonByIndex(0).wait_until_present.flash.click
 		else
 			puts "No clean up needed moving to next step"
 		end
@@ -133,24 +135,28 @@ module ClassPage
 
 	#### VERIFIERS ####
 	def verifyAdminEventClassEventSearchResults(result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(getEventResultView.text).to include(expectedResult)
 		getEventResultView.flash(color: ["yellow"])
 	end
 
 	def verifyAdminEventClassEventSearchResultsInvalid(result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(getAdminEventClassEventSearchResults.text).to eq(expectedResult)
 		getAdminEventClassEventSearchResults.flash(color: ["yellow"])
 	end
 
 	def verifyEventClassDefinitionB(index)
+		sleep(1)
 		expectedClassDenfinition = "B"
 		expect(getEventClassDefinition(index).text).to eq(expectedClassDenfinition)
 		getEventClassDefinition(index).flash(color: ["yellow"])
 	end
 
 	def verifyEventClassDefinitionA(index)
+		sleep(1)
 		expectedClassDenfinition = "A"
 		expect(getEventClassDefinition(index).text).to eq(expectedClassDenfinition)
 		getEventClassDefinition(index).flash(color: ["yellow"])
@@ -158,12 +164,14 @@ module ClassPage
 
 
 	def verifyEventClassDefinitionReset(index)
+		sleep(1)
 		expectedClassDenfinition = " "
 		expect(getEventClassDefinition(index).text).to eq(expectedClassDenfinition)
 		getEventClassDefinition(index).flash(color: ["yellow"])
 	end
 
 	def verifyGroupSearchResult(index, result)
+		sleep(1)
 		expectedResult = "#{result}"
 		expect(getEventInformationByRow(index).text).to include(expectedResult)
 		getEventInformationByRow(index).flash(color: ["yellow"])

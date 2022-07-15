@@ -69,20 +69,19 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 			accountTransactionsSourceGroupSearchTextField.flash.set ($adminAccountTransactionSourceGroupId)
       accountTransactionsSourceGroupSearchTextField.flash.set ($adminAccountTransactionSourceGroupId)
 			sendKeysEnter
-      sendKeysTab
+      sendKeysEnter
 		end
 
 		it "Sets a Transaction type Deposit" do
 			accountTransactionTransactionDropdown.flash.click
 			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdDeposit)
 			sendKeysEnter
-      sendKeysTab
+      sendKeysEnter
 		end
 
 		it "Sets an Account Id" do
 			accountTransactionAccountSearchTextField.flash.set ($adminAccountTransactionGroupId)
 			sendKeysEnter
-      sendKeysTab
 		end
 
 		it "Verifies the valid search result" do
@@ -93,12 +92,12 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 			accountTransactionTransactionDropdown.flash.click
 			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdWithdraw)
 			sendKeysEnter
-      sendKeysTab
+      sendKeysEnter
 		end
 
 		it "Sets an Account Id" do
 			accountTransactionAccountSearchTextField.flash.set ($adminAccountTransactionGroupId)
-			sendKeysTab
+			sendKeysEnter
 		end
 
 		it "Verifies the valid search result" do
@@ -109,12 +108,13 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 			accountTransactionTransactionDropdown.flash.click
 			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdAdjust)
 			sendKeysEnter
+      sendKeysEnter
       sendKeysTab
 		end
 
 		it "Sets an Account Id" do
 			accountTransactionAccountSearchTextField.flash.set ($adminAccountTransactionGroupId)
-			sendKeysTab
+			sendKeysEnter
 		end
 
 		it "Verifies the valid search result" do
@@ -125,6 +125,7 @@ RSpec.describe "Admin->Account->Transaction: Account Transaction verification te
 			accountTransactionTransactionDropdown.flash.click
 			accountTransactionTransactionSearchTextField.wait_until_present.flash.set ($adminAccountTransactionIdTransfer)
 			sendKeysEnter
+      sendKeysEnter
       sendKeysTab
 		end
 
