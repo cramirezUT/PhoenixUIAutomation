@@ -35,6 +35,7 @@ module PricesPage
 	end
 
 	def eventPricesRaceSearchTextField
+		sleep(1)
 		@browser.text_field(id: 'Prices-Select-Race-search')
 	end
 
@@ -186,6 +187,7 @@ module PricesPage
 
 	#### GETTERS ####
 	def getEventResultHeaderTitle
+		sleep(1)
 		@browser.div(utclass: 'LargeText BoldText')
 	end
 

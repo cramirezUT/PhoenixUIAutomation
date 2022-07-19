@@ -108,6 +108,7 @@ module HandlePage
 
 	#### GETTERS #####
 	def getEventHandleViewBoxPrice
+		sleep(1)
 		@browser.div(id: 'EventHandle-View-0-3')
 	end
 
