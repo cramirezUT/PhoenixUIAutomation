@@ -59,6 +59,7 @@ RSpec.describe "Admin->Event->Handle->Figure: Event Handle figure validation on 
     end
 
     it "Clicks on the Done button" do
+      eventHandleGroupDropdownDoneButton.focus
       eventHandleGroupDropdownDoneButton.flash.click
     end
 

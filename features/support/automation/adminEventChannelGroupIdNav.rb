@@ -81,7 +81,8 @@ RSpec.describe "Admin->Event->Channel: Event Channel group Id valid and invalid 
 
     it "Sets an invalid channel id" do
       eventChannelEeventChannelTextFieldByIndex(0).flash.set ($adminEventChannelChannelIdInvalid)
-      sendKeysTab
+      sendKeysEnter
+      sendKeysEnter
     end
 
     it "Verifies the invalid error message" do
