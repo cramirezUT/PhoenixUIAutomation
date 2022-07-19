@@ -46,7 +46,6 @@ RSpec.describe "Admin->Seller->Edit ExpiryDay-P2", :sellerEdit do
 			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
-
 		it "Navigate to Seller Edit" do
 			filesVerificationEnter.flash.click
 			filesVerificationEnter.flash(color: ["yelllow"]).set ("change")
@@ -70,7 +69,6 @@ RSpec.describe "Admin->Seller->Edit ExpiryDay-P2", :sellerEdit do
        sellerExpires.set ("100000000")
        sendKeysTab
     end
-
 	ensure
 	after(:all) do
 		logOutFuction

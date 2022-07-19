@@ -8,11 +8,16 @@ require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
 
+$adminSellerEditPin = "change"
+$adminSellerEditPinVerify = "edit"
+$adminSellerGroupId = "UTS-3"
 $adminSellerFindFirstName = "Johnny"
 $adminSellerFindFirstNameInvalid = "TNT"
 $adminSellerFindMiddleName = "B"
 $adminSellerFindLastName = "Goode"
 $adminSellerFindLastNameInvalid = "TNT"
+$adminSellerPin = "1234"
+$adminSellerVerifyPin = "1234"
 
 module AdminSellerFindPage
 	include RSpec::Matchers
@@ -72,6 +77,7 @@ module AdminSellerFindPage
 	end
 
 	def sellerEdit
+		sleep(1)
 		@browser.button(id: 'FileSeller-Edit')
 	end
 
@@ -104,7 +110,13 @@ module AdminSellerFindPage
 	end
 
 	def sellerPIN
+		sleep(1)
 		@browser.text_field(id: 'FileSeller-PIN')
+	end
+
+	def sellerVerifyPin
+		sleep(1)
+		@browser.text_field(id: 'FileSeller-VerifyPIN')
 	end
 
 	def sellerTaxID

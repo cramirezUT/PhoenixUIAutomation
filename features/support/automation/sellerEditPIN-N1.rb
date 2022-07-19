@@ -46,12 +46,11 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit PIN-N1", :sellerEdit do
 			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
-
 		it "Navigate to Seller Edit" do
 			filesVerificationEnter.flash.click
-			filesVerificationEnter.flash(color: ["yelllow"]).set ("change")
+			filesVerificationEnter.flash(color: ["yelllow"]).set ($adminSellerEditPin)
       sendKeysTab
-      filesVerificationEnter.flash(color: ["yelllow"]).set ("edit")
+      filesVerificationEnter.flash(color: ["yelllow"]).set ($adminSellerEditPinVerify)
 			sendKeysTab
 		end
 
@@ -60,7 +59,7 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit PIN-N1", :sellerEdit do
 		end
 
 		it "enter Seller group Number" do
-			enterSellerGroupNumber.flash(color: ["yelllow"]).set ("UTS-3")
+			enterSellerGroupNumber.flash(color: ["yelllow"]).set ($adminSellerGroupId)
       sendKeysTab
 		end
 
@@ -69,12 +68,20 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit PIN-N1", :sellerEdit do
 		end
 
     it "Edit PIN" do
+      sellerPIN.flash(color: ["yelllow"]).click
       sellerPIN.flash(color: ["yelllow"]).clear
-			sellerPIN.flash(color: ["yelllow"]).set ("1234qw")
+			sellerPIN.flash(color: ["yelllow"]).set ($adminSellerPin)
       sendKeysTab
 		end
 
+    it "Sets the verify pin" do
+      sellerVerifyPin.flash.click
+      sellerVerifyPin.flash.set ($adminSellerVerifyPin)
+      sendKeysTab
+    end
+
     it "Enter Save Button" do
+      sellerSave.flash(color: ["yelllow"]).focus
       sellerSave.flash(color: ["yelllow"]).click
     end
 

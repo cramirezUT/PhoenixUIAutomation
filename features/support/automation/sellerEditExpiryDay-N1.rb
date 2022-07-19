@@ -46,7 +46,6 @@ RSpec.describe "Admin->Seller->Edit ExpiryDay-N1", :sellerEdit do
 			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
-
 		it "Navigate to Seller Edit" do
 			filesVerificationEnter.flash.click
 			filesVerificationEnter.flash(color: ["yelllow"]).set ("change")
@@ -74,7 +73,6 @@ RSpec.describe "Admin->Seller->Edit ExpiryDay-N1", :sellerEdit do
     it "Verify Error" do
        verifyError("Invalid expiration days")
     end
-
 	ensure
 	after(:all) do
 		logOutFuction

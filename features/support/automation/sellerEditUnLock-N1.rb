@@ -46,7 +46,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Unlock-N1", :sellerEdit do
 			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
-
 		it "Navigate to Seller Edit" do
 			filesVerificationEnter.flash.click
 			filesVerificationEnter.flash(color: ["yelllow"]).set ("change")
@@ -74,7 +73,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Unlock-N1", :sellerEdit do
        sellerLock.flash(color: ["yelllow"]).click
        sellerDeleteConfirmNo.flash(color: ["yelllow"]).click
     end
-
 	ensure
 	after(:all) do
 		logOutFuction

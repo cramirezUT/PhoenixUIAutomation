@@ -46,7 +46,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller TaxId-N2", :sellerEdit do
 			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
-
 		it "Navigate to Seller Edit" do
 			filesVerificationEnter.flash.click
 			filesVerificationEnter.flash(color: ["yelllow"]).set ("change")

@@ -46,7 +46,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit Last Name-P1", :sellerEdit
 			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
-
 		it "Navigate to Seller Edit" do
 			filesVerificationEnter.flash.click
 			filesVerificationEnter.flash(color: ["yelllow"]).set ("change")
@@ -74,8 +73,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Edit Last Name-P1", :sellerEdit
       sellerLastName.flash(color: ["yelllow"]).set ("Aron5"+"#{@Random}")
       sendKeysTab
 		end
-
-
 	ensure
 	after(:all) do
 		logOutFuction

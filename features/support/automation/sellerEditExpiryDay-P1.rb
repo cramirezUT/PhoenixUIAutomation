@@ -46,7 +46,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Expires-P1", :sellerEdit do
 			mainMenuLinks("Files").wait_until_present.flash.click
 		end
 
-
 		it "Navigate to Seller Edit" do
 			filesVerificationEnter.flash.click
 			filesVerificationEnter.flash(color: ["yelllow"]).set ("change")
@@ -70,8 +69,6 @@ RSpec.describe "Admin->Seller->Edit admin Seller Expires-P1", :sellerEdit do
        sellerExpires.set ("10")
        sendKeysTab
     end
-
-
 	ensure
 	after(:all) do
 		logOutFuction
