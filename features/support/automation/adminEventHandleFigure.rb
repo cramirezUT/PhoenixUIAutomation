@@ -58,11 +58,6 @@ RSpec.describe "Admin->Event->Handle->Figure: Event Handle figure validation on 
       sendKeysEnter
     end
 
-    it "Clicks on the Done button" do
-      eventHandleGroupDropdownDoneButton.focus
-      eventHandleGroupDropdownDoneButton.flash.click
-    end
-
     it "Verifes the Handle price" do
       puts "Event Handle Price: #{getEventHandleViewBoxPrice.flash.text}"
       puts "NEED THE RACE PRICE TO VALIDATE THE EVENT HANDLE PRICE AGAINST"

@@ -158,7 +158,7 @@ module EventChannelPage
 	end
 
 	def verifyEventChannelInvalidChannelIdError(result)
-		sleep(1)
+		sleep(2)
 		expectedResult = "#{result}"
 		expect(getEventChannelResultError.text).to include(expectedResult)
 		getEventChannelResultError.flash(color: ["yellow"])
