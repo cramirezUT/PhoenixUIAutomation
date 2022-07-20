@@ -71,9 +71,7 @@ RSpec.describe "Admin->Event->Prices: Event Prices Prices race test", :adminEven
 
 		it "Sets Race 1" do
       eventPricesRaceDropdown.flash.click
-      eventPricesRaceSearchTextField.wait_until_present.set ($adminEventPricesRaceNumber1)
-      sendKeysEnter
-      sendKeysEnter
+			eventPricesRaceNumberByIndex(0).flash.click
     end
 
 		it "Verifies the valid search result" do

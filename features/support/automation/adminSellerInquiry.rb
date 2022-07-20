@@ -69,7 +69,9 @@ RSpec.describe "Admin->Seller->Inquiry: Admin Seller Inquiry functionality test"
 
 		it "Sets a valid Seller id" do
 			adminSellerInquiryModalSellerTextField.flash.click
-			sendKeysClear
+			sendKeysBackspace
+      sendKeysBackspace
+      sendKeysBackspace
 			adminSellerInquiryModalSellerTextField.flash.click
 			adminSellerInquiryModalSellerTextField.flash.set ($adminSellerInquirySellerId)
 			sendKeysTab

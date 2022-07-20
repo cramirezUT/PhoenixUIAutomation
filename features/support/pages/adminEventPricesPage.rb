@@ -10,7 +10,7 @@ require 'rspec/expectations'
 
 $adminEventPricesEventId = "CHF"
 $adminEventPricesEventIdInvalid = "TNT"
-$adminEventPricesRaceNumber1 = "1"
+$adminEventPricesRaceNumber2 = "2"
 $adminEventPricesSourceMeregeId = "Merged"
 
 module PricesPage
@@ -41,6 +41,10 @@ module PricesPage
 
 	def eventPricesGroupDropdown
 		@browser.button(id: 'Prices-Select-Group-mainbutton')
+	end
+
+	def eventPricesRaceNumberByIndex(index)
+		@browser.li(id: "ut-ms-opt-Prices-Select-Race_#{index}")
 	end
 
 	def eventPricesGroupSearchTextField
