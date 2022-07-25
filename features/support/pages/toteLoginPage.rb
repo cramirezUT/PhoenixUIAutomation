@@ -7,7 +7,7 @@ require 'pry'
 require 'rubygems'
 require 'selenium-webdriver'
 require 'rspec/expectations'
-require_relative "../lib/Users.rb"
+require_relative "../lib/users.rb"
 
 module ToteLoginPage
 	include RSpec::Matchers
