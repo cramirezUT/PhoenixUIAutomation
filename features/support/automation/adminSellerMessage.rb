@@ -6,8 +6,8 @@ require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
 require_relative "../pages/adminSellerMessagePage.rb"
 require_relative "../lib/browsers.rb"
-require_relative "../lib/SendKeys.rb"
-require_relative "../lib/Users.rb"
+require_relative "../lib/sendKeys.rb"
+require_relative "../lib/users.rb"
 require_relative "../lib/windows.rb"
 
 RSpec.configure do |c|
