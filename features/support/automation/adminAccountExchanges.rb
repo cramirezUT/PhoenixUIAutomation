@@ -10,8 +10,8 @@ require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
 require_relative "../pages/adminAccountExchangesPage.rb"
 require_relative "../lib/browsers.rb"
-require_relative "../lib/SendKeys.rb"
-require_relative "../lib/Users.rb"
+require_relative "../lib/sendKeys.rb"
+require_relative "../lib/users.rb"
 
 RSpec.configure do |c|
   c.include ToteLoginPage
