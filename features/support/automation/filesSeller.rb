@@ -5,7 +5,7 @@ require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
 require_relative "../pages/filesPage.rb"
-require_relative "../pages/FilesSellerPage.rb"
+require_relative "../pages/filesSellerPage.rb"
 require_relative "../lib/browsers.rb"
 require_relative "../lib/sendKeys.rb"
 require_relative "../lib/users.rb"
@@ -71,7 +71,7 @@ RSpec.describe "Files->Seller: Verify the table options in the Displayed Columns
 		end
 
     it "Closes the Seller modal" do
-      
+
     end
   ensure
     after(:all) do
