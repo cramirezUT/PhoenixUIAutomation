@@ -5,7 +5,7 @@ require_relative "../pages/toteLoginPage.rb"
 require_relative "../pages/homePage.rb"
 require_relative "../pages/siteSelectPage.rb"
 require_relative "../lib/browsers.rb"
-require_relative "../lib/SendKeys.rb"
+require_relative "../lib/sendKeys.rb"
 require_relative "../lib/users.rb"
 
 RSpec.configure do |c|
